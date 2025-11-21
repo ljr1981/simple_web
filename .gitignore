@@ -1,0 +1,23 @@
+# Eiffel compilation outputs
+EIFGENs/
+.eifgen/
+*.melted
+*.frozen
+*.finalized
+
+# Backup files
+*.swp
+*~
+*.bak
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+
+# Logs
+*.log
