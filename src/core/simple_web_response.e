@@ -36,7 +36,7 @@ feature {NONE} -- Initialization
 	make_with_body (a_status_code: INTEGER; a_body: STRING)
 			-- Initialize with status code and body
 		require
-			valid_status: a_status_code > 0
+			valid_status: a_status_code >= 0
 			body_attached: a_body /= Void
 		do
 			make (a_status_code)
@@ -88,7 +88,17 @@ feature -- Status Report
 		require
 			name_attached: a_name /= Void
 		do
-			Result := headers.has (a_name.as_lower)
+			from
+				headers.start
+				Result := false
+			until
+				headers.off
+			loop
+				if attached headers.key_for_iteration as al_header then
+					Result := Result or al_header.has_substring (a_name.as_lower)
+				end
+				headers.forth
+			end
 		end
 
 feature -- Element Change

@@ -105,54 +105,83 @@ feature -- Basic Operations
 feature -- Advanced Operations
 
 	execute (a_request: SIMPLE_WEB_REQUEST): SIMPLE_WEB_RESPONSE
-	    require
-	        request_attached: a_request /= Void
-	    local
-	        l_session: CURL_HTTP_CLIENT_SESSION
-	        l_ctx: HTTP_CLIENT_REQUEST_CONTEXT
-	        l_response: detachable HTTP_CLIENT_RESPONSE
-	    do
-	        -- Create session
-	        create l_session.make (a_request.url)
-	        create l_ctx.make
+			-- Execute HTTP request using configured client
+		require
+			request_attached: a_request /= Void
+		local
+			l_session: CURL_HTTP_CLIENT_SESSION
+			l_ctx: HTTP_CLIENT_REQUEST_CONTEXT
+			l_response: detachable HTTP_CLIENT_RESPONSE
+			l_hdr_name: STRING
+			l_hdr_value: READABLE_STRING
+		do
+			-- Create session
+			create l_session.make (a_request.url)
+			create l_ctx.make
 
-	        -- Add headers to context
-	        across a_request.headers.current_keys as ic loop
-	            if attached a_request.headers.item (ic) as l_value then
-	                l_ctx.headers.force (l_value, ic.out)
-	            end
-	        end
+			-- Add headers to context
+			across a_request.headers.current_keys as ic loop
+				if attached a_request.headers.item (ic) as l_value then
+					l_ctx.headers.force (l_value, ic.out)
+				end
+			end
 
-	        -- Set upload data if present
-	        if attached a_request.body as al_body and then not al_body.is_empty then
-	            l_ctx.set_upload_data (al_body)
-	        end
+			-- Set upload data if present
+			if attached a_request.body as al_body and then not al_body.is_empty then
+				l_ctx.set_upload_data (al_body)
+			end
 
-	        -- Execute based on method
-	        if a_request.method ~ Http_method_get then
-	            l_response := l_session.get ("", l_ctx)
-	        elseif a_request.method ~ Http_method_post then
-	            l_response := l_session.post ("", l_ctx, Void)
-	        elseif a_request.method ~ Http_method_put then
-	            l_response := l_session.put ("", l_ctx, Void)
-	        elseif a_request.method ~ Http_method_delete then
-	            l_response := l_session.delete ("", l_ctx)
-	        end
+			-- Execute based on method
+			if a_request.method ~ Http_method_get then
+				l_response := l_session.get ("", l_ctx)
+			elseif a_request.method ~ Http_method_post then
+				l_response := l_session.post ("", l_ctx, Void)
+			elseif a_request.method ~ Http_method_put then
+				l_response := l_session.put ("", l_ctx, Void)
+			elseif a_request.method ~ Http_method_delete then
+				l_response := l_session.delete ("", l_ctx)
+			end
 
-	        -- Build response
-	        if attached l_response as al_response then
-	            if attached al_response.body as al_body then
-	                create Result.make_with_body (al_response.status, al_body.to_string_8)
-	            else
-	                create Result.make (al_response.status)
-	            end
-	        else
-	            create Result.make (Status_service_unavailable)
-	            Result.set_body ("Request failed")
-	        end
-	    ensure
-	        result_attached: Result /= Void
-	    end
+			-- Build response
+			if attached l_response as al_response then
+				-- HTTP library returned a response object
+				if attached al_response.body as al_body then
+					-- Response has body content
+					if al_response.status = 0 then
+						-- Status 0 indicates network/request failure
+						create Result.make (Status_service_unavailable)
+					else
+						-- Normal response with status and body
+						create Result.make_with_body (al_response.status, al_body.to_string_8)
+					end
+				else
+					-- Response has no body (e.g., 204 No Content, HEAD request)
+					create Result.make (al_response.status)
+				end
+
+				-- Copy response headers
+				if attached al_response.headers as al_headers then
+					from
+						al_headers.start
+					until
+						al_headers.off
+					loop
+						if attached {STRING} al_headers.item_for_iteration [1] as al_hdr_name and then
+							attached {READABLE_STRING} al_headers.item_for_iteration [2] as al_hdr_value
+						then
+							Result.add_header (al_hdr_name, al_hdr_value)
+						end
+						al_headers.forth
+					end
+				end
+			else
+				-- HTTP library returned Void - complete failure
+				create Result.make (Status_service_unavailable)
+				Result.set_body ("Request failed")
+			end
+		ensure
+			result_attached: Result /= Void
+		end
 
 feature -- Factory Methods
 
