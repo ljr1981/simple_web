@@ -442,13 +442,15 @@ ec.exe -batch -config simple_web.ecf -target wms_api_tests -tests
 
 ## Testing
 
-70 tests covering:
+95 tests covering:
 - Request/response handling
 - Integration with httpbin.org, jsonplaceholder.typicode.com
 - Ollama API operations
 - Hybrid client functionality
 - Server route pattern matching
 - Server router functionality
+- Middleware pipeline tests (12 tests)
+- Input sanitization tests (15 tests)
 
 Run tests via EiffelStudio AutoTest.
 
@@ -469,6 +471,7 @@ Run tests via EiffelStudio AutoTest.
 - [x] Auth middleware (Bearer, Basic, API key)
 - [x] Input sanitization (XSS, path traversal, header injection)
 - [x] Safe parameter accessors with built-in sanitization
+- [x] Todo API mock (demonstrates integration with simple_sql)
 
 ### Planned
 - [ ] Rate limiting middleware
