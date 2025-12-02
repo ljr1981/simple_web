@@ -18,20 +18,20 @@
 		<library name="curl_http_client" location="$ISE_LIBRARY\contrib\library\network\http_client\curl_http_client.ecf"/>
 		<library name="default_standalone" location="$ISE_LIBRARY\contrib\library\web\framework\ewf\wsf\default\standalone.ecf"/>
 		<library name="encoder" location="$ISE_LIBRARY\contrib\library\web\framework\ewf\text\encoder\encoder.ecf"/>
-		<library name="framework" location="D:\prod\framework\framework.ecf"/>
+		<library name="framework" location="$FRAMEWORK\framework.ecf"/>
 		<library name="http_authorization" location="$ISE_LIBRARY\contrib\library\web\authentication\http_authorization\http_authorization.ecf"/>
 		<library name="http_network" location="$ISE_LIBRARY\contrib\library\network\http_network\http_network.ecf"/>
 		<library name="httpd" location="$ISE_LIBRARY\contrib\library\web\framework\ewf\httpd\httpd.ecf"/>
 		<library name="jwt" location="$ISE_LIBRARY\contrib\library\web\authentication\jwt\jwt.ecf"/>
 		<library name="jwt_openssl" location="$ISE_LIBRARY\contrib\library\web\authentication\jwt_openssl_ext\jwt_openssl.ecf"/>
 		<library name="oauth_module" location="$ISE_LIBRARY\unstable\library\web\cms\modules\oauth20\oauth20.ecf"/>
-		<library name="simple_json" location="D:\prod\simple_json\simple_json.ecf"/>
-		<library name="simple_web" location="D:\prod\simple_web\simple_web.ecf"/>
+		<library name="simple_json" location="$SIMPLE_JSON\simple_json.ecf"/>
 		<library name="standalone_launcher" location="$ISE_LIBRARY\unstable\library\web\cms\launcher\standalone.ecf"/>
-		<library name="testing_ext" location="D:\prod\testing_ext\testing_ext.ecf"/>
+		<library name="testing_ext" location="$TESTING_EXT\testing_ext.ecf"/>
 		<library name="uri" location="$ISE_LIBRARY\library\text\uri\uri.ecf"/>
 		<library name="uri_launcher" location="$ISE_LIBRARY\library\runtime\process\uri_launcher\uri_launcher.ecf"/>
 		<library name="uri_template" location="$ISE_LIBRARY\contrib\library\text\parser\uri_template\uri_template.ecf"/>
+		<library name="wsf" location="$ISE_LIBRARY\contrib\library\web\framework\ewf\wsf\wsf.ecf"/>
 		<library name="wsf_all" location="$ISE_LIBRARY\contrib\library\web\framework\ewf\wsf\connector\all.ecf"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
