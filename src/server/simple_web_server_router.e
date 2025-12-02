@@ -1,7 +1,7 @@
 note
 	description: "[
 		Shared router singleton for SIMPLE_WEB_SERVER.
-		Holds routes that are accessed by execution instances.
+		Holds routes and middleware pipeline that are accessed by execution instances.
 	]"
 	author: "Larry Rix"
 	date: "$Date$"
@@ -16,6 +16,14 @@ feature -- Access
 			-- Registered routes.
 		once
 			create Result.make (20)
+		ensure
+			result_attached: Result /= Void
+		end
+
+	middleware_pipeline: SIMPLE_WEB_MIDDLEWARE_PIPELINE
+			-- Middleware pipeline.
+		once
+			create Result.make
 		ensure
 			result_attached: Result /= Void
 		end
@@ -38,6 +46,26 @@ feature -- Route Registration
 			routes.wipe_out
 		ensure
 			routes_empty: routes.is_empty
+		end
+
+feature -- Middleware
+
+	add_middleware (a_middleware: SIMPLE_WEB_MIDDLEWARE)
+			-- Add middleware to pipeline.
+		require
+			middleware_attached: a_middleware /= Void
+		do
+			middleware_pipeline.use (a_middleware)
+		ensure
+			middleware_added: middleware_pipeline.count = old middleware_pipeline.count + 1
+		end
+
+	clear_middleware
+			-- Remove all middleware.
+		do
+			middleware_pipeline.clear
+		ensure
+			middleware_empty: middleware_pipeline.is_empty
 		end
 
 feature -- Matching

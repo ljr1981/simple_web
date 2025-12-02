@@ -11,7 +11,8 @@ class
 	SIMPLE_WEB_SERVER_RESPONSE
 
 create
-	make
+	make,
+	make_mock
 
 feature {NONE} -- Initialization
 
@@ -22,8 +23,24 @@ feature {NONE} -- Initialization
 		do
 			wsf_response := a_wsf_response
 			status_code := 200
+			is_mock := False
+			create mock_headers.make (10)
+			create mock_body.make_empty
 		ensure
 			wsf_response_set: wsf_response = a_wsf_response
+			default_status: status_code = 200
+			not_mock: not is_mock
+		end
+
+	make_mock
+			-- Create mock response for testing (no underlying WSF response).
+		do
+			status_code := 200
+			is_mock := True
+			create mock_headers.make (10)
+			create mock_body.make_empty
+		ensure
+			is_mock: is_mock
 			default_status: status_code = 200
 		end
 
@@ -32,8 +49,17 @@ feature -- Access
 	status_code: INTEGER
 			-- HTTP status code to send.
 
-	wsf_response: WSF_RESPONSE
-			-- Underlying WSF response.
+	wsf_response: detachable WSF_RESPONSE
+			-- Underlying WSF response (Void in mock mode).
+
+	is_mock: BOOLEAN
+			-- Is this a mock response for testing?
+
+	mock_headers: HASH_TABLE [STRING_8, STRING_8]
+			-- Headers set in mock mode (for testing verification).
+
+	mock_body: STRING_8
+			-- Body content set in mock mode (for testing verification).
 
 feature -- Status Setting
 
@@ -156,8 +182,13 @@ feature -- Response Sending
 	send_empty
 			-- Send empty response (typically with 204 No Content).
 		do
-			wsf_response.set_status_code (status_code)
-			wsf_response.put_header_text ("Content-Length: 0%R%N%R%N")
+			if is_mock then
+				mock_headers.force ("0", "Content-Length")
+				mock_body.wipe_out
+			elseif attached wsf_response as l_response then
+				l_response.set_status_code (status_code)
+				l_response.put_header_text ("Content-Length: 0%R%N%R%N")
+			end
 		end
 
 	send_redirect (a_url: READABLE_STRING_8)
@@ -168,8 +199,12 @@ feature -- Response Sending
 			if status_code = 200 then
 				status_code := 302
 			end
-			wsf_response.set_status_code (status_code)
-			wsf_response.put_header_text ("Location: " + a_url + "%R%N%R%N")
+			if is_mock then
+				mock_headers.force (a_url.to_string_8, "Location")
+			elseif attached wsf_response as l_response then
+				l_response.set_status_code (status_code)
+				l_response.put_header_text ("Location: " + a_url + "%R%N%R%N")
+			end
 		end
 
 	send_error (a_status: INTEGER; a_message: READABLE_STRING_8)
@@ -215,6 +250,21 @@ feature -- Response Sending
 			status_set: status_code = 500
 		end
 
+feature -- Header Setting
+
+	set_header (a_name: STRING_8; a_value: STRING_8)
+			-- Set HTTP header.
+		require
+			name_attached: a_name /= Void
+			value_attached: a_value /= Void
+		do
+			if is_mock then
+				mock_headers.force (a_value, a_name)
+			elseif attached wsf_response as l_response then
+				l_response.put_header_text (a_name + ": " + a_value + "%R%N")
+			end
+		end
+
 feature {NONE} -- Implementation
 
 	send_with_content_type (a_content: READABLE_STRING_8; a_content_type: STRING)
@@ -225,20 +275,29 @@ feature {NONE} -- Implementation
 		local
 			l_header: STRING
 		do
-			wsf_response.set_status_code (status_code)
-			create l_header.make (100)
-			l_header.append ("Content-Type: ")
-			l_header.append (a_content_type)
-			l_header.append ("%R%NContent-Length: ")
-			l_header.append_integer (a_content.count)
-			l_header.append ("%R%N%R%N")
-			wsf_response.put_header_text (l_header)
-			wsf_response.put_string (a_content)
+			if is_mock then
+				mock_headers.force (a_content_type, "Content-Type")
+				mock_headers.force (a_content.count.out, "Content-Length")
+				mock_body.wipe_out
+				mock_body.append (a_content.to_string_8)
+			elseif attached wsf_response as l_response then
+				l_response.set_status_code (status_code)
+				create l_header.make (100)
+				l_header.append ("Content-Type: ")
+				l_header.append (a_content_type)
+				l_header.append ("%R%NContent-Length: ")
+				l_header.append_integer (a_content.count)
+				l_header.append ("%R%N%R%N")
+				l_response.put_header_text (l_header)
+				l_response.put_string (a_content)
+			end
 		end
 
 invariant
-	wsf_response_attached: wsf_response /= Void
+	wsf_response_attached_or_mock: is_mock or wsf_response /= Void
 	valid_status_code: status_code >= 100 and status_code < 600
+	mock_headers_attached: mock_headers /= Void
+	mock_body_attached: mock_body /= Void
 
 note
 	copyright: "Copyright (c) 2024-2025, Larry Rix"

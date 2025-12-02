@@ -19,22 +19,37 @@ create
 feature -- Execution
 
 	execute
-			-- Execute the request by finding matching route and calling handler.
+			-- Execute the request through middleware pipeline, then route handler.
 		local
 			l_request: SIMPLE_WEB_SERVER_REQUEST
 			l_response: SIMPLE_WEB_SERVER_RESPONSE
+		do
+			create l_request.make (request)
+			create l_response.make (response)
+
+			-- Execute through middleware pipeline, ending with route dispatch
+			router.middleware_pipeline.execute (
+				l_request,
+				l_response,
+				agent dispatch_to_route (l_request, l_response)
+			)
+		end
+
+feature {NONE} -- Route Dispatch
+
+	dispatch_to_route (a_request: SIMPLE_WEB_SERVER_REQUEST; a_response: SIMPLE_WEB_SERVER_RESPONSE)
+			-- Find and execute matching route handler.
+		local
 			l_route: detachable SIMPLE_WEB_SERVER_ROUTE
 			l_path: STRING_32
 			l_params: HASH_TABLE [STRING_32, STRING_32]
 			l_keys: ARRAY [STRING_32]
 			i: INTEGER
 		do
-			create l_request.make (request)
-			create l_response.make (response)
-			l_path := request.path_info
+			l_path := a_request.path
 
 			-- Find matching route using shared router
-			l_route := router.find_route (request.request_method, l_path)
+			l_route := router.find_route (a_request.method, l_path)
 
 			if l_route /= Void then
 				-- Extract and set path parameters
@@ -46,16 +61,16 @@ feature -- Execution
 					i > l_keys.upper
 				loop
 					if attached l_params.item (l_keys [i]) as l_value then
-						l_request.set_path_parameter (l_keys [i], l_value)
+						a_request.set_path_parameter (l_keys [i], l_value)
 					end
 					i := i + 1
 				end
 				-- Call handler
-				l_route.handler.call ([l_request, l_response])
+				l_route.handler.call ([a_request, a_response])
 			else
 				-- No route found - send 404
-				l_response.set_not_found
-				l_response.send_json ("{%"error%":%"Not Found%",%"path%":%"" + l_path.to_string_8 + "%"}")
+				a_response.set_not_found
+				a_response.send_json ("{%"error%":%"Not Found%",%"path%":%"" + l_path.to_string_8 + "%"}")
 			end
 		end
 
