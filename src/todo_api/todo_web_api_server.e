@@ -74,9 +74,10 @@ create
 feature {NONE} -- Initialization
 
 	default_create
-			-- Create with default port and in-memory database.
+			-- Create with default port and in-memory database, then start server.
 		do
 			make (8080)
+			start
 		end
 
 	make (a_port: INTEGER)

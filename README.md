@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/ljr1981/claude_eiffel_op_docs/main/artwork/LOGO.png" alt="simple_ library logo" width="400">
+</p>
+
 # SIMPLE_WEB
 
 High-level HTTP library for Eiffel, providing clean APIs for both HTTP client operations and HTTP server development.
