@@ -211,7 +211,6 @@ feature {NONE} -- Implementation
 				i := i + 1
 			end
 		ensure
-			result_not_void: Result /= Void
 			result_at_least_as_long: Result.count >= s.count
 		end
 
