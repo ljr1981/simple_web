@@ -251,6 +251,15 @@ feature -- Response Sending
 			status_set: status_code = 404
 		end
 
+	send_binary (a_content: READABLE_STRING_8; a_content_type: STRING)
+			-- Send binary content (images, files, etc.) with specified content type.
+		require
+			content_attached: a_content /= Void
+			content_type_attached: a_content_type /= Void
+		do
+			send_with_content_type (a_content, a_content_type)
+		end
+
 	send_server_error (a_message: READABLE_STRING_8)
 			-- Send 500 Internal Server Error with error message.
 		require
