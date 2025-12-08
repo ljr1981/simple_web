@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="Skeleton execution based on router."/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="2011-2015, Jocelyn Fiat, Javier Velilla, Olivier Ligot, Colin Adams, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>wsf_routed_skeleton_execution Chart</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<span class="nav class selected">Chart</span>
+<a class="nav class" href="wsf_routed_skeleton_execution_links.html">Relations</a>
+<a class="nav class" href="wsf_routed_skeleton_execution_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="wsf_routed_skeleton_execution"></span>
+</div></form><pre><span class="ekeyword">deferred</span> <span class="ekeyword">class</span>
+	<a class="eclass" href="../wsf/wsf_routed_skeleton_execution_chart.html">WSF_ROUTED_SKELETON_EXECUTION</a>
+
+<span class="ekeyword">General</span>
+	<span class="eitag">cluster</span><span class="esymbol">:</span> <span class="necluster">router</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;Skeleton execution based on router.&quot;</span>
+
+<span class="ekeyword">Ancestors</span>
+	<a class="eclass" href="../wsf/wsf_proxy_use_policy_chart.html">WSF_PROXY_USE_POLICY</a><span class="echar">*</span>
+	<a class="eclass" href="../wsf/wsf_routed_execution_chart.html">WSF_ROUTED_EXECUTION</a><span class="echar">*</span>
+	<a class="eclass" href="../wsf/wsf_system_options_access_policy_chart.html">WSF_SYSTEM_OPTIONS_ACCESS_POLICY</a>
+
+<span class="ekeyword">Queries</span>
+	<span title="`is_system_options_forbidden' was declared in WSF_SYSTEM_OPTIONS_ACCESS_POLICY"><a class="efeature" href="../wsf/wsf_system_options_access_policy_short.html#f_is_system_options_forbidden">is_system_options_forbidden</a> <span class="esymbol">(</span><span class="elocal">req</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_chart.html">WSF_REQUEST</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`is_valid_end_of_execution' was declared in WSF_EXECUTION"><a class="efeature" href="../wsf/wsf_execution_short.html#f_is_valid_end_of_execution">is_valid_end_of_execution</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`maximum_uri_length' is declared in `Current'"><a class="efeature" href="../wsf/wsf_routed_skeleton_execution_short.html#f_maximum_uri_length">maximum_uri_length</a><span class="esymbol">:</span> <a class="eclass" href="../base/natural_32_chart.html">NATURAL_32</a></span>
+	<span title="`message_writable' was declared in WSF_EXECUTION"><a class="efeature" href="../wsf/wsf_execution_short.html#f_message_writable">message_writable</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`proxy_server' was declared in WSF_PROXY_USE_POLICY"><a class="efeature" href="../wsf/wsf_proxy_use_policy_short.html#f_proxy_server">proxy_server</a> <span class="esymbol">(</span><span class="elocal">req</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_chart.html">WSF_REQUEST</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../uri/uri_chart.html">URI</a></span>
+	<span title="`request' was declared in WSF_EXECUTION"><a class="efeature" href="../wsf/wsf_execution_short.html#f_request">request</a><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_chart.html">WSF_REQUEST</a></span>
+	<span title="`requires_proxy' was declared in WSF_PROXY_USE_POLICY"><a class="efeature" href="../wsf/wsf_proxy_use_policy_short.html#f_requires_proxy">requires_proxy</a> <span class="esymbol">(</span><span class="elocal">req</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_chart.html">WSF_REQUEST</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`response' was declared in WSF_EXECUTION"><a class="efeature" href="../wsf/wsf_execution_short.html#f_response">response</a><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_response_chart.html">WSF_RESPONSE</a></span>
+	<span title="`router' was declared in WSF_ROUTED_EXECUTION"><a class="efeature" href="../wsf/wsf_routed_execution_short.html#f_router">router</a><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_router_chart.html">WSF_ROUTER</a></span>
+	<span title="`system_options_forbidden_text' was declared in WSF_SYSTEM_OPTIONS_ACCESS_POLICY"><a class="efeature" href="../wsf/wsf_system_options_access_policy_short.html#f_system_options_forbidden_text">system_options_forbidden_text</a> <span class="esymbol">(</span><span class="elocal">req</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_chart.html">WSF_REQUEST</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a></span>
+	<span title="`unavailability_duration' is declared in `Current'"><a class="efeature" href="../wsf/wsf_routed_skeleton_execution_short.html#f_unavailability_duration">unavailability_duration</a><span class="esymbol">:</span> <a class="eclass" href="../base/natural_32_chart.html">NATURAL_32</a></span>
+	<span title="`unavailable' is declared in `Current'"><a class="efeature" href="../wsf/wsf_routed_skeleton_execution_short.html#f_unavailable">unavailable</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`unavailable_until' is declared in `Current'"><a class="efeature" href="../wsf/wsf_routed_skeleton_execution_short.html#f_unavailable_until">unavailable_until</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <span class="neclass">DATE_TIME</span></span>
+	<span title="`unavailablity_message' is declared in `Current'"><a class="efeature" href="../wsf/wsf_routed_skeleton_execution_short.html#f_unavailablity_message">unavailablity_message</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a></span>
+
+<span class="ekeyword">Commands</span>
+	<span title="`clean' was declared in WSF_EXECUTION"><a class="efeature" href="../wsf/wsf_execution_short.html#f_clean">clean</a></span>
+	<span title="`create_router' was declared in WSF_ROUTED_EXECUTION"><a class="efeature" href="../wsf/wsf_routed_execution_short.html#f_create_router">create_router</a></span>
+	<span title="`execute' is declared in `Current'"><a class="efeature" href="../wsf/wsf_routed_skeleton_execution_short.html#f_execute">execute</a></span>
+	<span title="`execute_default' was declared in WSF_ROUTED_EXECUTION"><a class="efeature" href="../wsf/wsf_routed_execution_short.html#f_execute_default">execute_default</a> <span class="esymbol">(</span><span class="elocal">req</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_chart.html">WSF_REQUEST</a><span class="esymbol">;</span> <span class="elocal">res</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_response_chart.html">WSF_RESPONSE</a><span class="esymbol">)</span></span>
+	<span title="`execute_skeleton' is declared in `Current'"><a class="efeature" href="../wsf/wsf_routed_skeleton_execution_short.html#f_execute_skeleton">execute_skeleton</a> <span class="esymbol">(</span><span class="elocal">req</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_chart.html">WSF_REQUEST</a><span class="esymbol">;</span> <span class="elocal">res</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_response_chart.html">WSF_RESPONSE</a><span class="esymbol">)</span></span>
+	<span title="`initialize_router' was declared in WSF_ROUTED_EXECUTION"><a class="efeature" href="../wsf/wsf_routed_execution_short.html#f_initialize_router">initialize_router</a></span>
+	<span title="`put_character' was declared in WSF_EXECUTION"><a class="efeature" href="../wsf/wsf_execution_short.html#f_put_character">put_character</a> <span class="esymbol">(</span><span class="elocal">c</span><span class="esymbol">:</span> <a class="eclass" href="../base/character_8_chart.html">CHARACTER_8</a><span class="esymbol">)</span></span>
+	<span title="`put_error' was declared in WSF_EXECUTION"><a class="efeature" href="../wsf/wsf_execution_short.html#f_put_error">put_error</a> <span class="esymbol">(</span><span class="elocal">err</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">)</span></span>
+	<span title="`put_string' was declared in WSF_EXECUTION"><a class="efeature" href="../wsf/wsf_execution_short.html#f_put_string">put_string</a> <span class="esymbol">(</span><span class="elocal">s</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">)</span></span>
+	<span title="`router_execute' was declared in WSF_ROUTED_EXECUTION"><a class="efeature" href="../wsf/wsf_routed_execution_short.html#f_router_execute">router_execute</a> <span class="esymbol">(</span><span class="elocal">req</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_chart.html">WSF_REQUEST</a><span class="esymbol">;</span> <span class="elocal">res</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_response_chart.html">WSF_RESPONSE</a><span class="esymbol">)</span></span>
+	<span title="`set_available' is declared in `Current'"><a class="efeature" href="../wsf/wsf_routed_skeleton_execution_short.html#f_set_available">set_available</a></span>
+	<span title="`set_maximum_uri_length' is declared in `Current'"><a class="efeature" href="../wsf/wsf_routed_skeleton_execution_short.html#f_set_maximum_uri_length">set_maximum_uri_length</a> <span class="esymbol">(</span><span class="elocal">a_len</span><span class="esymbol">:</span> <a class="eclass" href="../base/natural_32_chart.html">NATURAL_32</a><span class="esymbol">)</span></span>
+	<span title="`set_unavailable' is declared in `Current'"><a class="efeature" href="../wsf/wsf_routed_skeleton_execution_short.html#f_set_unavailable">set_unavailable</a> <span class="esymbol">(</span><span class="elocal">a_message</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">;</span> <span class="elocal">a_duration</span><span class="esymbol">:</span> <a class="eclass" href="../base/natural_32_chart.html">NATURAL_32</a><span class="esymbol">;</span> <span class="elocal">a_until</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <span class="neclass">DATE_TIME</span><span class="esymbol">)</span></span>
+	<span title="`setup_router' was declared in WSF_ROUTED_EXECUTION"><a class="efeature" href="../wsf/wsf_routed_execution_short.html#f_setup_router">setup_router</a></span>
+
+<span class="ekeyword">Constraints</span>
+	<span class="etag">unavailability message attached</span>
+	<span class="etag">unavailability duration xor unavailable until</span>
+
+</pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<span class="nav class selected">Chart</span>
+<a class="nav class" href="wsf_routed_skeleton_execution_links.html">Relations</a>
+<a class="nav class" href="wsf_routed_skeleton_execution_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="wsf_routed_skeleton_execution"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>

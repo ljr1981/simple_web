@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="Summary description for {WGI_DELAYED_HEADER_RESPONSE}."/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="2011-2015, Jocelyn Fiat, Javier Velilla, Olivier Ligot, Colin Adams, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>wsf_wgi_delayed_header_response Contracts</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="wsf_wgi_delayed_header_response_chart.html">Chart</a>
+<a class="nav class" href="wsf_wgi_delayed_header_response_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="wsf_wgi_delayed_header_response"></span>
+</div></form><pre><span class="ekeyword">note</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;Summary description for </span><span class="estring">{</span><span class="estring">WGI_DELAYED_HEADER_RESPONSE</span><span class="estring">}</span><span class="estring">.&quot;</span>
+	<span class="eitag">date</span><span class="esymbol">:</span> <span class="estring">&quot;$Date$&quot;</span>
+	<span class="eitag">revision</span><span class="esymbol">:</span> <span class="estring">&quot;$Revision$&quot;</span>
+
+<span class="ekeyword">class</span> <span class="ekeyword">interface</span>
+	<a class="eclass" href="../wsf/wsf_wgi_delayed_header_response_short.html">WSF_WGI_DELAYED_HEADER_RESPONSE</a>
+
+<span class="ekeyword">create</span> 
+	<a class="efeature" href="../wsf/wsf_wgi_delayed_header_response_short.html#f_make">make</a>
+
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Status report	</span>
+
+	<a name="f_message_writable"></a><a class="efeature" href="../wsf/wsf_wgi_delayed_header_response_short.html#f_message_writable">Message_writable</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a> <span class="esymbol">=</span> <span class="ekeyword">True</span>
+			<span class="ecomment">--</span><span class="ecomment"> Can message be written?</span>
+
+	<a name="f_message_committed"></a><a class="efeature" href="../wsf/wsf_wgi_delayed_header_response_short.html#f_message_committed">message_committed</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Message committed?</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Output operation</span>
+
+	<a name="f_put_character"></a><a class="efeature" href="../wsf/wsf_wgi_delayed_header_response_short.html#f_put_character">put_character</a> <span class="esymbol">(</span><span class="elocal">c</span><span class="esymbol">:</span> <a class="eclass" href="../base/character_8_short.html">CHARACTER_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Send the character </span><span class="equoted">c</span>
+
+	<a name="f_put_string"></a><a class="efeature" href="../wsf/wsf_wgi_delayed_header_response_short.html#f_put_string">put_string</a> <span class="esymbol">(</span><span class="elocal">s</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Send the string </span><span class="equoted">s</span>
+
+	<a name="f_put_substring"></a><a class="efeature" href="../wsf/wsf_wgi_delayed_header_response_short.html#f_put_substring">put_substring</a> <span class="esymbol">(</span><span class="elocal">s</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">;</span> <span class="elocal">a_begin_index</span><span class="esymbol">,</span> <span class="elocal">a_end_index</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Send the substring </span><span class="equoted">s[a_begin_index:a_end_index]</span>
+
+	<a name="f_put_file_content"></a><a class="efeature" href="../wsf/wsf_wgi_delayed_header_response_short.html#f_put_file_content">put_file_content</a> <span class="esymbol">(</span><span class="elocal">f</span><span class="esymbol">:</span> <a class="eclass" href="../base/file_short.html">FILE</a><span class="esymbol">;</span> <span class="elocal">a_offset</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a><span class="esymbol">;</span> <span class="elocal">a_count</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Send </span><span class="equoted">a_count</span><span class="ecomment"> bytes from the content of file </span><span class="equoted">f</span><span class="ecomment"> starting at offset </span><span class="equoted">a_offset</span><span class="ecomment">.</span>
+
+	<a name="f_flush"></a><a class="efeature" href="../wsf/wsf_wgi_delayed_header_response_short.html#f_flush">flush</a>
+			<span class="ecomment">--</span><span class="ecomment"> Flush if it makes sense</span>
+	
+<span class="ekeyword">note</span>
+	<span class="eitag">copyright</span><span class="esymbol">:</span> <span class="estring">&quot;2011-2015, Jocelyn Fiat, Javier Velilla, Olivier Ligot, Colin Adams, Eiffel Software and others&quot;</span>
+	<span class="eitag">license</span><span class="esymbol">:</span> <span class="estring">&quot;Eiffel Forum License v2 (see </span><a class="estring" href="http://www.eiffel.com/licensing/forum.txt">http://www.eiffel.com/licensing/forum.txt</a><span class="estring">)&quot;</span>
+	<span class="eitag">source</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">Eiffel Software</span>
+		<span class="estring">5949 Hollister Ave., Goleta, CA 93117 USA</span>
+		<span class="estring">Telephone 805-685-1006, Fax 805-685-6869</span>
+		<span class="estring">Website </span><a class="estring" href="http://www.eiffel.com">http://www.eiffel.com</a>
+		<span class="estring">Customer support </span><a class="estring" href="http://support.eiffel.com">http://support.eiffel.com</a>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+
+<span class="ekeyword">end</span> <span class="ecomment">--</span> <span class="ecomment">class </span><a class="eclass" href="../wsf/wsf_wgi_delayed_header_response_short.html">WSF_WGI_DELAYED_HEADER_RESPONSE</a></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="wsf_wgi_delayed_header_response_chart.html">Chart</a>
+<a class="nav class" href="wsf_wgi_delayed_header_response_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="wsf_wgi_delayed_header_response"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
+

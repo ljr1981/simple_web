@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="TTTURL dispatching of request TTT TTTMap a route to an handler according to the request method and path "/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="2011-2017, Jocelyn Fiat, Javier Velilla, Olivier Ligot, Colin Adams, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>wsf_router Chart</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<span class="nav class selected">Chart</span>
+<a class="nav class" href="wsf_router_links.html">Relations</a>
+<a class="nav class" href="wsf_router_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="wsf_router"></span>
+</div></form><pre><span class="ekeyword">class</span>
+	<a class="eclass" href="../wsf/wsf_router_chart.html">WSF_ROUTER</a>
+
+<span class="ekeyword">General</span>
+	<span class="eitag">cluster</span><span class="esymbol">:</span> <span class="necluster">router</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> 
+		<span class="estring">&quot;URL dispatching of request</span>
+		
+		<span class="estring">Map a route to an handler according to the request method and path</span>
+		<span class="estring">&quot;</span>
+	<span class="eitag">create</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_router_short.html#f_make">make</a><span class="esymbol">,</span> <a class="efeature" href="../wsf/wsf_router_short.html#f_make_with_base_url">make_with_base_url</a>
+
+<span class="ekeyword">Ancestors</span>
+	<a class="eclass" href="../base/iterable_chart.html">ITERABLE</a><span class="echar">*</span> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+	<a class="eclass" href="../wsf/wsf_request_exporter_chart.html">WSF_REQUEST_EXPORTER</a><span class="echar">*</span>
+
+<span class="ekeyword">Action sequences</span>
+	<span title="`pre_execution_actions' is declared in `Current'"><a class="efeature" href="../wsf/wsf_router_short.html#f_pre_execution_actions">pre_execution_actions</a><span class="esymbol">:</span> <a class="eclass" href="../base/action_sequence_chart.html">ACTION_SEQUENCE</a> <span class="esymbol">[</span><a class="eclass" href="../wsf/wsf_router_mapping_chart.html">WSF_ROUTER_MAPPING</a><span class="esymbol">]</span></span>
+
+<span class="ekeyword">Queries</span>
+	<span title="`all_allowed_methods' is declared in `Current'"><a class="efeature" href="../wsf/wsf_router_short.html#f_all_allowed_methods">all_allowed_methods</a><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_methods_chart.html">WSF_REQUEST_METHODS</a></span>
+	<span title="`allowed_methods_for_request' is declared in `Current'"><a class="efeature" href="../wsf/wsf_router_short.html#f_allowed_methods_for_request">allowed_methods_for_request</a> <span class="esymbol">(</span><span class="elocal">req</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_chart.html">WSF_REQUEST</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_methods_chart.html">WSF_REQUEST_METHODS</a></span>
+	<span title="`base_url' is declared in `Current'"><a class="efeature" href="../wsf/wsf_router_short.html#f_base_url">base_url</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a></span>
+	<span title="`count' is declared in `Current'"><a class="efeature" href="../wsf/wsf_router_short.html#f_count">count</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+	<span title="`has_item_associated_with_resource' is declared in `Current'"><a class="efeature" href="../wsf/wsf_router_short.html#f_has_item_associated_with_resource">has_item_associated_with_resource</a> <span class="esymbol">(</span><span class="elocal">a_resource</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">;</span> <span class="elocal">rqst_methods</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../wsf/wsf_request_methods_chart.html">WSF_REQUEST_METHODS</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`item_associated_with_resource' is declared in `Current'"><a class="efeature" href="../wsf/wsf_router_short.html#f_item_associated_with_resource">item_associated_with_resource</a> <span class="esymbol">(</span><span class="elocal">a_resource</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">;</span> <span class="elocal">rqst_methods</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../wsf/wsf_request_methods_chart.html">WSF_REQUEST_METHODS</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../wsf/wsf_router_item_chart.html">WSF_ROUTER_ITEM</a></span>
+	<span title="`items_associated_with_resource' is declared in `Current'"><a class="efeature" href="../wsf/wsf_router_short.html#f_items_associated_with_resource">items_associated_with_resource</a> <span class="esymbol">(</span><span class="elocal">a_resource</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">;</span> <span class="elocal">rqst_methods</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../wsf/wsf_request_methods_chart.html">WSF_REQUEST_METHODS</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/list_chart.html">LIST</a> <span class="esymbol">[</span><a class="eclass" href="../wsf/wsf_router_item_chart.html">WSF_ROUTER_ITEM</a><span class="esymbol">]</span></span>
+	<span title="`methods_delete' is declared in `Current'"><a class="efeature" href="../wsf/wsf_router_short.html#f_methods_delete">Methods_delete</a><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_methods_chart.html">WSF_REQUEST_METHODS</a></span>
+	<span title="`methods_get' is declared in `Current'"><a class="efeature" href="../wsf/wsf_router_short.html#f_methods_get">Methods_get</a><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_methods_chart.html">WSF_REQUEST_METHODS</a></span>
+	<span title="`methods_get_post' is declared in `Current'"><a class="efeature" href="../wsf/wsf_router_short.html#f_methods_get_post">Methods_get_post</a><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_methods_chart.html">WSF_REQUEST_METHODS</a></span>
+	<span title="`methods_get_post_put_delete' is declared in `Current'"><a class="efeature" href="../wsf/wsf_router_short.html#f_methods_get_post_put_delete">Methods_get_post_put_delete</a><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_methods_chart.html">WSF_REQUEST_METHODS</a></span>
+	<span title="`methods_get_put_delete' is declared in `Current'"><a class="efeature" href="../wsf/wsf_router_short.html#f_methods_get_put_delete">Methods_get_put_delete</a><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_methods_chart.html">WSF_REQUEST_METHODS</a></span>
+	<span title="`methods_head' is declared in `Current'"><a class="efeature" href="../wsf/wsf_router_short.html#f_methods_head">Methods_head</a><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_methods_chart.html">WSF_REQUEST_METHODS</a></span>
+	<span title="`methods_head_get' is declared in `Current'"><a class="efeature" href="../wsf/wsf_router_short.html#f_methods_head_get">Methods_head_get</a><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_methods_chart.html">WSF_REQUEST_METHODS</a></span>
+	<span title="`methods_head_get_post' is declared in `Current'"><a class="efeature" href="../wsf/wsf_router_short.html#f_methods_head_get_post">Methods_head_get_post</a><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_methods_chart.html">WSF_REQUEST_METHODS</a></span>
+	<span title="`methods_options' is declared in `Current'"><a class="efeature" href="../wsf/wsf_router_short.html#f_methods_options">Methods_options</a><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_methods_chart.html">WSF_REQUEST_METHODS</a></span>
+	<span title="`methods_post' is declared in `Current'"><a class="efeature" href="../wsf/wsf_router_short.html#f_methods_post">Methods_post</a><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_methods_chart.html">WSF_REQUEST_METHODS</a></span>
+	<span title="`methods_put' is declared in `Current'"><a class="efeature" href="../wsf/wsf_router_short.html#f_methods_put">Methods_put</a><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_methods_chart.html">WSF_REQUEST_METHODS</a></span>
+	<span title="`methods_put_post' is declared in `Current'"><a class="efeature" href="../wsf/wsf_router_short.html#f_methods_put_post">Methods_put_post</a><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_methods_chart.html">WSF_REQUEST_METHODS</a></span>
+	<span title="`new_cursor' is declared in `Current'"><a class="efeature" href="../wsf/wsf_router_short.html#f_new_cursor">new_cursor</a><span class="esymbol">:</span> <a class="eclass" href="../base/iteration_cursor_chart.html">ITERATION_CURSOR</a> <span class="esymbol">[</span><a class="eclass" href="../wsf/wsf_router_item_chart.html">WSF_ROUTER_ITEM</a><span class="esymbol">]</span></span>
+
+<span class="ekeyword">Commands</span>
+	<span title="`dispatch' is declared in `Current'"><a class="efeature" href="../wsf/wsf_router_short.html#f_dispatch">dispatch</a> <span class="esymbol">(</span><span class="elocal">req</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_chart.html">WSF_REQUEST</a><span class="esymbol">;</span> <span class="elocal">res</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_response_chart.html">WSF_RESPONSE</a><span class="esymbol">;</span> <span class="elocal">sess</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../wsf/wsf_router_session_chart.html">WSF_ROUTER_SESSION</a><span class="esymbol">)</span></span>
+	<span title="`execute_after' is declared in `Current'"><a class="efeature" href="../wsf/wsf_router_short.html#f_execute_after">execute_after</a> <span class="esymbol">(</span><span class="elocal">a_mapping</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_router_mapping_chart.html">WSF_ROUTER_MAPPING</a><span class="esymbol">)</span></span>
+	<span title="`execute_before' is declared in `Current'"><a class="efeature" href="../wsf/wsf_router_short.html#f_execute_before">execute_before</a> <span class="esymbol">(</span><span class="elocal">a_mapping</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_router_mapping_chart.html">WSF_ROUTER_MAPPING</a><span class="esymbol">)</span></span>
+	<span title="`handle' is declared in `Current'"><a class="efeature" href="../wsf/wsf_router_short.html#f_handle">handle</a> <span class="esymbol">(</span><span class="elocal">a_resource</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">;</span> <span class="elocal">f</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_router_mapping_factory_chart.html">WSF_ROUTER_MAPPING_FACTORY</a><span class="esymbol">;</span> <span class="elocal">rqst_methods</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../wsf/wsf_request_methods_chart.html">WSF_REQUEST_METHODS</a><span class="esymbol">)</span></span>
+	<span title="`import' is declared in `Current'"><a class="efeature" href="../wsf/wsf_router_short.html#f_import">import</a> <span class="esymbol">(</span><span class="elocal">a_mapping_items</span><span class="esymbol">:</span> <a class="eclass" href="../base/iterable_chart.html">ITERABLE</a> <span class="esymbol">[</span><a class="eclass" href="../wsf/wsf_router_item_chart.html">WSF_ROUTER_ITEM</a><span class="esymbol">]</span><span class="esymbol">)</span></span>
+	<span title="`map' is declared in `Current'"><a class="efeature" href="../wsf/wsf_router_short.html#f_map">map</a> <span class="esymbol">(</span><span class="elocal">a_mapping</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_router_mapping_chart.html">WSF_ROUTER_MAPPING</a><span class="esymbol">;</span> <span class="elocal">rqst_methods</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../wsf/wsf_request_methods_chart.html">WSF_REQUEST_METHODS</a><span class="esymbol">)</span></span>
+	<span title="`set_base_url' is declared in `Current'"><a class="efeature" href="../wsf/wsf_router_short.html#f_set_base_url">set_base_url</a> <span class="esymbol">(</span><span class="elocal">a_base_url</span><span class="esymbol">:</span> <span class="esymbol">[</span><span class="ekeyword">like</span> <a class="efeature" href="../wsf/wsf_router_short.html#f_base_url">base_url</a><span class="esymbol">]</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">)</span></span>
+
+<span class="ekeyword">Constraints</span>
+	<span class="etag">mappings attached</span>
+	<span class="etag">pre execution actions attached</span>
+
+</pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<span class="nav class selected">Chart</span>
+<a class="nav class" href="wsf_router_links.html">Relations</a>
+<a class="nav class" href="wsf_router_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="wsf_router"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>

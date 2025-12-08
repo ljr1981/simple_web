@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="API to manage CMS User OAuth authentication."/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>cms_oauth_20_api Chart</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<span class="nav class selected">Chart</span>
+<a class="nav class" href="cms_oauth_20_api_links.html">Relations</a>
+<a class="nav class" href="cms_oauth_20_api_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="cms_oauth_20_api"></span>
+</div></form><pre><span class="ekeyword">class</span>
+	<a class="eclass" href="../oauth_module/cms_oauth_20_api_chart.html">CMS_OAUTH_20_API</a>
+
+<span class="ekeyword">General</span>
+	<span class="eitag">cluster</span><span class="esymbol">:</span> <span class="necluster">src</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;API to manage CMS User OAuth authentication.&quot;</span>
+	<span class="eitag">create</span><span class="esymbol">:</span> <a class="efeature" href="../oauth_module/cms_oauth_20_api_short.html#f_make_with_storage">make_with_storage</a>
+
+<span class="ekeyword">Ancestors</span>
+	<span class="neclass">CMS_AUTH_API_I</span>
+	<a class="eclass" href="../base/refactoring_helper_chart.html">REFACTORING_HELPER</a>
+
+<span class="ekeyword">Queries</span>
+	<span title="`default_session_token_suffix' is declared in `Current'"><a class="efeature" href="../oauth_module/cms_oauth_20_api_short.html#f_default_session_token_suffix">Default_session_token_suffix</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`error_handler' was declared in CMS_MODULE_API"><span class="nefeature">error_handler</span><span class="esymbol">:</span> <span class="neclass">ERROR_HANDLER</span></span>
+	<span title="`has_error' was declared in CMS_MODULE_API"><span class="nefeature">has_error</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`html_encoded' was declared in CMS_MODULE_API"><span class="nefeature">html_encoded</span> <span class="esymbol">(</span><span class="elocal">a_string</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`oauth2_consumers' is declared in `Current'"><a class="efeature" href="../oauth_module/cms_oauth_20_api_short.html#f_oauth2_consumers">oauth2_consumers</a><span class="esymbol">:</span> <a class="eclass" href="../base/list_chart.html">LIST</a> <span class="esymbol">[</span><a class="eclass" href="../base/string_8_chart.html">STRING_8</a><span class="esymbol">]</span></span>
+	<span title="`oauth_consumer_by_callback' is declared in `Current'"><a class="efeature" href="../oauth_module/cms_oauth_20_api_short.html#f_oauth_consumer_by_callback">oauth_consumer_by_callback</a> <span class="esymbol">(</span><span class="elocal">a_callback</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../oauth_module/cms_oauth_20_consumer_chart.html">CMS_OAUTH_20_CONSUMER</a></span>
+	<span title="`oauth_consumer_by_name' is declared in `Current'"><a class="efeature" href="../oauth_module/cms_oauth_20_api_short.html#f_oauth_consumer_by_name">oauth_consumer_by_name</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../oauth_module/cms_oauth_20_consumer_chart.html">CMS_OAUTH_20_CONSUMER</a></span>
+	<span title="`percent_encoded' was declared in CMS_MODULE_API"><span class="nefeature">percent_encoded</span> <span class="esymbol">(</span><span class="elocal">a_string</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`session_max_age' is declared in `Current'"><a class="efeature" href="../oauth_module/cms_oauth_20_api_short.html#f_session_max_age">session_max_age</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+	<span title="`session_token' is declared in `Current'"><a class="efeature" href="../oauth_module/cms_oauth_20_api_short.html#f_session_token">session_token</a><span class="esymbol">:</span> <a class="eclass" href="../base/immutable_string_8_chart.html">IMMUTABLE_STRING_8</a></span>
+	<span title="`to_implement_assertion' was declared in REFACTORING_HELPER"><a class="efeature" href="../base/refactoring_helper_short.html#f_to_implement_assertion">to_implement_assertion</a> <span class="esymbol">(</span><span class="elocal">comment</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`url_encoded' was declared in CMS_MODULE_API"><span class="nefeature">url_encoded</span> <span class="esymbol">(</span><span class="elocal">a_string</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`user_oauth2_by_id' is declared in `Current'"><a class="efeature" href="../oauth_module/cms_oauth_20_api_short.html#f_user_oauth2_by_id">user_oauth2_by_id</a> <span class="esymbol">(</span><span class="elocal">a_oauth_id</span><span class="esymbol">,</span> <span class="elocal">a_consumer</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <span class="neclass">CMS_USER</span></span>
+	<span title="`user_oauth2_by_token' is declared in `Current'"><a class="efeature" href="../oauth_module/cms_oauth_20_api_short.html#f_user_oauth2_by_token">user_oauth2_by_token</a> <span class="esymbol">(</span><span class="elocal">a_token</span><span class="esymbol">,</span> <span class="elocal">a_consumer</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <span class="neclass">CMS_USER</span></span>
+	<span title="`user_oauth2_by_user_id' is declared in `Current'"><a class="efeature" href="../oauth_module/cms_oauth_20_api_short.html#f_user_oauth2_by_user_id">user_oauth2_by_user_id</a> <span class="esymbol">(</span><span class="elocal">a_uid</span><span class="esymbol">:</span> <span class="esymbol">[</span><span class="ekeyword">like</span> <span class="esymbol">{</span><span class="neclass">CMS_USER</span><span class="esymbol">}</span><span class="edot">.</span><span class="nefeature">id</span><span class="esymbol">]</span> <a class="eclass" href="../base/integer_64_chart.html">INTEGER_64</a><span class="esymbol">;</span> <span class="elocal">a_consumer</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <span class="neclass">CMS_USER</span></span>
+	<span title="`user_oauth2_without_consumer_by_token' is declared in `Current'"><a class="efeature" href="../oauth_module/cms_oauth_20_api_short.html#f_user_oauth2_without_consumer_by_token">user_oauth2_without_consumer_by_token</a> <span class="esymbol">(</span><span class="elocal">a_token</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <span class="neclass">CMS_USER</span></span>
+	<span title="`utf_8_encoded' was declared in CMS_MODULE_API"><span class="nefeature">utf_8_encoded</span> <span class="esymbol">(</span><span class="elocal">a_string</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+
+<span class="ekeyword">Commands</span>
+	<span title="`delete_oauth_consumer' is declared in `Current'"><a class="efeature" href="../oauth_module/cms_oauth_20_api_short.html#f_delete_oauth_consumer">delete_oauth_consumer</a> <span class="esymbol">(</span><span class="elocal">a_cons</span><span class="esymbol">:</span> <a class="eclass" href="../oauth_module/cms_oauth_20_consumer_chart.html">CMS_OAUTH_20_CONSUMER</a><span class="esymbol">)</span></span>
+	<span title="`fixme' was declared in REFACTORING_HELPER"><a class="efeature" href="../base/refactoring_helper_short.html#f_fixme">fixme</a> <span class="esymbol">(</span><span class="elocal">comment</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">)</span></span>
+	<span title="`new_user_oauth2' is declared in `Current'"><a class="efeature" href="../oauth_module/cms_oauth_20_api_short.html#f_new_user_oauth2">new_user_oauth2</a> <span class="esymbol">(</span><span class="elocal">a_token</span><span class="esymbol">,</span> <span class="elocal">a_user_profile</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">;</span> <span class="elocal">a_user</span><span class="esymbol">:</span> <span class="neclass">CMS_USER</span><span class="esymbol">;</span> <span class="elocal">a_oauth_id</span><span class="esymbol">,</span> <span class="elocal">a_consumer</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span></span>
+	<span title="`remove_user_oauth2' is declared in `Current'"><a class="efeature" href="../oauth_module/cms_oauth_20_api_short.html#f_remove_user_oauth2">remove_user_oauth2</a> <span class="esymbol">(</span><span class="elocal">a_user</span><span class="esymbol">:</span> <span class="neclass">CMS_USER</span><span class="esymbol">;</span> <span class="elocal">a_consumer_table</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span></span>
+	<span title="`reset_error' was declared in CMS_MODULE_API"><span class="nefeature">reset_error</span></span>
+	<span title="`save_oauth_consumer' is declared in `Current'"><a class="efeature" href="../oauth_module/cms_oauth_20_api_short.html#f_save_oauth_consumer">save_oauth_consumer</a> <span class="esymbol">(</span><span class="elocal">a_cons</span><span class="esymbol">:</span> <a class="eclass" href="../oauth_module/cms_oauth_20_consumer_chart.html">CMS_OAUTH_20_CONSUMER</a><span class="esymbol">)</span></span>
+	<span title="`to_implement' was declared in REFACTORING_HELPER"><a class="efeature" href="../base/refactoring_helper_short.html#f_to_implement">to_implement</a> <span class="esymbol">(</span><span class="elocal">comment</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">)</span></span>
+	<span title="`update_user_oauth2' is declared in `Current'"><a class="efeature" href="../oauth_module/cms_oauth_20_api_short.html#f_update_user_oauth2">update_user_oauth2</a> <span class="esymbol">(</span><span class="elocal">a_token</span><span class="esymbol">,</span> <span class="elocal">a_user_profile</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">;</span> <span class="elocal">a_user</span><span class="esymbol">:</span> <span class="neclass">CMS_USER</span><span class="esymbol">;</span> <span class="elocal">a_oauth_id</span><span class="esymbol">,</span> <span class="elocal">a_consumer_table</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span></span>
+
+</pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<span class="nav class selected">Chart</span>
+<a class="nav class" href="cms_oauth_20_api_links.html">Relations</a>
+<a class="nav class" href="cms_oauth_20_api_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="cms_oauth_20_api"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>

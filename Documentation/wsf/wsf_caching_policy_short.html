@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="Policies for determing caching of responses."/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="2011-2013, Jocelyn Fiat, Javier Velilla, Olivier Ligot, Colin Adams, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>wsf_caching_policy Contracts</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="wsf_caching_policy_chart.html">Chart</a>
+<a class="nav class" href="wsf_caching_policy_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="wsf_caching_policy"></span>
+</div></form><pre><span class="ekeyword">note</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">Policies for determing caching of responses.</span>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+	<span class="eitag">date</span><span class="esymbol">:</span> <span class="estring">&quot;$Date$&quot;</span>
+	<span class="eitag">revision</span><span class="esymbol">:</span> <span class="estring">&quot;$Revision$&quot;</span>
+
+<span class="ekeyword">deferred</span> <span class="ekeyword">class</span> <span class="ekeyword">interface</span>
+	<a class="eclass" href="../wsf/wsf_caching_policy_short.html">WSF_CACHING_POLICY</a>
+
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Access</span>
+
+	<a name="f_never_expires"></a><a class="efeature" href="../wsf/wsf_caching_policy_short.html#f_never_expires">Never_expires</a><span class="esymbol">:</span> <a class="eclass" href="../base/natural_32_short.html">NATURAL_32</a> <span class="esymbol">=</span> <span class="enumber">525600</span>
+			<span class="ecomment">--</span><span class="ecomment"> 525600 = 365 * 24 * 60 * 60 = (almost) 1 year;</span>
+			<span class="ecomment">--</span><span class="ecomment"> See </span><a class="ecomment" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21</a><span class="ecomment"> for an explanation of why this means never expire</span>
+
+	<a name="f_max_age"></a><a class="efeature" href="../wsf/wsf_caching_policy_short.html#f_max_age">max_age</a> <span class="esymbol">(</span><span class="elocal">req</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_short.html">WSF_REQUEST</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/natural_32_short.html">NATURAL_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> Maximum age in seconds before response to </span><span class="equoted">req</span><span class="ecomment"> is considered stale;</span>
+			<span class="ecomment">--</span><span class="ecomment"> This is used to generate a Cache-Control: max-age header.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Return 0 to indicate already expired.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Return </span><span class="ecomment">`</span><a class="efeature" href="../wsf/wsf_caching_policy_short.html#f_never_expires">never_expires</a><span class="ecomment">`</span><span class="ecomment"> to indicate never expires.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">req_attached</span><span class="esymbol">:</span> <span class="elocal">req</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">not_more_than_1_year</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <a class="esymbol" href="../base/comparable_short.html#f_is_less_equal">&lt;=</a> <a class="efeature" href="../wsf/wsf_caching_policy_short.html#f_never_expires">Never_expires</a>
+
+	<a name="f_shared_age"></a><a class="efeature" href="../wsf/wsf_caching_policy_short.html#f_shared_age">shared_age</a> <span class="esymbol">(</span><span class="elocal">req</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_short.html">WSF_REQUEST</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/natural_32_short.html">NATURAL_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> Maximum age in seconds before response to </span><span class="equoted">req</span><span class="ecomment"> is considered stale in a shared cache;</span>
+			<span class="ecomment">--</span><span class="ecomment"> This is used to generate a Cache-Control: s-maxage header.</span>
+			<span class="ecomment">--</span><span class="ecomment"> If you wish to have different expiry ages for shared and provate caches, redefine this routine.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Return 0 to indicate already expired.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Return </span><span class="ecomment">`</span><a class="efeature" href="../wsf/wsf_caching_policy_short.html#f_never_expires">never_expires</a><span class="ecomment">`</span><span class="ecomment"> to indicate never expires.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">req_attached</span><span class="esymbol">:</span> <span class="elocal">req</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">not_more_than_1_year</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <a class="esymbol" href="../base/comparable_short.html#f_is_less_equal">&lt;=</a> <a class="efeature" href="../wsf/wsf_caching_policy_short.html#f_never_expires">Never_expires</a>
+
+	<a name="f_http_1_0_age"></a><a class="efeature" href="../wsf/wsf_caching_policy_short.html#f_http_1_0_age">http_1_0_age</a> <span class="esymbol">(</span><span class="elocal">req</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_short.html">WSF_REQUEST</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/natural_32_short.html">NATURAL_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> Maximum age in seconds before response to </span><span class="equoted">req</span><span class="ecomment"> is considered stale;</span>
+			<span class="ecomment">--</span><span class="ecomment"> This is used to generate an Expires header, which HTTP/1.0 caches understand.</span>
+			<span class="ecomment">--</span><span class="ecomment"> If you wish to generate a different age for HTTP/1.0 caches, then redefine this routine.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Return 0 to indicate already expired.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Return </span><span class="ecomment">`</span><a class="efeature" href="../wsf/wsf_caching_policy_short.html#f_never_expires">never_expires</a><span class="ecomment">`</span><span class="ecomment"> to indicate never expires. Note this will</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;make a result cachecable that would not normally be cacheable (such as as response</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;to a POST), unless overriden by cache-control headers, so be sure to check </span><span class="equoted">req.request_method</span><span class="ecomment">.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">req_attached</span><span class="esymbol">:</span> <span class="elocal">req</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">not_more_than_1_year</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <a class="esymbol" href="../base/comparable_short.html#f_is_less_equal">&lt;=</a> <a class="efeature" href="../wsf/wsf_caching_policy_short.html#f_never_expires">Never_expires</a>
+
+	<a name="f_is_freely_cacheable"></a><a class="efeature" href="../wsf/wsf_caching_policy_short.html#f_is_freely_cacheable">is_freely_cacheable</a> <span class="esymbol">(</span><span class="elocal">req</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_short.html">WSF_REQUEST</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Should the response to </span><span class="equoted">req</span><span class="ecomment"> be freely cachable in shared caches?</span>
+			<span class="ecomment">--</span><span class="ecomment"> If </span><span class="equoted">True</span><span class="ecomment">, then a Cache-Control: public header will be generated.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">req_attached</span><span class="esymbol">:</span> <span class="elocal">req</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+
+	<a name="f_is_transformable"></a><a class="efeature" href="../wsf/wsf_caching_policy_short.html#f_is_transformable">is_transformable</a> <span class="esymbol">(</span><span class="elocal">req</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_short.html">WSF_REQUEST</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Should a non-transparent proxy be allowed to modify headers of response to </span><span class="equoted">req</span><span class="ecomment">?</span>
+			<span class="ecomment">--</span><span class="ecomment"> The headers concerned are listed in </span><a class="ecomment" href="http://www.w3.org/Protocols/rfc2616-sec14.html#sec14">http://www.w3.org/Protocols/rfc2616-sec14.html#sec14</a><span class="ecomment">,9.</span>
+			<span class="ecomment">--</span><span class="ecomment"> If </span><span class="equoted">False</span><span class="ecomment"> then a Cache-Control: no-transorm header will be generated.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">req_attached</span><span class="esymbol">:</span> <span class="elocal">req</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+
+	<a name="f_must_revalidate"></a><a class="efeature" href="../wsf/wsf_caching_policy_short.html#f_must_revalidate">must_revalidate</a> <span class="esymbol">(</span><span class="elocal">req</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_short.html">WSF_REQUEST</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> If a client has requested, or a cache is configured, to ignore server's expiration time,</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;should we force revalidation anyway?</span>
+			<span class="ecomment">--</span><span class="ecomment"> If </span><span class="equoted">True</span><span class="ecomment"> then a Cache-Control: must-revalidate header will be generated.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">req_attached</span><span class="esymbol">:</span> <span class="elocal">req</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+
+	<a name="f_must_proxy_revalidate"></a><a class="efeature" href="../wsf/wsf_caching_policy_short.html#f_must_proxy_revalidate">must_proxy_revalidate</a> <span class="esymbol">(</span><span class="elocal">req</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_short.html">WSF_REQUEST</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> If a shared cache is configured to ignore server's expiration time,</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;should we force revalidation anyway?</span>
+			<span class="ecomment">--</span><span class="ecomment"> If </span><span class="equoted">True</span><span class="ecomment"> then a Cache-Control: proxy-revalidate header will be generated.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">req_attached</span><span class="esymbol">:</span> <span class="elocal">req</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+
+	<a name="f_private_headers"></a><a class="efeature" href="../wsf/wsf_caching_policy_short.html#f_private_headers">private_headers</a> <span class="esymbol">(</span><span class="elocal">req</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_short.html">WSF_REQUEST</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/list_short.html">LIST</a> <span class="esymbol">[</span><a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">]</span>
+			<span class="ecomment">--</span><span class="ecomment"> Header names intended for a single user.</span>
+			<span class="ecomment">--</span><span class="ecomment"> If non-Void, then a Cache-Control: private header will be generated.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Returning an empty list prevents the entire response from being served from a shared cache.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">req_attached</span><span class="esymbol">:</span> <span class="elocal">req</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">not_freely_cacheable</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span> <a class="ekeyword" href="../base/boolean_short.html#f_implication">implies</a> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_caching_policy_short.html#f_is_freely_cacheable">is_freely_cacheable</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">req</span><span class="esymbol">)</span>
+
+	<a name="f_non_cacheable_headers"></a><a class="efeature" href="../wsf/wsf_caching_policy_short.html#f_non_cacheable_headers">non_cacheable_headers</a> <span class="esymbol">(</span><span class="elocal">req</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_short.html">WSF_REQUEST</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/list_short.html">LIST</a> <span class="esymbol">[</span><a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">]</span>
+			<span class="ecomment">--</span><span class="ecomment"> Header names that will not be sent from a cache without revalidation;</span>
+			<span class="ecomment">--</span><span class="ecomment"> If non-Void, then a Cache-Control: no-cache header will be generated.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Returning an empty list prevents the response being served from a cache</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;without revalidation.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">req_attached</span><span class="esymbol">:</span> <span class="elocal">req</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+
+	<a name="f_is_sensitive"></a><a class="efeature" href="../wsf/wsf_caching_policy_short.html#f_is_sensitive">is_sensitive</a> <span class="esymbol">(</span><span class="elocal">req</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_short.html">WSF_REQUEST</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is the response to </span><span class="equoted">req</span><span class="ecomment"> of a sensitive nature?</span>
+			<span class="ecomment">--</span><span class="ecomment"> If </span><span class="equoted">True</span><span class="ecomment"> then a Cache-Control: no-store header will be generated.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">req_attached</span><span class="esymbol">:</span> <span class="elocal">req</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+	
+<span class="ekeyword">note</span>
+	<span class="eitag">copyright</span><span class="esymbol">:</span> <span class="estring">&quot;2011-2013, Jocelyn Fiat, Javier Velilla, Olivier Ligot, Colin Adams, Eiffel Software and others&quot;</span>
+	<span class="eitag">license</span><span class="esymbol">:</span> <span class="estring">&quot;Eiffel Forum License v2 (see </span><a class="estring" href="http://www.eiffel.com/licensing/forum.txt">http://www.eiffel.com/licensing/forum.txt</a><span class="estring">)&quot;</span>
+	<span class="eitag">source</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">Eiffel Software</span>
+		<span class="estring">5949 Hollister Ave., Goleta, CA 93117 USA</span>
+		<span class="estring">Telephone 805-685-1006, Fax 805-685-6869</span>
+		<span class="estring">Website </span><a class="estring" href="http://www.eiffel.com">http://www.eiffel.com</a>
+		<span class="estring">Customer support </span><a class="estring" href="http://support.eiffel.com">http://support.eiffel.com</a>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+
+<span class="ekeyword">end</span> <span class="ecomment">--</span> <span class="ecomment">class </span><a class="eclass" href="../wsf/wsf_caching_policy_short.html">WSF_CACHING_POLICY</a></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="wsf_caching_policy_chart.html">Chart</a>
+<a class="nav class" href="wsf_caching_policy_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="wsf_caching_policy"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
+

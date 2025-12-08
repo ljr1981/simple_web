@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="Summary description for WSF_URI_MAPPING."/>
+<meta name="author" content=""/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="2011-2012, Jocelyn Fiat, Javier Velilla, Olivier Ligot, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>wsf_uri_mapping Chart</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<span class="nav class selected">Chart</span>
+<a class="nav class" href="wsf_uri_mapping_links.html">Relations</a>
+<a class="nav class" href="wsf_uri_mapping_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="wsf_uri_mapping"></span>
+</div></form><pre><span class="ekeyword">class</span>
+	<a class="eclass" href="../wsf/wsf_uri_mapping_chart.html">WSF_URI_MAPPING</a>
+
+<span class="ekeyword">General</span>
+	<span class="eitag">cluster</span><span class="esymbol">:</span> <span class="necluster">router</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;Summary description for WSF_URI_MAPPING.&quot;</span>
+	<span class="eitag">create</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_uri_mapping_i_short.html#f_make">make</a><span class="esymbol">,</span> <a class="efeature" href="../wsf/wsf_uri_mapping_i_short.html#f_make_trailing_slash_ignored">make_trailing_slash_ignored</a>
+
+<span class="ekeyword">Ancestors</span>
+	<a class="eclass" href="../wsf/wsf_uri_mapping_i_chart.html">WSF_URI_MAPPING_I</a><span class="echar">*</span>
+
+<span class="ekeyword">Queries</span>
+	<span title="`associated_resource' was declared in WSF_URI_MAPPING_I"><a class="efeature" href="../wsf/wsf_uri_mapping_i_short.html#f_associated_resource">associated_resource</a><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a></span>
+	<span title="`debug_output' was declared in WSF_ROUTER_MAPPING"><a class="efeature" href="../wsf/wsf_router_mapping_short.html#f_debug_output">debug_output</a><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_32_chart.html">READABLE_STRING_32</a></span>
+	<span title="`description' was declared in WSF_URI_MAPPING_I"><a class="efeature" href="../wsf/wsf_uri_mapping_i_short.html#f_description">Description</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_32_chart.html">STRING_32</a></span>
+	<span title="`documentation' was declared in WSF_SELF_DOCUMENTED_ROUTER_MAPPING"><a class="efeature" href="../wsf/wsf_self_documented_router_mapping_short.html#f_documentation">documentation</a> <span class="esymbol">(</span><span class="elocal">a_request_methods</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../wsf/wsf_request_methods_chart.html">WSF_REQUEST_METHODS</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_router_mapping_documentation_chart.html">WSF_ROUTER_MAPPING_DOCUMENTATION</a></span>
+	<span title="`handler' is declared in `Current'"><a class="efeature" href="../wsf/wsf_uri_mapping_short.html#f_handler">handler</a><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_uri_handler_chart.html">WSF_URI_HANDLER</a></span>
+	<span title="`is_mapping' was declared in WSF_URI_MAPPING_I"><a class="efeature" href="../wsf/wsf_uri_mapping_i_short.html#f_is_mapping">is_mapping</a> <span class="esymbol">(</span><span class="elocal">a_path</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">;</span> <span class="elocal">req</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_chart.html">WSF_REQUEST</a><span class="esymbol">;</span> <span class="elocal">a_router</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_router_chart.html">WSF_ROUTER</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`query_ignored' was declared in WSF_URI_MAPPING_I"><a class="efeature" href="../wsf/wsf_uri_mapping_i_short.html#f_query_ignored">query_ignored</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`trailing_slash_ignored' was declared in WSF_URI_MAPPING_I"><a class="efeature" href="../wsf/wsf_uri_mapping_i_short.html#f_trailing_slash_ignored">trailing_slash_ignored</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`uri' was declared in WSF_URI_MAPPING_I"><a class="efeature" href="../wsf/wsf_uri_mapping_i_short.html#f_uri">uri</a><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a></span>
+
+<span class="ekeyword">Commands</span>
+	<span title="`ignore_query' was declared in WSF_URI_MAPPING_I"><a class="efeature" href="../wsf/wsf_uri_mapping_i_short.html#f_ignore_query">ignore_query</a> <span class="esymbol">(</span><span class="elocal">b</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a><span class="esymbol">)</span></span>
+	<span title="`set_handler' is declared in `Current'"><a class="efeature" href="../wsf/wsf_uri_mapping_short.html#f_set_handler">set_handler</a> <span class="esymbol">(</span><span class="elocal">h</span><span class="esymbol">:</span> <span class="esymbol">[</span><span class="ekeyword">like</span> <a class="efeature" href="../wsf/wsf_uri_mapping_short.html#f_handler">handler</a><span class="esymbol">]</span> <a class="eclass" href="../wsf/wsf_uri_handler_chart.html">WSF_URI_HANDLER</a><span class="esymbol">)</span></span>
+	<span title="`try' was declared in WSF_URI_MAPPING_I"><a class="efeature" href="../wsf/wsf_uri_mapping_i_short.html#f_try">try</a> <span class="esymbol">(</span><span class="elocal">a_path</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">;</span> <span class="elocal">req</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_chart.html">WSF_REQUEST</a><span class="esymbol">;</span> <span class="elocal">res</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_response_chart.html">WSF_RESPONSE</a><span class="esymbol">;</span> <span class="elocal">sess</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_router_session_chart.html">WSF_ROUTER_SESSION</a><span class="esymbol">;</span> <span class="elocal">a_router</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_router_chart.html">WSF_ROUTER</a><span class="esymbol">)</span></span>
+
+</pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<span class="nav class selected">Chart</span>
+<a class="nav class" href="wsf_uri_mapping_links.html">Relations</a>
+<a class="nav class" href="wsf_uri_mapping_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="wsf_uri_mapping"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>

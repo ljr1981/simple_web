@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="JSON Web Token"/>
+<meta name="eis" content="name=JSON Web Token (JWT), src=https://tools.ietf.org/html/rfc7519, protocol=uri"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>jwt Contracts</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="jwt_chart.html">Chart</a>
+<a class="nav class" href="jwt_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="jwt"></span>
+</div></form><pre><span class="ekeyword">note</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;JSON Web Token&quot;</span>
+	<span class="eitag">date</span><span class="esymbol">:</span> <span class="estring">&quot;$Date$&quot;</span>
+	<span class="eitag">revision</span><span class="esymbol">:</span> <span class="estring">&quot;$Revision$&quot;</span>
+	<span class="eitag">eis</span><span class="esymbol">:</span> <span class="estring">&quot;name=JSON Web Token (JWT)&quot;</span><span class="esymbol">,</span> <span class="estring">&quot;src=</span><a class="estring" href="https://tools.ietf.org/html/rfc7519">https://tools.ietf.org/html/rfc7519</a><span class="estring">&quot;</span><span class="esymbol">,</span> <span class="estring">&quot;protocol=uri&quot;</span>
+
+<span class="ekeyword">deferred</span> <span class="ekeyword">class</span> <span class="ekeyword">interface</span>
+	<a class="eclass" href="../jwt/jwt_short.html">JWT</a>
+
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Access</span>
+
+	<a name="f_algorithms"></a><a class="efeature" href="../jwt/jwt_short.html#f_algorithms">algorithms</a><span class="esymbol">:</span> <a class="eclass" href="../jwt/jwt_algorithms_short.html">JWT_ALGORITHMS</a>
+
+	<a name="f_header"></a><a class="efeature" href="../jwt/jwt_short.html#f_header">header</a><span class="esymbol">:</span> <a class="eclass" href="../jwt/jwt_header_short.html">JWT_HEADER</a>
+
+	<a name="f_claimset"></a><a class="efeature" href="../jwt/jwt_short.html#f_claimset">claimset</a><span class="esymbol">:</span> <a class="eclass" href="../jwt/jwt_claimset_short.html">JWT_CLAIMSET</a>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Status report</span>
+
+	<a name="f_is_expired"></a><a class="efeature" href="../jwt/jwt_short.html#f_is_expired">is_expired</a> <span class="esymbol">(</span><span class="elocal">dt</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <span class="neclass">DATE_TIME</span><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is Current token expired?</span>
+			<span class="ecomment">--</span><span class="ecomment"> See &quot;exp&quot; claim.</span>
+
+	<a name="f_is_nbf_validated"></a><a class="efeature" href="../jwt/jwt_short.html#f_is_nbf_validated">is_nbf_validated</a> <span class="esymbol">(</span><span class="elocal">dt</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <span class="neclass">DATE_TIME</span><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Does </span><span class="equoted">dt</span><span class="ecomment"> or now verify the &quot;nbf&quot; claim?</span>
+			<span class="ecomment">--</span><span class="ecomment"> See &quot;nbf&quot; claim.</span>
+
+	<a name="f_is_iss_validated"></a><a class="efeature" href="../jwt/jwt_short.html#f_is_iss_validated">is_iss_validated</a> <span class="esymbol">(</span><span class="elocal">a_issuer</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+
+	<a name="f_is_aud_validated"></a><a class="efeature" href="../jwt/jwt_short.html#f_is_aud_validated">is_aud_validated</a> <span class="esymbol">(</span><span class="elocal">a_audience</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Conversion</span>
+
+	<a name="f_encoded_string"></a><a class="efeature" href="../jwt/jwt_short.html#f_encoded_string">encoded_string</a> <span class="esymbol">(</span><span class="elocal">a_secret</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> status report</span>
+
+	<a name="f_has_error"></a><a class="efeature" href="../jwt/jwt_short.html#f_has_error">has_error</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+
+	<a name="f_has_unsupported_alg_error"></a><a class="efeature" href="../jwt/jwt_short.html#f_has_unsupported_alg_error">has_unsupported_alg_error</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+
+	<a name="f_has_mismatched_alg_error"></a><a class="efeature" href="../jwt/jwt_short.html#f_has_mismatched_alg_error">has_mismatched_alg_error</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+
+	<a name="f_has_unverified_token_error"></a><a class="efeature" href="../jwt/jwt_short.html#f_has_unverified_token_error">has_unverified_token_error</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+
+	<a name="f_has_invalid_token_error"></a><a class="efeature" href="../jwt/jwt_short.html#f_has_invalid_token_error">has_invalid_token_error</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+
+	<a name="f_errors"></a><a class="efeature" href="../jwt/jwt_short.html#f_errors">errors</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/arrayed_list_short.html">ARRAYED_LIST</a> <span class="esymbol">[</span><a class="eclass" href="../jwt/jwt_error_short.html">JWT_ERROR</a><span class="esymbol">]</span>
+	
+<span class="ekeyword">end</span> <span class="ecomment">--</span> <span class="ecomment">class </span><a class="eclass" href="../jwt/jwt_short.html">JWT</a></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="jwt_chart.html">Chart</a>
+<a class="nav class" href="jwt_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="jwt"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
+

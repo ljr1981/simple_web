@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="TTTServer request context of the httpd request  TTTIt includes CGI interface and a few extra values that are usually valuable TTTT meta_variable (a_name: READABLE_STRING_GENERAL): detachable WSF_STRING TTTT meta_string_variable (a_name: READABLE_STRING_GENERAL): detachable READABLE_STRING_32  TTTIn addition it provides  TTTTquery_parameter (a_name: READABLE_STRING_GENERAL): detachable WSF_VALUE TTTTform_parameter (a_name: READABLE_STRING_GENERAL): detachable WSF_VALUE TTTTcookie (a_name: READABLE_STRING_GENERAL): detachable WSF_VALUE TTTT...  TTTAnd also has TTTTexecution_variable (a_name: READABLE_STRING_GENERAL): detachable ANY TTTTT--| to keep value attached to the request  TTTAbout https support: `is_https' indicates if the request is made through an https connection or not. "/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="2011-2020, Jocelyn Fiat, Javier Velilla, Olivier Ligot, Colin Adams, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>wsf_request Contracts</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="wsf_request_chart.html">Chart</a>
+<a class="nav class" href="wsf_request_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="wsf_request"></span>
+</div></form><pre><span class="ekeyword">note</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">			Server request context of the httpd request</span>
+		
+		<span class="estring">			It includes CGI interface and a few extra values that are usually valuable</span>
+		<span class="estring">				 meta_variable (a_name: READABLE_STRING_GENERAL): detachable WSF_STRING</span>
+		<span class="estring">				 meta_string_variable (a_name: READABLE_STRING_GENERAL): detachable READABLE_STRING_32</span>
+		
+		<span class="estring">			In addition it provides</span>
+		
+		<span class="estring">				query_parameter (a_name: READABLE_STRING_GENERAL): detachable WSF_VALUE</span>
+		<span class="estring">				form_parameter (a_name: READABLE_STRING_GENERAL): detachable WSF_VALUE</span>
+		<span class="estring">				cookie (a_name: READABLE_STRING_GENERAL): detachable WSF_VALUE</span>
+		<span class="estring">				...</span>
+		
+		<span class="estring">			And also has</span>
+		<span class="estring">				execution_variable (a_name: READABLE_STRING_GENERAL): detachable ANY</span>
+		<span class="estring">					--| to keep value attached to the request</span>
+		
+		<span class="estring">			About https support: </span><span class="estring">`</span><a class="efeature" href="../wsf/wsf_request_short.html#f_is_https">is_https</a><span class="estring">`</span><span class="estring"> indicates if the request is made through an https connection or not.</span>
+		
+	<span class="estring">]</span><span class="estring">&quot;</span>
+	<span class="eitag">date</span><span class="esymbol">:</span> <span class="estring">&quot;$Date$&quot;</span>
+	<span class="eitag">revision</span><span class="esymbol">:</span> <span class="estring">&quot;$Revision$&quot;</span>
+
+<span class="ekeyword">class</span> <span class="ekeyword">interface</span>
+	<a class="eclass" href="../wsf/wsf_request_short.html">WSF_REQUEST</a>
+
+<span class="ekeyword">create</span> <span class="esymbol">{</span><a class="eclass" href="../wsf/wsf_execution_short.html">WSF_EXECUTION</a><span class="esymbol">,</span> <span class="neclass">WGI_EXPORTER</span><span class="esymbol">}</span>
+	<a class="efeature" href="../wsf/wsf_request_short.html#f_make_from_wgi">make_from_wgi</a>
+
+<span class="ekeyword">convert</span>
+	<a class="efeature" href="../wsf/wsf_request_short.html#f_make_from_wgi">make_from_wgi</a> <span class="esymbol">(</span><span class="esymbol">{</span><span class="neclass">WGI_REQUEST</span><span class="esymbol">}</span><span class="esymbol">)</span>
+
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Destroy</span>
+
+	<a name="f_destroy"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_destroy">destroy</a>
+			<span class="ecomment">--</span><span class="ecomment"> Destroy the object when request is completed</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Status report</span>
+
+	<a name="f_is_https"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_is_https">is_https</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is https connection?</span>
+
+	<a name="f_debug_output"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_debug_output">debug_output</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> String that should be displayed in debugger to represent </span><span class="equoted">Current</span><span class="ecomment">.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Setting</span>
+
+	<a name="f_raw_input_data_recorded"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_raw_input_data_recorded">raw_input_data_recorded</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a> <span class="ekeyword">assign</span> <a class="efeature" href="../wsf/wsf_request_short.html#f_set_raw_input_data_recorded">set_raw_input_data_recorded</a>
+			<span class="ecomment">--</span><span class="ecomment"> Record RAW Input datas into </span><span class="ecomment">`</span><a class="efeature" href="../wsf/wsf_request_short.html#f_raw_input_data">raw_input_data</a><span class="ecomment">`</span>
+			<span class="ecomment">--</span><span class="ecomment"> otherwise just forget about it</span>
+			<span class="ecomment">--</span><span class="ecomment"> Default: False</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Raw input data</span>
+
+	<a name="f_raw_input_data"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_raw_input_data">raw_input_data</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/immutable_string_8_short.html">IMMUTABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Raw input data is </span><span class="ecomment">`</span><a class="efeature" href="../wsf/wsf_request_short.html#f_raw_input_data_recorded">raw_input_data_recorded</a><span class="ecomment">`</span><span class="ecomment"> is True</span>
+
+	<a name="f_set_raw_input_data"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_set_raw_input_data">set_raw_input_data</a> <span class="esymbol">(</span><span class="elocal">d</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">)</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Raw header data</span>
+
+	<a name="f_raw_header_data"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_raw_header_data">raw_header_data</a><span class="esymbol">:</span> <span class="ekeyword">like</span> <a class="efeature" href="../wsf/wsf_request_short.html#f_meta_string_variable">meta_string_variable</a>
+			<span class="ecomment">--</span><span class="ecomment"> Raw header data if available.</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">is_valid_as_string_8</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span> <a class="ekeyword" href="../base/boolean_short.html#f_implication">implies</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_32_short.html#f_is_valid_as_string_8">is_valid_as_string_8</a>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Error handling</span>
+
+	<a name="f_has_error"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_has_error">has_error</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+
+	<a name="f_error_handler"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_error_handler">error_handler</a><span class="esymbol">:</span> <span class="neclass">ERROR_HANDLER</span>
+			<span class="ecomment">--</span><span class="ecomment"> Error handler</span>
+			<span class="ecomment">--</span><span class="ecomment"> By default initialized to new handler</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Access: Input</span>
+
+	<a name="f_input"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_input">input</a><span class="esymbol">:</span> <span class="neclass">WGI_INPUT_STREAM</span>
+			<span class="ecomment">--</span><span class="ecomment"> Server input channel</span>
+
+	<a name="f_is_chunked_input"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_is_chunked_input">is_chunked_input</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is request using chunked transfer-encoding?</span>
+			<span class="ecomment">--</span><span class="ecomment"> If True, the Content-Length has no meaning</span>
+
+	<a name="f_read_input_data_into"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_read_input_data_into">read_input_data_into</a> <span class="esymbol">(</span><span class="elocal">buf</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> retrieve the content from the </span><span class="ecomment">`</span><a class="efeature" href="../wsf/wsf_request_short.html#f_input">input</a><span class="ecomment">`</span><span class="ecomment"> stream into </span><span class="equoted">s</span>
+			<span class="ecomment">--</span><span class="ecomment"> warning: if the input data has already been retrieved</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;you might not get anything</span>
+
+	<a name="f_read_input_data_into_file"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_read_input_data_into_file">read_input_data_into_file</a> <span class="esymbol">(</span><span class="elocal">a_medium</span><span class="esymbol">:</span> <a class="eclass" href="../base/io_medium_short.html">IO_MEDIUM</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> retrieve the content from the </span><span class="ecomment">`</span><a class="efeature" href="../wsf/wsf_request_short.html#f_input">input</a><span class="ecomment">`</span><span class="ecomment"> stream into </span><span class="equoted">s</span>
+			<span class="ecomment">--</span><span class="ecomment"> warning: if the input data has already been retrieved</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;you might not get anything</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">a_medium_is_open_write</span><span class="esymbol">:</span> <span class="elocal">a_medium</span><span class="edot">.</span><a class="efeature" href="../base/io_medium_short.html#f_is_open_write">is_open_write</a>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Helper</span>
+
+	<a name="f_is_request_method"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_is_request_method">is_request_method</a> <span class="esymbol">(</span><span class="elocal">m</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is </span><span class="equoted">m</span><span class="ecomment"> the Current request_method?</span>
+
+	<a name="f_is_put_request_method"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_is_put_request_method">is_put_request_method</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is Current a PUT request method?</span>
+
+	<a name="f_is_post_request_method"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_is_post_request_method">is_post_request_method</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is Current a POST request method?</span>
+
+	<a name="f_is_delete_request_method"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_is_delete_request_method">is_delete_request_method</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is Current a DELETE request method?</span>
+
+	<a name="f_is_get_request_method"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_is_get_request_method">is_get_request_method</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is Current a GET request method?</span>
+
+	<a name="f_is_get_head_request_method"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_is_get_head_request_method">is_get_head_request_method</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is Current a GET or a HEAD request method?</span>
+
+	<a name="f_is_put_post_request_method"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_is_put_post_request_method">is_put_post_request_method</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is Current a PUT or a POST request method?</span>
+
+	<a name="f_is_options_request_method"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_is_options_request_method">is_options_request_method</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+
+	<a name="f_is_content_type_accepted"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_is_content_type_accepted">is_content_type_accepted</a> <span class="esymbol">(</span><span class="elocal">a_content_type</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Does client accepts content_type for the response?</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Eiffel WGI access</span>
+
+	<a name="f_wgi_version"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_wgi_version">wgi_version</a><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Eiffel WGI version</span>
+
+	<a name="f_wgi_implementation"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_wgi_implementation">wgi_implementation</a><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Information about Eiffel WGI implementation</span>
+
+	<a name="f_wgi_connector"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_wgi_connector">wgi_connector</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <span class="ekeyword">separate</span> <span class="neclass">WGI_CONNECTOR</span>
+			<span class="ecomment">--</span><span class="ecomment"> Associated Eiffel WGI connector</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Access: global variables</span>
+
+	<a name="f_items"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_items">items</a><span class="esymbol">:</span> <a class="eclass" href="../base/iterable_short.html">ITERABLE</a> <span class="esymbol">[</span><a class="eclass" href="../wsf/wsf_value_short.html">WSF_VALUE</a><span class="esymbol">]</span>
+
+	<a name="f_item"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_item">item</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../wsf/wsf_value_short.html">WSF_VALUE</a>
+			<span class="ecomment">--</span><span class="ecomment"> Variable named </span><span class="equoted">a_name</span><span class="ecomment"> from any of the variables container</span>
+			<span class="ecomment">--</span><span class="ecomment"> and following a specific order: form_, query_ and path_ parameters</span>
+
+	<a name="f_string_item"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_string_item">string_item</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_32_short.html">READABLE_STRING_32</a>
+
+	<a name="f_string_array_item"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_string_array_item">string_array_item</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/array_short.html">ARRAY</a> <span class="esymbol">[</span><a class="eclass" href="../base/readable_string_32_short.html">READABLE_STRING_32</a><span class="esymbol">]</span>
+			<span class="ecomment">--</span><span class="ecomment"> Array of string values for path parameter </span><span class="equoted">a_name</span><span class="ecomment"> if relevant.</span>
+
+	<a name="f_string_array_item_for"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_string_array_item_for">string_array_item_for</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">;</span> <span class="elocal">a_item_fct</span><span class="esymbol">:</span> <a class="eclass" href="../base/function_short.html">FUNCTION</a> <span class="esymbol">[</span><a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">,</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../wsf/wsf_value_short.html">WSF_VALUE</a><span class="esymbol">]</span><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/array_short.html">ARRAY</a> <span class="esymbol">[</span><a class="eclass" href="../base/readable_string_32_short.html">READABLE_STRING_32</a><span class="esymbol">]</span>
+			<span class="ecomment">--</span><span class="ecomment"> Array of string values for query parameter </span><span class="equoted">a_name</span><span class="ecomment"> if relevant.</span>
+
+	<a name="f_table_item"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_table_item">table_item</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">;</span> <span class="elocal">f</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/function_short.html">FUNCTION</a> <span class="esymbol">[</span><a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">,</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../wsf/wsf_value_short.html">WSF_VALUE</a><span class="esymbol">]</span><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../wsf/wsf_value_short.html">WSF_VALUE</a>
+			<span class="ecomment">--</span><span class="ecomment"> Return value associated with table for flat name </span><span class="equoted">a_name</span><span class="ecomment">.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Use function </span><span class="equoted">f</span><span class="ecomment"> to get the item, this could be agent of </span><span class="ecomment">`</span><a class="efeature" href="../wsf/wsf_request_short.html#f_form_parameter">form_parameter</a><span class="ecomment">`</span><span class="ecomment"> or </span><span class="ecomment">`</span><a class="efeature" href="../wsf/wsf_request_short.html#f_query_parameter">query_parameter</a><span class="ecomment">`</span><span class="ecomment">, ...</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;By default, this uses </span><span class="ecomment">`</span><a class="efeature" href="../wsf/wsf_request_short.html#f_items">items</a><span class="ecomment">`</span>
+			<span class="ecomment">--</span><span class="ecomment"> For instance &quot;foo</span><span class="ecomment">[bar]</span><span class="ecomment">&quot; will return item &quot;bar&quot; from table item &quot;foo&quot; if it exists.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Note: we could add this flexible behavior directly to </span><span class="ecomment">`</span><a class="efeature" href="../wsf/wsf_request_short.html#f_query_parameter">query_parameter</a><span class="ecomment">`</span><span class="ecomment"> and related ..</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Helpers: global variables</span>
+
+	<a name="f_items_as_string_items"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_items_as_string_items">items_as_string_items</a><span class="esymbol">:</span> <a class="eclass" href="../base/iterable_short.html">ITERABLE</a> <span class="esymbol">[</span><a class="eclass" href="../base/tuple_short.html">TUPLE</a> <span class="esymbol">[</span><span class="elocal">name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_32_short.html">READABLE_STRING_32</a><span class="esymbol">;</span> <span class="elocal">value</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_32_short.html">READABLE_STRING_32</a><span class="esymbol">]</span><span class="esymbol">]</span>
+			<span class="ecomment">--</span><span class="ecomment"> </span><span class="ecomment">`</span><a class="efeature" href="../wsf/wsf_request_short.html#f_items">items</a><span class="ecomment">`</span><span class="ecomment"> as strings items</span>
+			<span class="ecomment">--</span><span class="ecomment"> i.e: flatten any table or related into multiple string items</span>
+
+	<a name="f_append_value_as_string_items_to"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_append_value_as_string_items_to">append_value_as_string_items_to</a> <span class="esymbol">(</span><span class="elocal">v</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_value_short.html">WSF_VALUE</a><span class="esymbol">;</span> <span class="elocal">a_target</span><span class="esymbol">:</span> <a class="eclass" href="../base/list_short.html">LIST</a> <span class="esymbol">[</span><a class="eclass" href="../base/tuple_short.html">TUPLE</a> <span class="esymbol">[</span><span class="elocal">name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_32_short.html">READABLE_STRING_32</a><span class="esymbol">;</span> <span class="elocal">value</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_32_short.html">READABLE_STRING_32</a><span class="esymbol">]</span><span class="esymbol">]</span><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Append value </span><span class="equoted">v</span><span class="ecomment"> to </span><span class="equoted">a_target</span><span class="ecomment"> as multiple string items</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Execution variables</span>
+
+	<a name="f_execution_variables"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_execution_variables">execution_variables</a><span class="esymbol">:</span> <a class="eclass" href="../base/table_iterable_short.html">TABLE_ITERABLE</a> <span class="esymbol">[</span><span class="ekeyword">detachable</span> <a class="eclass" href="../base/any_short.html">ANY</a><span class="esymbol">,</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">]</span>
+			<span class="ecomment">--</span><span class="ecomment"> Execution variables values.</span>
+
+	<a name="f_has_execution_variable"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_has_execution_variable">has_execution_variable</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Has execution variable related to </span><span class="equoted">a_name</span><span class="ecomment">?</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">a_name_valid</span><span class="esymbol">:</span> <span class="elocal">a_name</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span> <a class="ekeyword" href="../base/boolean_short.html#f_conjuncted_semistrict">and then</a> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_name</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_is_empty">is_empty</a>
+
+	<a name="f_execution_variable"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_execution_variable">execution_variable</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/any_short.html">ANY</a>
+			<span class="ecomment">--</span><span class="ecomment"> Execution variable related to </span><span class="equoted">a_name</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">a_name_valid</span><span class="esymbol">:</span> <span class="elocal">a_name</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span> <a class="ekeyword" href="../base/boolean_short.html#f_conjuncted_semistrict">and then</a> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_name</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_is_empty">is_empty</a>
+
+	<a name="f_set_execution_variable"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_set_execution_variable">set_execution_variable</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">;</span> <span class="elocal">a_value</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/any_short.html">ANY</a><span class="esymbol">)</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">param_set</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_request_short.html#f_execution_variable">execution_variable</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">)</span> <span class="esymbol">=</span> <span class="elocal">a_value</span>
+
+	<a name="f_unset_execution_variable"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_unset_execution_variable">unset_execution_variable</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">param_unset</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_request_short.html#f_execution_variable">execution_variable</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">)</span> <span class="esymbol">=</span> <span class="ekeyword">Void</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Access: CGI Meta variables</span>
+
+	<a name="f_meta_variable"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_meta_variable">meta_variable</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../wsf/wsf_string_short.html">WSF_STRING</a>
+			<span class="ecomment">--</span><span class="ecomment"> CGI Meta variable related to </span><span class="equoted">a_name</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">a_name_valid</span><span class="esymbol">:</span> <span class="elocal">a_name</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span> <a class="ekeyword" href="../base/boolean_short.html#f_conjuncted_semistrict">and then</a> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_name</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_is_empty">is_empty</a>
+
+	<a name="f_meta_string_variable"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_meta_string_variable">meta_string_variable</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_32_short.html">READABLE_STRING_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> CGI meta variable related to </span><span class="equoted">a_name</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">a_name_valid</span><span class="esymbol">:</span> <span class="elocal">a_name</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span> <a class="ekeyword" href="../base/boolean_short.html#f_conjuncted_semistrict">and then</a> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_name</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_is_empty">is_empty</a>
+
+	<a name="f_meta_variables"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_meta_variables">meta_variables</a><span class="esymbol">:</span> <a class="eclass" href="../base/iterable_short.html">ITERABLE</a> <span class="esymbol">[</span><a class="eclass" href="../wsf/wsf_string_short.html">WSF_STRING</a><span class="esymbol">]</span>
+			<span class="ecomment">--</span><span class="ecomment"> CGI meta variables values</span>
+
+	<a name="f_meta_string_variable_or_default"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_meta_string_variable_or_default">meta_string_variable_or_default</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">;</span> <span class="elocal">a_default</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_32_short.html">READABLE_STRING_32</a><span class="esymbol">;</span> <span class="elocal">use_default_when_empty</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_32_short.html">READABLE_STRING_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> Value for meta parameter </span><span class="equoted">a_name</span>
+			<span class="ecomment">--</span><span class="ecomment"> If not found, return </span><span class="equoted">a_default</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">a_name_not_empty</span><span class="esymbol">:</span> <span class="elocal">a_name</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span> <a class="ekeyword" href="../base/boolean_short.html#f_conjuncted_semistrict">and then</a> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_name</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_is_empty">is_empty</a>
+
+	<a name="f_set_meta_string_variable"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_set_meta_string_variable">set_meta_string_variable</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">;</span> <span class="elocal">a_value</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_32_short.html">READABLE_STRING_32</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set meta variable </span><span class="equoted">a_name</span><span class="ecomment"> and </span><span class="equoted">a_value</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">param_set</span><span class="esymbol">:</span> <span class="ekeyword">attached</span> <span class="esymbol">{</span><a class="eclass" href="../wsf/wsf_string_short.html">WSF_STRING</a><span class="esymbol">}</span> <a class="efeature" href="../wsf/wsf_request_short.html#f_meta_variable">meta_variable</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">)</span> <span class="ekeyword">as</span> val <a class="ekeyword" href="../base/boolean_short.html#f_conjuncted_semistrict">and then</a> <span class="elocal">a_value</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_same_string">same_string_general</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">val</span><span class="edot">.</span><a class="efeature" href="../wsf/wsf_string_short.html#f_url_encoded_value">url_encoded_value</a><span class="esymbol">)</span>
+
+	<a name="f_unset_meta_variable"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_unset_meta_variable">unset_meta_variable</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">param_unset</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_request_short.html#f_meta_variable">meta_variable</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">)</span> <span class="esymbol">=</span> <span class="ekeyword">Void</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Access: CGI meta parameters - 1.1</span>
+
+	<a name="f_auth_type"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_auth_type">auth_type</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> This variable is specific to requests made via the &quot;http&quot;</span>
+			<span class="ecomment">--</span><span class="ecomment"> scheme.</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> If the Script-URI required access authentication for external</span>
+			<span class="ecomment">--</span><span class="ecomment"> access, then the server MUST set the value of this variable</span>
+			<span class="ecomment">--</span><span class="ecomment"> from the 'auth-scheme' token in the wgi_request's &quot;Authorization&quot;</span>
+			<span class="ecomment">--</span><span class="ecomment"> header field. Otherwise it is set to NULL.</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;AUTH_TYPE &nbsp;&nbsp;= &quot;&quot; | auth-scheme</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;auth-scheme = &quot;Basic&quot; | &quot;Digest&quot; | token</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> HTTP access authentication schemes are described in section 11</span>
+			<span class="ecomment">--</span><span class="ecomment"> of the HTTP/1.1 specification </span><span class="ecomment">[8]</span><span class="ecomment">. The auth-scheme is not</span>
+			<span class="ecomment">--</span><span class="ecomment"> case-sensitive.</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> Servers MUST provide this metavariable to scripts if the</span>
+			<span class="ecomment">--</span><span class="ecomment"> wgi_request header included an &quot;Authorization&quot; field that was</span>
+			<span class="ecomment">--</span><span class="ecomment"> authenticated.</span>
+
+	<a name="f_content_length"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_content_length">content_length</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> This metavariable is set to the size of the message-body</span>
+			<span class="ecomment">--</span><span class="ecomment"> entity attached to the wgi_request, if any, in decimal number of</span>
+			<span class="ecomment">--</span><span class="ecomment"> octets. If no data are attached, then this metavariable is</span>
+			<span class="ecomment">--</span><span class="ecomment"> either NULL or not defined. The syntax is the same as for the</span>
+			<span class="ecomment">--</span><span class="ecomment"> HTTP &quot;Content-Length&quot; header field (section 14.14, HTTP/1.1</span>
+			<span class="ecomment">--</span><span class="ecomment"> specification </span><span class="ecomment">[8]</span><span class="ecomment">).</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;CONTENT_LENGTH = &quot;&quot; | 1*digit</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> Servers MUST provide this metavariable to scripts if the</span>
+			<span class="ecomment">--</span><span class="ecomment"> wgi_request was accompanied by a message-body entity.</span>
+
+	<a name="f_content_length_value"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_content_length_value">content_length_value</a><span class="esymbol">:</span> <a class="eclass" href="../base/natural_64_short.html">NATURAL_64</a>
+			<span class="ecomment">--</span><span class="ecomment"> Integer value related to `content_length&quot;</span>
+
+	<a name="f_content_type"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_content_type">content_type</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <span class="neclass">HTTP_CONTENT_TYPE</span>
+			<span class="ecomment">--</span><span class="ecomment"> If the wgi_request includes a message-body, CONTENT_TYPE is set to</span>
+			<span class="ecomment">--</span><span class="ecomment"> the Internet Media Type </span><span class="ecomment">[9]</span><span class="ecomment"> of the attached entity if the type</span>
+			<span class="ecomment">--</span><span class="ecomment"> was provided via a &quot;Content-type&quot; field in the wgi_request header,</span>
+			<span class="ecomment">--</span><span class="ecomment"> or if the server can determine it in the absence of a supplied</span>
+			<span class="ecomment">--</span><span class="ecomment"> &quot;Content-type&quot; field. The syntax is the same as for the HTTP</span>
+			<span class="ecomment">--</span><span class="ecomment"> &quot;Content-Type&quot; header field.</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;CONTENT_TYPE = &quot;&quot; | media-type</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;media-type &nbsp;&nbsp;= type &quot;/&quot; subtype *( &quot;;&quot; parameter)</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;type &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= token</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;subtype &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= token</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;parameter &nbsp;&nbsp;&nbsp;= attribute &quot;=&quot; value</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;attribute &nbsp;&nbsp;&nbsp;= token</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;value &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= token | quoted-string</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> The type, subtype, and parameter attribute names are not</span>
+			<span class="ecomment">--</span><span class="ecomment"> case-sensitive. Parameter values MAY be case sensitive. Media</span>
+			<span class="ecomment">--</span><span class="ecomment"> types and their use in HTTP are described in section 3.7 of</span>
+			<span class="ecomment">--</span><span class="ecomment"> the HTTP/1.1 specification </span><span class="ecomment">[8]</span><span class="ecomment">.</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> Example:</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;application/x-www-form-urlencoded</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> There is no default value for this variable. If and only if it</span>
+			<span class="ecomment">--</span><span class="ecomment"> is unset, then the script MAY attempt to determine the media</span>
+			<span class="ecomment">--</span><span class="ecomment"> type from the data received. If the type remains unknown, then</span>
+			<span class="ecomment">--</span><span class="ecomment"> the script MAY choose to either assume a content-type of</span>
+			<span class="ecomment">--</span><span class="ecomment"> application/octet-stream or reject the wgi_request with a 415</span>
+			<span class="ecomment">--</span><span class="ecomment"> (&quot;Unsupported Media Type&quot;) error. See section 7.2.1.3 for more</span>
+			<span class="ecomment">--</span><span class="ecomment"> information about returning error status values.</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> Servers MUST provide this metavariable to scripts if a</span>
+			<span class="ecomment">--</span><span class="ecomment"> &quot;Content-Type&quot; field was present in the original wgi_request</span>
+			<span class="ecomment">--</span><span class="ecomment"> header. If the server receives a wgi_request with an attached</span>
+			<span class="ecomment">--</span><span class="ecomment"> entity but no &quot;Content-Type&quot; header field, it MAY attempt to</span>
+			<span class="ecomment">--</span><span class="ecomment"> determine the correct datatype, or it MAY omit this</span>
+			<span class="ecomment">--</span><span class="ecomment"> metavariable when communicating the wgi_request information to the</span>
+			<span class="ecomment">--</span><span class="ecomment"> script.</span>
+
+	<a name="f_gateway_interface"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_gateway_interface">gateway_interface</a><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> This metavariable is set to the dialect of CGI being used by</span>
+			<span class="ecomment">--</span><span class="ecomment"> the server to communicate with the script. Syntax:</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;GATEWAY_INTERFACE = &quot;CGI&quot; &quot;/&quot; major &quot;.&quot; minor</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;major &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= 1*digit</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;minor &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= 1*digit</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> Note that the major and minor numbers are treated as separate</span>
+			<span class="ecomment">--</span><span class="ecomment"> integers and hence each may be more than a single digit. Thus</span>
+			<span class="ecomment">--</span><span class="ecomment"> CGI/2.4 is a lower version than CGI/2.13 which in turn is</span>
+			<span class="ecomment">--</span><span class="ecomment"> lower than CGI/12.3. Leading zeros in either the major or the</span>
+			<span class="ecomment">--</span><span class="ecomment"> minor number MUST be ignored by scripts and SHOULD NOT be</span>
+			<span class="ecomment">--</span><span class="ecomment"> generated by servers.</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> This document defines the 1.1 version of the CGI interface</span>
+			<span class="ecomment">--</span><span class="ecomment"> (&quot;CGI/1.1&quot;).</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> Servers MUST provide this metavariable to scripts.</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> The version of the CGI specification to which this server</span>
+			<span class="ecomment">--</span><span class="ecomment"> complies. &nbsp;Syntax:</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;GATEWAY_INTERFACE = &nbsp;&quot;CGI&quot; &quot;/&quot; 1*digit &quot;.&quot; 1*digit</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> Note that the major and minor numbers are treated as separate</span>
+			<span class="ecomment">--</span><span class="ecomment"> integers and that each may be incremented higher than a single</span>
+			<span class="ecomment">--</span><span class="ecomment"> digit. &nbsp;Thus CGI/2.4 is a lower version than CGI/2.13 which in</span>
+			<span class="ecomment">--</span><span class="ecomment"> turn is lower than CGI/12.3. Leading zeros must be ignored by</span>
+			<span class="ecomment">--</span><span class="ecomment"> scripts and should never be generated by servers.</span>
+
+	<a name="f_percent_encoded_path_info"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_percent_encoded_path_info">percent_encoded_path_info</a><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Percent encoded PATH_INFO value from CGI.</span>
+			<span class="ecomment">--</span><span class="ecomment"> See </span><span class="ecomment">`</span><a class="efeature" href="../wsf/wsf_request_short.html#f_path_info">path_info</a><span class="ecomment">`</span><span class="ecomment"> for the related percent decoded value.</span>
+
+	<a name="f_utf_8_path_info"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_utf_8_path_info">utf_8_path_info</a><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> UTF-8 encoded value for PATH_INFO.</span>
+			<span class="ecomment">--</span><span class="ecomment"> See </span><span class="ecomment">`</span><a class="efeature" href="../wsf/wsf_request_short.html#f_path_info">path_info</a><span class="ecomment">`</span><span class="ecomment"> for extended description.</span>
+
+	<a name="f_path_info"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_path_info">path_info</a><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_32_short.html">READABLE_STRING_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> The PATH_INFO metavariable specifies a path to be interpreted</span>
+			<span class="ecomment">--</span><span class="ecomment"> by the CGI script. It identifies the resource or sub-resource</span>
+			<span class="ecomment">--</span><span class="ecomment"> to be returned by the CGI script, and it is derived from the</span>
+			<span class="ecomment">--</span><span class="ecomment"> portion of the URI path following the script name but</span>
+			<span class="ecomment">--</span><span class="ecomment"> preceding any query data.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Unlike a URI path, the PATH_INFO is not URL-encoded, and cannot</span>
+			<span class="ecomment">--</span><span class="ecomment"> contain path-segment parameters.</span>
+			<span class="ecomment">--</span><span class="ecomment"> The syntax and semantics are similar to a decoded HTTP URL 'path' token</span>
+			<span class="ecomment">--</span><span class="ecomment"> (defined in RFC 2396 </span><span class="ecomment">[4]</span><span class="ecomment">), with the exception that a PATH_INFO of &quot;/&quot;</span>
+			<span class="ecomment">--</span><span class="ecomment"> represents a single void path segment.</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;PATH_INFO = &quot;&quot; | ( &quot;/&quot; path )</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;path &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= segment *( &quot;/&quot; segment )</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;segment &nbsp;&nbsp;= *pchar</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;pchar &nbsp;&nbsp;&nbsp;&nbsp;= &lt;any CHAR except &quot;/&quot;&gt;</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> The PATH_INFO string is the trailing part of the &lt;path&gt;</span>
+			<span class="ecomment">--</span><span class="ecomment"> component of the Script-URI (see section 3.2) that follows the</span>
+			<span class="ecomment">--</span><span class="ecomment"> SCRIPT_NAME portion of the path.</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> Servers MAY impose their own restrictions and limitations on</span>
+			<span class="ecomment">--</span><span class="ecomment"> what values they will accept for PATH_INFO, and MAY reject or</span>
+			<span class="ecomment">--</span><span class="ecomment"> edit any values they consider objectionable before passing</span>
+			<span class="ecomment">--</span><span class="ecomment"> them to the script.</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> Servers MUST make this URI component available to CGI scripts.</span>
+			<span class="ecomment">--</span><span class="ecomment"> The PATH_INFO value is case-sensitive, and the server MUST</span>
+			<span class="ecomment">--</span><span class="ecomment"> preserve the case of the PATH_INFO element of the URI when</span>
+			<span class="ecomment">--</span><span class="ecomment"> making it available to scripts.</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> Note: this is the unicode version of PATH_INFO, for utf-8 version</span>
+			<span class="ecomment">--</span><span class="ecomment"> please use </span><span class="ecomment">`</span><a class="efeature" href="../wsf/wsf_request_short.html#f_utf_8_path_info">utf_8_path_info</a><span class="ecomment">`</span><span class="ecomment">, which is the real CGI value of PATH_INFO.</span>
+
+	<a name="f_path_translated"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_path_translated">path_translated</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> PATH_TRANSLATED is derived by taking any path-info component</span>
+			<span class="ecomment">--</span><span class="ecomment"> of the wgi_request URI (see section 6.1.6), decoding it (see</span>
+			<span class="ecomment">--</span><span class="ecomment"> section 3.1), parsing it as a URI in its own right, and</span>
+			<span class="ecomment">--</span><span class="ecomment"> performing any virtual-to-physical translation appropriate to</span>
+			<span class="ecomment">--</span><span class="ecomment"> map it onto the server's document repository structure. If the</span>
+			<span class="ecomment">--</span><span class="ecomment"> wgi_request URI includes no path-info component, the</span>
+			<span class="ecomment">--</span><span class="ecomment"> PATH_TRANSLATED metavariable SHOULD NOT be defined.</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;PATH_TRANSLATED = *CHAR</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> For a wgi_request such as the following:</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;</span><a class="ecomment" href="http://somehost.com/cgi-bin/somescript/this%2eis%2epath%2einfo">http://somehost.com/cgi-bin/somescript/this%2eis%2epath%2einfo</a>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> the PATH_INFO component would be decoded, and the result</span>
+			<span class="ecomment">--</span><span class="ecomment"> parsed as though it were a wgi_request for the following:</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;</span><a class="ecomment" href="http://somehost.com/this.is.the.path.info">http://somehost.com/this.is.the.path.info</a>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> This would then be translated to a location in the server's</span>
+			<span class="ecomment">--</span><span class="ecomment"> document repository, perhaps a filesystem path something like</span>
+			<span class="ecomment">--</span><span class="ecomment"> this:</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;/usr/local/www/htdocs/this.is.the.path.info</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> The result of the translation is the value of PATH_TRANSLATED.</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> The value of PATH_TRANSLATED may or may not map to a valid</span>
+			<span class="ecomment">--</span><span class="ecomment"> repository location. Servers MUST preserve the case of the</span>
+			<span class="ecomment">--</span><span class="ecomment"> path-info segment if and only if the underlying repository</span>
+			<span class="ecomment">--</span><span class="ecomment"> supports case-sensitive names. If the repository is only</span>
+			<span class="ecomment">--</span><span class="ecomment"> case-aware, case-preserving, or case-blind with regard to</span>
+			<span class="ecomment">--</span><span class="ecomment"> document names, servers are not required to preserve the case</span>
+			<span class="ecomment">--</span><span class="ecomment"> of the original segment through the translation.</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> The translation algorithm the server uses to derive</span>
+			<span class="ecomment">--</span><span class="ecomment"> PATH_TRANSLATED is implementation defined; CGI scripts which</span>
+			<span class="ecomment">--</span><span class="ecomment"> use this variable may suffer limited portability.</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> Servers SHOULD provide this metavariable to scripts if and</span>
+			<span class="ecomment">--</span><span class="ecomment"> only if the wgi_request URI includes a path-info component.</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> note: it is UTF_8 encoded.</span>
+
+	<a name="f_query_string"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_query_string">query_string</a><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> A URL-encoded string; the &lt;query&gt; part of the Script-URI. (See</span>
+			<span class="ecomment">--</span><span class="ecomment"> section 3.2.)</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;QUERY_STRING = query-string</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;query-string = *uric</span>
+			<span class="ecomment">--</span><span class="ecomment"> The URL syntax for a query string is described in section 3 of</span>
+			<span class="ecomment">--</span><span class="ecomment"> RFC 2396 </span><span class="ecomment">[4]</span><span class="ecomment">.</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> Servers MUST supply this value to scripts. The QUERY_STRING</span>
+			<span class="ecomment">--</span><span class="ecomment"> value is case-sensitive. If the Script-URI does not include a</span>
+			<span class="ecomment">--</span><span class="ecomment"> query component, the QUERY_STRING metavariable MUST be defined</span>
+			<span class="ecomment">--</span><span class="ecomment"> as an empty string (&quot;&quot;).</span>
+
+	<a name="f_remote_addr"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_remote_addr">remote_addr</a><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> The IP address of the client sending the wgi_request to the</span>
+			<span class="ecomment">--</span><span class="ecomment"> server. This is not necessarily that of the user agent (such</span>
+			<span class="ecomment">--</span><span class="ecomment"> as if the wgi_request came through a proxy).</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;REMOTE_ADDR &nbsp;= hostnumber</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;hostnumber &nbsp;&nbsp;= ipv4-address | ipv6-address</span>
+			<span class="ecomment">--</span><span class="ecomment"> The definitions of ipv4-address and ipv6-address are provided</span>
+			<span class="ecomment">--</span><span class="ecomment"> in Appendix B of RFC 2373 </span><span class="ecomment">[13]</span><span class="ecomment">.</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> Servers MUST supply this value to scripts.</span>
+
+	<a name="f_remote_host"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_remote_host">remote_host</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> The fully qualified domain name of the client sending the</span>
+			<span class="ecomment">--</span><span class="ecomment"> wgi_request to the server, if available, otherwise NULL. (See</span>
+			<span class="ecomment">--</span><span class="ecomment"> section 6.1.9.) Fully qualified domain names take the form as</span>
+			<span class="ecomment">--</span><span class="ecomment"> described in section 3.5 of RFC 1034 </span><span class="ecomment">[10]</span><span class="ecomment"> and section 2.1 of</span>
+			<span class="ecomment">--</span><span class="ecomment"> RFC 1123 </span><span class="ecomment">[5]</span><span class="ecomment">. Domain names are not case sensitive.</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> Servers SHOULD provide this information to scripts.</span>
+
+	<a name="f_remote_ident"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_remote_ident">remote_ident</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> The identity information reported about the connection by a</span>
+			<span class="ecomment">--</span><span class="ecomment"> RFC 1413 </span><span class="ecomment">[11]</span><span class="ecomment"> wgi_request to the remote agent, if available.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Servers MAY choose not to support this feature, or not to</span>
+			<span class="ecomment">--</span><span class="ecomment"> wgi_request the data for efficiency reasons.</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;REMOTE_IDENT = *CHAR</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> The data returned may be used for authentication purposes, but</span>
+			<span class="ecomment">--</span><span class="ecomment"> the level of trust reposed in them should be minimal.</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> Servers MAY supply this information to scripts if the RFC1413</span>
+			<span class="ecomment">--</span><span class="ecomment"> </span><span class="ecomment">[11]</span><span class="ecomment"> lookup is performed.</span>
+
+	<a name="f_remote_user"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_remote_user">remote_user</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> If the wgi_request required authentication using the &quot;Basic&quot;</span>
+			<span class="ecomment">--</span><span class="ecomment"> mechanism (i.e., the AUTH_TYPE metavariable is set to</span>
+			<span class="ecomment">--</span><span class="ecomment"> &quot;Basic&quot;), then the value of the REMOTE_USER metavariable is</span>
+			<span class="ecomment">--</span><span class="ecomment"> set to the user-ID supplied. In all other cases the value of</span>
+			<span class="ecomment">--</span><span class="ecomment"> this metavariable is undefined.</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;REMOTE_USER = *OCTET</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> This variable is specific to requests made via the HTTP</span>
+			<span class="ecomment">--</span><span class="ecomment"> protocol.</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> Servers SHOULD provide this metavariable to scripts.</span>
+
+	<a name="f_request_method"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_request_method">request_method</a><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> The REQUEST_METHOD metavariable is set to the method with</span>
+			<span class="ecomment">--</span><span class="ecomment"> which the wgi_request was made, as described in section 5.1.1 of</span>
+			<span class="ecomment">--</span><span class="ecomment"> the HTTP/1.0 specification </span><span class="ecomment">[3]</span><span class="ecomment"> and section 5.1.1 of the</span>
+			<span class="ecomment">--</span><span class="ecomment"> HTTP/1.1 specification </span><span class="ecomment">[8]</span><span class="ecomment">.</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;REQUEST_METHOD &nbsp;&nbsp;= http-method</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;http-method &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= &quot;GET&quot; | &quot;HEAD&quot; | &quot;POST&quot; | &quot;PUT&quot; | &quot;DELETE&quot;</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| &quot;OPTIONS&quot; | &quot;TRACE&quot; | extension-method</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;extension-method = token</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> The method is case sensitive. CGI/1.1 servers MAY choose to</span>
+			<span class="ecomment">--</span><span class="ecomment"> process some methods directly rather than passing them to</span>
+			<span class="ecomment">--</span><span class="ecomment"> scripts.</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> This variable is specific to requests made with HTTP.</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> Servers MUST provide this metavariable to scripts.</span>
+
+	<a name="f_script_name"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_script_name">script_name</a><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> The SCRIPT_NAME metavariable is set to a URL path that could</span>
+			<span class="ecomment">--</span><span class="ecomment"> identify the CGI script (rather than the script's output). The</span>
+			<span class="ecomment">--</span><span class="ecomment"> syntax and semantics are identical to a decoded HTTP URL</span>
+			<span class="ecomment">--</span><span class="ecomment"> 'path' token (see RFC 2396 </span><span class="ecomment">[4]</span><span class="ecomment">).</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;SCRIPT_NAME = &quot;&quot; | ( &quot;/&quot; [ path ] )</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> The SCRIPT_NAME string is some leading part of the &lt;path&gt;</span>
+			<span class="ecomment">--</span><span class="ecomment"> component of the Script-URI derived in some implementation</span>
+			<span class="ecomment">--</span><span class="ecomment"> defined manner. No PATH_INFO or QUERY_STRING segments (see</span>
+			<span class="ecomment">--</span><span class="ecomment"> sections 6.1.6 and 6.1.8) are included in the SCRIPT_NAME</span>
+			<span class="ecomment">--</span><span class="ecomment"> value.</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> Servers MUST provide this metavariable to scripts.</span>
+
+	<a name="f_server_name"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_server_name">server_name</a><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> The SERVER_NAME metavariable is set to the name of the server,</span>
+			<span class="ecomment">--</span><span class="ecomment"> as derived from the &lt;host&gt; part of the Script-URI (see section</span>
+			<span class="ecomment">--</span><span class="ecomment"> 3.2).</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;SERVER_NAME = hostname | hostnumber</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> Servers MUST provide this metavariable to scripts.</span>
+
+	<a name="f_server_port"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_server_port">server_port</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> The SERVER_PORT metavariable is set to the port on which the</span>
+			<span class="ecomment">--</span><span class="ecomment"> wgi_request was received, as used in the &lt;port&gt; part of the</span>
+			<span class="ecomment">--</span><span class="ecomment"> Script-URI.</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;SERVER_PORT = 1*digit</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> If the &lt;port&gt; portion of the script-URI is blank, the actual</span>
+			<span class="ecomment">--</span><span class="ecomment"> port number upon which the wgi_request was received MUST be</span>
+			<span class="ecomment">--</span><span class="ecomment"> supplied.</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> Servers MUST provide this metavariable to scripts.</span>
+
+	<a name="f_server_protocol"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_server_protocol">server_protocol</a><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> The SERVER_PROTOCOL metavariable is set to the name and</span>
+			<span class="ecomment">--</span><span class="ecomment"> revision of the information protocol with which the wgi_request</span>
+			<span class="ecomment">--</span><span class="ecomment"> arrived. This is not necessarily the same as the protocol</span>
+			<span class="ecomment">--</span><span class="ecomment"> version used by the server in its response to the client.</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;SERVER_PROTOCOL &nbsp;&nbsp;= HTTP-Version | extension-version</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| extension-token</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;HTTP-Version &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= &quot;HTTP&quot; &quot;/&quot; 1*digit &quot;.&quot; 1*digit</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;extension-version = protocol &quot;/&quot; 1*digit &quot;.&quot; 1*digit</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;protocol &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= 1*( alpha | digit | &quot;+&quot; | &quot;-&quot; | &quot;.&quot; )</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;extension-token &nbsp;&nbsp;= token</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> 'protocol' is a version of the &lt;scheme&gt; part of the</span>
+			<span class="ecomment">--</span><span class="ecomment"> Script-URI, but is not identical to it. For example, the</span>
+			<span class="ecomment">--</span><span class="ecomment"> scheme of a wgi_request may be &quot;https&quot; while the protocol remains</span>
+			<span class="ecomment">--</span><span class="ecomment"> &quot;http&quot;. The protocol is not case sensitive, but by convention,</span>
+			<span class="ecomment">--</span><span class="ecomment"> 'protocol' is in upper case.</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> A well-known extension token value is &quot;INCLUDED&quot;, which</span>
+			<span class="ecomment">--</span><span class="ecomment"> signals that the current document is being included as part of</span>
+			<span class="ecomment">--</span><span class="ecomment"> a composite document, rather than being the direct target of</span>
+			<span class="ecomment">--</span><span class="ecomment"> the client wgi_request.</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> Servers MUST provide this metavariable to scripts.</span>
+
+	<a name="f_server_software"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_server_software">server_software</a><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> The SERVER_SOFTWARE metavariable is set to the name and</span>
+			<span class="ecomment">--</span><span class="ecomment"> version of the information server software answering the</span>
+			<span class="ecomment">--</span><span class="ecomment"> wgi_request (and running the gateway).</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;SERVER_SOFTWARE = 1*product</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;product &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= token [ &quot;/&quot; product-version ]</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;product-version = token</span>
+			<span class="ecomment">--</span><span class="ecomment"> Servers MUST provide this metavariable to scripts.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> HTTP_*</span>
+
+	<a name="f_http_accept"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_http_accept">http_accept</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Contents of the Accept: header from the current wgi_request, if there is one.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Example: 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'</span>
+
+	<a name="f_http_accept_charset"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_http_accept_charset">http_accept_charset</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Contents of the Accept-Charset: header from the current wgi_request, if there is one.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Example: 'iso-8859-1,*,utf-8'.</span>
+
+	<a name="f_http_accept_encoding"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_http_accept_encoding">http_accept_encoding</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Contents of the Accept-Encoding: header from the current wgi_request, if there is one.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Example: 'gzip'.</span>
+
+	<a name="f_http_accept_language"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_http_accept_language">http_accept_language</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Contents of the Accept-Language: header from the current wgi_request, if there is one.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Example: 'en'.</span>
+
+	<a name="f_http_connection"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_http_connection">http_connection</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Contents of the Connection: header from the current wgi_request, if there is one.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Example: 'keep-alive'.</span>
+
+	<a name="f_is_keep_alive_http_connection"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_is_keep_alive_http_connection">is_keep_alive_http_connection</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is a keep-alive connection?</span>
+
+	<a name="f_http_expect"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_http_expect">http_expect</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> The Expect request-header field is used to indicate that particular server behaviors are required by the client.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Example: '100-continue'.</span>
+
+	<a name="f_http_host"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_http_host">http_host</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Contents of the Host: header from the current wgi_request, if there is one.</span>
+
+	<a name="f_http_referer"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_http_referer">http_referer</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> The address of the page (if any) which referred the user agent to the current page.</span>
+			<span class="ecomment">--</span><span class="ecomment"> This is set by the user agent.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Not all user agents will set this, and some provide the ability to modify HTTP_REFERER as a feature.</span>
+			<span class="ecomment">--</span><span class="ecomment"> In short, it cannot really be trusted.</span>
+
+	<a name="f_http_user_agent"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_http_user_agent">http_user_agent</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Contents of the User-Agent: header from the current wgi_request, if there is one.</span>
+			<span class="ecomment">--</span><span class="ecomment"> This is a string denoting the user agent being which is accessing the page.</span>
+			<span class="ecomment">--</span><span class="ecomment"> A typical example is: Mozilla/4.5 </span><span class="ecomment">[en]</span><span class="ecomment"> (X11; U; Linux 2.2.9 i586).</span>
+			<span class="ecomment">--</span><span class="ecomment"> Among other things, you can use this value to tailor your page's</span>
+			<span class="ecomment">--</span><span class="ecomment"> output to the capabilities of the user agent.</span>
+
+	<a name="f_http_authorization"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_http_authorization">http_authorization</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Contents of the Authorization: header from the current wgi_request, if there is one.</span>
+
+	<a name="f_http_transfer_encoding"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_http_transfer_encoding">http_transfer_encoding</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Transfer-Encoding</span>
+			<span class="ecomment">--</span><span class="ecomment"> for instance chunked</span>
+
+	<a name="f_http_access_control_request_headers"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_http_access_control_request_headers">http_access_control_request_headers</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Indicates which headers will be used in the actual request</span>
+			<span class="ecomment">--</span><span class="ecomment"> as part of the preflight request</span>
+
+	<a name="f_http_if_match"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_http_if_match">http_if_match</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Existence check on resource</span>
+
+	<a name="f_http_if_modified_since"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_http_if_modified_since">http_if_modified_since</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Modification check on resource</span>
+
+	<a name="f_http_if_none_match"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_http_if_none_match">http_if_none_match</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Existence check on resource</span>
+
+	<a name="f_http_if_range"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_http_if_range">http_if_range</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Range check on resource</span>
+
+	<a name="f_http_if_unmodified_since"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_http_if_unmodified_since">http_if_unmodified_since</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Modification check on resource</span>
+
+	<a name="f_http_last_modified"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_http_last_modified">http_last_modified</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Modification time of resource</span>
+
+	<a name="f_http_range"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_http_range">http_range</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Requested byte-range of resource</span>
+
+	<a name="f_http_content_range"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_http_content_range">http_content_range</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Partial range of selected representation enclosed in message payload</span>
+
+	<a name="f_http_content_encoding"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_http_content_encoding">http_content_encoding</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Encoding (usually compression) of message payload</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Extra CGI environment variables</span>
+
+	<a name="f_request_uri"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_request_uri">request_uri</a><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> The URI which was given in order to access this page; for instance, '/index.html'.</span>
+
+	<a name="f_orig_path_info"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_orig_path_info">orig_path_info</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Original version of </span><span class="ecomment">`</span><a class="efeature" href="../wsf/wsf_request_short.html#f_path_info">path_info</a><span class="ecomment">`</span><span class="ecomment"> before processed by Current environment</span>
+
+	<a name="f_request_time"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_request_time">request_time</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <span class="neclass">DATE_TIME</span>
+			<span class="ecomment">--</span><span class="ecomment"> Request time (UTC)</span>
+
+	<a name="f_request_time_stamp"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_request_time_stamp">request_time_stamp</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_64_short.html">INTEGER_64</a>
+			<span class="ecomment">--</span><span class="ecomment"> Request time stamp (UTC)	 (unix time stamp)</span>
+		<span class="ekeyword">ensure</span>
+			<span class="ekeyword">Result</span> <span class="esymbol">=</span> <span class="enumber">0</span> <a class="ekeyword" href="../base/boolean_short.html#f_implication">implies</a> <a class="efeature" href="../wsf/wsf_request_short.html#f_meta_variable">meta_variable</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="esymbol">{</span><a class="eclass" href="../wsf/wsf_meta_names_short.html">WSF_META_NAMES</a><span class="esymbol">}</span><span class="edot">.</span><span class="nefeature">request_time</span><span class="esymbol">)</span> <span class="esymbol">=</span> <span class="ekeyword">Void</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Cookies</span>
+
+	<a name="f_cookies"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_cookies">cookies</a><span class="esymbol">:</span> <a class="eclass" href="../base/iterable_short.html">ITERABLE</a> <span class="esymbol">[</span><a class="eclass" href="../wsf/wsf_value_short.html">WSF_VALUE</a><span class="esymbol">]</span>
+			<span class="ecomment">--</span><span class="ecomment"> All cookies.</span>
+
+	<a name="f_cookie"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_cookie">cookie</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../wsf/wsf_value_short.html">WSF_VALUE</a>
+			<span class="ecomment">--</span><span class="ecomment"> Field for name </span><span class="equoted">a_name</span><span class="ecomment">.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Path parameters</span>
+
+	<a name="f_path_parameters"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_path_parameters">path_parameters</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/iterable_short.html">ITERABLE</a> <span class="esymbol">[</span><a class="eclass" href="../wsf/wsf_value_short.html">WSF_VALUE</a><span class="esymbol">]</span>
+			<span class="ecomment">--</span><span class="ecomment"> All path parameters.</span>
+
+	<a name="f_path_parameter"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_path_parameter">path_parameter</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../wsf/wsf_value_short.html">WSF_VALUE</a>
+			<span class="ecomment">--</span><span class="ecomment"> Path Parameter for name </span><span class="equoted">a_name</span><span class="ecomment">.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Query parameters</span>
+
+	<a name="f_query_parameters"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_query_parameters">query_parameters</a><span class="esymbol">:</span> <a class="eclass" href="../base/iterable_short.html">ITERABLE</a> <span class="esymbol">[</span><a class="eclass" href="../wsf/wsf_value_short.html">WSF_VALUE</a><span class="esymbol">]</span>
+			<span class="ecomment">--</span><span class="ecomment"> All query parameters</span>
+
+	<a name="f_query_parameter"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_query_parameter">query_parameter</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../wsf/wsf_value_short.html">WSF_VALUE</a>
+			<span class="ecomment">--</span><span class="ecomment"> Query parameter for name </span><span class="equoted">a_name</span><span class="ecomment">.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Form fields and related</span>
+
+	<a name="f_form_parameters"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_form_parameters">form_parameters</a><span class="esymbol">:</span> <a class="eclass" href="../base/iterable_short.html">ITERABLE</a> <span class="esymbol">[</span><a class="eclass" href="../wsf/wsf_value_short.html">WSF_VALUE</a><span class="esymbol">]</span>
+
+	<a name="f_form_parameter"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_form_parameter">form_parameter</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../wsf/wsf_value_short.html">WSF_VALUE</a>
+			<span class="ecomment">--</span><span class="ecomment"> Field for name </span><span class="equoted">a_name</span><span class="ecomment">.</span>
+
+	<a name="f_has_uploaded_file"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_has_uploaded_file">has_uploaded_file</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Has any uploaded file?</span>
+
+	<a name="f_uploaded_files"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_uploaded_files">uploaded_files</a><span class="esymbol">:</span> <a class="eclass" href="../base/iterable_short.html">ITERABLE</a> <span class="esymbol">[</span><a class="eclass" href="../wsf/wsf_uploaded_file_short.html">WSF_UPLOADED_FILE</a><span class="esymbol">]</span>
+			<span class="ecomment">--</span><span class="ecomment"> uploaded files values</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Access: MIME handler</span>
+
+	<a name="f_has_mime_handler"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_has_mime_handler">has_mime_handler</a> <span class="esymbol">(</span><span class="elocal">a_content_type</span><span class="esymbol">:</span> <span class="neclass">HTTP_CONTENT_TYPE</span><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Has a MIME handler registered for </span><span class="equoted">a_content_type</span><span class="ecomment">?</span>
+
+	<a name="f_register_mime_handler"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_register_mime_handler">register_mime_handler</a> <span class="esymbol">(</span><span class="elocal">a_handler</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_mime_handler_short.html">WSF_MIME_HANDLER</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Register </span><span class="equoted">a_handler</span><span class="ecomment"> for </span><span class="equoted">a_content_type</span>
+
+	<a name="f_mime_handler"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_mime_handler">mime_handler</a> <span class="esymbol">(</span><span class="elocal">a_content_type</span><span class="esymbol">:</span> <span class="neclass">HTTP_CONTENT_TYPE</span><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../wsf/wsf_mime_handler_short.html">WSF_MIME_HANDLER</a>
+			<span class="ecomment">--</span><span class="ecomment"> Mime handler associated with </span><span class="equoted">a_content_type</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">has_mime_handler_implies_attached</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_request_short.html#f_has_mime_handler">has_mime_handler</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">a_content_type</span><span class="esymbol">)</span> <a class="ekeyword" href="../base/boolean_short.html#f_implication">implies</a> <span class="ekeyword">Result</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Uploaded File Handling</span>
+
+	<a name="f_is_uploaded_file"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_is_uploaded_file">is_uploaded_file</a> <span class="esymbol">(</span><span class="elocal">a_filename</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is </span><span class="equoted">a_filename</span><span class="ecomment"> a file uploaded via HTTP Form</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> URL Utility</span>
+
+	<a name="f_server_url"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_server_url">server_url</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Server url, as </span><a class="ecomment" href="http://example.com:8080">http://example.com:8080</a>
+
+	<a name="f_absolute_script_url"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_absolute_script_url">absolute_script_url</a> <span class="esymbol">(</span><span class="elocal">a_path</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Absolute Url for the script if any, extended by </span><span class="equoted">a_path</span>
+
+	<a name="f_script_url"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_script_url">script_url</a> <span class="esymbol">(</span><span class="elocal">a_path</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Url relative to script name if any, extended by </span><span class="equoted">a_path</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Element change</span>
+
+	<a name="f_set_raw_input_data_recorded"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_set_raw_input_data_recorded">set_raw_input_data_recorded</a> <span class="esymbol">(</span><span class="elocal">b</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set </span><span class="ecomment">`</span><a class="efeature" href="../wsf/wsf_request_short.html#f_raw_input_data_recorded">raw_input_data_recorded</a><span class="ecomment">`</span><span class="ecomment"> to </span><span class="equoted">b</span>
+
+	<a name="f_set_error_handler"></a><a class="efeature" href="../wsf/wsf_request_short.html#f_set_error_handler">set_error_handler</a> <span class="esymbol">(</span><span class="elocal">ehdl</span><span class="esymbol">:</span> <span class="ekeyword">like</span> <a class="efeature" href="../wsf/wsf_request_short.html#f_error_handler">error_handler</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set </span><span class="ecomment">`</span><a class="efeature" href="../wsf/wsf_request_short.html#f_error_handler">error_handler</a><span class="ecomment">`</span><span class="ecomment"> to </span><span class="equoted">ehdl</span>
+	
+<span class="ekeyword">invariant</span>
+	<span class="etag">empty_string_32_unchanged</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_request_short.html#f_empty_string_32">Empty_string_32</a><span class="edot">.</span><a class="efeature" href="../base/immutable_string_32_short.html#f_is_empty">is_empty</a>
+	<span class="etag">empty_string_8_unchanged</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_request_short.html#f_empty_string_8">Empty_string_8</a><span class="edot">.</span><a class="efeature" href="../base/immutable_string_8_short.html#f_is_empty">is_empty</a>
+	<a class="efeature" href="../wsf/wsf_request_short.html#f_wgi_request">wgi_request</a><span class="edot">.</span><span class="nefeature">content_type</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span> <a class="ekeyword" href="../base/boolean_short.html#f_implication">implies</a> <a class="efeature" href="../wsf/wsf_request_short.html#f_content_type">content_type</a> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+
+<span class="ekeyword">note</span>
+	<span class="eitag">copyright</span><span class="esymbol">:</span> <span class="estring">&quot;2011-2020, Jocelyn Fiat, Javier Velilla, Olivier Ligot, Colin Adams, Eiffel Software and others&quot;</span>
+	<span class="eitag">license</span><span class="esymbol">:</span> <span class="estring">&quot;Eiffel Forum License v2 (see </span><a class="estring" href="http://www.eiffel.com/licensing/forum.txt">http://www.eiffel.com/licensing/forum.txt</a><span class="estring">)&quot;</span>
+	<span class="eitag">source</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">Eiffel Software</span>
+		<span class="estring">5949 Hollister Ave., Goleta, CA 93117 USA</span>
+		<span class="estring">Telephone 805-685-1006, Fax 805-685-6869</span>
+		<span class="estring">Website </span><a class="estring" href="http://www.eiffel.com">http://www.eiffel.com</a>
+		<span class="estring">Customer support </span><a class="estring" href="http://support.eiffel.com">http://support.eiffel.com</a>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+
+<span class="ekeyword">end</span> <span class="ecomment">--</span> <span class="ecomment">class </span><a class="eclass" href="../wsf/wsf_request_short.html">WSF_REQUEST</a></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="wsf_request_chart.html">Chart</a>
+<a class="nav class" href="wsf_request_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="wsf_request"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
+

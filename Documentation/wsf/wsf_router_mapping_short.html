@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="Describes a route or mapping for the WSF_ROUTER"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="2011-2021, Jocelyn Fiat, Javier Velilla, Olivier Ligot, Colin Adams, Alexander Kogtenkov, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>wsf_router_mapping Contracts</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="wsf_router_mapping_chart.html">Chart</a>
+<a class="nav class" href="wsf_router_mapping_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="wsf_router_mapping"></span>
+</div></form><pre><span class="ekeyword">note</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">Describes a route or mapping for the WSF_ROUTER</span>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+	<span class="eitag">date</span><span class="esymbol">:</span> <span class="estring">&quot;$Date$&quot;</span>
+	<span class="eitag">revision</span><span class="esymbol">:</span> <span class="estring">&quot;$Revision$&quot;</span>
+
+<span class="ekeyword">deferred</span> <span class="ekeyword">class</span> <span class="ekeyword">interface</span>
+	<a class="eclass" href="../wsf/wsf_router_mapping_short.html">WSF_ROUTER_MAPPING</a>
+
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Access</span>
+
+	<a name="f_associated_resource"></a><a class="efeature" href="../wsf/wsf_router_mapping_short.html#f_associated_resource">associated_resource</a><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Name (URI, or URI template or regular expression or ...) of handled resource</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">assciated_resource_not_void</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+
+	<a name="f_handler"></a><a class="efeature" href="../wsf/wsf_router_mapping_short.html#f_handler">handler</a><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_handler_short.html">WSF_HANDLER</a>
+			<span class="ecomment">--</span><span class="ecomment"> Handler associated with </span><span class="equoted">Current</span><span class="ecomment"> mapping</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">handler_attached</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Documentation</span>
+
+	<a name="f_description"></a><a class="efeature" href="../wsf/wsf_router_mapping_short.html#f_description">description</a><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_32_short.html">READABLE_STRING_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> Short description of associated mapping</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">description_attached</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Status report</span>
+
+	<a name="f_debug_output"></a><a class="efeature" href="../wsf/wsf_router_mapping_short.html#f_debug_output">debug_output</a><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_32_short.html">READABLE_STRING_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> String that should be displayed in debugger to represent </span><span class="equoted">Current</span><span class="ecomment">.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Status</span>
+
+	<a name="f_is_mapping"></a><a class="efeature" href="../wsf/wsf_router_mapping_short.html#f_is_mapping">is_mapping</a> <span class="esymbol">(</span><span class="elocal">a_path</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">;</span> <span class="elocal">req</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_short.html">WSF_REQUEST</a><span class="esymbol">;</span> <span class="elocal">a_router</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_router_short.html">WSF_ROUTER</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Does </span><span class="equoted">Current</span><span class="ecomment"> accept path </span><span class="equoted">a_path</span><span class="ecomment"> and request </span><span class="equoted">req</span><span class="ecomment"> when using </span><span class="equoted">a_router</span><span class="ecomment">?</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">a_path_attached</span><span class="esymbol">:</span> <span class="elocal">a_path</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">req_attached</span><span class="esymbol">:</span> <span class="elocal">req</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">a_router_attached</span><span class="esymbol">:</span> <span class="elocal">a_router</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+
+	<a name="f_try"></a><a class="efeature" href="../wsf/wsf_router_mapping_short.html#f_try">try</a> <span class="esymbol">(</span><span class="elocal">a_path</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">;</span> <span class="elocal">req</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_short.html">WSF_REQUEST</a><span class="esymbol">;</span> <span class="elocal">res</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_response_short.html">WSF_RESPONSE</a><span class="esymbol">;</span> <span class="elocal">sess</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_router_session_short.html">WSF_ROUTER_SESSION</a><span class="esymbol">;</span> <span class="elocal">a_router</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_router_short.html">WSF_ROUTER</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Try using </span><span class="equoted">Current</span><span class="ecomment"> mapping and if it matches path </span><span class="equoted">a_path</span><span class="ecomment"> and request </span><span class="equoted">req</span>
+			<span class="ecomment">--</span><span class="ecomment"> execute associated handler and set this handler in session </span><span class="equoted">sess</span><span class="ecomment">.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">a_path_attached</span><span class="esymbol">:</span> <span class="elocal">a_path</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">req_attached</span><span class="esymbol">:</span> <span class="elocal">req</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">res_attached</span><span class="esymbol">:</span> <span class="elocal">res</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">sess_attached</span><span class="esymbol">:</span> <span class="elocal">sess</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">a_router_attached</span><span class="esymbol">:</span> <span class="elocal">a_router</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+	
+<span class="ekeyword">note</span>
+	<span class="eitag">copyright</span><span class="esymbol">:</span> <span class="estring">&quot;2011-2021, Jocelyn Fiat, Javier Velilla, Olivier Ligot, Colin Adams, Alexander Kogtenkov, Eiffel Software and others&quot;</span>
+	<span class="eitag">license</span><span class="esymbol">:</span> <span class="estring">&quot;Eiffel Forum License v2 (see </span><a class="estring" href="http://www.eiffel.com/licensing/forum.txt">http://www.eiffel.com/licensing/forum.txt</a><span class="estring">)&quot;</span>
+	<span class="eitag">source</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">Eiffel Software</span>
+		<span class="estring">5949 Hollister Ave., Goleta, CA 93117 USA</span>
+		<span class="estring">Telephone 805-685-1006, Fax 805-685-6869</span>
+		<span class="estring">Website </span><a class="estring" href="http://www.eiffel.com">http://www.eiffel.com</a>
+		<span class="estring">Customer support </span><a class="estring" href="http://support.eiffel.com">http://support.eiffel.com</a>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+
+<span class="ekeyword">end</span> <span class="ecomment">--</span> <span class="ecomment">class </span><a class="eclass" href="../wsf/wsf_router_mapping_short.html">WSF_ROUTER_MAPPING</a></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="wsf_router_mapping_chart.html">Chart</a>
+<a class="nav class" href="wsf_router_mapping_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="wsf_router_mapping"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
+

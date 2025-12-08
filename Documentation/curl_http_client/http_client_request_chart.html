@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="Object representing a http client request It is mainly used internally by the HTTP_CLIENT_SESSION"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="2011-2018, Jocelyn Fiat, Javier Velilla, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>http_client_request Chart</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<span class="nav class selected">Chart</span>
+<a class="nav class" href="http_client_request_links.html">Relations</a>
+<a class="nav class" href="http_client_request_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="http_client_request"></span>
+</div></form><pre><span class="ekeyword">deferred</span> <span class="ekeyword">class</span>
+	<a class="eclass" href="../curl_http_client/http_client_request_chart.html">HTTP_CLIENT_REQUEST</a>
+
+<span class="ekeyword">General</span>
+	<span class="eitag">cluster</span><span class="esymbol">:</span> <span class="necluster">src</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> 
+		<span class="estring">&quot;Object representing a http client request</span>
+		<span class="estring">It is mainly used internally by the HTTP_CLIENT_SESSION&quot;</span>
+
+<span class="ekeyword">Ancestors</span>
+	<a class="eclass" href="../base/refactoring_helper_chart.html">REFACTORING_HELPER</a>
+
+<span class="ekeyword">Queries</span>
+	<span title="`auth_type' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_short.html#f_auth_type">auth_type</a><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a></span>
+	<span title="`auth_type_id' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_short.html#f_auth_type_id">auth_type_id</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+	<span title="`buffer_size' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_short.html#f_buffer_size">buffer_size</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+	<span title="`chunk_size' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_short.html#f_chunk_size">chunk_size</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+	<span title="`connect_timeout' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_short.html#f_connect_timeout">connect_timeout</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+	<span title="`credentials' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_short.html#f_credentials">credentials</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_32_chart.html">READABLE_STRING_32</a></span>
+	<span title="`default_response_charset' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_short.html#f_default_response_charset">default_response_charset</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a></span>
+	<span title="`headers' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_short.html#f_headers">headers</a><span class="esymbol">:</span> <a class="eclass" href="../base/hash_table_chart.html">HASH_TABLE</a> <span class="esymbol">[</span><a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">,</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">]</span></span>
+	<span title="`ignore_content_length' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_short.html#f_ignore_content_length">ignore_content_length</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`is_debug' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_short.html#f_is_debug">is_debug</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`is_insecure' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_short.html#f_is_insecure">is_insecure</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`max_redirects' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_short.html#f_max_redirects">max_redirects</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+	<span title="`password' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_short.html#f_password">password</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_32_chart.html">READABLE_STRING_32</a></span>
+	<span title="`proxy' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_short.html#f_proxy">proxy</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/tuple_chart.html">TUPLE</a> <span class="esymbol">[</span><a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">,</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a><span class="esymbol">]</span></span>
+	<span title="`request_method' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_short.html#f_request_method">request_method</a><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a></span>
+	<span title="`response' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_short.html#f_response">response</a><span class="esymbol">:</span> <a class="eclass" href="../curl_http_client/http_client_response_chart.html">HTTP_CLIENT_RESPONSE</a></span>
+	<span title="`timeout' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_short.html#f_timeout">timeout</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+	<span title="`to_implement_assertion' was declared in REFACTORING_HELPER"><a class="efeature" href="../base/refactoring_helper_short.html#f_to_implement_assertion">to_implement_assertion</a> <span class="esymbol">(</span><span class="elocal">comment</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`url' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_short.html#f_url">url</a><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a></span>
+	<span title="`username' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_short.html#f_username">username</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_32_chart.html">READABLE_STRING_32</a></span>
+
+<span class="ekeyword">Commands</span>
+	<span title="`fixme' was declared in REFACTORING_HELPER"><a class="efeature" href="../base/refactoring_helper_short.html#f_fixme">fixme</a> <span class="esymbol">(</span><span class="elocal">comment</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">)</span></span>
+	<span title="`to_implement' was declared in REFACTORING_HELPER"><a class="efeature" href="../base/refactoring_helper_short.html#f_to_implement">to_implement</a> <span class="esymbol">(</span><span class="elocal">comment</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">)</span></span>
+
+</pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<span class="nav class selected">Chart</span>
+<a class="nav class" href="http_client_request_links.html">Relations</a>
+<a class="nav class" href="http_client_request_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="http_client_request"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>

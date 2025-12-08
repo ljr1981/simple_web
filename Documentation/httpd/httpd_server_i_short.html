@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="HTTPD server interface"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="2011-2018, Jocelyn Fiat, Javier Velilla, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>httpd_server_i Contracts</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="httpd_server_i_chart.html">Chart</a>
+<a class="nav class" href="httpd_server_i_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="httpd_server_i"></span>
+</div></form><pre><span class="ekeyword">note</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;HTTPD server interface&quot;</span>
+	<span class="eitag">date</span><span class="esymbol">:</span> <span class="estring">&quot;$Date$&quot;</span>
+	<span class="eitag">revision</span><span class="esymbol">:</span> <span class="estring">&quot;$Revision$&quot;</span>
+
+<span class="ekeyword">deferred</span> <span class="ekeyword">class</span> <span class="ekeyword">interface</span>
+	<a class="eclass" href="../httpd/httpd_server_i_short.html">HTTPD_SERVER_I</a>
+
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Access</span>
+
+	<a name="f_is_verbose"></a><a class="efeature" href="../httpd/httpd_server_i_short.html#f_is_verbose">is_verbose</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is verbose for output messages.</span>
+
+	<a name="f_verbose_level"></a><a class="efeature" href="../httpd/httpd_server_i_short.html#f_verbose_level">verbose_level</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> Verbosity of output.</span>
+
+	<a name="f_configuration"></a><a class="efeature" href="../httpd/httpd_server_i_short.html#f_configuration">configuration</a><span class="esymbol">:</span> <a class="eclass" href="../httpd/httpd_configuration_short.html">HTTPD_CONFIGURATION</a>
+			<span class="ecomment">--</span><span class="ecomment"> Associated server configuration.</span>
+
+	<a name="f_controller"></a><a class="efeature" href="../httpd/httpd_server_i_short.html#f_controller">controller</a><span class="esymbol">:</span> <span class="ekeyword">separate</span> <a class="eclass" href="../httpd/httpd_controller_short.html">HTTPD_CONTROLLER</a>
+
+	<a name="f_factory"></a><a class="efeature" href="../httpd/httpd_server_i_short.html#f_factory">factory</a><span class="esymbol">:</span> <span class="ekeyword">separate</span> <a class="eclass" href="../httpd/httpd_request_handler_factory_short.html">HTTPD_REQUEST_HANDLER_FACTORY</a>
+
+	<a name="f_is_persistent_connection_supported"></a><a class="efeature" href="../httpd/httpd_server_i_short.html#f_is_persistent_connection_supported">Is_persistent_connection_supported</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a> <span class="esymbol">=</span> <span class="ekeyword">True</span>
+			<span class="ecomment">--</span><span class="ecomment"> Is persistent connection supported?</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Callbacks</span>
+
+	<a name="f_observer"></a><a class="efeature" href="../httpd/httpd_server_i_short.html#f_observer">observer</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <span class="ekeyword">separate</span> <a class="eclass" href="../httpd/httpd_server_observer_short.html">HTTPD_SERVER_OBSERVER</a>
+
+	<a name="f_set_observer"></a><a class="efeature" href="../httpd/httpd_server_i_short.html#f_set_observer">set_observer</a> <span class="esymbol">(</span><span class="elocal">obs</span><span class="esymbol">:</span> <span class="ekeyword">like</span> <a class="efeature" href="../httpd/httpd_server_i_short.html#f_observer">observer</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set </span><span class="ecomment">`</span><a class="efeature" href="../httpd/httpd_server_i_short.html#f_observer">observer</a><span class="ecomment">`</span><span class="ecomment"> to </span><span class="equoted">obs</span><span class="ecomment">.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Access: listening</span>
+
+	<a name="f_port"></a><a class="efeature" href="../httpd/httpd_server_i_short.html#f_port">port</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> Effective listening port.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Status: listening</span>
+
+	<a name="f_is_launched"></a><a class="efeature" href="../httpd/httpd_server_i_short.html#f_is_launched">is_launched</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Server launched and listening on </span><span class="ecomment">`</span><a class="efeature" href="../httpd/httpd_server_i_short.html#f_port">port</a><span class="ecomment">`</span><span class="ecomment">	</span>
+
+	<a name="f_is_terminated"></a><a class="efeature" href="../httpd/httpd_server_i_short.html#f_is_terminated">is_terminated</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is terminated?</span>
+
+	<a name="f_is_shutdown_requested"></a><a class="efeature" href="../httpd/httpd_server_i_short.html#f_is_shutdown_requested">is_shutdown_requested</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Set true to stop accept loop</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Execution</span>
+
+	<a name="f_launch"></a><a class="efeature" href="../httpd/httpd_server_i_short.html#f_launch">launch</a>
+
+	<a name="f_shutdown_server"></a><a class="efeature" href="../httpd/httpd_server_i_short.html#f_shutdown_server">shutdown_server</a>
+
+	<a name="f_controller_shutdown"></a><a class="efeature" href="../httpd/httpd_server_i_short.html#f_controller_shutdown">controller_shutdown</a> <span class="esymbol">(</span><span class="elocal">ctl</span><span class="esymbol">:</span> <span class="ekeyword">attached</span> <span class="ekeyword">like</span> <a class="efeature" href="../httpd/httpd_server_i_short.html#f_controller">controller</a><span class="esymbol">)</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Listening</span>
+
+	<a name="f_listen"></a><a class="efeature" href="../httpd/httpd_server_i_short.html#f_listen">listen</a>
+			<span class="ecomment">--</span><span class="ecomment"> Creates a socket and connects to the http server.</span>
+			<span class="ecomment">--</span><span class="ecomment"> </span><span class="equoted">a_server</span><span class="ecomment">: The main server object</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Event</span>
+
+	<a name="f_on_launched"></a><a class="efeature" href="../httpd/httpd_server_i_short.html#f_on_launched">on_launched</a> <span class="esymbol">(</span><span class="elocal">a_port</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Server launched using port </span><span class="equoted">a_port</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">not_launched</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../httpd/httpd_server_i_short.html#f_is_launched">is_launched</a>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">is_launched</span><span class="esymbol">:</span> <a class="efeature" href="../httpd/httpd_server_i_short.html#f_is_launched">is_launched</a>
+
+	<a name="f_on_stopped"></a><a class="efeature" href="../httpd/httpd_server_i_short.html#f_on_stopped">on_stopped</a>
+			<span class="ecomment">--</span><span class="ecomment"> Server stopped</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">is_launched</span><span class="esymbol">:</span> <a class="efeature" href="../httpd/httpd_server_i_short.html#f_is_launched">is_launched</a>
+
+	<a name="f_on_terminated"></a><a class="efeature" href="../httpd/httpd_server_i_short.html#f_on_terminated">on_terminated</a>
+			<span class="ecomment">--</span><span class="ecomment"> Server terminated</span>
+		<span class="ekeyword">require</span>
+			<a class="efeature" href="../httpd/httpd_server_i_short.html#f_is_terminated">is_terminated</a>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Configuration change</span>
+
+	<a name="f_apply_configuration"></a><a class="efeature" href="../httpd/httpd_server_i_short.html#f_apply_configuration">apply_configuration</a>
+		<span class="ekeyword">require</span>
+			<span class="etag">is_not_launched</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../httpd/httpd_server_i_short.html#f_is_launched">is_launched</a>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Output</span>
+
+	<a name="f_output"></a><a class="efeature" href="../httpd/httpd_server_i_short.html#f_output">output</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/file_short.html">FILE</a>
+
+	<a name="f_set_log_output"></a><a class="efeature" href="../httpd/httpd_server_i_short.html#f_set_log_output">set_log_output</a> <span class="esymbol">(</span><span class="elocal">f</span><span class="esymbol">:</span> <a class="eclass" href="../base/file_short.html">FILE</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set </span><span class="ecomment">`</span><a class="efeature" href="../httpd/httpd_server_i_short.html#f_output">output</a><span class="ecomment">`</span><span class="ecomment"> to </span><span class="equoted">f</span><span class="ecomment">.</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">output_set</span><span class="esymbol">:</span> <a class="efeature" href="../httpd/httpd_server_i_short.html#f_output">output</a> <span class="esymbol">=</span> <span class="elocal">f</span>
+
+	<a name="f_log"></a><a class="efeature" href="../httpd/httpd_server_i_short.html#f_log">log</a> <span class="esymbol">(</span><span class="elocal">a_message</span><span class="esymbol">:</span> <span class="ekeyword">separate</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Log </span><span class="equoted">a_message</span><span class="ecomment">.</span>
+
+	<a name="f_timeout_representation"></a><a class="efeature" href="../httpd/httpd_server_i_short.html#f_timeout_representation">timeout_representation</a> <span class="esymbol">(</span><span class="elocal">a_ns</span><span class="esymbol">:</span> <a class="eclass" href="../base/natural_64_short.html">NATURAL_64</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+	
+<span class="ekeyword">note</span>
+	<span class="eitag">copyright</span><span class="esymbol">:</span> <span class="estring">&quot;2011-2018, Jocelyn Fiat, Javier Velilla, Eiffel Software and others&quot;</span>
+	<span class="eitag">license</span><span class="esymbol">:</span> <span class="estring">&quot;Eiffel Forum License v2 (see </span><a class="estring" href="http://www.eiffel.com/licensing/forum.txt">http://www.eiffel.com/licensing/forum.txt</a><span class="estring">)&quot;</span>
+	<span class="eitag">source</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">Eiffel Software</span>
+		<span class="estring">5949 Hollister Ave., Goleta, CA 93117 USA</span>
+		<span class="estring">Telephone 805-685-1006, Fax 805-685-6869</span>
+		<span class="estring">Website </span><a class="estring" href="http://www.eiffel.com">http://www.eiffel.com</a>
+		<span class="estring">Customer support </span><a class="estring" href="http://support.eiffel.com">http://support.eiffel.com</a>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+
+<span class="ekeyword">end</span> <span class="ecomment">--</span> <span class="ecomment">class </span><a class="eclass" href="../httpd/httpd_server_i_short.html">HTTPD_SERVER_I</a></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="httpd_server_i_chart.html">Chart</a>
+<a class="nav class" href="httpd_server_i_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="httpd_server_i"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
+

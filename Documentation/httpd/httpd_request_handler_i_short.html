@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="HTTPD handler interface processing request."/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="2011-2018, Jocelyn Fiat, Javier Velilla, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>httpd_request_handler_i Contracts</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="httpd_request_handler_i_chart.html">Chart</a>
+<a class="nav class" href="httpd_request_handler_i_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="httpd_request_handler_i"></span>
+</div></form><pre><span class="ekeyword">note</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;HTTPD handler interface processing request.&quot;</span>
+	<span class="eitag">date</span><span class="esymbol">:</span> <span class="estring">&quot;$Date$&quot;</span>
+	<span class="eitag">revision</span><span class="esymbol">:</span> <span class="estring">&quot;$Revision$&quot;</span>
+
+<span class="ekeyword">deferred</span> <span class="ekeyword">class</span> <span class="ekeyword">interface</span>
+	<a class="eclass" href="../httpd/httpd_request_handler_i_short.html">HTTPD_REQUEST_HANDLER_I</a>
+
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Status report</span>
+
+	<a name="f_is_connected"></a><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_is_connected">is_connected</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is handler connected to incoming request via </span><span class="ecomment">`</span><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_client_socket">client_socket</a><span class="ecomment">`</span><span class="ecomment">?</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Access</span>
+
+	<a name="f_internal_client_socket"></a><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_internal_client_socket">internal_client_socket</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../httpd/httpd_stream_socket_short.html">HTTPD_STREAM_SOCKET</a>
+
+	<a name="f_client_socket"></a><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_client_socket">client_socket</a><span class="esymbol">:</span> <a class="eclass" href="../httpd/httpd_stream_socket_short.html">HTTPD_STREAM_SOCKET</a>
+
+	<a name="f_request_header"></a><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_request_header">request_header</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Header' source</span>
+
+	<a name="f_request_header_map"></a><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_request_header_map">request_header_map</a><span class="esymbol">:</span> <a class="eclass" href="../base/hash_table_short.html">HASH_TABLE</a> <span class="esymbol">[</span><a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">,</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">]</span>
+			<span class="ecomment">--</span><span class="ecomment"> Contains key:value of the header</span>
+
+	<a name="f_method"></a><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_method">method</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> http verb</span>
+
+	<a name="f_uri"></a><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_uri">uri</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;http endpoint</span>
+
+	<a name="f_version"></a><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_version">version</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;http_version</span>
+
+	<a name="f_remote_info"></a><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_remote_info">remote_info</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/tuple_short.html">TUPLE</a> <span class="esymbol">[</span><span class="elocal">addr</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">;</span> <span class="elocal">hostname</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">;</span> <span class="elocal">port</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a><span class="esymbol">]</span>
+			<span class="ecomment">--</span><span class="ecomment"> Information related to remote client</span>
+
+	<a name="f_is_persistent_connection_requested"></a><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_is_persistent_connection_requested">is_persistent_connection_requested</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Persistent connection requested?</span>
+			<span class="ecomment">--</span><span class="ecomment"> either has &quot;Connection: keep-alive&quot; header,</span>
+			<span class="ecomment">--</span><span class="ecomment"> or is HTTP/1.1 and no header &quot;Connection: close&quot;.</span>
+
+	<a name="f_is_http_version_1_0"></a><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_is_http_version_1_0">is_http_version_1_0</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+
+	<a name="f_is_http_version_1_1"></a><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_is_http_version_1_1">is_http_version_1_1</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+
+	<a name="f_is_http_version_2"></a><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_is_http_version_2">is_http_version_2</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Settings	</span>
+
+	<a name="f_is_verbose"></a><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_is_verbose">is_verbose</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Output messages?</span>
+
+	<a name="f_verbose_level"></a><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_verbose_level">verbose_level</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> Output verbosity.</span>
+
+	<a name="f_is_secure"></a><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_is_secure">is_secure</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is secure socket?</span>
+			<span class="ecomment">--</span><span class="ecomment"> i.e: SSL?			</span>
+
+	<a name="f_is_persistent_connection_supported"></a><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_is_persistent_connection_supported">is_persistent_connection_supported</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is persistent connection supported?</span>
+
+	<a name="f_is_next_persistent_connection_supported"></a><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_is_next_persistent_connection_supported">is_next_persistent_connection_supported</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is next persistent connection supported?</span>
+			<span class="ecomment">--</span><span class="ecomment"> note: it is relevant only if </span><span class="ecomment">`</span><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_is_persistent_connection_supported">is_persistent_connection_supported</a><span class="ecomment">`</span><span class="ecomment"> is True.</span>
+
+	<a name="f_timeout_ns"></a><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_timeout_ns">timeout_ns</a><span class="esymbol">:</span> <a class="eclass" href="../base/natural_64_short.html">NATURAL_64</a>
+			<span class="ecomment">--</span><span class="ecomment"> nanoseconds</span>
+			<span class="ecomment">--</span><span class="ecomment"> Amount of nanoseconds that the server waits for receipts and transmissions during communications.</span>
+
+	<a name="f_socket_recv_timeout_ns"></a><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_socket_recv_timeout_ns">socket_recv_timeout_ns</a><span class="esymbol">:</span> <a class="eclass" href="../base/natural_64_short.html">NATURAL_64</a>
+			<span class="ecomment">--</span><span class="ecomment"> nanoseconds</span>
+			<span class="ecomment">--</span><span class="ecomment"> Amount of nanoseconds that the server waits for receiving data on socket during communications.</span>
+
+	<a name="f_max_keep_alive_requests"></a><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_max_keep_alive_requests">max_keep_alive_requests</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> Maximum number of requests allowed per persistent connection.</span>
+
+	<a name="f_keep_alive_timeout_ns"></a><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_keep_alive_timeout_ns">keep_alive_timeout_ns</a><span class="esymbol">:</span> <a class="eclass" href="../base/natural_64_short.html">NATURAL_64</a>
+			<span class="ecomment">--</span><span class="ecomment"> nanoseconds</span>
+			<span class="ecomment">--</span><span class="ecomment"> Number of nanoseconds for persistent connection timeout.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Status report</span>
+
+	<a name="f_has_error"></a><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_has_error">has_error</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Error occurred during </span><span class="ecomment">`</span><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_get_request_header">get_request_header</a><span class="ecomment">`</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Status change</span>
+
+	<a name="f_report_error"></a><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_report_error">report_error</a> <span class="esymbol">(</span><span class="elocal">m</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Report error occurred, with optional message </span><span class="equoted">m</span><span class="ecomment">.</span>
+
+	<a name="f_reset_error"></a><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_reset_error">reset_error</a>
+			<span class="ecomment">--</span><span class="ecomment"> Reset previous error for current request handler.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Change</span>
+
+	<a name="f_set_is_verbose"></a><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_set_is_verbose">set_is_verbose</a> <span class="esymbol">(</span><span class="elocal">b</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set </span><span class="ecomment">`</span><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_is_verbose">is_verbose</a><span class="ecomment">`</span><span class="ecomment"> with </span><span class="equoted">b</span><span class="ecomment">.</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">is_verbose_set</span><span class="esymbol">:</span> <a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_is_verbose">is_verbose</a> <span class="esymbol">=</span> <span class="elocal">b</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Execution</span>
+
+	<a name="f_safe_execute"></a><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_safe_execute">safe_execute</a>
+			<span class="ecomment">--</span><span class="ecomment"> Execute accepted incoming connection as request.</span>
+
+	<a name="f_execute"></a><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_execute">execute</a>
+		<span class="ekeyword">require</span>
+			<span class="etag">is_connected</span><span class="esymbol">:</span> <a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_is_connected">is_connected</a>
+
+	<a name="f_execute_request"></a><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_execute_request">execute_request</a> <span class="esymbol">(</span><span class="elocal">a_is_reusing_connection</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Execute http request, and if </span><span class="equoted">a_is_reusing_connection</span><span class="ecomment"> is True</span>
+			<span class="ecomment">--</span><span class="ecomment"> the execution is reusing the persistent connection.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">is_connected</span><span class="esymbol">:</span> <a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_is_connected">is_connected</a>
+			<span class="etag">reuse_connection_when_possible</span><span class="esymbol">:</span> <span class="elocal">a_is_reusing_connection</span> <a class="ekeyword" href="../base/boolean_short.html#f_implication">implies</a> <a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_is_persistent_connection_supported">is_persistent_connection_supported</a>
+			<span class="etag">no_error</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_has_error">has_error</a>
+			<span class="etag">remote_info_set</span><span class="esymbol">:</span> <a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_remote_info">remote_info</a> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+
+	<a name="f_release"></a><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_release">release</a>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Request processing</span>
+
+	<a name="f_process_request"></a><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_process_request">process_request</a> <span class="esymbol">(</span><span class="elocal">a_socket</span><span class="esymbol">:</span> <a class="eclass" href="../httpd/httpd_stream_socket_short.html">HTTPD_STREAM_SOCKET</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Process request on socket </span><span class="equoted">a_socket</span><span class="ecomment">.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">no_error</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_has_error">has_error</a>
+			<span class="etag">a_uri_attached</span><span class="esymbol">:</span> <a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_uri">uri</a> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">a_method_attached</span><span class="esymbol">:</span> <a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_method">method</a> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">a_header_map_attached</span><span class="esymbol">:</span> <a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_request_header_map">request_header_map</a> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">a_header_text_attached</span><span class="esymbol">:</span> <a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_request_header">request_header</a> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">a_socket_attached</span><span class="esymbol">:</span> <span class="elocal">a_socket</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+
+	<a name="f_process_bad_request"></a><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_process_bad_request">process_bad_request</a> <span class="esymbol">(</span><span class="elocal">a_socket</span><span class="esymbol">:</span> <a class="eclass" href="../httpd/httpd_stream_socket_short.html">HTTPD_STREAM_SOCKET</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Process bad request catched on </span><span class="equoted">a_socket</span><span class="ecomment">.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">has_error</span><span class="esymbol">:</span> <a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_has_error">has_error</a>
+			<span class="etag">a_socket_attached</span><span class="esymbol">:</span> <span class="elocal">a_socket</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Parsing</span>
+
+	<a name="f_get_request_header"></a><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_get_request_header">get_request_header</a> <span class="esymbol">(</span><span class="elocal">a_socket</span><span class="esymbol">:</span> <a class="eclass" href="../httpd/httpd_stream_socket_short.html">HTTPD_STREAM_SOCKET</a><span class="esymbol">;</span> <span class="elocal">a_is_reusing_connection</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Analyze message extracted from </span><span class="equoted">a_socket</span><span class="ecomment"> as HTTP request.</span>
+			<span class="ecomment">--</span><span class="ecomment"> If </span><span class="equoted">a_is_reusing_connection</span><span class="ecomment"> is True, then first use</span>
+			<span class="ecomment">--</span><span class="ecomment"> Note: it reads from socket.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Note: it updates </span><span class="ecomment">`</span><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_request_header">request_header</a><span class="ecomment">`</span><span class="ecomment"> and </span><span class="ecomment">`</span><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_request_header_map">request_header_map</a><span class="ecomment">`</span><span class="ecomment">, and eventually </span><span class="ecomment">`</span><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_is_persistent_connection_requested">is_persistent_connection_requested</a><span class="ecomment">`</span><span class="ecomment">.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">input_readable</span><span class="esymbol">:</span> <span class="elocal">a_socket</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span> <a class="ekeyword" href="../base/boolean_short.html#f_conjuncted_semistrict">and then</a> <span class="elocal">a_socket</span><span class="edot">.</span><span class="nefeature">is_open_read</span>
+
+	<a name="f_has_keep_alive_http_connection_header"></a><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_has_keep_alive_http_connection_header">has_keep_alive_http_connection_header</a> <span class="esymbol">(</span><span class="elocal">h_map</span><span class="esymbol">:</span> <span class="ekeyword">like</span> <a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_request_header_map">request_header_map</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Does Current request header map </span><span class="equoted">h_map</span><span class="ecomment"> have &quot;keep-alive&quot; connection header?</span>
+
+	<a name="f_has_close_http_connection_header"></a><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_has_close_http_connection_header">has_close_http_connection_header</a> <span class="esymbol">(</span><span class="elocal">h_map</span><span class="esymbol">:</span> <span class="ekeyword">like</span> <a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_request_header_map">request_header_map</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Does Current request header map </span><span class="equoted">h_map</span><span class="ecomment"> have &quot;close&quot; connection header?</span>
+
+	<a name="f_analyze_request_line"></a><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_analyze_request_line">analyze_request_line</a> <span class="esymbol">(</span><span class="elocal">line</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Analyze </span><span class="equoted">line</span><span class="ecomment"> as a HTTP request line.</span>
+			<span class="ecomment">--</span><span class="ecomment"> note: may update </span><span class="ecomment">`</span><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_has_error">has_error</a><span class="ecomment">`</span><span class="ecomment">.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">valid_line</span><span class="esymbol">:</span> <span class="elocal">line</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span> <a class="ekeyword" href="../base/boolean_short.html#f_conjuncted_semistrict">and then</a> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">line</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+
+	<a name="f_next_line"></a><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_next_line">next_line</a> <span class="esymbol">(</span><span class="elocal">a_socket</span><span class="esymbol">:</span> <a class="eclass" href="../httpd/httpd_stream_socket_short.html">HTTPD_STREAM_SOCKET</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Next line fetched from </span><span class="equoted">a_socket</span><span class="ecomment"> is available.</span>
+			<span class="ecomment">--</span><span class="ecomment"> note: may update </span><span class="ecomment">`</span><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_has_error">has_error</a><span class="ecomment">`</span><span class="ecomment">.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">not_has_error</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_has_error">has_error</a>
+			<span class="etag">is_readable</span><span class="esymbol">:</span> <span class="elocal">a_socket</span><span class="edot">.</span><span class="nefeature">is_open_read</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Output</span>
+
+	<a name="f_logger"></a><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_logger">logger</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../httpd/httpd_logger_short.html">HTTPD_LOGGER</a>
+
+	<a name="f_set_logger"></a><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_set_logger">set_logger</a> <span class="esymbol">(</span><span class="elocal">a_logger</span><span class="esymbol">:</span> <span class="ekeyword">like</span> <a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_logger">logger</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set </span><span class="ecomment">`</span><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_logger">logger</a><span class="ecomment">`</span><span class="ecomment"> with </span><span class="equoted">a_logger</span><span class="ecomment">.</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">logger_set</span><span class="esymbol">:</span> <a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_logger">logger</a> <span class="esymbol">=</span> <span class="elocal">a_logger</span>
+
+	<a name="f_log_with_separation_line"></a><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_log_with_separation_line">log_with_separation_line</a> <span class="esymbol">(</span><span class="elocal">m</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">;</span> <span class="elocal">a_level</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Log message </span><span class="equoted">m</span><span class="ecomment">.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">is_verbose</span><span class="esymbol">:</span> <a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_is_verbose">is_verbose</a>
+
+	<a name="f_log"></a><a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_log">log</a> <span class="esymbol">(</span><span class="elocal">m</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">;</span> <span class="elocal">a_level</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Log message </span><span class="equoted">m</span><span class="ecomment">.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">is_verbose</span><span class="esymbol">:</span> <a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_is_verbose">is_verbose</a>
+	
+<span class="ekeyword">invariant</span>
+	<span class="etag">request_header_attached</span><span class="esymbol">:</span> <a class="efeature" href="../httpd/httpd_request_handler_i_short.html#f_request_header">request_header</a> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+
+<span class="ekeyword">note</span>
+	<span class="eitag">copyright</span><span class="esymbol">:</span> <span class="estring">&quot;2011-2018, Jocelyn Fiat, Javier Velilla, Eiffel Software and others&quot;</span>
+	<span class="eitag">license</span><span class="esymbol">:</span> <span class="estring">&quot;Eiffel Forum License v2 (see </span><a class="estring" href="http://www.eiffel.com/licensing/forum.txt">http://www.eiffel.com/licensing/forum.txt</a><span class="estring">)&quot;</span>
+	<span class="eitag">source</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">Eiffel Software</span>
+		<span class="estring">5949 Hollister Ave., Goleta, CA 93117 USA</span>
+		<span class="estring">Telephone 805-685-1006, Fax 805-685-6869</span>
+		<span class="estring">Website </span><a class="estring" href="http://www.eiffel.com">http://www.eiffel.com</a>
+		<span class="estring">Customer support </span><a class="estring" href="http://support.eiffel.com">http://support.eiffel.com</a>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+
+<span class="ekeyword">end</span> <span class="ecomment">--</span> <span class="ecomment">class </span><a class="eclass" href="../httpd/httpd_request_handler_i_short.html">HTTPD_REQUEST_HANDLER_I</a></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="httpd_request_handler_i_chart.html">Chart</a>
+<a class="nav class" href="httpd_request_handler_i_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="httpd_request_handler_i"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
+

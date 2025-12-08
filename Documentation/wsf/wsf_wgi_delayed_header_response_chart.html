@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="Summary description for {WGI_DELAYED_HEADER_RESPONSE}."/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="2011-2015, Jocelyn Fiat, Javier Velilla, Olivier Ligot, Colin Adams, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>wsf_wgi_delayed_header_response Chart</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<span class="nav class selected">Chart</span>
+<a class="nav class" href="wsf_wgi_delayed_header_response_links.html">Relations</a>
+<a class="nav class" href="wsf_wgi_delayed_header_response_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="wsf_wgi_delayed_header_response"></span>
+</div></form><pre><span class="ekeyword">class</span>
+	<a class="eclass" href="../wsf/wsf_wgi_delayed_header_response_chart.html">WSF_WGI_DELAYED_HEADER_RESPONSE</a>
+
+<span class="ekeyword">General</span>
+	<span class="eitag">cluster</span><span class="esymbol">:</span> <span class="necluster">src</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;Summary description for </span><span class="estring">{</span><span class="estring">WGI_DELAYED_HEADER_RESPONSE</span><span class="estring">}</span><span class="estring">.&quot;</span>
+	<span class="eitag">create</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_wgi_delayed_header_response_short.html#f_make">make</a>
+
+<span class="ekeyword">Ancestors</span>
+	<span class="neclass">WGI_FILTER_RESPONSE</span>
+	<a class="eclass" href="../wsf/wsf_response_exporter_chart.html">WSF_RESPONSE_EXPORTER</a><span class="echar">*</span>
+
+<span class="ekeyword">Queries</span>
+	<span title="`header_committed' was declared in WGI_FILTER_RESPONSE"><span class="nefeature">header_committed</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`message_committed' is declared in `Current'"><a class="efeature" href="../wsf/wsf_wgi_delayed_header_response_short.html#f_message_committed">message_committed</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`message_writable' is declared in `Current'"><a class="efeature" href="../wsf/wsf_wgi_delayed_header_response_short.html#f_message_writable">Message_writable</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`post_commit_action' was declared in WGI_RESPONSE"><span class="nefeature">post_commit_action</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/procedure_chart.html">PROCEDURE</a></span>
+	<span title="`status_code' was declared in WGI_FILTER_RESPONSE"><span class="nefeature">status_code</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+	<span title="`status_committed' was declared in WGI_FILTER_RESPONSE"><span class="nefeature">status_committed</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`status_is_set' was declared in WGI_FILTER_RESPONSE"><span class="nefeature">status_is_set</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`status_reason_phrase' was declared in WGI_FILTER_RESPONSE"><span class="nefeature">status_reason_phrase</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a></span>
+	<span title="`wgi_response' was declared in WGI_FILTER_RESPONSE"><span class="nefeature">wgi_response</span><span class="esymbol">:</span> <span class="neclass">WGI_RESPONSE</span></span>
+
+<span class="ekeyword">Commands</span>
+	<span title="`flush' is declared in `Current'"><a class="efeature" href="../wsf/wsf_wgi_delayed_header_response_short.html#f_flush">flush</a></span>
+	<span title="`put_character' is declared in `Current'"><a class="efeature" href="../wsf/wsf_wgi_delayed_header_response_short.html#f_put_character">put_character</a> <span class="esymbol">(</span><span class="elocal">c</span><span class="esymbol">:</span> <a class="eclass" href="../base/character_8_chart.html">CHARACTER_8</a><span class="esymbol">)</span></span>
+	<span title="`put_error' was declared in WGI_FILTER_RESPONSE"><span class="nefeature">put_error</span> <span class="esymbol">(</span><span class="elocal">a_message</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">)</span></span>
+	<span title="`put_file_content' is declared in `Current'"><a class="efeature" href="../wsf/wsf_wgi_delayed_header_response_short.html#f_put_file_content">put_file_content</a> <span class="esymbol">(</span><span class="elocal">f</span><span class="esymbol">:</span> <a class="eclass" href="../base/file_chart.html">FILE</a><span class="esymbol">;</span> <span class="elocal">a_offset</span><span class="esymbol">,</span> <span class="elocal">a_count</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a><span class="esymbol">)</span></span>
+	<span title="`put_header_text' was declared in WGI_FILTER_RESPONSE"><span class="nefeature">put_header_text</span> <span class="esymbol">(</span><span class="elocal">a_text</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">)</span></span>
+	<span title="`put_string' is declared in `Current'"><a class="efeature" href="../wsf/wsf_wgi_delayed_header_response_short.html#f_put_string">put_string</a> <span class="esymbol">(</span><span class="elocal">s</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">)</span></span>
+	<span title="`put_substring' is declared in `Current'"><a class="efeature" href="../wsf/wsf_wgi_delayed_header_response_short.html#f_put_substring">put_substring</a> <span class="esymbol">(</span><span class="elocal">s</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">;</span> <span class="elocal">a_begin_index</span><span class="esymbol">,</span> <span class="elocal">a_end_index</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a><span class="esymbol">)</span></span>
+	<span title="`set_post_commit_action' was declared in WGI_RESPONSE"><span class="nefeature">set_post_commit_action</span> <span class="esymbol">(</span><span class="elocal">act</span><span class="esymbol">:</span> <span class="esymbol">[</span><span class="ekeyword">like</span> <span class="nefeature">post_commit_action</span><span class="esymbol">]</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/procedure_chart.html">PROCEDURE</a><span class="esymbol">)</span></span>
+	<span title="`set_status_code' was declared in WGI_FILTER_RESPONSE"><span class="nefeature">set_status_code</span> <span class="esymbol">(</span><span class="elocal">a_code</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a><span class="esymbol">;</span> <span class="elocal">a_reason_phrase</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">)</span></span>
+
+</pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<span class="nav class selected">Chart</span>
+<a class="nav class" href="wsf_wgi_delayed_header_response_links.html">Relations</a>
+<a class="nav class" href="wsf_wgi_delayed_header_response_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="wsf_wgi_delayed_header_response"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>

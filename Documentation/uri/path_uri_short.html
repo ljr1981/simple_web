@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="TTTObject representing File uri for local PATH representationT TTTi.e provide conversion from a 'file://' URI to native PATH object TTT TTTCreation from string, file URI, and PATH TTTThis allows to easily convert PATH to URI, and reverse TTT TTTfor instance on Windows TTTTuri: PATH_URI TTTTcreate uri.make_from_path (create {PATH}.make_from_string (c:\dev\abc\foo)) TTTTprint (uri.string) TTTT> file:///c:/dev/abc/foo TTTT TTTTcreate v.make_from_file_uri (create {URI}.make_from_string (file:///c:/dev/abc/foo/bar)) TTTTprint (uri.file_path.name) TTTT> c:\dev\abc\foo\bar "/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="Copyright (c) 1984-2019, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>path_uri Contracts</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="path_uri_chart.html">Chart</a>
+<a class="nav class" href="path_uri_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="path_uri"></span>
+</div></form><pre><span class="ekeyword">note</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">			Object representing File uri for local PATH representation	</span>
+		<span class="estring">			i.e provide conversion from a '</span><a class="estring" href="file://">file://</a><span class="estring">' URI to native PATH object</span>
+		<span class="estring">			</span>
+		<span class="estring">			Creation from string, file URI, and PATH</span>
+		<span class="estring">			This allows to easily convert PATH to URI, and reverse</span>
+		<span class="estring">			</span>
+		<span class="estring">			for instance on Windows</span>
+		<span class="estring">				uri: PATH_URI</span>
+		<span class="estring">				create uri.make_from_path (create </span><span class="esymbol">{</span><a class="eclass" href="../base/path_short.html">PATH</a><span class="esymbol">}</span><span class="edot">.</span><a class="efeature" href="../base/path_short.html#f_make_from_string">make_from_string</a><span class="estring"> (&quot;c:\dev\abc\foo&quot;))</span>
+		<span class="estring">				print (uri.string)</span>
+		<span class="estring">				&gt; </span><a class="estring" href="file:///c:/dev/abc/foo">file:///c:/dev/abc/foo</a>
+		<span class="estring">				</span>
+		<span class="estring">				create v.make_from_file_uri (create </span><span class="esymbol">{</span><a class="eclass" href="../uri/uri_short.html">URI</a><span class="esymbol">}</span><span class="edot">.</span><a class="efeature" href="../uri/uri_short.html#f_make_from_string">make_from_string</a><span class="estring"> (&quot;</span><a class="estring" href="file:///c:/dev/abc/foo/bar">file:///c:/dev/abc/foo/bar</a><span class="estring">&quot;))</span>
+		<span class="estring">				print (uri.file_path.name)</span>
+		<span class="estring">				&gt; c:\dev\abc\foo\bar</span>
+		
+	<span class="estring">]</span><span class="estring">&quot;</span>
+	<span class="eitag">date</span><span class="esymbol">:</span> <span class="estring">&quot;$Date$&quot;</span>
+	<span class="eitag">revision</span><span class="esymbol">:</span> <span class="estring">&quot;$Revision$&quot;</span>
+
+<span class="ekeyword">class</span> <span class="ekeyword">interface</span>
+	<a class="eclass" href="../uri/path_uri_short.html">PATH_URI</a>
+
+<span class="ekeyword">create</span> 
+	<a class="efeature" href="../uri/path_uri_short.html#f_make_from_string">make_from_string</a><span class="esymbol">,</span>
+	<a class="efeature" href="../uri/path_uri_short.html#f_make_from_general_string">make_from_general_string</a><span class="esymbol">,</span>
+	<a class="efeature" href="../uri/path_uri_short.html#f_make_from_file_uri">make_from_file_uri</a><span class="esymbol">,</span>
+	<a class="efeature" href="../uri/path_uri_short.html#f_make_from_path">make_from_path</a>
+
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Access</span>
+
+	<a name="f_file_path"></a><a class="efeature" href="../uri/path_uri_short.html#f_file_path">file_path</a><span class="esymbol">:</span> <a class="eclass" href="../base/path_short.html">PATH</a>
+			<span class="ecomment">--</span><span class="ecomment"> Associated local PATH.</span>
+
+	<a name="f_is_absolute"></a><a class="efeature" href="../uri/path_uri_short.html#f_is_absolute">is_absolute</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is current URI represents an absolute path?</span>
+
+	<a name="f_hier"></a><a class="efeature" href="../uri/path_uri_short.html#f_hier">hier</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Hier part.</span>
+			<span class="ecomment">--</span><span class="ecomment"> hier-part &nbsp;&nbsp;= &quot;//&quot; authority path-abempty</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/ path-absolute</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/ path-rootless</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/ path-empty</span>
+	
+<span class="ekeyword">note</span>
+	<span class="eitag">copyright</span><span class="esymbol">:</span> <span class="estring">&quot;Copyright (c) 1984-2019, Eiffel Software and others&quot;</span>
+	<span class="eitag">license</span><span class="esymbol">:</span> <span class="estring">&quot;Eiffel Forum License v2 (see </span><a class="estring" href="http://www.eiffel.com/licensing/forum.txt">http://www.eiffel.com/licensing/forum.txt</a><span class="estring">)&quot;</span>
+	<span class="eitag">source</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">Eiffel Software</span>
+		<span class="estring">5949 Hollister Ave., Goleta, CA 93117 USA</span>
+		<span class="estring">Telephone 805-685-1006, Fax 805-685-6869</span>
+		<span class="estring">Website </span><a class="estring" href="http://www.eiffel.com">http://www.eiffel.com</a>
+		<span class="estring">Customer support </span><a class="estring" href="http://support.eiffel.com">http://support.eiffel.com</a>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+
+<span class="ekeyword">end</span> <span class="ecomment">--</span> <span class="ecomment">class </span><a class="eclass" href="../uri/path_uri_short.html">PATH_URI</a></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="path_uri_chart.html">Chart</a>
+<a class="nav class" href="path_uri_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="path_uri"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
+

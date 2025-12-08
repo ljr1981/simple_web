@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="Object that is use in relation with WSF_ROUTER, to precise which request methods is accepted. For convenience, `make_from_iterable' is available, so that you can use <<GET, POST>> for instance but remember manifest string are evil ...  Since in HTTP you can use your own custom request method, this is not possible to catch any typo  ( for instance if you write POST instead of P0ST this is hard to find the error,     but in one case it uses upper o and in the other case this is zero 0  )     The recommanded way to use is for instance     create {WSF_REQUEST_METHODS}.make_get_post     create methods; methods.enable_get; methods.enable_post  This sounds heavy, but this is much safer.   ( note: in addition internally this first checks using reference comparison   and then compare string value, so it brings optimization for accepted request methods. )"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="2011-2013, Jocelyn Fiat, Javier Velilla, Olivier Ligot, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>wsf_request_methods Chart</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<span class="nav class selected">Chart</span>
+<a class="nav class" href="wsf_request_methods_links.html">Relations</a>
+<a class="nav class" href="wsf_request_methods_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="wsf_request_methods"></span>
+</div></form><pre><span class="ekeyword">class</span>
+	<a class="eclass" href="../wsf/wsf_request_methods_chart.html">WSF_REQUEST_METHODS</a>
+
+<span class="ekeyword">General</span>
+	<span class="eitag">cluster</span><span class="esymbol">:</span> <span class="necluster">router</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> 
+		<span class="estring">&quot;Object that is use in relation with WSF_ROUTER, to precise which request methods is accepted.</span>
+		<span class="estring">For convenience, </span><span class="estring">make_from_iterable</span><span class="estring"> is available, so that you can use &lt;&lt;%&quot;GET%&quot;, %&quot;POST%&quot;&gt;&gt; for instance</span>
+		<span class="estring">but remember manifest string are evil ... </span>
+		<span class="estring">Since in HTTP you can use your own custom request method, this is not possible to catch any typo</span>
+		<span class="estring"> ( for instance if you write %&quot;POST%&quot; instead of %&quot;P0ST%&quot; this is hard to find the error, </span>
+		<span class="estring"> &nbsp;&nbsp;but in one case it uses upper %&quot;o%&quot; and in the other case this is zero %&quot;0%&quot;</span>
+		<span class="estring"> )</span>
+		<span class="estring"> &nbsp;&nbsp;</span>
+		<span class="estring">The recommanded way to use is for instance</span>
+		<span class="estring"> &nbsp;&nbsp;&nbsp;create </span><span class="esymbol">{</span><a class="eclass" href="../wsf/wsf_request_methods_chart.html">WSF_REQUEST_METHODS</a><span class="esymbol">}</span><span class="estring">.make_get_post</span>
+		<span class="estring"> &nbsp;&nbsp;&nbsp;create methods; methods.enable_get; methods.enable_post</span>
+		
+		<span class="estring">This sounds heavy, but this is much safer. </span>
+		
+		<span class="estring">( note: in addition internally this first checks using reference comparison</span>
+		<span class="estring"> &nbsp;and then compare string value, so it brings optimization for accepted request methods.</span>
+		<span class="estring">)&quot;</span>
+	<span class="eitag">create</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_default_create">default_create</a><span class="esymbol">,</span> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_make">make</a><span class="esymbol">,</span> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_make_from_iterable">make_from_iterable</a><span class="esymbol">,</span> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_make_from_string">make_from_string</a>
+
+<span class="ekeyword">Ancestors</span>
+	<span class="neclass">HTTP_REQUEST_METHODS</span>
+	<a class="eclass" href="../base/iterable_chart.html">ITERABLE</a><span class="echar">*</span> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+
+<span class="ekeyword">Queries</span>
+	<span title="`has' is declared in `Current'"><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has">has</a> <span class="esymbol">(</span><span class="elocal">a_method</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`has_all_of' is declared in `Current'"><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has_all_of">has_all_of</a> <span class="esymbol">(</span><span class="elocal">a_methods</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_methods_chart.html">WSF_REQUEST_METHODS</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`has_method_connect' is declared in `Current'"><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has_method_connect">has_method_connect</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`has_method_delete' is declared in `Current'"><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has_method_delete">has_method_delete</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`has_method_get' is declared in `Current'"><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has_method_get">has_method_get</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`has_method_head' is declared in `Current'"><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has_method_head">has_method_head</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`has_method_options' is declared in `Current'"><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has_method_options">has_method_options</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`has_method_patch' is declared in `Current'"><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has_method_patch">has_method_patch</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`has_method_post' is declared in `Current'"><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has_method_post">has_method_post</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`has_method_put' is declared in `Current'"><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has_method_put">has_method_put</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`has_method_trace' is declared in `Current'"><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has_method_trace">has_method_trace</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`has_some_of' is declared in `Current'"><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has_some_of">has_some_of</a> <span class="esymbol">(</span><span class="elocal">a_methods</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_methods_chart.html">WSF_REQUEST_METHODS</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`is_empty' is declared in `Current'"><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_is_empty">is_empty</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`is_locked' is declared in `Current'"><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_is_locked">is_locked</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`method' was declared in HTTP_REQUEST_METHODS"><span class="nefeature">method</span> <span class="esymbol">(</span><span class="elocal">m</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a></span>
+	<span title="`method_connect' was declared in HTTP_REQUEST_METHODS"><span class="nefeature">Method_connect</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`method_delete' was declared in HTTP_REQUEST_METHODS"><span class="nefeature">Method_delete</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`method_get' was declared in HTTP_REQUEST_METHODS"><span class="nefeature">Method_get</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`method_head' was declared in HTTP_REQUEST_METHODS"><span class="nefeature">Method_head</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`method_options' was declared in HTTP_REQUEST_METHODS"><span class="nefeature">Method_options</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`method_patch' was declared in HTTP_REQUEST_METHODS"><span class="nefeature">Method_patch</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`method_post' was declared in HTTP_REQUEST_METHODS"><span class="nefeature">Method_post</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`method_put' was declared in HTTP_REQUEST_METHODS"><span class="nefeature">Method_put</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`method_trace' was declared in HTTP_REQUEST_METHODS"><span class="nefeature">Method_trace</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`methods' is declared in `Current'"><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_methods">methods</a><span class="esymbol">:</span> <a class="eclass" href="../base/arrayed_list_chart.html">ARRAYED_LIST</a> <span class="esymbol">[</span><a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">]</span></span>
+	<span title="`new_cursor' is declared in `Current'"><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_new_cursor">new_cursor</a><span class="esymbol">:</span> <a class="eclass" href="../base/indexable_iteration_cursor_chart.html">INDEXABLE_ITERATION_CURSOR</a> <span class="esymbol">[</span><a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">]</span></span>
+	<span title="`plus' is declared in `Current'"><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_plus">plus</a> <span class="ekeyword">alias</span> <span class="esymbol">&quot;</span><a class="esymbol" href="../wsf/wsf_request_methods_short.html#f_plus">+</a><span class="esymbol">&quot;</span> <span class="esymbol">(</span><span class="elocal">a_other</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_methods_chart.html">WSF_REQUEST_METHODS</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_methods_chart.html">WSF_REQUEST_METHODS</a></span>
+	<span title="`to_array' is declared in `Current'"><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_to_array">to_array</a><span class="esymbol">:</span> <a class="eclass" href="../base/array_chart.html">ARRAY</a> <span class="esymbol">[</span><a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">]</span></span>
+
+<span class="ekeyword">Commands</span>
+	<span title="`disable_connect' is declared in `Current'"><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_disable_connect">disable_connect</a></span>
+	<span title="`disable_custom' is declared in `Current'"><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_disable_custom">disable_custom</a> <span class="esymbol">(</span><span class="elocal">m</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">)</span></span>
+	<span title="`disable_delete' is declared in `Current'"><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_disable_delete">disable_delete</a></span>
+	<span title="`disable_get' is declared in `Current'"><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_disable_get">disable_get</a></span>
+	<span title="`disable_head' is declared in `Current'"><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_disable_head">disable_head</a></span>
+	<span title="`disable_options' is declared in `Current'"><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_disable_options">disable_options</a></span>
+	<span title="`disable_patch' is declared in `Current'"><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_disable_patch">disable_patch</a></span>
+	<span title="`disable_post' is declared in `Current'"><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_disable_post">disable_post</a></span>
+	<span title="`disable_put' is declared in `Current'"><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_disable_put">disable_put</a></span>
+	<span title="`disable_trace' is declared in `Current'"><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_disable_trace">disable_trace</a></span>
+	<span title="`enable_connect' is declared in `Current'"><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_enable_connect">enable_connect</a></span>
+	<span title="`enable_custom' is declared in `Current'"><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_enable_custom">enable_custom</a> <span class="esymbol">(</span><span class="elocal">m</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">)</span></span>
+	<span title="`enable_delete' is declared in `Current'"><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_enable_delete">enable_delete</a></span>
+	<span title="`enable_get' is declared in `Current'"><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_enable_get">enable_get</a></span>
+	<span title="`enable_head' is declared in `Current'"><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_enable_head">enable_head</a></span>
+	<span title="`enable_options' is declared in `Current'"><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_enable_options">enable_options</a></span>
+	<span title="`enable_patch' is declared in `Current'"><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_enable_patch">enable_patch</a></span>
+	<span title="`enable_post' is declared in `Current'"><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_enable_post">enable_post</a></span>
+	<span title="`enable_put' is declared in `Current'"><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_enable_put">enable_put</a></span>
+	<span title="`enable_trace' is declared in `Current'"><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_enable_trace">enable_trace</a></span>
+	<span title="`lock' is declared in `Current'"><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_lock">lock</a></span>
+
+<span class="ekeyword">Constraints</span>
+	<span class="etag">methods attached</span>
+	<span class="etag">methods are uppercase</span>
+
+</pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<span class="nav class selected">Chart</span>
+<a class="nav class" href="wsf_request_methods_links.html">Relations</a>
+<a class="nav class" href="wsf_request_methods_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="wsf_request_methods"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>

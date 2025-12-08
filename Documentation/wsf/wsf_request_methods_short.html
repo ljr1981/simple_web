@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="Object that is use in relation with WSF_ROUTER, to precise which request methods is accepted. For convenience, `make_from_iterable' is available, so that you can use <<GET, POST>> for instance but remember manifest string are evil ...  Since in HTTP you can use your own custom request method, this is not possible to catch any typo  ( for instance if you write POST instead of P0ST this is hard to find the error,     but in one case it uses upper o and in the other case this is zero 0  )     The recommanded way to use is for instance     create {WSF_REQUEST_METHODS}.make_get_post     create methods; methods.enable_get; methods.enable_post  This sounds heavy, but this is much safer.   ( note: in addition internally this first checks using reference comparison   and then compare string value, so it brings optimization for accepted request methods. )"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="2011-2013, Jocelyn Fiat, Javier Velilla, Olivier Ligot, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>wsf_request_methods Contracts</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="wsf_request_methods_chart.html">Chart</a>
+<a class="nav class" href="wsf_request_methods_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="wsf_request_methods"></span>
+</div></form><pre><span class="ekeyword">note</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">Object that is use in relation with WSF_ROUTER, to precise which request methods is accepted.</span>
+		<span class="estring">For convenience, </span><span class="estring">`</span><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_make_from_iterable">make_from_iterable</a><span class="estring">`</span><span class="estring"> is available, so that you can use &lt;&lt;&quot;GET&quot;, &quot;POST&quot;&gt;&gt; for instance</span>
+		<span class="estring">but remember manifest string are evil ... </span>
+		<span class="estring">Since in HTTP you can use your own custom request method, this is not possible to catch any typo</span>
+		<span class="estring"> ( for instance if you write &quot;POST&quot; instead of &quot;P0ST&quot; this is hard to find the error, </span>
+		<span class="estring"> &nbsp;&nbsp;but in one case it uses upper &quot;o&quot; and in the other case this is zero &quot;0&quot;</span>
+		<span class="estring"> )</span>
+		<span class="estring"> &nbsp;&nbsp;</span>
+		<span class="estring">The recommanded way to use is for instance</span>
+		<span class="estring"> &nbsp;&nbsp;&nbsp;create </span><span class="esymbol">{</span><a class="eclass" href="../wsf/wsf_request_methods_short.html">WSF_REQUEST_METHODS</a><span class="esymbol">}</span><span class="estring">.make_get_post</span>
+		<span class="estring"> &nbsp;&nbsp;&nbsp;create methods; methods.enable_get; methods.enable_post</span>
+		
+		<span class="estring">This sounds heavy, but this is much safer. </span>
+		
+		<span class="estring">( note: in addition internally this first checks using reference comparison</span>
+		<span class="estring"> &nbsp;and then compare string value, so it brings optimization for accepted request methods.</span>
+		<span class="estring">)</span>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+	<span class="eitag">date</span><span class="esymbol">:</span> <span class="estring">&quot;$Date$&quot;</span>
+	<span class="eitag">revision</span><span class="esymbol">:</span> <span class="estring">&quot;$Revision$&quot;</span>
+
+<span class="ekeyword">class</span> <span class="ekeyword">interface</span>
+	<a class="eclass" href="../wsf/wsf_request_methods_short.html">WSF_REQUEST_METHODS</a>
+
+<span class="ekeyword">create</span> 
+	<a class="efeature" href="../wsf/wsf_request_methods_short.html#f_default_create">default_create</a><span class="esymbol">,</span>
+	<a class="efeature" href="../wsf/wsf_request_methods_short.html#f_make">make</a><span class="esymbol">,</span>
+	<a class="efeature" href="../wsf/wsf_request_methods_short.html#f_make_from_iterable">make_from_iterable</a><span class="esymbol">,</span>
+	<a class="efeature" href="../wsf/wsf_request_methods_short.html#f_make_from_string">make_from_string</a>
+
+<span class="ekeyword">convert</span>
+	<a class="efeature" href="../wsf/wsf_request_methods_short.html#f_to_array">to_array</a><span class="esymbol">:</span> <span class="esymbol">{</span><a class="eclass" href="../base/array_short.html">ARRAY</a> <span class="esymbol">[</span><a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">]</span><span class="esymbol">}</span><span class="esymbol">,</span>
+	<a class="efeature" href="../wsf/wsf_request_methods_short.html#f_make_from_iterable">make_from_iterable</a> <span class="esymbol">(</span><span class="esymbol">{</span><a class="eclass" href="../base/iterable_short.html">ITERABLE</a> <span class="esymbol">[</span><a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">]</span><span class="esymbol">,</span>
+		<a class="eclass" href="../base/iterable_short.html">ITERABLE</a> <span class="esymbol">[</span><a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">]</span><span class="esymbol">,</span>
+		<a class="eclass" href="../base/array_short.html">ARRAY</a> <span class="esymbol">[</span><a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">]</span><span class="esymbol">,</span>
+		<a class="eclass" href="../base/array_short.html">ARRAY</a> <span class="esymbol">[</span><a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">]</span><span class="esymbol">}</span><span class="esymbol">)</span><span class="esymbol">,</span>
+	<a class="efeature" href="../wsf/wsf_request_methods_short.html#f_make_from_string">make_from_string</a> <span class="esymbol">(</span><span class="esymbol">{</span><a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">,</span>
+		<a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">}</span><span class="esymbol">)</span>
+
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Status report</span>
+
+	<a name="f_is_locked"></a><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_is_locked">is_locked</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is Current locked? And then can not be modified?</span>
+
+	<a name="f_is_empty"></a><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_is_empty">is_empty</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+
+	<a name="f_has"></a><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has">has</a> <span class="esymbol">(</span><span class="elocal">a_method</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Has </span><span class="equoted">a_method</span><span class="ecomment"> enabled?</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">a_method_attached</span><span class="esymbol">:</span> <span class="elocal">a_method</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">a_method_is_uppercase</span><span class="esymbol">:</span> <span class="elocal">a_method</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_same_string">same_string</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">a_method</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_as_upper">as_upper</a><span class="esymbol">)</span>
+
+	<a name="f_has_some_of"></a><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has_some_of">has_some_of</a> <span class="esymbol">(</span><span class="elocal">a_methods</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_methods_short.html">WSF_REQUEST_METHODS</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Have any methods from </span><span class="equoted">a_methods</span><span class="ecomment"> been enabled?</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">a_methods_attached</span><span class="esymbol">:</span> <span class="elocal">a_methods</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+
+	<a name="f_has_all_of"></a><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has_all_of">has_all_of</a> <span class="esymbol">(</span><span class="elocal">a_methods</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_methods_short.html">WSF_REQUEST_METHODS</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Have all methods from </span><span class="equoted">a_methods</span><span class="ecomment"> been enabled?</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">a_methods_attached</span><span class="esymbol">:</span> <span class="elocal">a_methods</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+
+	<a name="f_has_method_get"></a><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has_method_get">has_method_get</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Has method GET been enabled?</span>
+
+	<a name="f_has_method_post"></a><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has_method_post">has_method_post</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Has method POST been enabled?</span>
+
+	<a name="f_has_method_put"></a><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has_method_put">has_method_put</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Has method PUT been enabled?</span>
+
+	<a name="f_has_method_delete"></a><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has_method_delete">has_method_delete</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Has method DELETE been enabled?</span>
+
+	<a name="f_has_method_options"></a><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has_method_options">has_method_options</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Has method OPTIONS been enabled?</span>
+
+	<a name="f_has_method_head"></a><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has_method_head">has_method_head</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Has method HEAD been enabled?</span>
+
+	<a name="f_has_method_trace"></a><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has_method_trace">has_method_trace</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Has method TRACE been enabled?</span>
+
+	<a name="f_has_method_connect"></a><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has_method_connect">has_method_connect</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Has method CONNECT been enabled?</span>
+
+	<a name="f_has_method_patch"></a><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has_method_patch">has_method_patch</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Has method PATCH been enabled?</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Access</span>
+
+	<a name="f_new_cursor"></a><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_new_cursor">new_cursor</a><span class="esymbol">:</span> <a class="eclass" href="../base/indexable_iteration_cursor_short.html">INDEXABLE_ITERATION_CURSOR</a> <span class="esymbol">[</span><a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">]</span>
+			<span class="ecomment">--</span><span class="ecomment"> Fresh cursor associated with current structure</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Status change</span>
+
+	<a name="f_lock"></a><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_lock">lock</a>
+			<span class="ecomment">--</span><span class="ecomment"> Lock current and prevent any change in methods</span>
+			<span class="ecomment">--</span><span class="ecomment"> Once it is locked, it is impossible to unlock.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Basic operations</span>
+
+	<a name="f_plus"></a><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_plus">plus</a> <span class="ekeyword">alias</span> <span class="esymbol">&quot;</span><a class="esymbol" href="../wsf/wsf_request_methods_short.html#f_plus">+</a><span class="esymbol">&quot;</span> <span class="esymbol">(</span><span class="elocal">a_other</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_methods_short.html">WSF_REQUEST_METHODS</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_methods_short.html">WSF_REQUEST_METHODS</a>
+			<span class="ecomment">--</span><span class="ecomment"> Merge Current and a_other into Result</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">a_other_not_void</span><span class="esymbol">:</span> <span class="elocal">a_other</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Element change</span>
+
+	<a name="f_enable_get"></a><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_enable_get">enable_get</a>
+		<span class="ekeyword">require</span>
+			<span class="etag">is_not_locked</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_is_locked">is_locked</a>
+			<span class="etag">get_disabled</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="nefeature">Method_get</span><span class="esymbol">)</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">get_enabled</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="nefeature">Method_get</span><span class="esymbol">)</span>
+
+	<a name="f_disable_get"></a><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_disable_get">disable_get</a>
+		<span class="ekeyword">require</span>
+			<span class="etag">is_not_locked</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_is_locked">is_locked</a>
+			<span class="etag">get_enabled</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="nefeature">Method_get</span><span class="esymbol">)</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">get_disabled</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="nefeature">Method_get</span><span class="esymbol">)</span>
+
+	<a name="f_enable_post"></a><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_enable_post">enable_post</a>
+		<span class="ekeyword">require</span>
+			<span class="etag">is_not_locked</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_is_locked">is_locked</a>
+			<span class="etag">post_disabled</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="nefeature">Method_post</span><span class="esymbol">)</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">post_enabled</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="nefeature">Method_post</span><span class="esymbol">)</span>
+
+	<a name="f_disable_post"></a><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_disable_post">disable_post</a>
+		<span class="ekeyword">require</span>
+			<span class="etag">is_not_locked</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_is_locked">is_locked</a>
+			<span class="etag">post_enabled</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="nefeature">Method_post</span><span class="esymbol">)</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">post_disabled</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="nefeature">Method_post</span><span class="esymbol">)</span>
+
+	<a name="f_enable_put"></a><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_enable_put">enable_put</a>
+		<span class="ekeyword">require</span>
+			<span class="etag">is_not_locked</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_is_locked">is_locked</a>
+			<span class="etag">put_disabled</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="nefeature">Method_put</span><span class="esymbol">)</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">put_enabled</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="nefeature">Method_put</span><span class="esymbol">)</span>
+
+	<a name="f_disable_put"></a><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_disable_put">disable_put</a>
+		<span class="ekeyword">require</span>
+			<span class="etag">is_not_locked</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_is_locked">is_locked</a>
+			<span class="etag">put_enabled</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="nefeature">Method_put</span><span class="esymbol">)</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">put_disabled</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="nefeature">Method_put</span><span class="esymbol">)</span>
+
+	<a name="f_enable_delete"></a><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_enable_delete">enable_delete</a>
+		<span class="ekeyword">require</span>
+			<span class="etag">is_not_locked</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_is_locked">is_locked</a>
+			<span class="etag">delete_disabled</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="nefeature">Method_delete</span><span class="esymbol">)</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">delete_enabled</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="nefeature">Method_delete</span><span class="esymbol">)</span>
+
+	<a name="f_disable_delete"></a><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_disable_delete">disable_delete</a>
+		<span class="ekeyword">require</span>
+			<span class="etag">is_not_locked</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_is_locked">is_locked</a>
+			<span class="etag">delete_enabled</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="nefeature">Method_delete</span><span class="esymbol">)</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">delete_disabled</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="nefeature">Method_delete</span><span class="esymbol">)</span>
+
+	<a name="f_enable_options"></a><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_enable_options">enable_options</a>
+		<span class="ekeyword">require</span>
+			<span class="etag">is_not_locked</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_is_locked">is_locked</a>
+			<span class="etag">options_disabled</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="nefeature">Method_options</span><span class="esymbol">)</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">options_enabled</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="nefeature">Method_options</span><span class="esymbol">)</span>
+
+	<a name="f_disable_options"></a><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_disable_options">disable_options</a>
+		<span class="ekeyword">require</span>
+			<span class="etag">is_not_locked</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_is_locked">is_locked</a>
+			<span class="etag">options_enabled</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="nefeature">Method_options</span><span class="esymbol">)</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">options_disabled</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="nefeature">Method_options</span><span class="esymbol">)</span>
+
+	<a name="f_enable_head"></a><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_enable_head">enable_head</a>
+		<span class="ekeyword">require</span>
+			<span class="etag">is_not_locked</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_is_locked">is_locked</a>
+			<span class="etag">head_disabled</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="nefeature">Method_head</span><span class="esymbol">)</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">head_enabled</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="nefeature">Method_head</span><span class="esymbol">)</span>
+
+	<a name="f_disable_head"></a><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_disable_head">disable_head</a>
+		<span class="ekeyword">require</span>
+			<span class="etag">is_not_locked</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_is_locked">is_locked</a>
+			<span class="etag">head_enabled</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="nefeature">Method_head</span><span class="esymbol">)</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">head_disabled</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="nefeature">Method_head</span><span class="esymbol">)</span>
+
+	<a name="f_enable_trace"></a><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_enable_trace">enable_trace</a>
+		<span class="ekeyword">require</span>
+			<span class="etag">is_not_locked</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_is_locked">is_locked</a>
+			<span class="etag">trace_disabled</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="nefeature">Method_trace</span><span class="esymbol">)</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">trace_enabled</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="nefeature">Method_trace</span><span class="esymbol">)</span>
+
+	<a name="f_disable_trace"></a><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_disable_trace">disable_trace</a>
+		<span class="ekeyword">require</span>
+			<span class="etag">is_not_locked</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_is_locked">is_locked</a>
+			<span class="etag">trace_enabled</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="nefeature">Method_trace</span><span class="esymbol">)</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">trace_disabled</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="nefeature">Method_trace</span><span class="esymbol">)</span>
+
+	<a name="f_enable_connect"></a><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_enable_connect">enable_connect</a>
+		<span class="ekeyword">require</span>
+			<span class="etag">is_not_locked</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_is_locked">is_locked</a>
+			<span class="etag">connect_disabled</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="nefeature">Method_connect</span><span class="esymbol">)</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">connect_enabled</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="nefeature">Method_connect</span><span class="esymbol">)</span>
+
+	<a name="f_disable_connect"></a><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_disable_connect">disable_connect</a>
+		<span class="ekeyword">require</span>
+			<span class="etag">is_not_locked</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_is_locked">is_locked</a>
+			<span class="etag">connect_enabled</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="nefeature">Method_connect</span><span class="esymbol">)</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">connect_disabled</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="nefeature">Method_connect</span><span class="esymbol">)</span>
+
+	<a name="f_enable_patch"></a><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_enable_patch">enable_patch</a>
+		<span class="ekeyword">require</span>
+			<span class="etag">is_not_locked</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_is_locked">is_locked</a>
+			<span class="etag">patch_disabled</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="nefeature">Method_patch</span><span class="esymbol">)</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">patch_enabled</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="nefeature">Method_patch</span><span class="esymbol">)</span>
+
+	<a name="f_disable_patch"></a><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_disable_patch">disable_patch</a>
+		<span class="ekeyword">require</span>
+			<span class="etag">is_not_locked</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_is_locked">is_locked</a>
+			<span class="etag">patch_enabled</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="nefeature">Method_patch</span><span class="esymbol">)</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">patch_disabled</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="nefeature">Method_patch</span><span class="esymbol">)</span>
+
+	<a name="f_enable_custom"></a><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_enable_custom">enable_custom</a> <span class="esymbol">(</span><span class="elocal">m</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">)</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">is_not_locked</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_is_locked">is_locked</a>
+			<span class="etag">not_blank</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">across</span>
+					<span class="elocal">m</span> <span class="ekeyword">as</span> mc
+				<span class="ekeyword">some</span>
+					<span class="elocal">mc</span><span class="edot">.</span><a class="efeature" href="../base/general_special_iteration_cursor_short.html#f_item">item</a><span class="edot">.</span><a class="efeature" href="../base/character_8_ref_short.html#f_is_space">is_space</a>
+				<span class="ekeyword">end</span>
+			<span class="etag">custom_disabled</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">m</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_as_upper">as_upper</a><span class="esymbol">)</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">custom_enabled</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">m</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_as_upper">as_upper</a><span class="esymbol">)</span>
+
+	<a name="f_disable_custom"></a><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_disable_custom">disable_custom</a> <span class="esymbol">(</span><span class="elocal">m</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">)</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">is_not_locked</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_is_locked">is_locked</a>
+			<span class="etag">m_attached</span><span class="esymbol">:</span> <span class="elocal">m</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">not_blank</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">across</span>
+					<span class="elocal">m</span> <span class="ekeyword">as</span> mc
+				<span class="ekeyword">some</span>
+					<span class="elocal">mc</span><span class="edot">.</span><a class="efeature" href="../base/general_special_iteration_cursor_short.html#f_item">item</a><span class="edot">.</span><a class="efeature" href="../base/character_8_ref_short.html#f_is_space">is_space</a>
+				<span class="ekeyword">end</span>
+			<span class="etag">custom_enabled</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">m</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_as_upper">as_upper</a><span class="esymbol">)</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">custom_disabled</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">m</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_as_upper">as_upper</a><span class="esymbol">)</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Access</span>
+
+	<a name="f_methods"></a><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_methods">methods</a><span class="esymbol">:</span> <a class="eclass" href="../base/arrayed_list_short.html">ARRAYED_LIST</a> <span class="esymbol">[</span><a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">]</span>
+
+	<a name="f_to_array"></a><a class="efeature" href="../wsf/wsf_request_methods_short.html#f_to_array">to_array</a><span class="esymbol">:</span> <a class="eclass" href="../base/array_short.html">ARRAY</a> <span class="esymbol">[</span><a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">]</span>
+	
+<span class="ekeyword">invariant</span>
+	<span class="etag">methods_attached</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_request_methods_short.html#f_methods">methods</a> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+	<span class="etag">methods_are_uppercase</span><span class="esymbol">:</span> <span class="ekeyword">across</span>
+			<a class="efeature" href="../wsf/wsf_request_methods_short.html#f_methods">methods</a> <span class="ekeyword">as</span> c
+		<span class="ekeyword">all</span>
+			<span class="elocal">c</span><span class="edot">.</span><a class="efeature" href="../base/general_special_iteration_cursor_short.html#f_item">item</a><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_same_string">same_string</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">c</span><span class="edot">.</span><a class="efeature" href="../base/general_special_iteration_cursor_short.html#f_item">item</a><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_as_upper">as_upper</a><span class="esymbol">)</span>
+		<span class="ekeyword">end</span>
+
+<span class="ekeyword">note</span>
+	<span class="eitag">copyright</span><span class="esymbol">:</span> <span class="estring">&quot;2011-2013, Jocelyn Fiat, Javier Velilla, Olivier Ligot, Eiffel Software and others&quot;</span>
+	<span class="eitag">license</span><span class="esymbol">:</span> <span class="estring">&quot;Eiffel Forum License v2 (see </span><a class="estring" href="http://www.eiffel.com/licensing/forum.txt">http://www.eiffel.com/licensing/forum.txt</a><span class="estring">)&quot;</span>
+	<span class="eitag">source</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">Eiffel Software</span>
+		<span class="estring">5949 Hollister Ave., Goleta, CA 93117 USA</span>
+		<span class="estring">Telephone 805-685-1006, Fax 805-685-6869</span>
+		<span class="estring">Website </span><a class="estring" href="http://www.eiffel.com">http://www.eiffel.com</a>
+		<span class="estring">Customer support </span><a class="estring" href="http://support.eiffel.com">http://support.eiffel.com</a>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+
+<span class="ekeyword">end</span> <span class="ecomment">--</span> <span class="ecomment">class </span><a class="eclass" href="../wsf/wsf_request_methods_short.html">WSF_REQUEST_METHODS</a></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="wsf_request_methods_chart.html">Chart</a>
+<a class="nav class" href="wsf_request_methods_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="wsf_request_methods"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
+

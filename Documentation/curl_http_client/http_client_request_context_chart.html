@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="TContext for HTTP client request TThis is used to hold  TT- headers TT- query_parameters TT- form parameters TT- upload_data xor upload_filename TAnd in addition it has  TT- credentials_required TT- proxy TT TNote that any value set in this context class overrides conflicting value eventually T     set in associated HTTP_CLIENT_SESSION.  TWarning: for now [2012-05-31], you can have only one of the following data TTT- form_parameters TTT- or upload_data  TTT- or upload_filename  TTTIf you set more than one, the priority is then upload_data, then upload_filename, then form_parameters"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="2011-2024, Jocelyn Fiat, Javier Velilla, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>http_client_request_context Chart</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<span class="nav class selected">Chart</span>
+<a class="nav class" href="http_client_request_context_links.html">Relations</a>
+<a class="nav class" href="http_client_request_context_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="http_client_request_context"></span>
+</div></form><pre><span class="ekeyword">class</span>
+	<a class="eclass" href="../curl_http_client/http_client_request_context_chart.html">HTTP_CLIENT_REQUEST_CONTEXT</a>
+
+<span class="ekeyword">General</span>
+	<span class="eitag">cluster</span><span class="esymbol">:</span> <span class="necluster">src</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> 
+		<span class="estring">&quot;Context for HTTP client request</span>
+		<span class="estring">This is used to hold </span>
+		<span class="estring">- headers</span>
+		<span class="estring">- query_parameters</span>
+		<span class="estring">- form parameters</span>
+		<span class="estring">- upload_data xor upload_filename</span>
+		<span class="estring">And in addition it has </span>
+		<span class="estring">- credentials_required</span>
+		<span class="estring">- proxy</span>
+		
+		<span class="estring">Note that any value set in this context class overrides conflicting value eventually</span>
+		<span class="estring"> &nbsp;&nbsp;&nbsp;&nbsp;set in associated HTTP_CLIENT_SESSION.</span>
+		
+		<span class="estring">Warning: for now </span><span class="estring">[2012-05-31]</span><span class="estring">, you can have only one of the following data</span>
+		<span class="estring">- form_parameters</span>
+		<span class="estring">- or upload_data </span>
+		<span class="estring">- or upload_filename </span>
+		<span class="estring">If you set more than one, the priority is then upload_data, then upload_filename, then form_parameters&quot;</span>
+	<span class="eitag">create</span><span class="esymbol">:</span> <a class="efeature" href="../curl_http_client/http_client_request_context_short.html#f_make">make</a><span class="esymbol">,</span> <a class="efeature" href="../curl_http_client/http_client_request_context_short.html#f_make_with_credentials_required">make_with_credentials_required</a>
+
+<span class="ekeyword">Ancestors</span>
+	<a class="eclass" href="../base/any_chart.html">ANY</a>
+
+<span class="ekeyword">Queries</span>
+	<span title="`credentials_required' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_context_short.html#f_credentials_required">credentials_required</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`form_parameters' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_context_short.html#f_form_parameters">form_parameters</a><span class="esymbol">:</span> <span class="neclass">HTTP_CLIENT_REQUEST_FORM_PARAMETERS</span></span>
+	<span title="`form_parameters_to_x_www_form_url_encoded_string' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_context_short.html#f_form_parameters_to_x_www_form_url_encoded_string">form_parameters_to_x_www_form_url_encoded_string</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`has_form_data' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_context_short.html#f_has_form_data">has_form_data</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`has_upload_data' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_context_short.html#f_has_upload_data">has_upload_data</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`has_upload_filename' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_context_short.html#f_has_upload_filename">has_upload_filename</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`has_write_option' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_context_short.html#f_has_write_option">has_write_option</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`headers' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_context_short.html#f_headers">headers</a><span class="esymbol">:</span> <a class="eclass" href="../base/hash_table_chart.html">HASH_TABLE</a> <span class="esymbol">[</span><a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">,</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">]</span></span>
+	<span title="`http_version' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_context_short.html#f_http_version">http_version</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/immutable_string_8_chart.html">IMMUTABLE_STRING_8</a></span>
+	<span title="`output_content_file' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_context_short.html#f_output_content_file">output_content_file</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/file_chart.html">FILE</a></span>
+	<span title="`output_file' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_context_short.html#f_output_file">output_file</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/file_chart.html">FILE</a></span>
+	<span title="`proxy' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_context_short.html#f_proxy">proxy</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/tuple_chart.html">TUPLE</a> <span class="esymbol">[</span><a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">,</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a><span class="esymbol">]</span></span>
+	<span title="`query_parameters' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_context_short.html#f_query_parameters">query_parameters</a><span class="esymbol">:</span> <span class="neclass">HTTP_CLIENT_REQUEST_QUERY_PARAMETERS</span></span>
+	<span title="`query_parameters_to_url_encoded_string' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_context_short.html#f_query_parameters_to_url_encoded_string">query_parameters_to_url_encoded_string</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`upload_data' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_context_short.html#f_upload_data">upload_data</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a></span>
+	<span title="`upload_filename' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_context_short.html#f_upload_filename">upload_filename</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/immutable_string_32_chart.html">IMMUTABLE_STRING_32</a></span>
+	<span title="`write_agent' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_context_short.html#f_write_agent">write_agent</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/procedure_chart.html">PROCEDURE</a> <span class="esymbol">[</span><a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">]</span></span>
+
+<span class="ekeyword">Commands</span>
+	<span title="`add_file_form_parameter' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_context_short.html#f_add_file_form_parameter">add_file_form_parameter</a> <span class="esymbol">(</span><span class="elocal">k</span><span class="esymbol">,</span> <span class="elocal">a_location</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">;</span> <span class="elocal">a_content_type</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">)</span></span>
+	<span title="`add_form_parameter' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_context_short.html#f_add_form_parameter">add_form_parameter</a> <span class="esymbol">(</span><span class="elocal">k</span><span class="esymbol">,</span> <span class="elocal">v</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span></span>
+	<span title="`add_header' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_context_short.html#f_add_header">add_header</a> <span class="esymbol">(</span><span class="elocal">k</span><span class="esymbol">,</span> <span class="elocal">v</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">)</span></span>
+	<span title="`add_header_line' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_context_short.html#f_add_header_line">add_header_line</a> <span class="esymbol">(</span><span class="elocal">s</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">)</span></span>
+	<span title="`add_header_lines' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_context_short.html#f_add_header_lines">add_header_lines</a> <span class="esymbol">(</span><span class="elocal">lst</span><span class="esymbol">:</span> <a class="eclass" href="../base/iterable_chart.html">ITERABLE</a> <span class="esymbol">[</span><a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">]</span><span class="esymbol">)</span></span>
+	<span title="`add_query_parameter' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_context_short.html#f_add_query_parameter">add_query_parameter</a> <span class="esymbol">(</span><span class="elocal">k</span><span class="esymbol">,</span> <span class="elocal">v</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span></span>
+	<span title="`append_query_parameters_to_url' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_context_short.html#f_append_query_parameters_to_url">append_query_parameters_to_url</a> <span class="esymbol">(</span><span class="elocal">a_url</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a><span class="esymbol">)</span></span>
+	<span title="`remove_form_parameters' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_context_short.html#f_remove_form_parameters">remove_form_parameters</a> <span class="esymbol">(</span><span class="elocal">k</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span></span>
+	<span title="`remove_query_parameters' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_context_short.html#f_remove_query_parameters">remove_query_parameters</a> <span class="esymbol">(</span><span class="elocal">k</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span></span>
+	<span title="`set_credentials_required' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_context_short.html#f_set_credentials_required">set_credentials_required</a> <span class="esymbol">(</span><span class="elocal">b</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a><span class="esymbol">)</span></span>
+	<span title="`set_http_version' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_context_short.html#f_set_http_version">set_http_version</a> <span class="esymbol">(</span><span class="elocal">v</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">)</span></span>
+	<span title="`set_output_content_file' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_context_short.html#f_set_output_content_file">set_output_content_file</a> <span class="esymbol">(</span><span class="elocal">f</span><span class="esymbol">:</span> <a class="eclass" href="../base/file_chart.html">FILE</a><span class="esymbol">)</span></span>
+	<span title="`set_output_file' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_context_short.html#f_set_output_file">set_output_file</a> <span class="esymbol">(</span><span class="elocal">f</span><span class="esymbol">:</span> <a class="eclass" href="../base/file_chart.html">FILE</a><span class="esymbol">)</span></span>
+	<span title="`set_proxy' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_context_short.html#f_set_proxy">set_proxy</a> <span class="esymbol">(</span><span class="elocal">a_host</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">;</span> <span class="elocal">a_port</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a><span class="esymbol">)</span></span>
+	<span title="`set_upload_data' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_context_short.html#f_set_upload_data">set_upload_data</a> <span class="esymbol">(</span><span class="elocal">a_data</span><span class="esymbol">:</span> <span class="esymbol">[</span><span class="ekeyword">like</span> <a class="efeature" href="../curl_http_client/http_client_request_context_short.html#f_upload_data">upload_data</a><span class="esymbol">]</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">)</span></span>
+	<span title="`set_upload_filename' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_context_short.html#f_set_upload_filename">set_upload_filename</a> <span class="esymbol">(</span><span class="elocal">a_fn</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span></span>
+	<span title="`set_write_agent' is declared in `Current'"><a class="efeature" href="../curl_http_client/http_client_request_context_short.html#f_set_write_agent">set_write_agent</a> <span class="esymbol">(</span><span class="elocal">agt</span><span class="esymbol">:</span> <span class="esymbol">[</span><span class="ekeyword">like</span> <a class="efeature" href="../curl_http_client/http_client_request_context_short.html#f_write_agent">write_agent</a><span class="esymbol">]</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/procedure_chart.html">PROCEDURE</a> <span class="esymbol">[</span><a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">]</span><span class="esymbol">)</span></span>
+
+</pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<span class="nav class selected">Chart</span>
+<a class="nav class" href="http_client_request_context_links.html">Relations</a>
+<a class="nav class" href="http_client_request_context_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="http_client_request_context"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="{POOLED_THREAD} is used in combination with {THREAD_POOL} to allow for pooled threads."/>
+<meta name="legal" content="See notice at end of class."/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="2011-2012, Javier Velilla and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="licensing_options" content="http://www.eiffel.com/licensing"/>
+<meta name="copying" content="This file is part of Eiffel Software's Eiffel Development Environment.  Eiffel Software's Eiffel Development Environment is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2 of the License (available at the URL listed under license above).  Eiffel Software's Eiffel Development Environment is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.  You should have received a copy of the GNU General Public License along with Eiffel Software's Eiffel Development Environment; if not, write to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>pooled_thread Chart</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<span class="nav class selected">Chart</span>
+<a class="nav class" href="pooled_thread_links.html">Relations</a>
+<a class="nav class" href="pooled_thread_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="pooled_thread"></span>
+</div></form><pre><span class="ekeyword">class</span>
+	<a class="eclass" href="../httpd/pooled_thread_chart.html">POOLED_THREAD</a> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+
+<span class="ekeyword">General</span>
+	<span class="eitag">cluster</span><span class="esymbol">:</span> <span class="necluster">concurrency_thread</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="esymbol">{</span><a class="eclass" href="../httpd/pooled_thread_chart.html">POOLED_THREAD</a><span class="esymbol">}</span><span class="estring"> is used in combination with </span><span class="esymbol">{</span><a class="eclass" href="../httpd/thread_pool_chart.html">THREAD_POOL</a><span class="esymbol">}</span><span class="estring"> to allow for pooled threads.&quot;</span>
+	<span class="eitag">create</span><span class="esymbol">:</span> <a class="efeature" href="../httpd/pooled_thread_short.html#f_make">make</a>
+
+<span class="ekeyword">Ancestors</span>
+	<span class="neclass">THREAD</span><span class="echar">*</span>
+
+<span class="ekeyword">Queries</span>
+	<span title="`current_thread_id' was declared in THREAD_ENVIRONMENT"><a class="efeature" href="../base/thread_environment_short.html#f_current_thread_id">current_thread_id</a><span class="esymbol">:</span> <a class="eclass" href="../base/pointer_chart.html">POINTER</a></span>
+	<span title="`is_exit_supported' was declared in THREAD"><span class="nefeature">is_exit_supported</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`is_last_launch_successful' was declared in THREAD"><span class="nefeature">is_last_launch_successful</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`is_launchable' was declared in THREAD"><span class="nefeature">is_launchable</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`join_with_timeout' was declared in THREAD"><span class="nefeature">join_with_timeout</span> <span class="esymbol">(</span><span class="elocal">a_timeout_ms</span><span class="esymbol">:</span> <a class="eclass" href="../base/natural_64_chart.html">NATURAL_64</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`terminated' was declared in THREAD"><span class="nefeature">terminated</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`thread_id' was declared in THREAD"><span class="nefeature">thread_id</span><span class="esymbol">:</span> <a class="eclass" href="../base/pointer_chart.html">POINTER</a></span>
+
+<span class="ekeyword">Commands</span>
+	<span title="`execute' is declared in `Current'"><a class="efeature" href="../httpd/pooled_thread_short.html#f_execute">execute</a></span>
+	<span title="`exit' was declared in THREAD"><span class="nefeature">exit</span></span>
+	<span title="`join' was declared in THREAD"><span class="nefeature">join</span></span>
+	<span title="`join_all' was declared in THREAD_CONTROL"><span class="nefeature">join_all</span></span>
+	<span title="`launch' was declared in THREAD"><span class="nefeature">launch</span></span>
+	<span title="`launch_with_attributes' was declared in THREAD"><span class="nefeature">launch_with_attributes</span> <span class="esymbol">(</span><span class="elocal">attr</span><span class="esymbol">:</span> <span class="neclass">THREAD_ATTRIBUTES</span><span class="esymbol">)</span></span>
+	<span title="`set_target' is declared in `Current'"><a class="efeature" href="../httpd/pooled_thread_short.html#f_set_target">set_target</a> <span class="esymbol">(</span><span class="elocal">a_target</span><span class="esymbol">:</span> <span class="egeneric">G</span><span class="esymbol">)</span></span>
+	<span title="`sleep' was declared in THREAD"><span class="nefeature">sleep</span> <span class="esymbol">(</span><span class="elocal">nanoseconds</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_64_chart.html">INTEGER_64</a><span class="esymbol">)</span></span>
+	<span title="`yield' was declared in THREAD_CONTROL"><span class="nefeature">yield</span></span>
+
+</pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<span class="nav class selected">Chart</span>
+<a class="nav class" href="pooled_thread_links.html">Relations</a>
+<a class="nav class" href="pooled_thread_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="pooled_thread"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>

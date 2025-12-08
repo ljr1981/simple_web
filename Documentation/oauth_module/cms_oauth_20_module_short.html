@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="Generic OAuth Module supporting authentication using different providers."/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="Copyright (c) 1984-2013, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>cms_oauth_20_module Contracts</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="cms_oauth_20_module_chart.html">Chart</a>
+<a class="nav class" href="cms_oauth_20_module_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="cms_oauth_20_module"></span>
+</div></form><pre><span class="ekeyword">note</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">Generic OAuth Module supporting authentication using different providers.</span>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+	<span class="eitag">date</span><span class="esymbol">:</span> <span class="estring">&quot;$Date$&quot;</span>
+	<span class="eitag">revision</span><span class="esymbol">:</span> <span class="estring">&quot;$Revision$&quot;</span>
+
+<span class="ekeyword">class</span> <span class="ekeyword">interface</span>
+	<a class="eclass" href="../oauth_module/cms_oauth_20_module_short.html">CMS_OAUTH_20_MODULE</a>
+
+<span class="ekeyword">create</span> 
+	<a class="efeature" href="../oauth_module/cms_oauth_20_module_short.html#f_make">make</a>
+
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Access</span>
+
+	<a name="f_name"></a><a class="efeature" href="../oauth_module/cms_oauth_20_module_short.html#f_name">Name</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;oauth20&quot;
+			<span class="ecomment">--</span><span class="ecomment"> Name of the module.</span>
+
+	<a name="f_permissions"></a><a class="efeature" href="../oauth_module/cms_oauth_20_module_short.html#f_permissions">permissions</a><span class="esymbol">:</span> <a class="eclass" href="../base/list_short.html">LIST</a> <span class="esymbol">[</span><a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">]</span>
+			<span class="ecomment">--</span><span class="ecomment"> List of permission ids, used by this module, and declared.</span>
+
+	<a name="f_perm_use_oauth2_auth"></a><a class="efeature" href="../oauth_module/cms_oauth_20_module_short.html#f_perm_use_oauth2_auth">Perm_use_oauth2_auth</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;use oauth2_auth&quot;
+
+	<a name="f_perm_account_oauth2_register"></a><a class="efeature" href="../oauth_module/cms_oauth_20_module_short.html#f_perm_account_oauth2_register">Perm_account_oauth2_register</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;oauth2 account register&quot;
+
+	<a name="f_has_permission_to_use_authentication"></a><a class="efeature" href="../oauth_module/cms_oauth_20_module_short.html#f_has_permission_to_use_authentication">has_permission_to_use_authentication</a> <span class="esymbol">(</span><span class="elocal">api</span><span class="esymbol">:</span> <span class="neclass">CMS_API</span><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is current user (or anonymous) has permssion to use Current authentication?</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Filters</span>
+
+	<a name="f_filters"></a><a class="efeature" href="../oauth_module/cms_oauth_20_module_short.html#f_filters">filters</a> <span class="esymbol">(</span><span class="elocal">a_api</span><span class="esymbol">:</span> <span class="neclass">CMS_API</span><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/list_short.html">LIST</a> <span class="esymbol">[</span><a class="eclass" href="../wsf/wsf_filter_short.html">WSF_FILTER</a><span class="esymbol">]</span>
+			<span class="ecomment">--</span><span class="ecomment"> Possibly list of Filter's module.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Access: docs</span>
+
+	<a name="f_root_dir"></a><a class="efeature" href="../oauth_module/cms_oauth_20_module_short.html#f_root_dir">root_dir</a><span class="esymbol">:</span> <a class="eclass" href="../base/path_short.html">PATH</a>
+
+	<a name="f_cache_duration"></a><a class="efeature" href="../oauth_module/cms_oauth_20_module_short.html#f_cache_duration">cache_duration</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> Caching duration</span>
+
+	<a name="f_cache_disabled"></a><a class="efeature" href="../oauth_module/cms_oauth_20_module_short.html#f_cache_disabled">cache_disabled</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Access: auth strategy	</span>
+
+	<a name="f_login_title"></a><a class="efeature" href="../oauth_module/cms_oauth_20_module_short.html#f_login_title">Login_title</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;OAuth&quot;
+			<span class="ecomment">--</span><span class="ecomment"> Module specific login title.</span>
+
+	<a name="f_login_location"></a><a class="efeature" href="../oauth_module/cms_oauth_20_module_short.html#f_login_location">Login_location</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;account/auth/roc-oauth-login&quot;
+			<span class="ecomment">--</span><span class="ecomment"> Login cms location for Current module.</span>
+
+	<a name="f_logout_location"></a><a class="efeature" href="../oauth_module/cms_oauth_20_module_short.html#f_logout_location">Logout_location</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;account/auth/roc-oauth-logout&quot;
+			<span class="ecomment">--</span><span class="ecomment"> Logout cms location for Current module.</span>
+
+	<a name="f_is_authenticating"></a><a class="efeature" href="../oauth_module/cms_oauth_20_module_short.html#f_is_authenticating">is_authenticating</a> <span class="esymbol">(</span><span class="elocal">a_response</span><span class="esymbol">:</span> <span class="neclass">CMS_RESPONSE</span><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is Current module strategy currently authenticating active user?</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Router</span>
+
+	<a name="f_setup_router"></a><a class="efeature" href="../oauth_module/cms_oauth_20_module_short.html#f_setup_router">setup_router</a> <span class="esymbol">(</span><span class="elocal">a_router</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_router_short.html">WSF_ROUTER</a><span class="esymbol">;</span> <span class="elocal">a_api</span><span class="esymbol">:</span> <span class="neclass">CMS_API</span><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Setup url dispatching for Current module.</span>
+
+	<a name="f_oauth_callback_path_parameter"></a><a class="efeature" href="../oauth_module/cms_oauth_20_module_short.html#f_oauth_callback_path_parameter">Oauth_callback_path_parameter</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;callback&quot;
+			<span class="ecomment">--</span><span class="ecomment"> Callback path parameter.	</span>
+
+	<a name="f_oauth_callback_path"></a><a class="efeature" href="../oauth_module/cms_oauth_20_module_short.html#f_oauth_callback_path">Oauth_callback_path</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;/account/auth/oauth-callback/&quot;
+
+	<a name="f_oauth_register_path"></a><a class="efeature" href="../oauth_module/cms_oauth_20_module_short.html#f_oauth_register_path">Oauth_register_path</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;/account/auth/oauth-register/&quot;
+
+	<a name="f_oauth_code_query_parameter"></a><a class="efeature" href="../oauth_module/cms_oauth_20_module_short.html#f_oauth_code_query_parameter">Oauth_code_query_parameter</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;code&quot;
+			<span class="ecomment">--</span><span class="ecomment"> Code query parameter, specific to OAuth protocol.</span>
+			<span class="ecomment">--</span><span class="ecomment"> FIXME: should we have a way to change this value?</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: if a OAuth provider is not using &quot;code&quot; query name.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Hooks configuration</span>
+
+	<a name="f_setup_hooks"></a><a class="efeature" href="../oauth_module/cms_oauth_20_module_short.html#f_setup_hooks">setup_hooks</a> <span class="esymbol">(</span><span class="elocal">a_hooks</span><span class="esymbol">:</span> <span class="neclass">CMS_HOOK_CORE_MANAGER</span><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Module hooks configuration.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Hooks</span>
+
+	<a name="f_block_list"></a><a class="efeature" href="../oauth_module/cms_oauth_20_module_short.html#f_block_list">block_list</a><span class="esymbol">:</span> <a class="eclass" href="../base/iterable_short.html">ITERABLE</a> <span class="esymbol">[</span><span class="ekeyword">like</span> <span class="esymbol">{</span><span class="neclass">CMS_BLOCK</span><span class="esymbol">}</span><span class="edot">.</span><span class="nefeature">name</span><span class="esymbol">]</span>
+			<span class="ecomment">--</span><span class="ecomment"> List of block names, managed by current object.</span>
+			<span class="ecomment">--</span><span class="ecomment"> If prefixed by &quot;?&quot;, condition will be checked</span>
+			<span class="ecomment">--</span><span class="ecomment"> to determine if it should be displayed (and computed) or not.</span>
+
+	<a name="f_get_block_view"></a><a class="efeature" href="../oauth_module/cms_oauth_20_module_short.html#f_get_block_view">get_block_view</a> <span class="esymbol">(</span><span class="elocal">a_block_id</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">;</span> <span class="elocal">a_response</span><span class="esymbol">:</span> <span class="neclass">CMS_RESPONSE</span><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Get block object identified by </span><span class="equoted">a_block_id</span><span class="ecomment"> and associate with </span><span class="equoted">a_response</span><span class="ecomment">.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Warning: be carefully with caching, if </span><span class="ecomment">`</span><a class="efeature" href="../oauth_module/cms_oauth_20_module_short.html#f_get_block_view">get_block_view</a><span class="ecomment">`</span><span class="ecomment"> is altering </span><span class="equoted">a_response</span>
+			<span class="ecomment">--</span><span class="ecomment">		as linking with css, js ... It should be done in </span><span class="equoted">setup_block_view</span><span class="ecomment">.</span>
+
+	<a name="f_handle_login"></a><a class="efeature" href="../oauth_module/cms_oauth_20_module_short.html#f_handle_login">handle_login</a> <span class="esymbol">(</span><span class="elocal">api</span><span class="esymbol">:</span> <span class="neclass">CMS_API</span><span class="esymbol">;</span> <span class="elocal">req</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_short.html">WSF_REQUEST</a><span class="esymbol">;</span> <span class="elocal">res</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_response_short.html">WSF_RESPONSE</a><span class="esymbol">)</span>
+
+	<a name="f_handle_logout"></a><a class="efeature" href="../oauth_module/cms_oauth_20_module_short.html#f_handle_logout">handle_logout</a> <span class="esymbol">(</span><span class="elocal">api</span><span class="esymbol">:</span> <span class="neclass">CMS_API</span><span class="esymbol">;</span> <span class="elocal">a_oauth20_api</span><span class="esymbol">:</span> <a class="eclass" href="../oauth_module/cms_oauth_20_api_short.html">CMS_OAUTH_20_API</a><span class="esymbol">;</span> <span class="elocal">req</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_short.html">WSF_REQUEST</a><span class="esymbol">;</span> <span class="elocal">res</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_response_short.html">WSF_RESPONSE</a><span class="esymbol">)</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> OAuth2 Login with Provider</span>
+
+	<a name="f_handle_login_with_oauth"></a><a class="efeature" href="../oauth_module/cms_oauth_20_module_short.html#f_handle_login_with_oauth">handle_login_with_oauth</a> <span class="esymbol">(</span><span class="elocal">api</span><span class="esymbol">:</span> <span class="neclass">CMS_API</span><span class="esymbol">;</span> <span class="elocal">a_oauth_api</span><span class="esymbol">:</span> <a class="eclass" href="../oauth_module/cms_oauth_20_api_short.html">CMS_OAUTH_20_API</a><span class="esymbol">;</span> <span class="elocal">req</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_short.html">WSF_REQUEST</a><span class="esymbol">;</span> <span class="elocal">res</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_response_short.html">WSF_RESPONSE</a><span class="esymbol">)</span>
+
+	<a name="f_handle_callback_oauth"></a><a class="efeature" href="../oauth_module/cms_oauth_20_module_short.html#f_handle_callback_oauth">handle_callback_oauth</a> <span class="esymbol">(</span><span class="elocal">api</span><span class="esymbol">:</span> <span class="neclass">CMS_API</span><span class="esymbol">;</span> <span class="elocal">a_oauth_api</span><span class="esymbol">:</span> <a class="eclass" href="../oauth_module/cms_oauth_20_api_short.html">CMS_OAUTH_20_API</a><span class="esymbol">;</span> <span class="elocal">req</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_short.html">WSF_REQUEST</a><span class="esymbol">;</span> <span class="elocal">res</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_response_short.html">WSF_RESPONSE</a><span class="esymbol">)</span>
+
+	<a name="f_handle_associate"></a><a class="efeature" href="../oauth_module/cms_oauth_20_module_short.html#f_handle_associate">handle_associate</a> <span class="esymbol">(</span><span class="elocal">api</span><span class="esymbol">:</span> <span class="neclass">CMS_API</span><span class="esymbol">;</span> <span class="elocal">a_oauth_api</span><span class="esymbol">:</span> <a class="eclass" href="../oauth_module/cms_oauth_20_api_short.html">CMS_OAUTH_20_API</a><span class="esymbol">;</span> <span class="elocal">req</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_short.html">WSF_REQUEST</a><span class="esymbol">;</span> <span class="elocal">res</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_response_short.html">WSF_RESPONSE</a><span class="esymbol">)</span>
+
+	<a name="f_handle_un_associate"></a><a class="efeature" href="../oauth_module/cms_oauth_20_module_short.html#f_handle_un_associate">handle_un_associate</a> <span class="esymbol">(</span><span class="elocal">api</span><span class="esymbol">:</span> <span class="neclass">CMS_API</span><span class="esymbol">;</span> <span class="elocal">a_oauth_api</span><span class="esymbol">:</span> <a class="eclass" href="../oauth_module/cms_oauth_20_api_short.html">CMS_OAUTH_20_API</a><span class="esymbol">;</span> <span class="elocal">req</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_short.html">WSF_REQUEST</a><span class="esymbol">;</span> <span class="elocal">res</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_response_short.html">WSF_RESPONSE</a><span class="esymbol">)</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Registration</span>
+
+	<a name="f_new_registration_form"></a><a class="efeature" href="../oauth_module/cms_oauth_20_module_short.html#f_new_registration_form">new_registration_form</a> <span class="esymbol">(</span><span class="elocal">a_consumer</span><span class="esymbol">:</span> <a class="eclass" href="../oauth_module/cms_oauth_20_consumer_short.html">CMS_OAUTH_20_CONSUMER</a><span class="esymbol">;</span> <span class="elocal">a_oauth_id</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">;</span> <span class="elocal">a_access_token</span><span class="esymbol">:</span> <span class="neclass">OAUTH_TOKEN</span><span class="esymbol">;</span> <span class="elocal">a_oauth_email</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">;</span> <span class="elocal">a_user_profile</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">;</span> <span class="elocal">a_oauth2_api</span><span class="esymbol">:</span> <a class="eclass" href="../oauth_module/cms_oauth_20_api_short.html">CMS_OAUTH_20_API</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="neclass">CMS_FORM</span>
+
+	<a name="f_new_empty_registration_form"></a><a class="efeature" href="../oauth_module/cms_oauth_20_module_short.html#f_new_empty_registration_form">new_empty_registration_form</a><span class="esymbol">:</span> <span class="neclass">CMS_FORM</span>
+
+	<a name="f_handle_register"></a><a class="efeature" href="../oauth_module/cms_oauth_20_module_short.html#f_handle_register">handle_register</a> <span class="esymbol">(</span><span class="elocal">api</span><span class="esymbol">:</span> <span class="neclass">CMS_API</span><span class="esymbol">;</span> <span class="elocal">a_oauth_api</span><span class="esymbol">:</span> <a class="eclass" href="../oauth_module/cms_oauth_20_api_short.html">CMS_OAUTH_20_API</a><span class="esymbol">;</span> <span class="elocal">req</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_short.html">WSF_REQUEST</a><span class="esymbol">;</span> <span class="elocal">res</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_response_short.html">WSF_RESPONSE</a><span class="esymbol">)</span>
+	
+<span class="ekeyword">note</span>
+	<span class="eitag">copyright</span><span class="esymbol">:</span> <span class="estring">&quot;Copyright (c) 1984-2013, Eiffel Software and others&quot;</span>
+	<span class="eitag">license</span><span class="esymbol">:</span> <span class="estring">&quot;Eiffel Forum License v2 (see </span><a class="estring" href="http://www.eiffel.com/licensing/forum.txt">http://www.eiffel.com/licensing/forum.txt</a><span class="estring">)&quot;</span>
+	<span class="eitag">source</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">Eiffel Software</span>
+		<span class="estring">5949 Hollister Ave., Goleta, CA 93117 USA</span>
+		<span class="estring">Telephone 805-685-1006, Fax 805-685-6869</span>
+		<span class="estring">Website </span><a class="estring" href="http://www.eiffel.com">http://www.eiffel.com</a>
+		<span class="estring">Customer support </span><a class="estring" href="http://support.eiffel.com">http://support.eiffel.com</a>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+
+<span class="ekeyword">end</span> <span class="ecomment">--</span> <span class="ecomment">class </span><a class="eclass" href="../oauth_module/cms_oauth_20_module_short.html">CMS_OAUTH_20_MODULE</a></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="cms_oauth_20_module_chart.html">Chart</a>
+<a class="nav class" href="cms_oauth_20_module_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="cms_oauth_20_module"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
+

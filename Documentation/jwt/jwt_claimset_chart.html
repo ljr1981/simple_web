@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="Object representing a JWT claim set"/>
+<meta name="eis" content="name=JWT claims, src=https://tools.ietf.org/html/rfc7519#section-4, protocol=uri"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>jwt_claimset Chart</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<span class="nav class selected">Chart</span>
+<a class="nav class" href="jwt_claimset_links.html">Relations</a>
+<a class="nav class" href="jwt_claimset_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="jwt_claimset"></span>
+</div></form><pre><span class="ekeyword">class</span>
+	<a class="eclass" href="../jwt/jwt_claimset_chart.html">JWT_CLAIMSET</a>
+
+<span class="ekeyword">General</span>
+	<span class="eitag">cluster</span><span class="esymbol">:</span> <span class="necluster">src</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;Object representing a JWT claim set&quot;</span>
+	<span class="eitag">create</span><span class="esymbol">:</span> <a class="efeature" href="../jwt/jwt_claimset_short.html#f_default_create">default_create</a>
+
+<span class="ekeyword">Ancestors</span>
+	<a class="eclass" href="../base/any_chart.html">ANY</a>
+
+<span class="ekeyword">Queries</span>
+	<span title="`audience' is declared in `Current'"><a class="efeature" href="../jwt/jwt_claimset_short.html#f_audience">audience</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a></span>
+	<span title="`claim' is declared in `Current'"><a class="efeature" href="../jwt/jwt_claimset_short.html#f_claim">claim</a> <span class="ekeyword">alias</span> <span class="esymbol">&quot;</span><a class="esymbol" href="../jwt/jwt_claimset_short.html#f_claim">[]</a><span class="esymbol">&quot;</span> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/any_chart.html">ANY</a></span>
+	<span title="`expiration_time' is declared in `Current'"><a class="efeature" href="../jwt/jwt_claimset_short.html#f_expiration_time">expiration_time</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <span class="neclass">DATE_TIME</span></span>
+	<span title="`issued_at' is declared in `Current'"><a class="efeature" href="../jwt/jwt_claimset_short.html#f_issued_at">issued_at</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <span class="neclass">DATE_TIME</span></span>
+	<span title="`issuer' is declared in `Current'"><a class="efeature" href="../jwt/jwt_claimset_short.html#f_issuer">issuer</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a></span>
+	<span title="`json' is declared in `Current'"><a class="efeature" href="../jwt/jwt_claimset_short.html#f_json">json</a><span class="esymbol">:</span> <span class="neclass">JSON_OBJECT</span></span>
+	<span title="`jwd_id' is declared in `Current'"><a class="efeature" href="../jwt/jwt_claimset_short.html#f_jwd_id">jwd_id</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a></span>
+	<span title="`not_before_time' is declared in `Current'"><a class="efeature" href="../jwt/jwt_claimset_short.html#f_not_before_time">not_before_time</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <span class="neclass">DATE_TIME</span></span>
+	<span title="`string' is declared in `Current'"><a class="efeature" href="../jwt/jwt_claimset_short.html#f_string">string</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`string_32_claim' is declared in `Current'"><a class="efeature" href="../jwt/jwt_claimset_short.html#f_string_32_claim">string_32_claim</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_32_chart.html">READABLE_STRING_32</a></span>
+	<span title="`string_8_claim' is declared in `Current'"><a class="efeature" href="../jwt/jwt_claimset_short.html#f_string_8_claim">string_8_claim</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a></span>
+	<span title="`subjet' is declared in `Current'"><a class="efeature" href="../jwt/jwt_claimset_short.html#f_subjet">subjet</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_32_chart.html">READABLE_STRING_32</a></span>
+
+<span class="ekeyword">Commands</span>
+	<span title="`import_json' is declared in `Current'"><a class="efeature" href="../jwt/jwt_claimset_short.html#f_import_json">import_json</a> <span class="esymbol">(</span><span class="elocal">j</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">)</span></span>
+	<span title="`set_audience' is declared in `Current'"><a class="efeature" href="../jwt/jwt_claimset_short.html#f_set_audience">set_audience</a> <span class="esymbol">(</span><span class="elocal">aud</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">)</span></span>
+	<span title="`set_claim' is declared in `Current'"><a class="efeature" href="../jwt/jwt_claimset_short.html#f_set_claim">set_claim</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">;</span> <span class="elocal">a_val</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/any_chart.html">ANY</a><span class="esymbol">)</span></span>
+	<span title="`set_expiration_time' is declared in `Current'"><a class="efeature" href="../jwt/jwt_claimset_short.html#f_set_expiration_time">set_expiration_time</a> <span class="esymbol">(</span><span class="elocal">exp</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <span class="neclass">DATE_TIME</span><span class="esymbol">)</span></span>
+	<span title="`set_issued_at' is declared in `Current'"><a class="efeature" href="../jwt/jwt_claimset_short.html#f_set_issued_at">set_issued_at</a> <span class="esymbol">(</span><span class="elocal">iat</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <span class="neclass">DATE_TIME</span><span class="esymbol">)</span></span>
+	<span title="`set_issued_at_now_utc' is declared in `Current'"><a class="efeature" href="../jwt/jwt_claimset_short.html#f_set_issued_at_now_utc">set_issued_at_now_utc</a></span>
+	<span title="`set_issuer' is declared in `Current'"><a class="efeature" href="../jwt/jwt_claimset_short.html#f_set_issuer">set_issuer</a> <span class="esymbol">(</span><span class="elocal">iss</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">)</span></span>
+	<span title="`set_jwt_id' is declared in `Current'"><a class="efeature" href="../jwt/jwt_claimset_short.html#f_set_jwt_id">set_jwt_id</a> <span class="esymbol">(</span><span class="elocal">jti</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">)</span></span>
+	<span title="`set_not_before_time' is declared in `Current'"><a class="efeature" href="../jwt/jwt_claimset_short.html#f_set_not_before_time">set_not_before_time</a> <span class="esymbol">(</span><span class="elocal">nbf</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <span class="neclass">DATE_TIME</span><span class="esymbol">)</span></span>
+	<span title="`set_subject' is declared in `Current'"><a class="efeature" href="../jwt/jwt_claimset_short.html#f_set_subject">set_subject</a> <span class="esymbol">(</span><span class="elocal">sub</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_32_chart.html">READABLE_STRING_32</a><span class="esymbol">)</span></span>
+
+</pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<span class="nav class selected">Chart</span>
+<a class="nav class" href="jwt_claimset_links.html">Relations</a>
+<a class="nav class" href="jwt_claimset_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="jwt_claimset"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>

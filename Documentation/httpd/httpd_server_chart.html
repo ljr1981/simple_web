@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="httpd server"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="2011-2016, Jocelyn Fiat, Javier Velilla, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>httpd_server Chart</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<span class="nav class selected">Chart</span>
+<a class="nav class" href="httpd_server_links.html">Relations</a>
+<a class="nav class" href="httpd_server_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="httpd_server"></span>
+</div></form><pre><span class="ekeyword">class</span>
+	<a class="eclass" href="../httpd/httpd_server_chart.html">HTTPD_SERVER</a>
+
+<span class="ekeyword">General</span>
+	<span class="eitag">cluster</span><span class="esymbol">:</span> <span class="necluster">no_ssl</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;httpd server&quot;</span>
+	<span class="eitag">create</span><span class="esymbol">:</span> <a class="efeature" href="../httpd/httpd_server_i_short.html#f_make">make</a>
+
+<span class="ekeyword">Ancestors</span>
+	<a class="eclass" href="../httpd/httpd_server_i_chart.html">HTTPD_SERVER_I</a><span class="echar">*</span>
+
+<span class="ekeyword">Queries</span>
+	<span title="`alert_level' was declared in HTTPD_LOGGER_CONSTANTS"><a class="efeature" href="../httpd/httpd_logger_constants_short.html#f_alert_level">Alert_level</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+	<span title="`configuration' was declared in HTTPD_SERVER_I"><a class="efeature" href="../httpd/httpd_server_i_short.html#f_configuration">configuration</a><span class="esymbol">:</span> <a class="eclass" href="../httpd/httpd_configuration_chart.html">HTTPD_CONFIGURATION</a></span>
+	<span title="`controller' was declared in HTTPD_SERVER_I"><a class="efeature" href="../httpd/httpd_server_i_short.html#f_controller">controller</a><span class="esymbol">:</span> <span class="ekeyword">separate</span> <a class="eclass" href="../httpd/httpd_controller_chart.html">HTTPD_CONTROLLER</a></span>
+	<span title="`critical_level' was declared in HTTPD_LOGGER_CONSTANTS"><a class="efeature" href="../httpd/httpd_logger_constants_short.html#f_critical_level">Critical_level</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+	<span title="`debug_level' was declared in HTTPD_LOGGER_CONSTANTS"><a class="efeature" href="../httpd/httpd_logger_constants_short.html#f_debug_level">Debug_level</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+	<span title="`error_level' was declared in HTTPD_LOGGER_CONSTANTS"><a class="efeature" href="../httpd/httpd_logger_constants_short.html#f_error_level">Error_level</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+	<span title="`factory' was declared in HTTPD_SERVER_I"><a class="efeature" href="../httpd/httpd_server_i_short.html#f_factory">factory</a><span class="esymbol">:</span> <span class="ekeyword">separate</span> <a class="eclass" href="../httpd/httpd_request_handler_factory_chart.html">HTTPD_REQUEST_HANDLER_FACTORY</a></span>
+	<span title="`information_level' was declared in HTTPD_LOGGER_CONSTANTS"><a class="efeature" href="../httpd/httpd_logger_constants_short.html#f_information_level">Information_level</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+	<span title="`is_launched' was declared in HTTPD_SERVER_I"><a class="efeature" href="../httpd/httpd_server_i_short.html#f_is_launched">is_launched</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`is_persistent_connection_supported' was declared in HTTPD_SERVER_I"><a class="efeature" href="../httpd/httpd_server_i_short.html#f_is_persistent_connection_supported">Is_persistent_connection_supported</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`is_shutdown_requested' was declared in HTTPD_SERVER_I"><a class="efeature" href="../httpd/httpd_server_i_short.html#f_is_shutdown_requested">is_shutdown_requested</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`is_terminated' was declared in HTTPD_SERVER_I"><a class="efeature" href="../httpd/httpd_server_i_short.html#f_is_terminated">is_terminated</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`is_verbose' was declared in HTTPD_SERVER_I"><a class="efeature" href="../httpd/httpd_server_i_short.html#f_is_verbose">is_verbose</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`logger_level_representation' was declared in HTTPD_LOGGER_CONSTANTS"><a class="efeature" href="../httpd/httpd_logger_constants_short.html#f_logger_level_representation">logger_level_representation</a> <span class="esymbol">(</span><span class="elocal">a_level</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`notice_level' was declared in HTTPD_LOGGER_CONSTANTS"><a class="efeature" href="../httpd/httpd_logger_constants_short.html#f_notice_level">Notice_level</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+	<span title="`observer' was declared in HTTPD_SERVER_I"><a class="efeature" href="../httpd/httpd_server_i_short.html#f_observer">observer</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <span class="ekeyword">separate</span> <a class="eclass" href="../httpd/httpd_server_observer_chart.html">HTTPD_SERVER_OBSERVER</a></span>
+	<span title="`output' was declared in HTTPD_SERVER_I"><a class="efeature" href="../httpd/httpd_server_i_short.html#f_output">output</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/file_chart.html">FILE</a></span>
+	<span title="`port' was declared in HTTPD_SERVER_I"><a class="efeature" href="../httpd/httpd_server_i_short.html#f_port">port</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+	<span title="`processor_id_from_object' was declared in HTTPD_DEBUG_FACILITIES"><a class="efeature" href="../httpd/httpd_debug_facilities_short.html#f_processor_id_from_object">processor_id_from_object</a> <span class="esymbol">(</span><span class="elocal">a_object</span><span class="esymbol">:</span> <span class="ekeyword">separate</span> <a class="eclass" href="../base/any_chart.html">ANY</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+	<span title="`timeout_representation' was declared in HTTPD_SERVER_I"><a class="efeature" href="../httpd/httpd_server_i_short.html#f_timeout_representation">timeout_representation</a> <span class="esymbol">(</span><span class="elocal">a_ns</span><span class="esymbol">:</span> <a class="eclass" href="../base/natural_64_chart.html">NATURAL_64</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`verbose_level' was declared in HTTPD_SERVER_I"><a class="efeature" href="../httpd/httpd_server_i_short.html#f_verbose_level">verbose_level</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+	<span title="`warning_level' was declared in HTTPD_LOGGER_CONSTANTS"><a class="efeature" href="../httpd/httpd_logger_constants_short.html#f_warning_level">Warning_level</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+
+<span class="ekeyword">Commands</span>
+	<span title="`apply_configuration' was declared in HTTPD_SERVER_I"><a class="efeature" href="../httpd/httpd_server_i_short.html#f_apply_configuration">apply_configuration</a></span>
+	<span title="`controller_shutdown' was declared in HTTPD_SERVER_I"><a class="efeature" href="../httpd/httpd_server_i_short.html#f_controller_shutdown">controller_shutdown</a> <span class="esymbol">(</span><span class="elocal">ctl</span><span class="esymbol">:</span> <span class="esymbol">[</span><span class="ekeyword">attached</span> <span class="ekeyword">like</span> <a class="efeature" href="../httpd/httpd_server_i_short.html#f_controller">controller</a><span class="esymbol">]</span> <span class="ekeyword">attached</span> <span class="ekeyword">separate</span> <a class="eclass" href="../httpd/httpd_controller_chart.html">HTTPD_CONTROLLER</a><span class="esymbol">)</span></span>
+	<span title="`launch' was declared in HTTPD_SERVER_I"><a class="efeature" href="../httpd/httpd_server_i_short.html#f_launch">launch</a></span>
+	<span title="`listen' was declared in HTTPD_SERVER_I"><a class="efeature" href="../httpd/httpd_server_i_short.html#f_listen">listen</a></span>
+	<span title="`log' was declared in HTTPD_SERVER_I"><a class="efeature" href="../httpd/httpd_server_i_short.html#f_log">log</a> <span class="esymbol">(</span><span class="elocal">a_message</span><span class="esymbol">:</span> <span class="ekeyword">separate</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">)</span></span>
+	<span title="`on_launched' was declared in HTTPD_SERVER_I"><a class="efeature" href="../httpd/httpd_server_i_short.html#f_on_launched">on_launched</a> <span class="esymbol">(</span><span class="elocal">a_port</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a><span class="esymbol">)</span></span>
+	<span title="`on_stopped' was declared in HTTPD_SERVER_I"><a class="efeature" href="../httpd/httpd_server_i_short.html#f_on_stopped">on_stopped</a></span>
+	<span title="`on_terminated' was declared in HTTPD_SERVER_I"><a class="efeature" href="../httpd/httpd_server_i_short.html#f_on_terminated">on_terminated</a></span>
+	<span title="`set_log_output' was declared in HTTPD_SERVER_I"><a class="efeature" href="../httpd/httpd_server_i_short.html#f_set_log_output">set_log_output</a> <span class="esymbol">(</span><span class="elocal">f</span><span class="esymbol">:</span> <a class="eclass" href="../base/file_chart.html">FILE</a><span class="esymbol">)</span></span>
+	<span title="`set_observer' was declared in HTTPD_SERVER_I"><a class="efeature" href="../httpd/httpd_server_i_short.html#f_set_observer">set_observer</a> <span class="esymbol">(</span><span class="elocal">obs</span><span class="esymbol">:</span> <span class="esymbol">[</span><span class="ekeyword">like</span> <a class="efeature" href="../httpd/httpd_server_i_short.html#f_observer">observer</a><span class="esymbol">]</span> <span class="ekeyword">detachable</span> <span class="ekeyword">separate</span> <a class="eclass" href="../httpd/httpd_server_observer_chart.html">HTTPD_SERVER_OBSERVER</a><span class="esymbol">)</span></span>
+	<span title="`shutdown_server' was declared in HTTPD_SERVER_I"><a class="efeature" href="../httpd/httpd_server_i_short.html#f_shutdown_server">shutdown_server</a></span>
+
+</pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<span class="nav class selected">Chart</span>
+<a class="nav class" href="httpd_server_links.html">Relations</a>
+<a class="nav class" href="httpd_server_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="httpd_server"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>

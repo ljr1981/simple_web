@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="TTTServer request context of the httpd request  TTTIt includes CGI interface and a few extra values that are usually valuable TTTT meta_variable (a_name: READABLE_STRING_GENERAL): detachable WSF_STRING TTTT meta_string_variable (a_name: READABLE_STRING_GENERAL): detachable READABLE_STRING_32  TTTIn addition it provides  TTTTquery_parameter (a_name: READABLE_STRING_GENERAL): detachable WSF_VALUE TTTTform_parameter (a_name: READABLE_STRING_GENERAL): detachable WSF_VALUE TTTTcookie (a_name: READABLE_STRING_GENERAL): detachable WSF_VALUE TTTT...  TTTAnd also has TTTTexecution_variable (a_name: READABLE_STRING_GENERAL): detachable ANY TTTTT--| to keep value attached to the request  TTTAbout https support: `is_https' indicates if the request is made through an https connection or not. "/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="2011-2020, Jocelyn Fiat, Javier Velilla, Olivier Ligot, Colin Adams, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>wsf_request Relations</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="wsf_request_chart.html">Chart</a>
+<span class="nav class selected">Relations</span>
+<a class="nav class" href="wsf_request_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="wsf_request"></span>
+</div></form><pre><span class="ekeyword">class</span>
+	<a class="eclass" href="../wsf/wsf_request_links.html">WSF_REQUEST</a>
+
+<span class="ekeyword">Ancestors</span>
+	<a class="eclass" href="../base/debug_output_links.html">DEBUG_OUTPUT</a><span class="echar">*</span>
+	<a class="eclass" href="../base/shared_execution_environment_links.html">SHARED_EXECUTION_ENVIRONMENT</a>
+	<a class="eclass" href="../wsf/shared_wsf_percent_encoder_links.html">SHARED_WSF_PERCENT_ENCODER</a>
+	<a class="eclass" href="../wsf/wsf_value_utilities_links.html">WSF_VALUE_UTILITIES</a>
+
+<span class="ekeyword">Clients</span>
+	<span class="neclass">BAD_REQUEST_ERROR_CMS_RESPONSE</span>
+	<span class="neclass">CMS_ACCESS_TOKEN_WEBAPI_AUTH_FILTER</span>
+	<span class="neclass">CMS_ACCESS_TOKEN_WEBAPI_HANDLER</span>
+	<span class="neclass">CMS_API</span>
+	<span class="neclass">CMS_AUTHENTICATION_MODULE</span>
+	<span class="neclass">CMS_AUTHENTICATION_MODULE_ADMINISTRATION</span>
+	<span class="neclass">CMS_DEBUG_MODULE</span>
+	<span class="neclass">CMS_ERROR_FILTER</span>
+	<span class="neclass">CMS_EXECUTION</span><span class="echar">*</span>
+	<span class="neclass">CMS_MAINTENANCE_FILTER</span>
+	<a class="eclass" href="../oauth_module/cms_oauth_20_filter_links.html">CMS_OAUTH_20_FILTER</a>
+	<a class="eclass" href="../oauth_module/cms_oauth_20_module_links.html">CMS_OAUTH_20_MODULE</a>
+	<a class="eclass" href="../oauth_module/cms_oauth_20_module_administration_links.html">CMS_OAUTH_20_MODULE_ADMINISTRATION</a>
+	<span class="neclass">CMS_PAGINATION_GENERATOR</span>
+	<span class="neclass">CMS_RESPONSE</span><span class="echar">*</span>
+	<span class="neclass">CMS_RESPONSE_I</span><span class="echar">*</span>
+	<span class="neclass">CMS_ROOT_WEBAPI_HANDLER</span>
+	<span class="neclass">CMS_THEME_FILE_SYSTEM_HANDLER</span>
+	<span class="neclass">CMS_USERS_WEBAPI_HANDLER</span>
+	<span class="neclass">CMS_USER_HANDLER</span>
+	<span class="neclass">CMS_USER_REGISTER_WEBAPI_HANDLER</span>
+	<span class="neclass">CMS_USER_VIEW_RESPONSE</span>
+	<span class="neclass">CMS_USER_WEBAPI_HANDLER</span>
+	<span class="neclass">FORBIDDEN_ERROR_CMS_RESPONSE</span>
+	<span class="neclass">JSON_WEBAPI_RESPONSE</span>
+	<span class="neclass">NOT_FOUND_ERROR_CMS_RESPONSE</span>
+	<span class="neclass">NOT_IMPLEMENTED_ERROR_CMS_RESPONSE</span>
+	<a class="eclass" href="../src/simple_web_server_request_links.html">SIMPLE_WEB_SERVER_REQUEST</a>
+	<span class="neclass">WEBAPI_RESPONSE</span><span class="echar">*</span>
+	<span class="neclass">WEB_SOCKET</span>
+	<a class="eclass" href="../wsf/wsf_application_x_www_form_urlencoded_handler_links.html">WSF_APPLICATION_X_WWW_FORM_URLENCODED_HANDLER</a>
+	<span class="neclass">WSF_CGI_HANDLER</span>
+	<a class="eclass" href="../wsf/wsf_cors_options_filter_links.html">WSF_CORS_OPTIONS_FILTER</a>
+	<a class="eclass" href="../wsf/wsf_cors_options_response_links.html">WSF_CORS_OPTIONS_RESPONSE</a>
+	<span class="neclass">WSF_DEBUG_HANDLER</span>
+	<span class="neclass">WSF_DEBUG_INFORMATION</span>
+	<a class="eclass" href="../wsf/wsf_default_response_links.html">WSF_DEFAULT_RESPONSE</a>
+	<a class="eclass" href="../wsf/wsf_default_router_response_links.html">WSF_DEFAULT_ROUTER_RESPONSE</a>
+	<a class="eclass" href="../wsf/wsf_execution_links.html">WSF_EXECUTION</a><span class="echar">*</span>
+	<a class="eclass" href="../wsf/wsf_file_system_handler_links.html">WSF_FILE_SYSTEM_HANDLER</a>
+	<a class="eclass" href="../wsf/wsf_format_utility_links.html">WSF_FORMAT_UTILITY</a>
+	<span class="neclass">WSF_FORM_DATA</span>
+	<a class="eclass" href="../wsf/wsf_logging_filter_links.html">WSF_LOGGING_FILTER</a>
+	<span class="neclass">WSF_METHOD_HANDLER</span><span class="echar">*</span>
+	<a class="eclass" href="../wsf/wsf_method_not_allowed_response_links.html">WSF_METHOD_NOT_ALLOWED_RESPONSE</a>
+	<a class="eclass" href="../wsf/wsf_mime_handler_helper_links.html">WSF_MIME_HANDLER_HELPER</a><span class="echar">*</span>
+	<a class="eclass" href="../wsf/wsf_multipart_form_data_handler_links.html">WSF_MULTIPART_FORM_DATA_HANDLER</a>
+	<a class="eclass" href="../wsf/wsf_not_found_response_links.html">WSF_NOT_FOUND_RESPONSE</a>
+	<a class="eclass" href="../wsf/wsf_not_implemented_response_links.html">WSF_NOT_IMPLEMENTED_RESPONSE</a>
+	<a class="eclass" href="../wsf/wsf_options_policy_links.html">WSF_OPTIONS_POLICY</a>
+	<a class="eclass" href="../wsf/wsf_precondition_failed_message_links.html">WSF_PRECONDITION_FAILED_MESSAGE</a>
+	<a class="eclass" href="../wsf/wsf_proxy_use_policy_links.html">WSF_PROXY_USE_POLICY</a><span class="echar">*</span>
+	<a class="eclass" href="../wsf/wsf_request_links.html">WSF_REQUEST</a>
+	<a class="eclass" href="../wsf/wsf_request_path_parameters_provider_links.html">WSF_REQUEST_PATH_PARAMETERS_PROVIDER</a>
+	<span class="neclass">WSF_REQUEST_THEME</span>
+	<span class="neclass">WSF_REQUEST_UTILITY</span>
+	<span class="neclass">WSF_REQUEST_UTILITY_PROXY</span><span class="echar">*</span>
+	<span class="neclass">WSF_RESOURCE_CONTEXT_HANDLER_HELPER</span><span class="echar">*</span> <span class="esymbol">[</span><span class="egeneric">C</span> <span class="esymbol">-&gt;</span> <span class="neclass">WSF_HANDLER_CONTEXT</span> <span class="ekeyword">create</span> <span class="nefeature">make</span> <span class="ekeyword">end</span><span class="esymbol">]</span>
+	<span class="neclass">WSF_RESOURCE_HANDLER_HELPER</span>
+	<a class="eclass" href="../wsf/wsf_routed_skeleton_execution_links.html">WSF_ROUTED_SKELETON_EXECUTION</a><span class="echar">*</span>
+	<a class="eclass" href="../wsf/wsf_router_links.html">WSF_ROUTER</a>
+	<a class="eclass" href="../wsf/wsf_router_self_documentation_message_links.html">WSF_ROUTER_SELF_DOCUMENTATION_MESSAGE</a>
+	<a class="eclass" href="../wsf/wsf_routing_extension_condition_links.html">WSF_ROUTING_EXTENSION_CONDITION</a>
+	<a class="eclass" href="../wsf/wsf_routing_path_exists_condition_links.html">WSF_ROUTING_PATH_EXISTS_CONDITION</a>
+	<a class="eclass" href="../wsf/wsf_starts_with_handler_links.html">WSF_STARTS_WITH_HANDLER</a><span class="echar">*</span>
+	<a class="eclass" href="../wsf/wsf_starts_with_mapping_i_links.html">WSF_STARTS_WITH_MAPPING_I</a><span class="echar">*</span>
+	<a class="eclass" href="../wsf/wsf_trace_response_links.html">WSF_TRACE_RESPONSE</a>
+	<span class="neclass">WSF_VALUE_UTILITY</span>
+
+<span class="ekeyword">Suppliers</span>
+	<a class="eclass" href="../base/array_links.html">ARRAY</a> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+	<a class="eclass" href="../base/arrayed_list_links.html">ARRAYED_LIST</a> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+	<a class="eclass" href="../base/boolean_links.html">BOOLEAN</a>
+	<a class="eclass" href="../base/cell_links.html">CELL</a> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+	<a class="eclass" href="../base/character_8_links.html">CHARACTER_8</a>
+	<span class="neclass">DATE</span>
+	<span class="neclass">DATE_TIME</span>
+	<a class="eclass" href="../base/directory_links.html">DIRECTORY</a>
+	<span class="neclass">ERROR_HANDLER</span>
+	<a class="eclass" href="../base/execution_environment_links.html">EXECUTION_ENVIRONMENT</a>
+	<a class="eclass" href="../base/file_links.html">FILE</a><span class="echar">*</span>
+	<a class="eclass" href="../base/function_links.html">FUNCTION</a> <span class="esymbol">[</span><span class="egeneric">OPEN_ARGS</span> <span class="esymbol">-&gt;</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/tuple_links.html">TUPLE</a> <span class="ekeyword">create</span> <a class="efeature" href="../base/any_short.html#f_default_create">default_create</a> <span class="ekeyword">end</span><span class="esymbol">,</span> <span class="egeneric">RESULT_TYPE</span><span class="esymbol">]</span>
+	<a class="eclass" href="../base/hash_table_iteration_cursor_links.html">HASH_TABLE_ITERATION_CURSOR</a> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">,</span> <span class="egeneric">K</span> <span class="esymbol">-&gt;</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/hashable_links.html">HASHABLE</a><span class="esymbol">]</span>
+	<span class="neclass">HTTP_ACCEPT_MEDIA_TYPE_VARIANTS</span>
+	<span class="neclass">HTTP_CONTENT_TYPE</span>
+	<span class="neclass">HTTP_DATE_TIME_UTILITIES</span>
+	<span class="neclass">HTTP_REQUEST_METHODS</span>
+	<span class="neclass">HTTP_STATUS_CODE</span>
+	<a class="eclass" href="../base/immutable_string_32_links.html">IMMUTABLE_STRING_32</a>
+	<a class="eclass" href="../base/immutable_string_8_links.html">IMMUTABLE_STRING_8</a>
+	<a class="eclass" href="../base/integer_32_links.html">INTEGER_32</a>
+	<a class="eclass" href="../base/integer_64_links.html">INTEGER_64</a>
+	<a class="eclass" href="../base/io_medium_links.html">IO_MEDIUM</a><span class="echar">*</span>
+	<a class="eclass" href="../base/iterable_links.html">ITERABLE</a><span class="echar">*</span> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+	<a class="eclass" href="../base/iteration_cursor_links.html">ITERATION_CURSOR</a><span class="echar">*</span> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+	<a class="eclass" href="../base/list_links.html">LIST</a><span class="echar">*</span> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+	<a class="eclass" href="../base/natural_64_links.html">NATURAL_64</a>
+	<a class="eclass" href="../base/path_links.html">PATH</a>
+	<a class="eclass" href="../base/raw_file_links.html">RAW_FILE</a>
+	<a class="eclass" href="../base/readable_string_32_links.html">READABLE_STRING_32</a><span class="echar">*</span>
+	<a class="eclass" href="../base/readable_string_8_links.html">READABLE_STRING_8</a><span class="echar">*</span>
+	<a class="eclass" href="../base/readable_string_general_links.html">READABLE_STRING_GENERAL</a><span class="echar">*</span>
+	<a class="eclass" href="../base/real_64_links.html">REAL_64</a>
+	<span class="neclass">SERVER_MEDIA_TYPE_NEGOTIATION</span>
+	<a class="eclass" href="../base/string_32_links.html">STRING_32</a>
+	<a class="eclass" href="../base/string_8_links.html">STRING_8</a>
+	<a class="eclass" href="../base/string_table_links.html">STRING_TABLE</a> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+	<a class="eclass" href="../base/table_iterable_links.html">TABLE_ITERABLE</a><span class="echar">*</span> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">,</span> <span class="egeneric">K</span><span class="esymbol">]</span>
+	<a class="eclass" href="../base/table_iteration_cursor_links.html">TABLE_ITERATION_CURSOR</a><span class="echar">*</span> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">,</span> <span class="egeneric">K</span><span class="esymbol">]</span>
+	<span class="neclass">TIME</span>
+	<a class="eclass" href="../base/utf_converter_links.html">UTF_CONVERTER</a>
+	<span class="neclass">WGI_INPUT_STREAM</span><span class="echar">*</span>
+	<span class="neclass">WGI_REQUEST</span><span class="echar">*</span>
+	<a class="eclass" href="../wsf/wsf_application_x_www_form_urlencoded_handler_links.html">WSF_APPLICATION_X_WWW_FORM_URLENCODED_HANDLER</a>
+	<a class="eclass" href="../wsf/wsf_error_links.html">WSF_ERROR</a>
+	<a class="eclass" href="../wsf/wsf_file_utilities_links.html">WSF_FILE_UTILITIES</a> <span class="esymbol">[</span><span class="egeneric">G</span> <span class="esymbol">-&gt;</span> <a class="eclass" href="../base/file_links.html">FILE</a> <span class="ekeyword">create</span> <a class="efeature" href="../base/file_short.html#f_make_with_path">make_with_path</a> <span class="ekeyword">end</span><span class="esymbol">]</span>
+	<a class="eclass" href="../wsf/wsf_meta_names_links.html">WSF_META_NAMES</a>
+	<a class="eclass" href="../wsf/wsf_mime_handler_links.html">WSF_MIME_HANDLER</a><span class="echar">*</span>
+	<a class="eclass" href="../wsf/wsf_multipart_form_data_handler_links.html">WSF_MULTIPART_FORM_DATA_HANDLER</a>
+	<a class="eclass" href="../wsf/wsf_percent_encoder_links.html">WSF_PERCENT_ENCODER</a>
+	<a class="eclass" href="../wsf/wsf_request_links.html">WSF_REQUEST</a>
+	<a class="eclass" href="../wsf/wsf_request_path_parameters_source_links.html">WSF_REQUEST_PATH_PARAMETERS_SOURCE</a><span class="echar">*</span>
+	<a class="eclass" href="../wsf/wsf_string_links.html">WSF_STRING</a>
+	<a class="eclass" href="../wsf/wsf_table_links.html">WSF_TABLE</a>
+	<a class="eclass" href="../wsf/wsf_uploaded_file_links.html">WSF_UPLOADED_FILE</a>
+	<a class="eclass" href="../wsf/wsf_value_links.html">WSF_VALUE</a><span class="echar">*</span>
+
+</pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="wsf_request_chart.html">Chart</a>
+<span class="nav class selected">Relations</span>
+<a class="nav class" href="wsf_request_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="wsf_request"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>

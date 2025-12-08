@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="Summary description for {HTTP_CLIENT_SECURE_CONFIG}."/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="2011-2019, Jocelyn Fiat, Javier Velilla, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>http_client_secure_config Contracts</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="http_client_secure_config_chart.html">Chart</a>
+<a class="nav class" href="http_client_secure_config_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="http_client_secure_config"></span>
+</div></form><pre><span class="ekeyword">note</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;Summary description for </span><span class="esymbol">{</span><a class="eclass" href="../curl_http_client/http_client_secure_config_short.html">HTTP_CLIENT_SECURE_CONFIG</a><span class="esymbol">}</span><span class="estring">.&quot;</span>
+	<span class="eitag">date</span><span class="esymbol">:</span> <span class="estring">&quot;$Date$&quot;</span>
+	<span class="eitag">revision</span><span class="esymbol">:</span> <span class="estring">&quot;$Revision$&quot;</span>
+
+<span class="ekeyword">class</span> <span class="ekeyword">interface</span>
+	<a class="eclass" href="../curl_http_client/http_client_secure_config_short.html">HTTP_CLIENT_SECURE_CONFIG</a>
+
+<span class="ekeyword">create</span> 
+	<a class="efeature" href="../base/any_short.html#f_default_create">default_create</a>
+
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Access</span>
+
+	<a name="f_verify_peer"></a><a class="efeature" href="../curl_http_client/http_client_secure_config_short.html#f_verify_peer">verify_peer</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Verify the peer's SSL certificate.</span>
+			<span class="ecomment">--</span><span class="ecomment"> If the verification fails to prove that the certificate is authentic, the connection fails.</span>
+			<span class="ecomment">--</span><span class="ecomment"> by default is disabled. call enable_verify_peer.</span>
+
+	<a name="f_verify_host"></a><a class="efeature" href="../curl_http_client/http_client_secure_config_short.html#f_verify_host">verify_host</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Verify the certificate's name against host.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Checks the server's certificate's claimed identity.</span>
+			<span class="ecomment">--</span><span class="ecomment"> by default is disabled. call enable_verify_host.</span>
+
+	<a name="f_certificate_type"></a><a class="efeature" href="../curl_http_client/http_client_secure_config_short.html#f_certificate_type">certificate_type</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;specify type of the client SSL certificate.</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;PEM, DER, P12</span>
+
+	<a name="f_client_certificate"></a><a class="efeature" href="../curl_http_client/http_client_secure_config_short.html#f_client_certificate">client_certificate</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/string_32_short.html">STRING_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> specify the certificate for client authentication.</span>
+
+	<a name="f_passphrase"></a><a class="efeature" href="../curl_http_client/http_client_secure_config_short.html#f_passphrase">passphrase</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/string_32_short.html">STRING_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> password required for a private key.		</span>
+
+	<a name="f_certificate_authority"></a><a class="efeature" href="../curl_http_client/http_client_secure_config_short.html#f_certificate_authority">certificate_authority</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/string_32_short.html">STRING_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;path to Certificate Authority (CA) bundle.</span>
+
+	<a name="f_tls_version"></a><a class="efeature" href="../curl_http_client/http_client_secure_config_short.html#f_tls_version">tls_version</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> TLS version 1.2 or 1.3		</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Change Element</span>
+
+	<a name="f_enable_verify_host"></a><a class="efeature" href="../curl_http_client/http_client_secure_config_short.html#f_enable_verify_host">enable_verify_host</a>
+			<span class="ecomment">--</span><span class="ecomment">Enable verify the certificate's name against host.</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">verify_host_set</span><span class="esymbol">:</span> <a class="efeature" href="../curl_http_client/http_client_secure_config_short.html#f_verify_host">verify_host</a> <span class="esymbol">=</span> <span class="ekeyword">True</span>
+
+	<a name="f_enable_verify_peer"></a><a class="efeature" href="../curl_http_client/http_client_secure_config_short.html#f_enable_verify_peer">enable_verify_peer</a>
+			<span class="ecomment">--</span><span class="ecomment"> Enable verify the certificate's name against host.</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">verify_peer_set</span><span class="esymbol">:</span> <a class="efeature" href="../curl_http_client/http_client_secure_config_short.html#f_verify_peer">verify_peer</a> <span class="esymbol">=</span> <span class="ekeyword">True</span>
+
+	<a name="f_set_certificate_type"></a><a class="efeature" href="../curl_http_client/http_client_secure_config_short.html#f_set_certificate_type">set_certificate_type</a> <span class="esymbol">(</span><span class="elocal">a_cert</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set type of the client SSL certificate (PEM, P12) </span><span class="ecomment">`</span><a class="efeature" href="../curl_http_client/http_client_secure_config_short.html#f_certificate_type">certificate_type</a><span class="ecomment">`</span><span class="ecomment"> with </span><span class="equoted">a_cert</span><span class="ecomment">.</span>
+		<span class="ekeyword">note</span>
+			<span class="eitag">eis</span><span class="esymbol">:</span> <span class="estring">&quot;name=certificates formats&quot;</span><span class="esymbol">,</span> <span class="estring">&quot;src=</span><a class="estring" href="https://www.ssls.com/knowledgebase/what-are-certificate-formats-and-what-is-the-difference-between-them/">https://www.ssls.com/knowledgebase/what-are-certificate-formats-and-what-is-the-difference-between-them/</a><span class="estring">&quot;</span><span class="esymbol">,</span> <span class="estring">&quot;protocol=uri&quot;</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">is_valid_certificate_type</span><span class="esymbol">:</span> <a class="efeature" href="../curl_http_client/http_client_secure_config_short.html#f_certificates_formats">certificates_formats</a><span class="edot">.</span><a class="efeature" href="../base/container_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">a_cert</span><span class="edot">.</span><a class="efeature" href="../base/string_8_short.html#f_as_lower">as_lower</a><span class="esymbol">)</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">certificate_type_set</span><span class="esymbol">:</span> <a class="efeature" href="../curl_http_client/http_client_secure_config_short.html#f_certificate_type">certificate_type</a> <span class="esymbol">=</span> <span class="elocal">a_cert</span>
+
+	<a name="f_set_client_certificate"></a><a class="efeature" href="../curl_http_client/http_client_secure_config_short.html#f_set_client_certificate">set_client_certificate</a> <span class="esymbol">(</span><span class="elocal">a_client_certificate</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_32_short.html">STRING_32</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set path to client certificate </span><span class="ecomment">`</span><a class="efeature" href="../curl_http_client/http_client_secure_config_short.html#f_client_certificate">client_certificate</a><span class="ecomment">`</span><span class="ecomment"> with </span><span class="equoted">a_client_certificate</span><span class="ecomment"> for authentication.</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">client_certificate_set</span><span class="esymbol">:</span> <a class="efeature" href="../curl_http_client/http_client_secure_config_short.html#f_client_certificate">client_certificate</a> <span class="esymbol">=</span> <span class="elocal">a_client_certificate</span>
+
+	<a name="f_set_passphrase"></a><a class="efeature" href="../curl_http_client/http_client_secure_config_short.html#f_set_passphrase">set_passphrase</a> <span class="esymbol">(</span><span class="elocal">a_password</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_32_short.html">STRING_32</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set the passphrase </span><span class="ecomment">`</span><a class="efeature" href="../curl_http_client/http_client_secure_config_short.html#f_passphrase">passphrase</a><span class="ecomment">`</span><span class="ecomment"> with </span><span class="equoted">a_password</span><span class="ecomment">, if the private key required it.</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">passphrase_set</span><span class="esymbol">:</span> <a class="efeature" href="../curl_http_client/http_client_secure_config_short.html#f_passphrase">passphrase</a> <span class="esymbol">=</span> <span class="elocal">a_password</span>
+
+	<a name="f_set_certificate_authority"></a><a class="efeature" href="../curl_http_client/http_client_secure_config_short.html#f_set_certificate_authority">set_certificate_authority</a> <span class="esymbol">(</span><span class="elocal">a_certificate</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_32_short.html">STRING_32</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;set path to Certificate Authority </span><span class="ecomment">`</span><a class="efeature" href="../curl_http_client/http_client_secure_config_short.html#f_certificate_authority">certificate_authority</a><span class="ecomment">`</span><span class="ecomment"> with </span><span class="equoted">a_certificate</span><span class="ecomment">.</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">certificate_authority_set</span><span class="esymbol">:</span> <a class="efeature" href="../curl_http_client/http_client_secure_config_short.html#f_certificate_authority">certificate_authority</a> <span class="esymbol">=</span> <span class="elocal">a_certificate</span>
+
+	<a name="f_set_tls_version"></a><a class="efeature" href="../curl_http_client/http_client_secure_config_short.html#f_set_tls_version">set_tls_version</a> <span class="esymbol">(</span><span class="elocal">a_version</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;set preferred TLS/SSL version </span><span class="ecomment">`</span><a class="efeature" href="../curl_http_client/http_client_secure_config_short.html#f_tls_version">tls_version</a><span class="ecomment">`</span><span class="ecomment"> with </span><span class="equoted">a_version</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">valid_tls_version</span><span class="esymbol">:</span> <a class="efeature" href="../curl_http_client/http_client_secure_config_short.html#f_is_valid_tls_verion">is_valid_tls_verion</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">a_version</span><span class="esymbol">)</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">tls_version_set</span><span class="esymbol">:</span> <a class="efeature" href="../curl_http_client/http_client_secure_config_short.html#f_tls_version">tls_version</a> <span class="esymbol">=</span> <span class="elocal">a_version</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Certificates Types</span>
+
+	<a name="f_certificates_formats"></a><a class="efeature" href="../curl_http_client/http_client_secure_config_short.html#f_certificates_formats">certificates_formats</a><span class="esymbol">:</span> <a class="eclass" href="../base/set_short.html">SET</a> <span class="esymbol">[</span><a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">]</span>
+		<span class="ekeyword">note</span>
+			<span class="eitag">eis</span><span class="esymbol">:</span> <span class="estring">&quot;name=certificates formats&quot;</span><span class="esymbol">,</span> <span class="estring">&quot;src=</span><a class="estring" href="https://www.ssls.com/knowledgebase/what-are-certificate-formats-and-what-is-the-difference-between-them/">https://www.ssls.com/knowledgebase/what-are-certificate-formats-and-what-is-the-difference-between-them/</a><span class="estring">&quot;</span><span class="esymbol">,</span> <span class="estring">&quot;protocol=uri&quot;</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">is_class</span><span class="esymbol">:</span> <span class="ekeyword">class</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> TLS versions</span>
+
+	<a name="f_tls_1_2"></a><a class="efeature" href="../curl_http_client/http_client_secure_config_short.html#f_tls_1_2">Tls_1_2</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a> <span class="esymbol">=</span> <span class="enumber">2</span>
+
+	<a name="f_tls_1_3"></a><a class="efeature" href="../curl_http_client/http_client_secure_config_short.html#f_tls_1_3">Tls_1_3</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a> <span class="esymbol">=</span> <span class="enumber">3</span>
+
+	<a name="f_is_valid_tls_verion"></a><a class="efeature" href="../curl_http_client/http_client_secure_config_short.html#f_is_valid_tls_verion">is_valid_tls_verion</a> <span class="esymbol">(</span><span class="elocal">a_version</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is </span><span class="equoted">a_version</span><span class="ecomment"> a valid and supported TLS version?</span>
+
+	<a name="f_is_tls_1_2"></a><a class="efeature" href="../curl_http_client/http_client_secure_config_short.html#f_is_tls_1_2">is_tls_1_2</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+
+	<a name="f_is_tls_1_3"></a><a class="efeature" href="../curl_http_client/http_client_secure_config_short.html#f_is_tls_1_3">is_tls_1_3</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Reset</span>
+
+	<a name="f_reset"></a><a class="efeature" href="../curl_http_client/http_client_secure_config_short.html#f_reset">reset</a>
+			<span class="ecomment">--</span><span class="ecomment"> Clear config.</span>
+	
+<span class="ekeyword">note</span>
+	<span class="eitag">copyright</span><span class="esymbol">:</span> <span class="estring">&quot;2011-2019, Jocelyn Fiat, Javier Velilla, Eiffel Software and others&quot;</span>
+	<span class="eitag">license</span><span class="esymbol">:</span> <span class="estring">&quot;Eiffel Forum License v2 (see </span><a class="estring" href="http://www.eiffel.com/licensing/forum.txt">http://www.eiffel.com/licensing/forum.txt</a><span class="estring">)&quot;</span>
+	<span class="eitag">source</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">Eiffel Software</span>
+		<span class="estring">5949 Hollister Ave., Goleta, CA 93117 USA</span>
+		<span class="estring">Telephone 805-685-1006, Fax 805-685-6869</span>
+		<span class="estring">Website </span><a class="estring" href="http://www.eiffel.com">http://www.eiffel.com</a>
+		<span class="estring">Customer support </span><a class="estring" href="http://support.eiffel.com">http://support.eiffel.com</a>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+
+<span class="ekeyword">end</span> <span class="ecomment">--</span> <span class="ecomment">class </span><a class="eclass" href="../curl_http_client/http_client_secure_config_short.html">HTTP_CLIENT_SECURE_CONFIG</a></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="http_client_secure_config_chart.html">Chart</a>
+<a class="nav class" href="http_client_secure_config_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="http_client_secure_config"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
+

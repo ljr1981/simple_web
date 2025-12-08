@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="TTTComponent to launch the service using the default connector  TTTHow-to:  TTTTs: WSF_SERVICE_LAUNCHER TTTTcreate s.make_and_launch (service)  TTTT`service' can be Current if inherit from WSF_SERVICE TTTTor also  `create {WSF_CALLBACK_SERVICE}.make (agent execute)'  TTTTexecute (req: WSF_REQUEST; res: WSF_RESPONSE) TTTTTdo TTTTTT-- ... TTTTTend TTTTT TTTTYou can also provide specific options that might be relevant TTTTonly for specific connectors such as   TTTTFor instance, you can use TTTTcreate s.make_and_launch_and_options (agent execute, <<[port, 8099]>>)  TTTTAnd if the connector is the Standalone connector,  TTTTcheck {WSF_STANDALONE_SERVICE_LAUNCHER} for options description, such as: TTTTTport: numeric such as 8099 (or equivalent string as 8099) TTTTTbase: base_url (very specific to standalone server) TTTTTverbose: to display verbose output."/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="2011-2015, Jocelyn Fiat, Javier Velilla, Olivier Ligot, Colin Adams, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>wsf_service_launcher Contracts</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="wsf_service_launcher_chart.html">Chart</a>
+<a class="nav class" href="wsf_service_launcher_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="wsf_service_launcher"></span>
+</div></form><pre><span class="ekeyword">note</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">			Component to launch the service using the default connector</span>
+		
+		<span class="estring">			How-to:</span>
+		
+		<span class="estring">				s: WSF_SERVICE_LAUNCHER</span>
+		<span class="estring">				create s.make_and_launch (service)</span>
+		
+		<span class="estring">				</span><span class="estring">service</span><span class="estring"> can be Current if inherit from WSF_SERVICE</span>
+		<span class="estring">				or also &nbsp;</span><span class="estring">create {WSF_CALLBACK_SERVICE}.make (agent execute)</span>
+		
+		<span class="estring">				execute (req: WSF_REQUEST; res: WSF_RESPONSE)</span>
+		<span class="estring">					do</span>
+		<span class="estring">						-- ...</span>
+		<span class="estring">					end</span>
+		<span class="estring">					</span>
+		<span class="estring">				You can also provide specific options that might be relevant</span>
+		<span class="estring">				only for specific connectors such as</span>
+		
+		
+		<span class="estring">				For instance, you can use</span>
+		<span class="estring">				create s.make_and_launch_and_options (agent execute, &lt;&lt;[&quot;port&quot;, 8099]&gt;&gt;)</span>
+		
+		<span class="estring">				And if the connector is the Standalone connector, </span>
+		<span class="estring">				check </span><span class="esymbol">{</span><span class="neclass">WSF_STANDALONE_SERVICE_LAUNCHER</span><span class="esymbol">}</span><span class="estring"> for options description, such as:</span>
+		<span class="estring">					port: numeric such as 8099 (or equivalent string as &quot;8099&quot;)</span>
+		<span class="estring">					base: base_url (very specific to standalone server)</span>
+		<span class="estring">					verbose: to display verbose output.</span>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+	<span class="eitag">date</span><span class="esymbol">:</span> <span class="estring">&quot;$Date$&quot;</span>
+	<span class="eitag">revision</span><span class="esymbol">:</span> <span class="estring">&quot;$Revision$&quot;</span>
+
+<span class="ekeyword">deferred</span> <span class="ekeyword">class</span> <span class="ekeyword">interface</span>
+	<a class="eclass" href="../wsf/wsf_service_launcher_short.html">WSF_SERVICE_LAUNCHER</a> <span class="esymbol">[</span><span class="egeneric">G</span> <span class="esymbol">-&gt;</span> <a class="eclass" href="../wsf/wsf_execution_short.html">WSF_EXECUTION</a> <span class="ekeyword">create</span> <a class="efeature" href="../wsf/wsf_execution_short.html#f_make">make</a> <span class="ekeyword">end</span><span class="esymbol">]</span>
+
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Status report</span>
+
+	<a name="f_launchable"></a><a class="efeature" href="../wsf/wsf_service_launcher_short.html#f_launchable">launchable</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is default service launchable?</span>
+
+	<a name="f_connector"></a><a class="efeature" href="../wsf/wsf_service_launcher_short.html#f_connector">connector</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <span class="neclass">WGI_CONNECTOR</span>
+			<span class="ecomment">--</span><span class="ecomment"> Connector associated to current default service</span>
+
+	<a name="f_connector_name"></a><a class="efeature" href="../wsf/wsf_service_launcher_short.html#f_connector_name">connector_name</a><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Connector's name associated to current default service	</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Execution</span>
+
+	<a name="f_launch"></a><a class="efeature" href="../wsf/wsf_service_launcher_short.html#f_launch">launch</a>
+			<span class="ecomment">--</span><span class="ecomment"> Launch default service</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">launchable</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_service_launcher_short.html#f_launchable">launchable</a>
+	
+<span class="ekeyword">invariant</span>
+	<span class="etag">connector_attached</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_service_launcher_short.html#f_connector">connector</a> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+
+<span class="ekeyword">note</span>
+	<span class="eitag">copyright</span><span class="esymbol">:</span> <span class="estring">&quot;2011-2015, Jocelyn Fiat, Javier Velilla, Olivier Ligot, Colin Adams, Eiffel Software and others&quot;</span>
+	<span class="eitag">license</span><span class="esymbol">:</span> <span class="estring">&quot;Eiffel Forum License v2 (see </span><a class="estring" href="http://www.eiffel.com/licensing/forum.txt">http://www.eiffel.com/licensing/forum.txt</a><span class="estring">)&quot;</span>
+	<span class="eitag">source</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">Eiffel Software</span>
+		<span class="estring">5949 Hollister Ave., Goleta, CA 93117 USA</span>
+		<span class="estring">Telephone 805-685-1006, Fax 805-685-6869</span>
+		<span class="estring">Website </span><a class="estring" href="http://www.eiffel.com">http://www.eiffel.com</a>
+		<span class="estring">Customer support </span><a class="estring" href="http://support.eiffel.com">http://support.eiffel.com</a>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+
+<span class="ekeyword">end</span> <span class="ecomment">--</span> <span class="ecomment">class </span><a class="eclass" href="../wsf/wsf_service_launcher_short.html">WSF_SERVICE_LAUNCHER</a></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="wsf_service_launcher_chart.html">Chart</a>
+<a class="nav class" href="wsf_service_launcher_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="wsf_service_launcher"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
+

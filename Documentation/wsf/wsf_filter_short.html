@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="Objects than can pre-process incoming data and post-process outgoing data."/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="2011-2013, Jocelyn Fiat, Javier Velilla, Olivier Ligot, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>wsf_filter Contracts</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="wsf_filter_chart.html">Chart</a>
+<a class="nav class" href="wsf_filter_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="wsf_filter"></span>
+</div></form><pre><span class="ekeyword">note</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;Objects than can pre-process incoming data and post-process outgoing data.&quot;</span>
+	<span class="eitag">date</span><span class="esymbol">:</span> <span class="estring">&quot;$Date$&quot;</span>
+	<span class="eitag">revision</span><span class="esymbol">:</span> <span class="estring">&quot;$Revision$&quot;</span>
+
+<span class="ekeyword">deferred</span> <span class="ekeyword">class</span> <span class="ekeyword">interface</span>
+	<a class="eclass" href="../wsf/wsf_filter_short.html">WSF_FILTER</a>
+
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Access</span>
+
+	<a name="f_next"></a><a class="efeature" href="../wsf/wsf_filter_short.html#f_next">next</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../wsf/wsf_filter_short.html">WSF_FILTER</a> <span class="ekeyword">assign</span> <a class="efeature" href="../wsf/wsf_filter_short.html#f_set_next">set_next</a>
+			<span class="ecomment">--</span><span class="ecomment"> Next filter</span>
+
+	<a name="f_last"></a><a class="efeature" href="../wsf/wsf_filter_short.html#f_last">last</a><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_filter_short.html">WSF_FILTER</a>
+			<span class="ecomment">--</span><span class="ecomment"> Last filter in the chain following </span><span class="ecomment">`</span><a class="efeature" href="../wsf/wsf_filter_short.html#f_next">next</a><span class="ecomment">`</span><span class="ecomment">.</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">is_closing</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span> <a class="ekeyword" href="../base/boolean_short.html#f_conjuncted_semistrict">and then</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../wsf/wsf_filter_short.html#f_next">next</a> <span class="esymbol">=</span> <span class="ekeyword">Void</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Element change</span>
+
+	<a name="f_set_next"></a><a class="efeature" href="../wsf/wsf_filter_short.html#f_set_next">set_next</a> <span class="esymbol">(</span><span class="elocal">a_next</span><span class="esymbol">:</span> <span class="ekeyword">like</span> <a class="efeature" href="../wsf/wsf_filter_short.html#f_next">next</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set </span><span class="ecomment">`</span><a class="efeature" href="../wsf/wsf_filter_short.html#f_next">next</a><span class="ecomment">`</span><span class="ecomment"> to </span><span class="equoted">a_next</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">a_next_is_not_current</span><span class="esymbol">:</span> <span class="elocal">a_next</span> <span class="esymbol">/=</span> <span class="ekeyword">Current</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">next_set</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_filter_short.html#f_next">next</a> <span class="esymbol">=</span> <span class="elocal">a_next</span>
+
+	<a name="f_append"></a><a class="efeature" href="../wsf/wsf_filter_short.html#f_append">append</a> <span class="esymbol">(</span><span class="elocal">a_filter</span><span class="esymbol">:</span> <span class="ekeyword">attached</span> <span class="ekeyword">like</span> <a class="efeature" href="../wsf/wsf_filter_short.html#f_next">next</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Append </span><span class="equoted">a_filter</span><span class="ecomment"> to the </span><span class="ecomment">`</span><a class="efeature" href="../wsf/wsf_filter_short.html#f_last">last</a><span class="ecomment">`</span><span class="ecomment"> filter.</span>
+
+	<a name="f_insert_after"></a><a class="efeature" href="../wsf/wsf_filter_short.html#f_insert_after">insert_after</a> <span class="esymbol">(</span><span class="elocal">a_filter</span><span class="esymbol">:</span> <span class="ekeyword">attached</span> <span class="ekeyword">like</span> <a class="efeature" href="../wsf/wsf_filter_short.html#f_next">next</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Append </span><span class="equoted">a_filter</span><span class="ecomment"> to the </span><span class="ecomment">`</span><a class="efeature" href="../wsf/wsf_filter_short.html#f_last">last</a><span class="ecomment">`</span><span class="ecomment"> filter.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Basic operations</span>
+
+	<a name="f_execute"></a><a class="efeature" href="../wsf/wsf_filter_short.html#f_execute">execute</a> <span class="esymbol">(</span><span class="elocal">req</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_short.html">WSF_REQUEST</a><span class="esymbol">;</span> <span class="elocal">res</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_response_short.html">WSF_RESPONSE</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Execute the filter.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">req_attached</span><span class="esymbol">:</span> <span class="elocal">req</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">res_attached</span><span class="esymbol">:</span> <span class="elocal">res</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+	
+<span class="ekeyword">note</span>
+	<span class="eitag">copyright</span><span class="esymbol">:</span> <span class="estring">&quot;2011-2013, Jocelyn Fiat, Javier Velilla, Olivier Ligot, Eiffel Software and others&quot;</span>
+	<span class="eitag">license</span><span class="esymbol">:</span> <span class="estring">&quot;Eiffel Forum License v2 (see </span><a class="estring" href="http://www.eiffel.com/licensing/forum.txt">http://www.eiffel.com/licensing/forum.txt</a><span class="estring">)&quot;</span>
+	<span class="eitag">source</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">Eiffel Software</span>
+		<span class="estring">5949 Hollister Ave., Goleta, CA 93117 USA</span>
+		<span class="estring">Telephone 805-685-1006, Fax 805-685-6869</span>
+		<span class="estring">Website </span><a class="estring" href="http://www.eiffel.com">http://www.eiffel.com</a>
+		<span class="estring">Customer support </span><a class="estring" href="http://support.eiffel.com">http://support.eiffel.com</a>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+
+<span class="ekeyword">end</span> <span class="ecomment">--</span> <span class="ecomment">class </span><a class="eclass" href="../wsf/wsf_filter_short.html">WSF_FILTER</a></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="wsf_filter_chart.html">Chart</a>
+<a class="nav class" href="wsf_filter_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="wsf_filter"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
+

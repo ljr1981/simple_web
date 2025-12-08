@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="TTTComponent to launch the service using the default connector  TTTHow-to:  TTTTs: WSF_SERVICE_LAUNCHER TTTTcreate s.make_and_launch (service)  TTTT`service' can be Current if inherit from WSF_SERVICE TTTTor also  `create {WSF_CALLBACK_SERVICE}.make (agent execute)'  TTTTexecute (req: WSF_REQUEST; res: WSF_RESPONSE) TTTTTdo TTTTTT-- ... TTTTTend TTTTT TTTTYou can also provide specific options that might be relevant TTTTonly for specific connectors such as   TTTTFor instance, you can use TTTTcreate s.make_and_launch_and_options (agent execute, <<[port, 8099]>>)  TTTTAnd if the connector is the Standalone connector,  TTTTcheck {WSF_STANDALONE_SERVICE_LAUNCHER} for options description, such as: TTTTTport: numeric such as 8099 (or equivalent string as 8099) TTTTTbase: base_url (very specific to standalone server) TTTTTverbose: to display verbose output."/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="2011-2015, Jocelyn Fiat, Javier Velilla, Olivier Ligot, Colin Adams, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>wsf_service_launcher Relations</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="wsf_service_launcher_chart.html">Chart</a>
+<span class="nav class selected">Relations</span>
+<a class="nav class" href="wsf_service_launcher_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="wsf_service_launcher"></span>
+</div></form><pre><span class="ekeyword">deferred</span> <span class="ekeyword">class</span>
+	<a class="eclass" href="../wsf/wsf_service_launcher_links.html">WSF_SERVICE_LAUNCHER</a> <span class="esymbol">[</span><span class="egeneric">G</span> <span class="esymbol">-&gt;</span> <a class="eclass" href="../wsf/wsf_execution_links.html">WSF_EXECUTION</a> <span class="ekeyword">create</span> <a class="efeature" href="../wsf/wsf_execution_short.html#f_make">make</a> <span class="ekeyword">end</span><span class="esymbol">]</span>
+
+<span class="ekeyword">Ancestors</span>
+	<a class="eclass" href="../base/any_links.html">ANY</a>
+
+<span class="ekeyword">Descendants</span>
+	<span class="neclass">WSF_STANDALONE_SERVICE_LAUNCHER</span> <span class="esymbol">[</span><span class="egeneric">G</span> <span class="esymbol">-&gt;</span> <a class="eclass" href="../wsf/wsf_execution_links.html">WSF_EXECUTION</a> <span class="ekeyword">create</span> <a class="efeature" href="../wsf/wsf_execution_short.html#f_make">make</a> <span class="ekeyword">end</span><span class="esymbol">]</span>
+
+<span class="ekeyword">Clients</span>
+	<a class="eclass" href="../wsf/wsf_default_service_i_links.html">WSF_DEFAULT_SERVICE_I</a><span class="echar">*</span> <span class="esymbol">[</span><span class="egeneric">G</span> <span class="esymbol">-&gt;</span> <a class="eclass" href="../wsf/wsf_service_launcher_links.html">WSF_SERVICE_LAUNCHER</a> <span class="esymbol">[</span><a class="eclass" href="../wsf/wsf_execution_links.html">WSF_EXECUTION</a><span class="esymbol">]</span> <span class="ekeyword">create</span> <a class="efeature" href="../wsf/wsf_service_launcher_short.html#f_make_and_launch">make_and_launch</a> <span class="ekeyword">end</span><span class="esymbol">]</span>
+	<a class="eclass" href="../wsf/wsf_service_launcher_links.html">WSF_SERVICE_LAUNCHER</a><span class="echar">*</span> <span class="esymbol">[</span><span class="egeneric">G</span> <span class="esymbol">-&gt;</span> <a class="eclass" href="../wsf/wsf_execution_links.html">WSF_EXECUTION</a> <span class="ekeyword">create</span> <a class="efeature" href="../wsf/wsf_execution_short.html#f_make">make</a> <span class="ekeyword">end</span><span class="esymbol">]</span>
+
+<span class="ekeyword">Suppliers</span>
+	<span class="neclass">WGI_CONNECTOR</span><span class="echar">*</span>
+	<a class="eclass" href="../wsf/wsf_service_launcher_links.html">WSF_SERVICE_LAUNCHER</a><span class="echar">*</span> <span class="esymbol">[</span><span class="egeneric">G</span> <span class="esymbol">-&gt;</span> <a class="eclass" href="../wsf/wsf_execution_links.html">WSF_EXECUTION</a> <span class="ekeyword">create</span> <a class="efeature" href="../wsf/wsf_execution_short.html#f_make">make</a> <span class="ekeyword">end</span><span class="esymbol">]</span>
+
+</pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="wsf_service_launcher_chart.html">Chart</a>
+<span class="nav class selected">Relations</span>
+<a class="nav class" href="wsf_service_launcher_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="wsf_service_launcher"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="Skeleton execution based on router."/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="2011-2015, Jocelyn Fiat, Javier Velilla, Olivier Ligot, Colin Adams, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>wsf_routed_skeleton_execution Contracts</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="wsf_routed_skeleton_execution_chart.html">Chart</a>
+<a class="nav class" href="wsf_routed_skeleton_execution_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="wsf_routed_skeleton_execution"></span>
+</div></form><pre><span class="ekeyword">note</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;Skeleton execution based on router.&quot;</span>
+	<span class="eitag">date</span><span class="esymbol">:</span> <span class="estring">&quot;$Date$&quot;</span>
+	<span class="eitag">revision</span><span class="esymbol">:</span> <span class="estring">&quot;$Revision$&quot;</span>
+
+<span class="ekeyword">deferred</span> <span class="ekeyword">class</span> <span class="ekeyword">interface</span>
+	<a class="eclass" href="../wsf/wsf_routed_skeleton_execution_short.html">WSF_ROUTED_SKELETON_EXECUTION</a>
+
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Execution</span>
+
+	<a name="f_execute"></a><a class="efeature" href="../wsf/wsf_routed_skeleton_execution_short.html#f_execute">execute</a>
+			<span class="ecomment">--</span><span class="ecomment"> Dispatch the request</span>
+			<span class="ecomment">--</span><span class="ecomment"> and if handler is not found, execute the default procedure </span><span class="ecomment">`</span><a class="efeature" href="../wsf/wsf_routed_execution_short.html#f_execute_default">execute_default</a><span class="ecomment">`</span><span class="ecomment">.</span>
+
+	<a name="f_execute_skeleton"></a><a class="efeature" href="../wsf/wsf_routed_skeleton_execution_short.html#f_execute_skeleton">execute_skeleton</a> <span class="esymbol">(</span><span class="elocal">req</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_short.html">WSF_REQUEST</a><span class="esymbol">;</span> <span class="elocal">res</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_response_short.html">WSF_RESPONSE</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> If the service is available, and request URI is not too long, dispatch the request</span>
+			<span class="ecomment">--</span><span class="ecomment"> and if handler is not found, execute the default procedure </span><span class="ecomment">`</span><a class="efeature" href="../wsf/wsf_routed_execution_short.html#f_execute_default">execute_default</a><span class="ecomment">`</span><span class="ecomment">.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Measurement</span>
+
+	<a name="f_maximum_uri_length"></a><a class="efeature" href="../wsf/wsf_routed_skeleton_execution_short.html#f_maximum_uri_length">maximum_uri_length</a><span class="esymbol">:</span> <a class="eclass" href="../base/natural_32_short.html">NATURAL_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> Maximum length in characters (or zero for no limit) permitted</span>
+			<span class="ecomment">--</span><span class="ecomment"> for </span><span class="esymbol">{</span><a class="eclass" href="../wsf/wsf_request_short.html">WSF_REQUEST</a><span class="esymbol">}</span><span class="edot">.</span><a class="efeature" href="../wsf/wsf_request_short.html#f_request_uri">request_uri</a>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Status report</span>
+
+	<a name="f_unavailable"></a><a class="efeature" href="../wsf/wsf_routed_skeleton_execution_short.html#f_unavailable">unavailable</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is service currently unavailable?</span>
+
+	<a name="f_unavailablity_message"></a><a class="efeature" href="../wsf/wsf_routed_skeleton_execution_short.html#f_unavailablity_message">unavailablity_message</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Message to be included as text of response body for </span><span class="esymbol">{</span><span class="neclass">HTTP_STATUS_CODE</span><span class="esymbol">}</span><span class="edot">.</span><span class="nefeature">service_unavailable</span>
+
+	<a name="f_unavailability_duration"></a><a class="efeature" href="../wsf/wsf_routed_skeleton_execution_short.html#f_unavailability_duration">unavailability_duration</a><span class="esymbol">:</span> <a class="eclass" href="../base/natural_32_short.html">NATURAL_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> Delta seconds for service unavailability (0 if not known)</span>
+
+	<a name="f_unavailable_until"></a><a class="efeature" href="../wsf/wsf_routed_skeleton_execution_short.html#f_unavailable_until">unavailable_until</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <span class="neclass">DATE_TIME</span>
+			<span class="ecomment">--</span><span class="ecomment"> Time at which service becomes available again (if known)</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Status setting</span>
+
+	<a name="f_set_available"></a><a class="efeature" href="../wsf/wsf_routed_skeleton_execution_short.html#f_set_available">set_available</a>
+			<span class="ecomment">--</span><span class="ecomment"> Set </span><span class="ecomment">`</span><a class="efeature" href="../wsf/wsf_routed_skeleton_execution_short.html#f_unavailable">unavailable</a><span class="ecomment">`</span><span class="ecomment"> to </span><span class="equoted">False</span><span class="ecomment">.</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">available</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_routed_skeleton_execution_short.html#f_unavailable">unavailable</a> <span class="esymbol">=</span> <span class="ekeyword">False</span>
+			<span class="etag">unavailablity_message_detached</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_routed_skeleton_execution_short.html#f_unavailablity_message">unavailablity_message</a> <span class="esymbol">=</span> <span class="ekeyword">Void</span>
+			<span class="etag">unavailable_until_detached</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_routed_skeleton_execution_short.html#f_unavailable_until">unavailable_until</a> <span class="esymbol">=</span> <span class="ekeyword">Void</span>
+
+	<a name="f_set_unavailable"></a><a class="efeature" href="../wsf/wsf_routed_skeleton_execution_short.html#f_set_unavailable">set_unavailable</a> <span class="esymbol">(</span><span class="elocal">a_message</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">;</span> <span class="elocal">a_duration</span><span class="esymbol">:</span> <a class="eclass" href="../base/natural_32_short.html">NATURAL_32</a><span class="esymbol">;</span> <span class="elocal">a_until</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <span class="neclass">DATE_TIME</span><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set </span><span class="ecomment">`</span><a class="efeature" href="../wsf/wsf_routed_skeleton_execution_short.html#f_unavailable">unavailable</a><span class="ecomment">`</span><span class="ecomment"> to </span><span class="equoted">True</span><span class="ecomment">.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">a_message_attached</span><span class="esymbol">:</span> <span class="elocal">a_message</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">a_duration_xor_a_until</span><span class="esymbol">:</span> <span class="elocal">a_duration</span> <a class="esymbol" href="../base/comparable_short.html#f_is_greater">&gt;</a> <span class="enumber">0</span> <a class="ekeyword" href="../base/boolean_short.html#f_implication">implies</a> <span class="elocal">a_until</span> <span class="esymbol">=</span> <span class="ekeyword">Void</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">unavailable</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_routed_skeleton_execution_short.html#f_unavailable">unavailable</a> <span class="esymbol">=</span> <span class="ekeyword">True</span>
+			<span class="etag">unavailablity_message_aliased</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_routed_skeleton_execution_short.html#f_unavailablity_message">unavailablity_message</a> <span class="esymbol">=</span> <span class="elocal">a_message</span>
+			<span class="etag">unavailability_duration_set</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_routed_skeleton_execution_short.html#f_unavailability_duration">unavailability_duration</a> <span class="esymbol">=</span> <span class="elocal">a_duration</span>
+			<span class="etag">unavailable_until_aliased</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_routed_skeleton_execution_short.html#f_unavailable_until">unavailable_until</a> <span class="esymbol">=</span> <span class="elocal">a_until</span>
+
+	<a name="f_set_maximum_uri_length"></a><a class="efeature" href="../wsf/wsf_routed_skeleton_execution_short.html#f_set_maximum_uri_length">set_maximum_uri_length</a> <span class="esymbol">(</span><span class="elocal">a_len</span><span class="esymbol">:</span> <a class="eclass" href="../base/natural_32_short.html">NATURAL_32</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set </span><span class="ecomment">`</span><a class="efeature" href="../wsf/wsf_routed_skeleton_execution_short.html#f_maximum_uri_length">maximum_uri_length</a><span class="ecomment">`</span><span class="ecomment"> to </span><span class="equoted">a_len</span><span class="ecomment">.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Can pass zero to mean no restrictions.</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">maximum_uri_length_set</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_routed_skeleton_execution_short.html#f_maximum_uri_length">maximum_uri_length</a> <span class="esymbol">=</span> <span class="elocal">a_len</span>
+	
+<span class="ekeyword">invariant</span>
+	<span class="etag">unavailability_message_attached</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_routed_skeleton_execution_short.html#f_unavailable">unavailable</a> <a class="ekeyword" href="../base/boolean_short.html#f_implication">implies</a> <span class="ekeyword">attached</span> <a class="efeature" href="../wsf/wsf_routed_skeleton_execution_short.html#f_unavailablity_message">unavailablity_message</a> <span class="ekeyword">as</span> m <a class="ekeyword" href="../base/boolean_short.html#f_conjuncted_semistrict">and then</a> <span class="elocal">m</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_count">count</a> <a class="esymbol" href="../base/comparable_short.html#f_is_greater">&gt;</a> <span class="enumber">0</span>
+	<span class="etag">unavailability_duration_xor_unavailable_until</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_routed_skeleton_execution_short.html#f_unavailability_duration">unavailability_duration</a> <a class="esymbol" href="../base/comparable_short.html#f_is_greater">&gt;</a> <span class="enumber">0</span> <a class="ekeyword" href="../base/boolean_short.html#f_implication">implies</a> <a class="efeature" href="../wsf/wsf_routed_skeleton_execution_short.html#f_unavailable_until">unavailable_until</a> <span class="esymbol">=</span> <span class="ekeyword">Void</span>
+
+<span class="ekeyword">note</span>
+	<span class="eitag">copyright</span><span class="esymbol">:</span> <span class="estring">&quot;2011-2015, Jocelyn Fiat, Javier Velilla, Olivier Ligot, Colin Adams, Eiffel Software and others&quot;</span>
+	<span class="eitag">license</span><span class="esymbol">:</span> <span class="estring">&quot;Eiffel Forum License v2 (see </span><a class="estring" href="http://www.eiffel.com/licensing/forum.txt">http://www.eiffel.com/licensing/forum.txt</a><span class="estring">)&quot;</span>
+	<span class="eitag">source</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">Eiffel Software</span>
+		<span class="estring">5949 Hollister Ave., Goleta, CA 93117 USA</span>
+		<span class="estring">Telephone 805-685-1006, Fax 805-685-6869</span>
+		<span class="estring">Website </span><a class="estring" href="http://www.eiffel.com">http://www.eiffel.com</a>
+		<span class="estring">Customer support </span><a class="estring" href="http://support.eiffel.com">http://support.eiffel.com</a>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+
+<span class="ekeyword">end</span> <span class="ecomment">--</span> <span class="ecomment">class </span><a class="eclass" href="../wsf/wsf_routed_skeleton_execution_short.html">WSF_ROUTED_SKELETON_EXECUTION</a></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="wsf_routed_skeleton_execution_chart.html">Chart</a>
+<a class="nav class" href="wsf_routed_skeleton_execution_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="wsf_routed_skeleton_execution"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
+

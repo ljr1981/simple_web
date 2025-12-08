@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="Main interface to send message back to the client  You can send part by part, i.e: - set the status code, see: set_status_code (a_code) - put the header's text, see: put_header_text (a_text) - put string for the body, see: put_string (s), put_character (c) - using put_error will eventually send error message directly to the underlying connector's log   (i.e for apache, it will go to the error log) - And you can also send the message as chunked, see put_chunk (..) for more details - Or you can send a WSF_RESPONSE_MESSAGE in once, see `send (mesg)'"/>
+<meta name="eis" content="name=Hypertext Transfer Protocol -- HTTP/1.1 , protocol=URI, src=http://www.w3.org/Protocols/rfc2616/rfc2616.html"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="2011-2016, Jocelyn Fiat, Javier Velilla, Olivier Ligot, Colin Adams, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>wsf_response Contracts</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="wsf_response_chart.html">Chart</a>
+<a class="nav class" href="wsf_response_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="wsf_response"></span>
+</div></form><pre><span class="ekeyword">note</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">Main interface to send message back to the client</span>
+		
+		<span class="estring">You can send part by part, i.e:</span>
+		<span class="estring">- set the status code, see: set_status_code (a_code)</span>
+		<span class="estring">- put the header's text, see: put_header_text (a_text)</span>
+		<span class="estring">- put string for the body, see: put_string (s), put_character (c)</span>
+		<span class="estring">- using put_error will eventually send error message directly to the underlying connector's log</span>
+		<span class="estring"> &nbsp;(i.e for apache, it will go to the error log)</span>
+		<span class="estring">- And you can also send the message as &quot;chunked&quot;, see put_chunk (..) for more details</span>
+		<span class="estring">- Or you can send a WSF_RESPONSE_MESSAGE in once, see </span><span class="estring">send (mesg)</span>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+	<span class="eitag">date</span><span class="esymbol">:</span> <span class="estring">&quot;$Date$&quot;</span>
+	<span class="eitag">revision</span><span class="esymbol">:</span> <span class="estring">&quot;$Revision$&quot;</span>
+	<span class="eitag">eis</span><span class="esymbol">:</span> <span class="estring">&quot;name=Hypertext Transfer Protocol -- HTTP/1.1 &quot;</span><span class="esymbol">,</span> <span class="estring">&quot;protocol=URI&quot;</span><span class="esymbol">,</span> <span class="estring">&quot;src=</span><a class="estring" href="http://www.w3.org/Protocols/rfc2616/rfc2616.html">http://www.w3.org/Protocols/rfc2616/rfc2616.html</a><span class="estring">&quot;</span>
+	<span class="eitag">eis</span><span class="esymbol">:</span> <span class="estring">&quot;name=Chunked Transfer Coding&quot;</span><span class="esymbol">,</span> <span class="estring">&quot;protocol=URI&quot;</span><span class="esymbol">,</span> <span class="estring">&quot;src=</span><a class="estring" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.6.1">http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.6.1</a><span class="estring">&quot;</span>
+
+<span class="ekeyword">class</span> <span class="ekeyword">interface</span>
+	<a class="eclass" href="../wsf/wsf_response_short.html">WSF_RESPONSE</a>
+
+<span class="ekeyword">create</span> <span class="esymbol">{</span><a class="eclass" href="../wsf/wsf_execution_short.html">WSF_EXECUTION</a><span class="esymbol">,</span> <span class="neclass">WGI_EXPORTER</span><span class="esymbol">}</span>
+	<a class="efeature" href="../wsf/wsf_response_short.html#f_make_from_wgi">make_from_wgi</a>
+
+
+<span class="ekeyword">create</span> <span class="esymbol">{</span><a class="eclass" href="../wsf/wsf_response_short.html">WSF_RESPONSE</a><span class="esymbol">}</span>
+	<a class="efeature" href="../wsf/wsf_response_short.html#f_make_from_wsf">make_from_wsf</a>
+
+<span class="ekeyword">convert</span>
+	<a class="efeature" href="../wsf/wsf_response_short.html#f_make_from_wgi">make_from_wgi</a> <span class="esymbol">(</span><span class="esymbol">{</span><span class="neclass">WGI_RESPONSE</span><span class="esymbol">}</span><span class="esymbol">)</span>
+
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Status report</span>
+
+	<a name="f_status_committed"></a><a class="efeature" href="../wsf/wsf_response_short.html#f_status_committed">status_committed</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Status line committed?</span>
+
+	<a name="f_header_committed"></a><a class="efeature" href="../wsf/wsf_response_short.html#f_header_committed">header_committed</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Header committed?</span>
+
+	<a name="f_message_committed"></a><a class="efeature" href="../wsf/wsf_response_short.html#f_message_committed">message_committed</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Message committed?</span>
+
+	<a name="f_message_writable"></a><a class="efeature" href="../wsf/wsf_response_short.html#f_message_writable">message_writable</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Can message be written?</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Status setting</span>
+
+	<a name="f_status_is_set"></a><a class="efeature" href="../wsf/wsf_response_short.html#f_status_is_set">status_is_set</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is status set?</span>
+
+	<a name="f_set_status_code"></a><a class="efeature" href="../wsf/wsf_response_short.html#f_set_status_code">set_status_code</a> <span class="esymbol">(</span><span class="elocal">a_code</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set response status code</span>
+			<span class="ecomment">--</span><span class="ecomment"> Should be done before sending any data back to the client</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">a_code_valid</span><span class="esymbol">:</span> <span class="elocal">a_code</span> <a class="esymbol" href="../base/comparable_short.html#f_is_greater">&gt;</a> <span class="enumber">0</span>
+			<span class="etag">status_not_set</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_response_short.html#f_status_committed">status_committed</a>
+			<span class="etag">header_not_committed</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_response_short.html#f_header_committed">header_committed</a>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">status_code_set</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_response_short.html#f_status_code">status_code</a> <span class="esymbol">=</span> <span class="elocal">a_code</span>
+			<span class="etag">status_set</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_response_short.html#f_status_is_set">status_is_set</a>
+			<span class="etag">status_reason_phrase_unset</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_response_short.html#f_status_reason_phrase">status_reason_phrase</a> <span class="esymbol">=</span> <span class="ekeyword">Void</span>
+
+	<a name="f_set_status_code_with_reason_phrase"></a><a class="efeature" href="../wsf/wsf_response_short.html#f_set_status_code_with_reason_phrase">set_status_code_with_reason_phrase</a> <span class="esymbol">(</span><span class="elocal">a_code</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a><span class="esymbol">;</span> <span class="elocal">a_reason_phrase</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set response status code</span>
+			<span class="ecomment">--</span><span class="ecomment"> Should be done before sending any data back to the client</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">a_code_valid</span><span class="esymbol">:</span> <span class="elocal">a_code</span> <a class="esymbol" href="../base/comparable_short.html#f_is_greater">&gt;</a> <span class="enumber">0</span>
+			<span class="etag">status_not_set</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_response_short.html#f_status_committed">status_committed</a>
+			<span class="etag">header_not_committed</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_response_short.html#f_header_committed">header_committed</a>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">status_code_set</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_response_short.html#f_status_code">status_code</a> <span class="esymbol">=</span> <span class="elocal">a_code</span>
+			<span class="etag">status_reason_phrase_set</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_response_short.html#f_status_reason_phrase">status_reason_phrase</a> <span class="esymbol">=</span> <span class="elocal">a_reason_phrase</span>
+			<span class="etag">status_set</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_response_short.html#f_status_is_set">status_is_set</a>
+
+	<a name="f_status_code"></a><a class="efeature" href="../wsf/wsf_response_short.html#f_status_code">status_code</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> Response status</span>
+
+	<a name="f_status_reason_phrase"></a><a class="efeature" href="../wsf/wsf_response_short.html#f_status_reason_phrase">status_reason_phrase</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Custom status reason phrase (optional)</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Header access</span>
+
+	<a name="f_header"></a><a class="efeature" href="../wsf/wsf_response_short.html#f_header">header</a><span class="esymbol">:</span> <span class="neclass">HTTP_HEADER_MODIFIER</span>
+			<span class="ecomment">--</span><span class="ecomment"> Associated header builder interface.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Header output operation</span>
+
+	<a name="f_put_header_line"></a><a class="efeature" href="../wsf/wsf_response_short.html#f_put_header_line">put_header_line</a> <span class="esymbol">(</span><span class="elocal">h</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Put header </span><span class="equoted">h</span>
+			<span class="ecomment">--</span><span class="ecomment"> Replace any existing value</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">header_not_committed</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_response_short.html#f_header_committed">header_committed</a>
+
+	<a name="f_add_header_line"></a><a class="efeature" href="../wsf/wsf_response_short.html#f_add_header_line">add_header_line</a> <span class="esymbol">(</span><span class="elocal">h</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Add header </span><span class="equoted">h</span>
+			<span class="ecomment">--</span><span class="ecomment"> This can lead to duplicated header entries</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">header_not_committed</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_response_short.html#f_header_committed">header_committed</a>
+
+	<a name="f_put_header_text"></a><a class="efeature" href="../wsf/wsf_response_short.html#f_put_header_text">put_header_text</a> <span class="esymbol">(</span><span class="elocal">a_text</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Put the multiline header </span><span class="equoted">a_text</span>
+			<span class="ecomment">--</span><span class="ecomment"> Overwite potential existing header</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">header_not_committed</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_response_short.html#f_header_committed">header_committed</a>
+			<span class="etag">a_text_ends_with_single_crlf</span><span class="esymbol">:</span> <span class="elocal">a_text</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_count">count</a> <a class="esymbol" href="../base/comparable_short.html#f_is_greater">&gt;</a> <span class="enumber">2</span> <a class="ekeyword" href="../base/boolean_short.html#f_implication">implies</a> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_text</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_substring">substring</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">a_text</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_count">count</a> <a class="esymbol" href="../base/integer_32_short.html#f_minus">-</a> <span class="enumber">2</span><span class="esymbol">,</span> <span class="elocal">a_text</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_count">count</a><span class="esymbol">)</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_same_string">same_string</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;%R%N&quot;<span class="esymbol">)</span>
+			<span class="etag">a_text_does_not_end_with_double_crlf</span><span class="esymbol">:</span> <span class="elocal">a_text</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_count">count</a> <a class="esymbol" href="../base/comparable_short.html#f_is_greater">&gt;</a> <span class="enumber">4</span> <a class="ekeyword" href="../base/boolean_short.html#f_implication">implies</a> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_text</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_substring">substring</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">a_text</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_count">count</a> <a class="esymbol" href="../base/integer_32_short.html#f_minus">-</a> <span class="enumber">4</span><span class="esymbol">,</span> <span class="elocal">a_text</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_count">count</a><span class="esymbol">)</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_same_string">same_string</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;%R%N%R%N&quot;<span class="esymbol">)</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">message_writable</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_response_short.html#f_message_writable">message_writable</a>
+
+	<a name="f_add_header_text"></a><a class="efeature" href="../wsf/wsf_response_short.html#f_add_header_text">add_header_text</a> <span class="esymbol">(</span><span class="elocal">a_text</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Add the multiline header </span><span class="equoted">a_text</span>
+			<span class="ecomment">--</span><span class="ecomment"> Does not replace existing header with same name</span>
+			<span class="ecomment">--</span><span class="ecomment"> This could leads to multiple header with the same name</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">header_not_committed</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_response_short.html#f_header_committed">header_committed</a>
+			<span class="etag">a_text_ends_with_single_crlf</span><span class="esymbol">:</span> <span class="elocal">a_text</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_count">count</a> <a class="esymbol" href="../base/comparable_short.html#f_is_greater">&gt;</a> <span class="enumber">2</span> <a class="ekeyword" href="../base/boolean_short.html#f_implication">implies</a> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_text</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_substring">substring</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">a_text</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_count">count</a> <a class="esymbol" href="../base/integer_32_short.html#f_minus">-</a> <span class="enumber">2</span><span class="esymbol">,</span> <span class="elocal">a_text</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_count">count</a><span class="esymbol">)</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_same_string">same_string</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;%R%N&quot;<span class="esymbol">)</span>
+			<span class="etag">a_text_does_not_end_with_double_crlf</span><span class="esymbol">:</span> <span class="elocal">a_text</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_count">count</a> <a class="esymbol" href="../base/comparable_short.html#f_is_greater">&gt;</a> <span class="enumber">4</span> <a class="ekeyword" href="../base/boolean_short.html#f_implication">implies</a> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_text</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_substring">substring</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">a_text</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_count">count</a> <a class="esymbol" href="../base/integer_32_short.html#f_minus">-</a> <span class="enumber">4</span><span class="esymbol">,</span> <span class="elocal">a_text</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_count">count</a><span class="esymbol">)</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_same_string">same_string</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;%R%N%R%N&quot;<span class="esymbol">)</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">status_set</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_response_short.html#f_status_is_set">status_is_set</a>
+			<span class="etag">message_writable</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_response_short.html#f_message_writable">message_writable</a>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Header output operation: helpers</span>
+
+	<a name="f_put_header"></a><a class="efeature" href="../wsf/wsf_response_short.html#f_put_header">put_header</a> <span class="esymbol">(</span><span class="elocal">a_status_code</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a><span class="esymbol">;</span> <span class="elocal">a_headers</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/array_short.html">ARRAY</a> <span class="esymbol">[</span><a class="eclass" href="../base/tuple_short.html">TUPLE</a> <span class="esymbol">[</span><span class="elocal">name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">;</span> <span class="elocal">value</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">]</span><span class="esymbol">]</span><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Put headers with status </span><span class="equoted">a_status</span><span class="ecomment">, and headers from </span><span class="equoted">a_headers</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">a_status_code_valid</span><span class="esymbol">:</span> <span class="elocal">a_status_code</span> <a class="esymbol" href="../base/comparable_short.html#f_is_greater">&gt;</a> <span class="enumber">0</span>
+			<span class="etag">status_not_committed</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_response_short.html#f_status_committed">status_committed</a>
+			<span class="etag">header_not_committed</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_response_short.html#f_header_committed">header_committed</a>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">status_code_set</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_response_short.html#f_status_code">status_code</a> <span class="esymbol">=</span> <span class="elocal">a_status_code</span>
+			<span class="etag">status_set</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_response_short.html#f_status_is_set">status_is_set</a>
+			<span class="etag">message_writable</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_response_short.html#f_message_writable">message_writable</a>
+
+	<a name="f_add_header"></a><a class="efeature" href="../wsf/wsf_response_short.html#f_add_header">add_header</a> <span class="esymbol">(</span><span class="elocal">a_status_code</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a><span class="esymbol">;</span> <span class="elocal">a_headers</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/array_short.html">ARRAY</a> <span class="esymbol">[</span><a class="eclass" href="../base/tuple_short.html">TUPLE</a> <span class="esymbol">[</span><span class="elocal">name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">;</span> <span class="elocal">value</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">]</span><span class="esymbol">]</span><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Put headers with status </span><span class="equoted">a_status</span><span class="ecomment">, and headers from </span><span class="equoted">a_headers</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">a_status_code_valid</span><span class="esymbol">:</span> <span class="elocal">a_status_code</span> <a class="esymbol" href="../base/comparable_short.html#f_is_greater">&gt;</a> <span class="enumber">0</span>
+			<span class="etag">status_not_committed</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_response_short.html#f_status_committed">status_committed</a>
+			<span class="etag">header_not_committed</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_response_short.html#f_header_committed">header_committed</a>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">status_code_set</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_response_short.html#f_status_code">status_code</a> <span class="esymbol">=</span> <span class="elocal">a_status_code</span>
+			<span class="etag">status_set</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_response_short.html#f_status_is_set">status_is_set</a>
+			<span class="etag">message_writable</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_response_short.html#f_message_writable">message_writable</a>
+
+	<a name="f_put_header_lines"></a><a class="efeature" href="../wsf/wsf_response_short.html#f_put_header_lines">put_header_lines</a> <span class="esymbol">(</span><span class="elocal">a_lines</span><span class="esymbol">:</span> <a class="eclass" href="../base/iterable_short.html">ITERABLE</a> <span class="esymbol">[</span><a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">]</span><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Put headers from </span><span class="equoted">a_lines</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">header_not_committed</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_response_short.html#f_header_committed">header_committed</a>
+
+	<a name="f_add_header_lines"></a><a class="efeature" href="../wsf/wsf_response_short.html#f_add_header_lines">add_header_lines</a> <span class="esymbol">(</span><span class="elocal">a_lines</span><span class="esymbol">:</span> <a class="eclass" href="../base/iterable_short.html">ITERABLE</a> <span class="esymbol">[</span><a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">]</span><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Add headers from </span><span class="equoted">a_lines</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">header_not_committed</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_response_short.html#f_header_committed">header_committed</a>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Header add cookie</span>
+
+	<a name="f_add_cookie"></a><a class="efeature" href="../wsf/wsf_response_short.html#f_add_cookie">add_cookie</a> <span class="esymbol">(</span><span class="elocal">a_cookie</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_cookie_short.html">WSF_COOKIE</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Add a Set-Cookie header field to the response,</span>
+			<span class="ecomment">--</span><span class="ecomment"> if no Set-Cookie header field already use same cookie-name.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Output report</span>
+
+	<a name="f_transfered_content_length"></a><a class="efeature" href="../wsf/wsf_response_short.html#f_transfered_content_length">transfered_content_length</a><span class="esymbol">:</span> <a class="eclass" href="../base/natural_64_short.html">NATURAL_64</a>
+			<span class="ecomment">--</span><span class="ecomment"> Length of the content transfered via </span><span class="ecomment">`</span><a class="efeature" href="../wsf/wsf_response_short.html#f_put_string">put_string</a><span class="ecomment">`</span><span class="ecomment">, </span><span class="ecomment">`</span><a class="efeature" href="../wsf/wsf_response_short.html#f_put_character">put_character</a><span class="ecomment">`</span>
+			<span class="ecomment">--</span><span class="ecomment"> </span><span class="ecomment">`</span><a class="efeature" href="../wsf/wsf_response_short.html#f_put_chunk">put_chunk</a><span class="ecomment">`</span><span class="ecomment">, </span><span class="ecomment">`</span><a class="efeature" href="../wsf/wsf_response_short.html#f_put_substring">put_substring</a><span class="ecomment">`</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Body</span>
+
+	<a name="f_put_character"></a><a class="efeature" href="../wsf/wsf_response_short.html#f_put_character">put_character</a> <span class="esymbol">(</span><span class="elocal">c</span><span class="esymbol">:</span> <a class="eclass" href="../base/character_8_short.html">CHARACTER_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Send the character </span><span class="equoted">c</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">message_writable</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_response_short.html#f_message_writable">message_writable</a>
+
+	<a name="f_put_string"></a><a class="efeature" href="../wsf/wsf_response_short.html#f_put_string">put_string</a> <span class="esymbol">(</span><span class="elocal">s</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Send the string </span><span class="equoted">s</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">message_writable</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_response_short.html#f_message_writable">message_writable</a>
+
+	<a name="f_put_substring"></a><a class="efeature" href="../wsf/wsf_response_short.html#f_put_substring">put_substring</a> <span class="esymbol">(</span><span class="elocal">s</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">;</span> <span class="elocal">a_begin_index</span><span class="esymbol">,</span> <span class="elocal">a_end_index</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Send the substring </span><span class="equoted">s[a_begin_index:a_end_index]</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">message_writable</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_response_short.html#f_message_writable">message_writable</a>
+
+	<a name="f_put_file_content"></a><a class="efeature" href="../wsf/wsf_response_short.html#f_put_file_content">put_file_content</a> <span class="esymbol">(</span><span class="elocal">f</span><span class="esymbol">:</span> <a class="eclass" href="../base/file_short.html">FILE</a><span class="esymbol">;</span> <span class="elocal">a_offset</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a><span class="esymbol">;</span> <span class="elocal">a_count</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Send </span><span class="equoted">a_count</span><span class="ecomment"> bytes from the content of file </span><span class="equoted">f</span><span class="ecomment"> starting at offset </span><span class="equoted">a_offset</span><span class="ecomment">.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">message_writable</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_response_short.html#f_message_writable">message_writable</a>
+			<span class="etag">not_too_big</span><span class="esymbol">:</span> <span class="elocal">a_offset</span> <a class="esymbol" href="../base/integer_32_short.html#f_plus">+</a> <span class="elocal">a_count</span> <a class="esymbol" href="../base/comparable_short.html#f_is_less_equal">&lt;=</a> <span class="elocal">f</span><span class="edot">.</span><a class="efeature" href="../base/file_short.html#f_count">count</a>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Chunk body</span>
+
+	<a name="f_put_chunk"></a><a class="efeature" href="../wsf/wsf_response_short.html#f_put_chunk">put_chunk</a> <span class="esymbol">(</span><span class="elocal">a_content</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">;</span> <span class="elocal">a_ext</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Write chunk non empty </span><span class="equoted">a_content</span>
+			<span class="ecomment">--</span><span class="ecomment"> with optional extension </span><span class="equoted">a_ext</span><span class="ecomment">: chunk-extension= *( &quot;;&quot; chunk-ext-name [ &quot;=&quot; chunk-ext-val ] )</span>
+			<span class="ecomment">--</span><span class="ecomment"> Note: that you should have header &quot;Transfer-Encoding: chunked&quot;</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">a_content_not_empty</span><span class="esymbol">:</span> <span class="elocal">a_content</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span> <a class="ekeyword" href="../base/boolean_short.html#f_conjuncted_semistrict">and then</a> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_content</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_is_empty">is_empty</a>
+			<span class="etag">message_writable</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_response_short.html#f_message_writable">message_writable</a>
+			<span class="etag">valid_chunk_extension</span><span class="esymbol">:</span> <span class="esymbol">(</span><span class="elocal">a_ext</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span> <a class="ekeyword" href="../base/boolean_short.html#f_conjuncted_semistrict">and then</a> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_ext</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_is_empty">is_empty</a><span class="esymbol">)</span> <a class="ekeyword" href="../base/boolean_short.html#f_implication">implies</a> <span class="esymbol">(</span><span class="elocal">a_ext</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_starts_with">starts_with</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;;&quot;<span class="esymbol">)</span> <a class="ekeyword" href="../base/boolean_short.html#f_conjuncted">and</a> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_ext</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="echar">'%N'</span><span class="esymbol">)</span> <a class="ekeyword" href="../base/boolean_short.html#f_conjuncted">and</a> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_ext</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="echar">'%R'</span><span class="esymbol">)</span><span class="esymbol">)</span>
+		<span class="ekeyword">ensure</span>
+			<a class="efeature" href="../wsf/wsf_response_short.html#f_transfered_content_length">transfered_content_length</a> <span class="esymbol">=</span> <span class="ekeyword">old</span> <a class="efeature" href="../wsf/wsf_response_short.html#f_transfered_content_length">transfered_content_length</a> <a class="esymbol" href="../base/natural_64_short.html#f_plus">+</a> <span class="elocal">a_content</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_count">count</a><span class="edot">.</span><a class="efeature" href="../base/integer_32_ref_short.html#f_to_natural_64">to_natural_64</a>
+
+	<a name="f_put_custom_chunk_end"></a><a class="efeature" href="../wsf/wsf_response_short.html#f_put_custom_chunk_end">put_custom_chunk_end</a> <span class="esymbol">(</span><span class="elocal">a_ext</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">;</span> <span class="elocal">a_trailer</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Put end of chunked content,</span>
+			<span class="ecomment">--</span><span class="ecomment"> with optional extension </span><span class="equoted">a_ext</span><span class="ecomment">: chunk-extension= *( &quot;;&quot; chunk-ext-name [ &quot;=&quot; chunk-ext-val ] )</span>
+			<span class="ecomment">--</span><span class="ecomment"> and with optional trailer </span><span class="equoted">a_trailer</span><span class="ecomment"> : trailer= *(entity-header CRLF)</span>
+
+	<a name="f_put_chunk_end"></a><a class="efeature" href="../wsf/wsf_response_short.html#f_put_chunk_end">put_chunk_end</a>
+			<span class="ecomment">--</span><span class="ecomment"> Put end of chunked content</span>
+			<span class="ecomment">--</span><span class="ecomment"> without any optional trailer.</span>
+
+	<a name="f_flush"></a><a class="efeature" href="../wsf/wsf_response_short.html#f_flush">flush</a>
+			<span class="ecomment">--</span><span class="ecomment"> Flush if it makes sense</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Response object</span>
+
+	<a name="f_send"></a><a class="efeature" href="../wsf/wsf_response_short.html#f_send">send</a> <span class="esymbol">(</span><span class="elocal">a_message</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_response_message_short.html">WSF_RESPONSE_MESSAGE</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set </span><span class="equoted">a_message</span><span class="ecomment"> as the whole response to the client</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">header_not_committed</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_response_short.html#f_header_committed">header_committed</a>
+			<span class="etag">status_not_committed</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_response_short.html#f_status_committed">status_committed</a>
+			<span class="etag">no_message_committed</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_response_short.html#f_message_committed">message_committed</a>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">status_committed</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_response_short.html#f_status_is_set">status_is_set</a>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Redirect</span>
+
+	<a name="f_redirect_now_custom"></a><a class="efeature" href="../wsf/wsf_response_short.html#f_redirect_now_custom">redirect_now_custom</a> <span class="esymbol">(</span><span class="elocal">a_url</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">;</span> <span class="elocal">a_status_code</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a><span class="esymbol">;</span> <span class="elocal">a_header</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <span class="neclass">HTTP_HEADER</span><span class="esymbol">;</span> <span class="elocal">a_content</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/tuple_short.html">TUPLE</a> <span class="esymbol">[</span><span class="elocal">body</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">;</span> <span class="elocal">type</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">]</span><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Redirect to the given url </span><span class="equoted">a_url</span><span class="ecomment"> and precise custom </span><span class="equoted">a_status_code</span><span class="ecomment">, custom header and content</span>
+			<span class="ecomment">--</span><span class="ecomment"> Please see </span><a class="ecomment" href="http://www.faqs.org/rfcs/rfc2616">http://www.faqs.org/rfcs/rfc2616</a><span class="ecomment"> to use proper status code.</span>
+			<span class="ecomment">--</span><span class="ecomment"> if </span><span class="equoted">a_status_code</span><span class="ecomment"> is 0, use the default </span><span class="esymbol">{</span><span class="neclass">HTTP_STATUS_CODE</span><span class="esymbol">}</span><span class="edot">.</span><span class="nefeature">temp_redirect</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">header_not_committed</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_response_short.html#f_header_committed">header_committed</a>
+
+	<a name="f_redirect_now"></a><a class="efeature" href="../wsf/wsf_response_short.html#f_redirect_now">redirect_now</a> <span class="esymbol">(</span><span class="elocal">a_url</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Redirect to the given url </span><span class="equoted">a_url</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">header_not_committed</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../wsf/wsf_response_short.html#f_header_committed">header_committed</a>
+
+	<a name="f_redirect_now_with_content"></a><a class="efeature" href="../wsf/wsf_response_short.html#f_redirect_now_with_content">redirect_now_with_content</a> <span class="esymbol">(</span><span class="elocal">a_url</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">;</span> <span class="elocal">a_content</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">;</span> <span class="elocal">a_content_type</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Redirect to the given url </span><span class="equoted">a_url</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Error reporting</span>
+
+	<a name="f_put_error"></a><a class="efeature" href="../wsf/wsf_response_short.html#f_put_error">put_error</a> <span class="esymbol">(</span><span class="elocal">a_message</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Report error described by </span><span class="equoted">a_message</span>
+			<span class="ecomment">--</span><span class="ecomment"> This might be used by the underlying connector</span>
+	
+<span class="ekeyword">note</span>
+	<span class="eitag">copyright</span><span class="esymbol">:</span> <span class="estring">&quot;2011-2016, Jocelyn Fiat, Javier Velilla, Olivier Ligot, Colin Adams, Eiffel Software and others&quot;</span>
+	<span class="eitag">license</span><span class="esymbol">:</span> <span class="estring">&quot;Eiffel Forum License v2 (see </span><a class="estring" href="http://www.eiffel.com/licensing/forum.txt">http://www.eiffel.com/licensing/forum.txt</a><span class="estring">)&quot;</span>
+	<span class="eitag">source</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">Eiffel Software</span>
+		<span class="estring">5949 Hollister Ave., Goleta, CA 93117 USA</span>
+		<span class="estring">Telephone 805-685-1006, Fax 805-685-6869</span>
+		<span class="estring">Website </span><a class="estring" href="http://www.eiffel.com">http://www.eiffel.com</a>
+		<span class="estring">Customer support </span><a class="estring" href="http://support.eiffel.com">http://support.eiffel.com</a>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+
+<span class="ekeyword">end</span> <span class="ecomment">--</span> <span class="ecomment">class </span><a class="eclass" href="../wsf/wsf_response_short.html">WSF_RESPONSE</a></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="wsf_response_chart.html">Chart</a>
+<a class="nav class" href="wsf_response_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="wsf_response"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
+

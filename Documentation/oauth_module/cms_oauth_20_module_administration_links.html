@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="keywords" content="Eiffel class"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>cms_oauth_20_module_administration Relations</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="cms_oauth_20_module_administration_chart.html">Chart</a>
+<span class="nav class selected">Relations</span>
+<a class="nav class" href="cms_oauth_20_module_administration_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="cms_oauth_20_module_administration"></span>
+</div></form><pre><span class="ekeyword">class</span>
+	<a class="eclass" href="../oauth_module/cms_oauth_20_module_administration_links.html">CMS_OAUTH_20_MODULE_ADMINISTRATION</a>
+
+<span class="ekeyword">Ancestors</span>
+	<span class="neclass">CMS_HOOK_MENU_SYSTEM_ALTER</span><span class="echar">*</span>
+	<span class="neclass">CMS_MODULE_ADMINISTRATION</span><span class="echar">*</span> <span class="esymbol">[</span><span class="egeneric">G</span> <span class="esymbol">-&gt;</span> <span class="neclass">CMS_MODULE</span><span class="esymbol">]</span>
+
+<span class="ekeyword">Clients</span>
+	<a class="eclass" href="../oauth_module/cms_oauth_20_module_links.html">CMS_OAUTH_20_MODULE</a>
+	<a class="eclass" href="../oauth_module/cms_oauth_20_module_administration_links.html">CMS_OAUTH_20_MODULE_ADMINISTRATION</a>
+
+<span class="ekeyword">Suppliers</span>
+	<a class="eclass" href="../base/action_sequence_links.html">ACTION_SEQUENCE</a> <span class="esymbol">[</span><span class="egeneric">EVENT_DATA</span> <span class="esymbol">-&gt;</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/tuple_links.html">TUPLE</a> <span class="ekeyword">create</span> <a class="efeature" href="../base/any_short.html#f_default_create">default_create</a> <span class="ekeyword">end</span><span class="esymbol">]</span>
+	<a class="eclass" href="../base/arrayed_list_links.html">ARRAYED_LIST</a> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+	<a class="eclass" href="../base/arrayed_list_iteration_cursor_links.html">ARRAYED_LIST_ITERATION_CURSOR</a> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+	<a class="eclass" href="../base/boolean_links.html">BOOLEAN</a>
+	<span class="neclass">CMS_API</span>
+	<span class="neclass">CMS_FORM</span>
+	<span class="neclass">CMS_HOOK_CORE_MANAGER</span>
+	<span class="neclass">CMS_LOCAL_LINK</span>
+	<span class="neclass">CMS_MENU</span>
+	<span class="neclass">CMS_MENU_SYSTEM</span>
+	<a class="eclass" href="../oauth_module/cms_oauth_20_api_links.html">CMS_OAUTH_20_API</a>
+	<a class="eclass" href="../oauth_module/cms_oauth_20_consumer_links.html">CMS_OAUTH_20_CONSUMER</a>
+	<a class="eclass" href="../oauth_module/cms_oauth_20_module_links.html">CMS_OAUTH_20_MODULE</a>
+	<a class="eclass" href="../oauth_module/cms_oauth_20_module_administration_links.html">CMS_OAUTH_20_MODULE_ADMINISTRATION</a>
+	<span class="neclass">CMS_RESPONSE</span><span class="echar">*</span>
+	<span class="neclass">CMS_RESPONSE_API</span>
+	<a class="eclass" href="../base/file_utilities_links.html">FILE_UTILITIES</a>
+	<span class="neclass">GENERIC_VIEW_CMS_RESPONSE</span>
+	<a class="eclass" href="../base/immutable_string_32_links.html">IMMUTABLE_STRING_32</a>
+	<a class="eclass" href="../base/indexable_iteration_cursor_links.html">INDEXABLE_ITERATION_CURSOR</a><span class="echar">*</span> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+	<span class="neclass">INI_CONFIG</span>
+	<span class="neclass">INTERNAL_SERVER_ERROR_CMS_RESPONSE</span>
+	<a class="eclass" href="../base/iteration_cursor_links.html">ITERATION_CURSOR</a><span class="echar">*</span> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+	<a class="eclass" href="../base/list_links.html">LIST</a><span class="echar">*</span> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+	<span class="neclass">NOT_FOUND_ERROR_CMS_RESPONSE</span>
+	<a class="eclass" href="../base/path_links.html">PATH</a>
+	<a class="eclass" href="../base/readable_string_32_links.html">READABLE_STRING_32</a><span class="echar">*</span>
+	<a class="eclass" href="../base/string_32_links.html">STRING_32</a>
+	<a class="eclass" href="../base/string_8_links.html">STRING_8</a>
+	<a class="eclass" href="../base/string_table_links.html">STRING_TABLE</a> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+	<span class="neclass">WSF_FORM</span>
+	<span class="neclass">WSF_FORM_DATA</span>
+	<span class="neclass">WSF_FORM_FIELD_SET</span>
+	<span class="neclass">WSF_FORM_SUBMIT_INPUT</span>
+	<span class="neclass">WSF_FORM_TEXT_INPUT</span>
+	<a class="eclass" href="../wsf/wsf_request_links.html">WSF_REQUEST</a>
+	<a class="eclass" href="../wsf/wsf_router_links.html">WSF_ROUTER</a>
+	<a class="eclass" href="../wsf/wsf_string_links.html">WSF_STRING</a>
+	<a class="eclass" href="../wsf/wsf_uri_agent_handler_links.html">WSF_URI_AGENT_HANDLER</a>
+	<a class="eclass" href="../wsf/wsf_uri_template_agent_handler_links.html">WSF_URI_TEMPLATE_AGENT_HANDLER</a>
+
+</pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="cms_oauth_20_module_administration_chart.html">Chart</a>
+<span class="nav class selected">Relations</span>
+<a class="nav class" href="cms_oauth_20_module_administration_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="cms_oauth_20_module_administration"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="Object that represents a URI Scheme  See http://en.wikipedia.org/wiki/URI_scheme See http://en.wikipedia.org/wiki/Uniform_resource_identifier See http://en.wikipedia.org/wiki/Uniform_resource_locator See http://tools.ietf.org/html/rfc3986 (URI)  Global syntax element:    pchar         = unreserved / pct-encoded / sub-delims / : / @    pct-encoded   =  HEXDIG HEXDIG    unreserved    = ALPHA / DIGIT / - / . / _ / ~    reserved      = gen-delims / sub-delims    gen-delims    = : / / / ? / # / [ / ] / @    sub-delims    = ! / $ / & / ' / ( / )                  / * / + / , / ; / ="/>
+<meta name="eis" content="name=URI-RFC3986 Generic syntax, protocol=URI, src=http://tools.ietf.org/html/rfc3986"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="Copyright (c) 1984-2021, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>uri Contracts</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="uri_chart.html">Chart</a>
+<a class="nav class" href="uri_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="uri"></span>
+</div></form><pre><span class="ekeyword">note</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">Object that represents a URI Scheme</span>
+		
+		<span class="estring">See </span><a class="estring" href="http://en.wikipedia.org/wiki/URI_scheme">http://en.wikipedia.org/wiki/URI_scheme</a>
+		<span class="estring">See </span><a class="estring" href="http://en.wikipedia.org/wiki/Uniform_resource_identifier">http://en.wikipedia.org/wiki/Uniform_resource_identifier</a>
+		<span class="estring">See </span><a class="estring" href="http://en.wikipedia.org/wiki/Uniform_resource_locator">http://en.wikipedia.org/wiki/Uniform_resource_locator</a>
+		<span class="estring">See </span><a class="estring" href="http://tools.ietf.org/html/rfc3986">http://tools.ietf.org/html/rfc3986</a><span class="estring"> (URI)</span>
+		
+		<span class="estring">Global syntax element:</span>
+		<span class="estring"> &nbsp;&nbsp;pchar &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= unreserved / pct-encoded / sub-delims / &quot;:&quot; / &quot;@&quot;</span>
+		<span class="estring"> &nbsp;&nbsp;pct-encoded &nbsp;&nbsp;= &quot;%&quot; HEXDIG HEXDIG</span>
+		<span class="estring"> &nbsp;&nbsp;unreserved &nbsp;&nbsp;&nbsp;= ALPHA / DIGIT / &quot;-&quot; / &quot;.&quot; / &quot;_&quot; / &quot;~&quot;</span>
+		<span class="estring"> &nbsp;&nbsp;reserved &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= gen-delims / sub-delims</span>
+		<span class="estring"> &nbsp;&nbsp;gen-delims &nbsp;&nbsp;&nbsp;= &quot;:&quot; / &quot;/&quot; / &quot;?&quot; / &quot;#&quot; / &quot;[&quot; / &quot;]&quot; / &quot;@&quot;</span>
+		<span class="estring"> &nbsp;&nbsp;sub-delims &nbsp;&nbsp;&nbsp;= &quot;!&quot; / &quot;$&quot; / &quot;&#38;&quot; / &quot;'&quot; / &quot;(&quot; / &quot;)&quot;</span>
+		<span class="estring"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/ &quot;*&quot; / &quot;+&quot; / &quot;,&quot; / &quot;;&quot; / &quot;=&quot;</span>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+	<span class="eitag">date</span><span class="esymbol">:</span> <span class="estring">&quot;$Date$&quot;</span>
+	<span class="eitag">revision</span><span class="esymbol">:</span> <span class="estring">&quot;$Revision$&quot;</span>
+	<span class="eitag">eis</span><span class="esymbol">:</span> <span class="estring">&quot;name=URI-RFC3986 Generic syntax&quot;</span><span class="esymbol">,</span> <span class="estring">&quot;protocol=URI&quot;</span><span class="esymbol">,</span> <span class="estring">&quot;src=</span><a class="estring" href="http://tools.ietf.org/html/rfc3986">http://tools.ietf.org/html/rfc3986</a><span class="estring">&quot;</span>
+	<span class="eitag">eis</span><span class="esymbol">:</span> <span class="estring">&quot;name=URI-Wikipedia&quot;</span><span class="esymbol">,</span> <span class="estring">&quot;protocol=URI&quot;</span><span class="esymbol">,</span> <span class="estring">&quot;src=</span><a class="estring" href="http://en.wikipedia.org/wiki/URI_scheme">http://en.wikipedia.org/wiki/URI_scheme</a><span class="estring">&quot;</span>
+	<span class="eitag">eis</span><span class="esymbol">:</span> <span class="estring">&quot;name=IRI-RFC3987&quot;</span><span class="esymbol">,</span> <span class="estring">&quot;protocol=URI&quot;</span><span class="esymbol">,</span> <span class="estring">&quot;src=</span><a class="estring" href="http://tools.ietf.org/html/rfc3987">http://tools.ietf.org/html/rfc3987</a><span class="estring">&quot;</span>
+	<span class="eitag">eis</span><span class="esymbol">:</span> <span class="estring">&quot;name=IRI-Wikipedia&quot;</span><span class="esymbol">,</span> <span class="estring">&quot;protocol=URI&quot;</span><span class="esymbol">,</span> <span class="estring">&quot;src=</span><a class="estring" href="http://en.wikipedia.org/wiki/Internationalized_Resource_Identifier">http://en.wikipedia.org/wiki/Internationalized_Resource_Identifier</a><span class="estring">&quot;</span>
+	<span class="eitag">eis</span><span class="esymbol">:</span> <span class="estring">&quot;name=Percent-encoding&quot;</span><span class="esymbol">,</span> <span class="estring">&quot;protocol=URI&quot;</span><span class="esymbol">,</span> <span class="estring">&quot;src=</span><a class="estring" href="http://en.wikipedia.org/wiki/Percent-encoding">http://en.wikipedia.org/wiki/Percent-encoding</a><span class="estring">&quot;</span>
+	<span class="eitag">eis</span><span class="esymbol">:</span> <span class="estring">&quot;name=url-RFC1738&quot;</span><span class="esymbol">,</span> <span class="estring">&quot;protocol=URI&quot;</span><span class="esymbol">,</span> <span class="estring">&quot;src=</span><a class="estring" href="http://tools.ietf.org/html/rfc1738">http://tools.ietf.org/html/rfc1738</a><span class="estring">&quot;</span>
+	<span class="eitag">eis</span><span class="esymbol">:</span> <span class="estring">&quot;name=mailto-RFC2368&quot;</span><span class="esymbol">,</span> <span class="estring">&quot;protocol=URI&quot;</span><span class="esymbol">,</span> <span class="estring">&quot;src=</span><a class="estring" href="http://tools.ietf.org/html/rfc2368">http://tools.ietf.org/html/rfc2368</a><span class="estring">&quot;</span>
+	<span class="eitag">eis</span><span class="esymbol">:</span> <span class="estring">&quot;name=ipv6-RFC2373&quot;</span><span class="esymbol">,</span> <span class="estring">&quot;protocol=URI&quot;</span><span class="esymbol">,</span> <span class="estring">&quot;src=</span><a class="estring" href="http://tools.ietf.org/html/rfc2373">http://tools.ietf.org/html/rfc2373</a><span class="estring">&quot;</span>
+	<span class="eitag">eis</span><span class="esymbol">:</span> <span class="estring">&quot;name=ipv6-RFC2373 in URL&quot;</span><span class="esymbol">,</span> <span class="estring">&quot;protocol=URI&quot;</span><span class="esymbol">,</span> <span class="estring">&quot;src=</span><a class="estring" href="http://tools.ietf.org/html/rfc2732">http://tools.ietf.org/html/rfc2732</a><span class="estring">&quot;</span>
+	<span class="eitag">eis</span><span class="esymbol">:</span> <span class="estring">&quot;name=RFC3490 Internationalizing Domain Names in Applications (IDNA)&quot;</span><span class="esymbol">,</span> <span class="estring">&quot;protocol=URI&quot;</span><span class="esymbol">,</span> <span class="estring">&quot;src=</span><a class="estring" href="https://tools.ietf.org/html/rfc3490">https://tools.ietf.org/html/rfc3490</a><span class="estring">&quot;</span>
+
+<span class="ekeyword">class</span> <span class="ekeyword">interface</span>
+	<a class="eclass" href="../uri/uri_short.html">URI</a>
+
+<span class="ekeyword">create</span> 
+	<a class="efeature" href="../uri/uri_short.html#f_make_from_string">make_from_string</a><span class="esymbol">,</span>
+	<a class="efeature" href="../uri/uri_short.html#f_make_from_uri">make_from_uri</a>
+
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Basic operation</span>
+
+	<a name="f_check_validity"></a><a class="efeature" href="../uri/uri_short.html#f_check_validity">check_validity</a> <span class="esymbol">(</span><span class="elocal">a_fixing</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Check validity of URI</span>
+			<span class="ecomment">--</span><span class="ecomment"> If </span><span class="equoted">a_fixing</span><span class="ecomment"> is True, attempt to correct input URI.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Status</span>
+
+	<a name="f_is_valid"></a><a class="efeature" href="../uri/uri_short.html#f_is_valid">is_valid</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is Current valid?</span>
+
+	<a name="f_is_corrected"></a><a class="efeature" href="../uri/uri_short.html#f_is_corrected">is_corrected</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is Current valid after eventual correction?</span>
+
+	<a name="f_has_authority"></a><a class="efeature" href="../uri/uri_short.html#f_has_authority">has_authority</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+
+	<a name="f_has_query"></a><a class="efeature" href="../uri/uri_short.html#f_has_query">has_query</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+
+	<a name="f_has_path"></a><a class="efeature" href="../uri/uri_short.html#f_has_path">has_path</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+
+	<a name="f_has_fragment"></a><a class="efeature" href="../uri/uri_short.html#f_has_fragment">has_fragment</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Access</span>
+
+	<a name="f_scheme"></a><a class="efeature" href="../uri/uri_short.html#f_scheme">scheme</a><span class="esymbol">:</span> <a class="eclass" href="../base/immutable_string_8_short.html">IMMUTABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Scheme name.</span>
+
+	<a name="f_userinfo"></a><a class="efeature" href="../uri/uri_short.html#f_userinfo">userinfo</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/immutable_string_8_short.html">IMMUTABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> User information.</span>
+
+	<a name="f_host"></a><a class="efeature" href="../uri/uri_short.html#f_host">host</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/immutable_string_8_short.html">IMMUTABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Host name.</span>
+
+	<a name="f_idn_hostname"></a><a class="efeature" href="../uri/uri_short.html#f_idn_hostname">idn_hostname</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/immutable_string_8_short.html">IMMUTABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Hostname, formatted with Punycode according to the IDN standard (RFC 3490).</span>
+
+	<a name="f_hostname"></a><a class="efeature" href="../uri/uri_short.html#f_hostname">hostname</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/string_32_short.html">STRING_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> Unicode hostname.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Decoded IDN value from </span><span class="ecomment">`</span><a class="efeature" href="../uri/uri_short.html#f_host">host</a><span class="ecomment">`</span><span class="ecomment">.</span>
+		<span class="ekeyword">note</span>
+			<span class="eitag">eis</span><span class="esymbol">:</span> <span class="estring">&quot;name=RFC3490 Internationalizing Domain Names in Applications (IDNA)&quot;</span><span class="esymbol">,</span> <span class="estring">&quot;protocol=URI&quot;</span><span class="esymbol">,</span> <span class="estring">&quot;src=</span><a class="estring" href="https://tools.ietf.org/html/rfc3490">https://tools.ietf.org/html/rfc3490</a><span class="estring">&quot;</span>
+
+	<a name="f_port"></a><a class="efeature" href="../uri/uri_short.html#f_port">port</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> Associated port, if </span><span class="equoted">0</span><span class="ecomment"> this is not defined.</span>
+			<span class="ecomment">--</span><span class="ecomment"> RFC3986: port = *DIGIT</span>
+
+	<a name="f_path"></a><a class="efeature" href="../uri/uri_short.html#f_path">path</a><span class="esymbol">:</span> <a class="eclass" href="../base/immutable_string_8_short.html">IMMUTABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Path component containing data, usually organized in hierarchical form.</span>
+
+	<a name="f_query"></a><a class="efeature" href="../uri/uri_short.html#f_query">query</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/immutable_string_8_short.html">IMMUTABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Query string.</span>
+
+	<a name="f_fragment"></a><a class="efeature" href="../uri/uri_short.html#f_fragment">fragment</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/immutable_string_8_short.html">IMMUTABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> The fragment identifier component of a URI allows indirect</span>
+			<span class="ecomment">--</span><span class="ecomment"> identification of a secondary resource by reference to a primary</span>
+			<span class="ecomment">--</span><span class="ecomment"> resource and additional identifying information.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Access</span>
+
+	<a name="f_decoded_path"></a><a class="efeature" href="../uri/uri_short.html#f_decoded_path">decoded_path</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_32_short.html">STRING_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> Decoded </span><span class="ecomment">`</span><a class="efeature" href="../uri/uri_short.html#f_path">path</a><span class="ecomment">`</span>
+
+	<a name="f_path_segments"></a><a class="efeature" href="../uri/uri_short.html#f_path_segments">path_segments</a><span class="esymbol">:</span> <a class="eclass" href="../base/list_short.html">LIST</a> <span class="esymbol">[</span><a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">]</span>
+			<span class="ecomment">--</span><span class="ecomment"> Segments composing </span><span class="ecomment">`</span><a class="efeature" href="../uri/uri_short.html#f_path">path</a><span class="ecomment">`</span><span class="ecomment">.</span>
+		<span class="ekeyword">ensure</span>
+			<span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_count">count</a> <span class="esymbol">=</span> <a class="efeature" href="../uri/uri_short.html#f_path_segment_count">path_segment_count</a>
+
+	<a name="f_path_segment_count"></a><a class="efeature" href="../uri/uri_short.html#f_path_segment_count">path_segment_count</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> Path segments count.</span>
+
+	<a name="f_path_segment"></a><a class="efeature" href="../uri/uri_short.html#f_path_segment">path_segment</a> <span class="esymbol">(</span><span class="elocal">i</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> i_th path Segment, starting index is 0 .</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">valid_index</span><span class="esymbol">:</span> <span class="elocal">i</span> <a class="esymbol" href="../base/comparable_short.html#f_is_greater_equal">&gt;=</a> <span class="enumber">0</span> <a class="ekeyword" href="../base/boolean_short.html#f_conjuncted">and</a> <span class="elocal">i</span> <a class="esymbol" href="../base/integer_32_short.html#f_is_less">&lt;</a> <a class="efeature" href="../uri/uri_short.html#f_path_segment_count">path_segment_count</a>
+
+	<a name="f_decoded_path_segment"></a><a class="efeature" href="../uri/uri_short.html#f_decoded_path_segment">decoded_path_segment</a> <span class="ekeyword">alias</span> <span class="esymbol">&quot;</span><a class="esymbol" href="../uri/uri_short.html#f_decoded_path_segment">[]</a><span class="esymbol">&quot;</span> <span class="esymbol">(</span><span class="elocal">i</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_32_short.html">READABLE_STRING_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> i_th path Segment, starting index is 0 .</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">valid_index</span><span class="esymbol">:</span> <span class="elocal">i</span> <a class="esymbol" href="../base/comparable_short.html#f_is_greater_equal">&gt;=</a> <span class="enumber">0</span> <a class="ekeyword" href="../base/boolean_short.html#f_conjuncted">and</a> <span class="elocal">i</span> <a class="esymbol" href="../base/integer_32_short.html#f_is_less">&lt;</a> <a class="efeature" href="../uri/uri_short.html#f_path_segment_count">path_segment_count</a>
+
+	<a name="f_decoded_path_segments"></a><a class="efeature" href="../uri/uri_short.html#f_decoded_path_segments">decoded_path_segments</a><span class="esymbol">:</span> <a class="eclass" href="../base/list_short.html">LIST</a> <span class="esymbol">[</span><a class="eclass" href="../base/readable_string_32_short.html">READABLE_STRING_32</a><span class="esymbol">]</span>
+			<span class="ecomment">--</span><span class="ecomment"> Decoded Segments composing </span><span class="ecomment">`</span><a class="efeature" href="../uri/uri_short.html#f_path">path</a><span class="ecomment">`</span><span class="ecomment">.</span>
+
+	<a name="f_query_items"></a><a class="efeature" href="../uri/uri_short.html#f_query_items">query_items</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/list_short.html">LIST</a> <span class="esymbol">[</span><a class="eclass" href="../base/tuple_short.html">TUPLE</a> <span class="esymbol">[</span><span class="elocal">name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">;</span> <span class="elocal">value</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">]</span><span class="esymbol">]</span>
+			<span class="ecomment">--</span><span class="ecomment"> Query items composing the </span><span class="ecomment">`</span><a class="efeature" href="../uri/uri_short.html#f_query">query</a><span class="ecomment">`</span><span class="ecomment">.</span>
+
+	<a name="f_decoded_query_items"></a><a class="efeature" href="../uri/uri_short.html#f_decoded_query_items">decoded_query_items</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/list_short.html">LIST</a> <span class="esymbol">[</span><a class="eclass" href="../base/tuple_short.html">TUPLE</a> <span class="esymbol">[</span><span class="elocal">name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_32_short.html">READABLE_STRING_32</a><span class="esymbol">;</span> <span class="elocal">value</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_32_short.html">READABLE_STRING_32</a><span class="esymbol">]</span><span class="esymbol">]</span>
+			<span class="ecomment">--</span><span class="ecomment"> Decoded query items composing the </span><span class="ecomment">`</span><a class="efeature" href="../uri/uri_short.html#f_query">query</a><span class="ecomment">`</span><span class="ecomment">.</span>
+
+	<a name="f_decoded_query_item"></a><a class="efeature" href="../uri/uri_short.html#f_decoded_query_item">decoded_query_item</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_32_short.html">READABLE_STRING_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> Decoded query item associated with </span><span class="equoted">a_name</span><span class="ecomment">.</span>
+			<span class="ecomment">--</span><span class="ecomment"> If item exists without any value, return empty string.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Query</span>
+
+	<a name="f_hier"></a><a class="efeature" href="../uri/uri_short.html#f_hier">hier</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Hier part.</span>
+			<span class="ecomment">--</span><span class="ecomment"> hier-part &nbsp;&nbsp;= &quot;//&quot; authority path-abempty</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/ path-absolute</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/ path-rootless</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/ path-empty</span>
+
+	<a name="f_username_password"></a><a class="efeature" href="../uri/uri_short.html#f_username_password">username_password</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/tuple_short.html">TUPLE</a> <span class="esymbol">[</span><span class="elocal">username</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">;</span> <span class="elocal">password</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">]</span>
+			<span class="ecomment">--</span><span class="ecomment"> Username and password value extrated from </span><span class="ecomment">`</span><a class="efeature" href="../uri/uri_short.html#f_userinfo">userinfo</a><span class="ecomment">`</span><span class="ecomment">.</span>
+
+	<a name="f_username"></a><a class="efeature" href="../uri/uri_short.html#f_username">username</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Eventual username.</span>
+
+	<a name="f_password"></a><a class="efeature" href="../uri/uri_short.html#f_password">password</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Eventual password.</span>
+
+	<a name="f_authority"></a><a class="efeature" href="../uri/uri_short.html#f_authority">authority</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Hierarchical element for naming authority.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Conversion</span>
+
+	<a name="f_append_to_string"></a><a class="efeature" href="../uri/uri_short.html#f_append_to_string">append_to_string</a> <span class="esymbol">(</span><span class="elocal">s</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_general_short.html">STRING_GENERAL</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Append string representation of Current into </span><span class="equoted">s</span><span class="ecomment">.</span>
+
+	<a name="f_string"></a><a class="efeature" href="../uri/uri_short.html#f_string">string</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> String representation.</span>
+			<span class="ecomment">--</span><span class="ecomment"> </span><a class="ecomment" href="mailto:scheme://username:password@hostname/path?query#fragment">scheme://username:password@hostname/path?query#fragment</a>
+
+	<a name="f_resolved_uri"></a><a class="efeature" href="../uri/uri_short.html#f_resolved_uri">resolved_uri</a><span class="esymbol">:</span> <a class="eclass" href="../uri/uri_short.html">URI</a>
+			<span class="ecomment">--</span><span class="ecomment"> Resolved URI, i.e remove segment-component from </span><span class="ecomment">`</span><a class="efeature" href="../uri/uri_short.html#f_path">path</a><span class="ecomment">`</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Comparison</span>
+
+	<a name="f_is_same_uri"></a><a class="efeature" href="../uri/uri_short.html#f_is_same_uri">is_same_uri</a> <span class="esymbol">(</span><span class="elocal">a_uri</span><span class="esymbol">:</span> <a class="eclass" href="../uri/uri_short.html">URI</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is </span><span class="equoted">a_uri</span><span class="ecomment"> same as Current ?</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Element Change</span>
+
+	<a name="f_set_scheme"></a><a class="efeature" href="../uri/uri_short.html#f_set_scheme">set_scheme</a> <span class="esymbol">(</span><span class="elocal">v</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set </span><span class="ecomment">`</span><a class="efeature" href="../uri/uri_short.html#f_scheme">scheme</a><span class="ecomment">`</span><span class="ecomment"> to </span><span class="equoted">v</span>
+		<span class="ekeyword">require</span>
+			<a class="efeature" href="../uri/uri_short.html#f_is_valid_scheme">is_valid_scheme</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">v</span><span class="esymbol">)</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">scheme_set</span><span class="esymbol">:</span> <a class="efeature" href="../uri/uri_short.html#f_scheme">scheme</a><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_same_string">same_string</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">v</span><span class="esymbol">)</span>
+
+	<a name="f_set_userinfo"></a><a class="efeature" href="../uri/uri_short.html#f_set_userinfo">set_userinfo</a> <span class="esymbol">(</span><span class="elocal">v</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">)</span>
+		<span class="ekeyword">require</span>
+			<a class="efeature" href="../uri/uri_short.html#f_is_valid_userinfo">is_valid_userinfo</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">v</span><span class="esymbol">)</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">userinfo_set</span><span class="esymbol">:</span> <a class="efeature" href="../uri/uri_short.html#f_is_same_string">is_same_string</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">v</span><span class="esymbol">,</span> <a class="efeature" href="../uri/uri_short.html#f_userinfo">userinfo</a><span class="esymbol">)</span>
+
+	<a name="f_set_hostname"></a><a class="efeature" href="../uri/uri_short.html#f_set_hostname">set_hostname</a> <span class="esymbol">(</span><span class="elocal">v</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set </span><span class="ecomment">`</span><a class="efeature" href="../uri/uri_short.html#f_host">host</a><span class="ecomment">`</span><span class="ecomment"> from string </span><span class="equoted">v</span><span class="ecomment"> formatted with Punycode according to the IDN standard if needed.</span>
+		<span class="ekeyword">note</span>
+			<span class="eitag">eis</span><span class="esymbol">:</span> <span class="estring">&quot;name=RFC3490 Internationalizing Domain Names in Applications (IDNA)&quot;</span><span class="esymbol">,</span> <span class="estring">&quot;protocol=URI&quot;</span><span class="esymbol">,</span> <span class="estring">&quot;src=</span><a class="estring" href="https://tools.ietf.org/html/rfc3490">https://tools.ietf.org/html/rfc3490</a><span class="estring">&quot;</span>
+		<span class="ekeyword">require</span>
+			<a class="efeature" href="../uri/uri_short.html#f_is_valid_host">is_valid_host</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">v</span><span class="esymbol">)</span>
+
+	<a name="f_set_port"></a><a class="efeature" href="../uri/uri_short.html#f_set_port">set_port</a> <span class="esymbol">(</span><span class="elocal">v</span><span class="esymbol">:</span> <span class="ekeyword">like</span> <a class="efeature" href="../uri/uri_short.html#f_port">port</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set </span><span class="ecomment">`</span><a class="efeature" href="../uri/uri_short.html#f_port">port</a><span class="ecomment">`</span><span class="ecomment"> to </span><span class="equoted">v</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">port_set</span><span class="esymbol">:</span> <a class="efeature" href="../uri/uri_short.html#f_port">port</a> <span class="esymbol">=</span> <span class="elocal">v</span>
+
+	<a name="f_set_path"></a><a class="efeature" href="../uri/uri_short.html#f_set_path">set_path</a> <span class="esymbol">(</span><span class="elocal">a_path</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set </span><span class="ecomment">`</span><a class="efeature" href="../uri/uri_short.html#f_path">path</a><span class="ecomment">`</span><span class="ecomment"> to </span><span class="equoted">a_path</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">is_valid_path</span><span class="esymbol">:</span> <a class="efeature" href="../uri/uri_short.html#f_is_valid_path">is_valid_path</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">a_path</span><span class="esymbol">)</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">path_set</span><span class="esymbol">:</span> <a class="efeature" href="../uri/uri_short.html#f_path">path</a><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_same_string">same_string_general</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">a_path</span><span class="esymbol">)</span>
+
+	<a name="f_set_unencoded_path"></a><a class="efeature" href="../uri/uri_short.html#f_set_unencoded_path">set_unencoded_path</a> <span class="esymbol">(</span><span class="elocal">a_path</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set non encoded </span><span class="ecomment">`</span><a class="efeature" href="../uri/uri_short.html#f_path">path</a><span class="ecomment">`</span><span class="ecomment"> to </span><span class="equoted">a_path</span>
+			<span class="ecomment">--</span><span class="ecomment"> note: </span><span class="equoted">a_segment</span><span class="ecomment"> may contains unicode, and reserved characters apart from '/'</span>
+			<span class="ecomment">--</span><span class="ecomment">		 that is used as segment separator</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">a_path_valid</span><span class="esymbol">:</span> <a class="efeature" href="../uri/uri_short.html#f_has_authority">has_authority</a> <a class="ekeyword" href="../base/boolean_short.html#f_implication">implies</a> <span class="elocal">a_path</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_is_empty">is_empty</a> <a class="ekeyword" href="../base/boolean_short.html#f_disjuncted_semistrict">or else</a> <span class="elocal">a_path</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_starts_with">starts_with</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;/&quot;<span class="esymbol">)</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">path_set</span><span class="esymbol">:</span> <a class="efeature" href="../uri/uri_short.html#f_decoded_path">decoded_path</a><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_same_string">same_string_general</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">a_path</span><span class="esymbol">)</span> <a class="ekeyword" href="../base/boolean_short.html#f_disjuncted">or</a> <a class="efeature" href="../uri/uri_short.html#f_decoded_path">decoded_path</a><span class="edot">.</span><a class="efeature" href="../base/readable_string_32_short.html#f_same_string">same_string</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="esymbol">{</span><a class="eclass" href="../base/string_32_short.html">STRING_32</a><span class="esymbol">}</span> &quot;/&quot; <a class="esymbol" href="../base/string_32_short.html#f_plus">+</a> <span class="elocal">a_path</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_as_string_32">as_string_32</a><span class="esymbol">)</span>
+
+	<a name="f_add_unencoded_path_segment"></a><a class="efeature" href="../uri/uri_short.html#f_add_unencoded_path_segment">add_unencoded_path_segment</a> <span class="esymbol">(</span><span class="elocal">a_segment</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Add a non encoded path segment </span><span class="equoted">a_segment</span><span class="ecomment"> to </span><span class="ecomment">`</span><a class="efeature" href="../uri/uri_short.html#f_path">path</a><span class="ecomment">`</span><span class="ecomment">.</span>
+			<span class="ecomment">--</span><span class="ecomment"> note: </span><span class="equoted">a_segment</span><span class="ecomment"> may contains unicode, and reserved characters such as '/'</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;those characters will be percent encoded as expected.</span>
+
+	<a name="f_set_query"></a><a class="efeature" href="../uri/uri_short.html#f_set_query">set_query</a> <span class="esymbol">(</span><span class="elocal">v</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set </span><span class="ecomment">`</span><a class="efeature" href="../uri/uri_short.html#f_query">query</a><span class="ecomment">`</span><span class="ecomment"> to </span><span class="equoted">v</span>
+		<span class="ekeyword">require</span>
+			<a class="efeature" href="../uri/uri_short.html#f_is_valid_query">is_valid_query</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">v</span><span class="esymbol">)</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">query_set</span><span class="esymbol">:</span> <a class="efeature" href="../uri/uri_short.html#f_is_same_string">is_same_string</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">v</span><span class="esymbol">,</span> <a class="efeature" href="../uri/uri_short.html#f_query">query</a><span class="esymbol">)</span>
+
+	<a name="f_set_fragment"></a><a class="efeature" href="../uri/uri_short.html#f_set_fragment">set_fragment</a> <span class="esymbol">(</span><span class="elocal">v</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set </span><span class="ecomment">`</span><a class="efeature" href="../uri/uri_short.html#f_fragment">fragment</a><span class="ecomment">`</span><span class="ecomment"> to </span><span class="equoted">v</span>
+		<span class="ekeyword">require</span>
+			<a class="efeature" href="../uri/uri_short.html#f_is_valid_fragment">is_valid_fragment</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">v</span><span class="esymbol">)</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">fragment_set</span><span class="esymbol">:</span> <a class="efeature" href="../uri/uri_short.html#f_is_same_string">is_same_string</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">v</span><span class="esymbol">,</span> <a class="efeature" href="../uri/uri_short.html#f_fragment">fragment</a><span class="esymbol">)</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Change: query</span>
+
+	<a name="f_remove_query"></a><a class="efeature" href="../uri/uri_short.html#f_remove_query">remove_query</a>
+			<span class="ecomment">--</span><span class="ecomment"> Remove query from Current URI</span>
+
+	<a name="f_add_encoded_query_parameter"></a><a class="efeature" href="../uri/uri_short.html#f_add_encoded_query_parameter">add_encoded_query_parameter</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">;</span> <span class="elocal">a_value</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Add already encoded parameters, used to bypass strict rules.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Warning: depending on systems, this may be unsafe, and some systems can possibly</span>
+			<span class="ecomment">--</span><span class="ecomment"> modify characters such as: { } | \ ^ ~ [ ] `</span>
+
+	<a name="f_add_query_parameter"></a><a class="efeature" href="../uri/uri_short.html#f_add_query_parameter">add_query_parameter</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">;</span> <span class="elocal">a_value</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Add non percent-encoded parameters</span>
+
+	<a name="f_add_query_parameters"></a><a class="efeature" href="../uri/uri_short.html#f_add_query_parameters">add_query_parameters</a> <span class="esymbol">(</span><span class="elocal">lst</span><span class="esymbol">:</span> <a class="eclass" href="../base/iterable_short.html">ITERABLE</a> <span class="esymbol">[</span><a class="eclass" href="../base/tuple_short.html">TUPLE</a> <span class="esymbol">[</span><span class="elocal">name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">;</span> <span class="elocal">value</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">]</span><span class="esymbol">]</span><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Add non percent-encoded parameters from manifest</span>
+
+	<a name="f_add_query_parameters_from_table"></a><a class="efeature" href="../uri/uri_short.html#f_add_query_parameters_from_table">add_query_parameters_from_table</a> <span class="esymbol">(</span><span class="elocal">tb</span><span class="esymbol">:</span> <a class="eclass" href="../base/table_iterable_short.html">TABLE_ITERABLE</a> <span class="esymbol">[</span><span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">,</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">]</span><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Add non percent-encoded parameters from table</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Status report</span>
+
+	<a name="f_is_valid_scheme"></a><a class="efeature" href="../uri/uri_short.html#f_is_valid_scheme">is_valid_scheme</a> <span class="esymbol">(</span><span class="elocal">s</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> 		scheme = ALPHA *( ALPHA / DIGIT / &quot;+&quot; / &quot;-&quot; / &quot;.&quot; )</span>
+
+	<a name="f_is_valid_userinfo"></a><a class="efeature" href="../uri/uri_short.html#f_is_valid_userinfo">is_valid_userinfo</a> <span class="esymbol">(</span><span class="elocal">s</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment">		userinfo = *( unreserved / pct-encoded / sub-delims / &quot;:&quot; )</span>
+
+	<a name="f_is_valid_host"></a><a class="efeature" href="../uri/uri_short.html#f_is_valid_host">is_valid_host</a> <span class="esymbol">(</span><span class="elocal">s</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment">		host = IP-literal / IPv4address / reg-name</span>
+			<span class="ecomment">--</span><span class="ecomment"> 		IP-literal = &quot;[&quot; ( IPv6address / IPvFuture &nbsp;) &quot;]&quot;</span>
+			<span class="ecomment">--</span><span class="ecomment"> 		IPvFuture &nbsp;= &quot;v&quot; 1*HEXDIG &quot;.&quot; 1*( unreserved / sub-delims / &quot;:&quot; )</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IPv6address = &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6( h16 &quot;:&quot; ) ls32</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;::&quot; 5( h16 &quot;:&quot; ) ls32</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/ [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;h16 ] &quot;::&quot; 4( h16 &quot;:&quot; ) ls32</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/ [ *1( h16 &quot;:&quot; ) h16 ] &quot;::&quot; 3( h16 &quot;:&quot; ) ls32</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/ [ *2( h16 &quot;:&quot; ) h16 ] &quot;::&quot; 2( h16 &quot;:&quot; ) ls32</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/ [ *3( h16 &quot;:&quot; ) h16 ] &quot;::&quot; &nbsp;&nbsp;&nbsp;h16 &quot;:&quot; &nbsp;&nbsp;ls32</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/ [ *4( h16 &quot;:&quot; ) h16 ] &quot;::&quot; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ls32</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/ [ *5( h16 &quot;:&quot; ) h16 ] &quot;::&quot; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;h16</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/ [ *6( h16 &quot;:&quot; ) h16 ] &quot;::&quot;</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ls32 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= ( h16 &quot;:&quot; h16 ) / IPv4address</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;; least-significant 32 bits of address</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;h16 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= 1*4HEXDIG</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;; 16 bits of address represented in hexadecimal</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IPv4address = dec-octet &quot;.&quot; dec-octet &quot;.&quot; dec-octet &quot;.&quot; dec-octet</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dec-octet &nbsp;&nbsp;= DIGIT &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;; 0-9</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/ %x31-39 DIGIT &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;; 10-99</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/ &quot;1&quot; 2DIGIT &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;; 100-199</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/ &quot;2&quot; %x30-34 DIGIT &nbsp;&nbsp;&nbsp;&nbsp;; 200-249</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/ &quot;25&quot; %x30-35 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;; 250-255</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment">		reg-name &nbsp;&nbsp;&nbsp;= *( unreserved / pct-encoded / sub-delims )</span>
+
+	<a name="f_is_valid_path"></a><a class="efeature" href="../uri/uri_short.html#f_is_valid_path">is_valid_path</a> <span class="esymbol">(</span><span class="elocal">s</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= path-abempty &nbsp;&nbsp;&nbsp;; begins with &quot;/&quot; or is empty</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/ path-absolute &nbsp;&nbsp;; begins with &quot;/&quot; but not &quot;//&quot;</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/ path-noscheme &nbsp;&nbsp;; begins with a non-colon segment</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/ path-rootless &nbsp;&nbsp;; begins with a segment</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/ path-empty &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;; zero characters</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path-abempty &nbsp;= *( &quot;/&quot; segment )</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path-absolute = &quot;/&quot; [ segment-nz *( &quot;/&quot; segment ) ]</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path-noscheme = segment-nz-nc *( &quot;/&quot; segment )</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path-rootless = segment-nz *( &quot;/&quot; segment )</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path-empty &nbsp;&nbsp;&nbsp;= 0&lt;pchar&gt;</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;segment &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= *pchar</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;segment-nz &nbsp;&nbsp;&nbsp;= 1*pchar</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;segment-nz-nc = 1*( unreserved / pct-encoded / sub-delims / &quot;@&quot; )</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;; non-zero-length segment without any colon &quot;:&quot;</span>
+			<span class="ecomment">--</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pchar &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= unreserved / pct-encoded / sub-delims / &quot;:&quot; / &quot;@&quot;</span>
+
+	<a name="f_is_valid_query"></a><a class="efeature" href="../uri/uri_short.html#f_is_valid_query">is_valid_query</a> <span class="esymbol">(</span><span class="elocal">s</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> 	query = *( pchar / &quot;/&quot; / &quot;?&quot; )</span>
+
+	<a name="f_is_valid_fragment"></a><a class="efeature" href="../uri/uri_short.html#f_is_valid_fragment">is_valid_fragment</a> <span class="esymbol">(</span><span class="elocal">s</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment">fragment = *( pchar / &quot;/&quot; / &quot;?&quot; )</span>
+
+	<a name="f_is_ascii_string"></a><a class="efeature" href="../uri/uri_short.html#f_is_ascii_string">is_ascii_string</a> <span class="esymbol">(</span><span class="elocal">a_string</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is </span><span class="equoted">a_string</span><span class="ecomment"> containing only ASCII characters?</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Helper</span>
+
+	<a name="f_string_item"></a><a class="efeature" href="../uri/uri_short.html#f_string_item">string_item</a> <span class="esymbol">(</span><span class="elocal">s</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">;</span> <span class="elocal">i</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/character_32_short.html">CHARACTER_32</a>
+
+	<a name="f_append_www_form_urlencoded_string_to"></a><a class="efeature" href="../uri/uri_short.html#f_append_www_form_urlencoded_string_to">append_www_form_urlencoded_string_to</a> <span class="esymbol">(</span><span class="elocal">a_string</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">;</span> <span class="elocal">a_target</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_general_short.html">STRING_GENERAL</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> The application/x-www-form-urlencoded encoded string for </span><span class="equoted">a_string</span><span class="ecomment">.</span>
+			<span class="ecomment">--</span><span class="ecomment"> character encoding is UTF-8.</span>
+			<span class="ecomment">--</span><span class="ecomment"> See </span><a class="ecomment" href="http://www.w3.org/TR/html5/forms.html#url-encoded-form-data">http://www.w3.org/TR/html5/forms.html#url-encoded-form-data</a>
+
+	<a name="f_www_form_urlencoded_string"></a><a class="efeature" href="../uri/uri_short.html#f_www_form_urlencoded_string">www_form_urlencoded_string</a> <span class="esymbol">(</span><span class="elocal">a_string</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> The application/x-www-form-urlencoded encoded string for </span><span class="equoted">a_string</span><span class="ecomment">.</span>
+			<span class="ecomment">--</span><span class="ecomment"> character encoding is UTF-8.</span>
+			<span class="ecomment">--</span><span class="ecomment"> See </span><a class="ecomment" href="http://www.w3.org/TR/html5/forms.html#url-encoded-form-data">http://www.w3.org/TR/html5/forms.html#url-encoded-form-data</a>
+
+	<a name="f_append_decoded_www_form_urlencoded_string_to"></a><a class="efeature" href="../uri/uri_short.html#f_append_decoded_www_form_urlencoded_string_to">append_decoded_www_form_urlencoded_string_to</a> <span class="esymbol">(</span><span class="elocal">a_string</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">;</span> <span class="elocal">a_target</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_general_short.html">STRING_GENERAL</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> The string decoded from application/x-www-form-urlencoded encoded string </span><span class="equoted">a_string</span><span class="ecomment">.</span>
+			<span class="ecomment">--</span><span class="ecomment"> character encoding is UTF-8.</span>
+			<span class="ecomment">--</span><span class="ecomment"> See </span><a class="ecomment" href="http://www.w3.org/TR/html5/forms.html#url-encoded-form-data">http://www.w3.org/TR/html5/forms.html#url-encoded-form-data</a>
+
+	<a name="f_decoded_www_form_urlencoded_string"></a><a class="efeature" href="../uri/uri_short.html#f_decoded_www_form_urlencoded_string">decoded_www_form_urlencoded_string</a> <span class="esymbol">(</span><span class="elocal">a_string</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_32_short.html">STRING_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> The string decoded from application/x-www-form-urlencoded encoded string </span><span class="equoted">a_string</span><span class="ecomment">.</span>
+			<span class="ecomment">--</span><span class="ecomment"> character encoding is UTF-8.</span>
+			<span class="ecomment">--</span><span class="ecomment"> See </span><a class="ecomment" href="http://www.w3.org/TR/html5/forms.html#url-encoded-form-data">http://www.w3.org/TR/html5/forms.html#url-encoded-form-data</a>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Assertion helper</span>
+
+	<a name="f_is_valid_in_uri_string"></a><a class="efeature" href="../uri/uri_short.html#f_is_valid_in_uri_string">is_valid_in_uri_string</a> <span class="esymbol">(</span><span class="elocal">s</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is </span><span class="equoted">s</span><span class="ecomment"> composed only of ASCII character?</span>
+
+	<a name="f_is_same_string"></a><a class="efeature" href="../uri/uri_short.html#f_is_same_string">is_same_string</a> <span class="esymbol">(</span><span class="elocal">s1</span><span class="esymbol">,</span> <span class="elocal">s2</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> </span><span class="equoted">s1</span><span class="ecomment"> and </span><span class="equoted">s2</span><span class="ecomment"> have same string content?</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Status report</span>
+
+	<a name="f_debug_output"></a><a class="efeature" href="../uri/uri_short.html#f_debug_output">debug_output</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> String that should be displayed in debugger to represent </span><span class="equoted">Current</span><span class="ecomment">.</span>
+	
+<span class="ekeyword">note</span>
+	<span class="eitag">copyright</span><span class="esymbol">:</span> <span class="estring">&quot;Copyright (c) 1984-2021, Eiffel Software and others&quot;</span>
+	<span class="eitag">license</span><span class="esymbol">:</span> <span class="estring">&quot;Eiffel Forum License v2 (see </span><a class="estring" href="http://www.eiffel.com/licensing/forum.txt">http://www.eiffel.com/licensing/forum.txt</a><span class="estring">)&quot;</span>
+	<span class="eitag">source</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">Eiffel Software</span>
+		<span class="estring">5949 Hollister Ave., Goleta, CA 93117 USA</span>
+		<span class="estring">Telephone 805-685-1006, Fax 805-685-6869</span>
+		<span class="estring">Website </span><a class="estring" href="http://www.eiffel.com">http://www.eiffel.com</a>
+		<span class="estring">Customer support </span><a class="estring" href="http://support.eiffel.com">http://support.eiffel.com</a>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+
+<span class="ekeyword">end</span> <span class="ecomment">--</span> <span class="ecomment">class </span><a class="eclass" href="../uri/uri_short.html">URI</a></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="uri_chart.html">Chart</a>
+<a class="nav class" href="uri_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="uri"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
+

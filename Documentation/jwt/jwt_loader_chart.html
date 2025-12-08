@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="Loader and verifier to JWT token."/>
+<meta name="eis" content="name=Known Critical vulnerabilities in JWT libs, protocol=URI, src=https://auth0.com/blog/critical-vulnerabilities-in-json-web-token-libraries/"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>jwt_loader Chart</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<span class="nav class selected">Chart</span>
+<a class="nav class" href="jwt_loader_links.html">Relations</a>
+<a class="nav class" href="jwt_loader_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="jwt_loader"></span>
+</div></form><pre><span class="ekeyword">class</span>
+	<a class="eclass" href="../jwt/jwt_loader_chart.html">JWT_LOADER</a>
+
+<span class="ekeyword">General</span>
+	<span class="eitag">cluster</span><span class="esymbol">:</span> <span class="necluster">src</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;Loader and verifier to JWT token.&quot;</span>
+
+<span class="ekeyword">Ancestors</span>
+	<a class="eclass" href="../jwt/jwt_utilities_chart.html">JWT_UTILITIES</a>
+
+<span class="ekeyword">Queries</span>
+	<span title="`algorithms' is declared in `Current'"><a class="efeature" href="../jwt/jwt_loader_short.html#f_algorithms">algorithms</a><span class="esymbol">:</span> <a class="eclass" href="../jwt/jwt_algorithms_chart.html">JWT_ALGORITHMS</a></span>
+	<span title="`base64url_decode' was declared in JWT_UTILITIES"><a class="efeature" href="../jwt/jwt_utilities_short.html#f_base64url_decode">base64url_decode</a> <span class="esymbol">(</span><span class="elocal">s</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`base64url_encode' was declared in JWT_UTILITIES"><a class="efeature" href="../jwt/jwt_utilities_short.html#f_base64url_encode">base64url_encode</a> <span class="esymbol">(</span><span class="elocal">s</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`signature' was declared in JWT_UTILITIES"><a class="efeature" href="../jwt/jwt_utilities_short.html#f_signature">signature</a> <span class="esymbol">(</span><span class="elocal">a_enc_header</span><span class="esymbol">,</span> <span class="elocal">a_enc_payload</span><span class="esymbol">,</span> <span class="elocal">a_secret</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">;</span> <span class="elocal">alg</span><span class="esymbol">:</span> <a class="eclass" href="../jwt/jwt_alg_chart.html">JWT_ALG</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`token' is declared in `Current'"><a class="efeature" href="../jwt/jwt_loader_short.html#f_token">token</a> <span class="esymbol">(</span><span class="elocal">a_token_input</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">;</span> <span class="elocal">a_alg</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">;</span> <span class="elocal">a_verification_key</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">;</span> <span class="elocal">ctx</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../jwt/jwt_context_chart.html">JWT_CONTEXT</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../jwt/jwt_chart.html">JWT</a></span>
+	<span title="`urlsafe_decode' was declared in JWT_UTILITIES"><a class="efeature" href="../jwt/jwt_utilities_short.html#f_urlsafe_decode">urlsafe_decode</a> <span class="esymbol">(</span><span class="elocal">s</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`urlsafe_encode' was declared in JWT_UTILITIES"><a class="efeature" href="../jwt/jwt_utilities_short.html#f_urlsafe_encode">urlsafe_encode</a> <span class="esymbol">(</span><span class="elocal">s</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+
+</pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<span class="nav class selected">Chart</span>
+<a class="nav class" href="jwt_loader_links.html">Relations</a>
+<a class="nav class" href="jwt_loader_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="jwt_loader"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>

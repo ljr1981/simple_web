@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="Component to handle percent encoding"/>
+<meta name="eis" content="name=Percent-encoding, protocol=URI, src=http://en.wikipedia.org/wiki/Percent-encoding"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="Copyright (c) 2011-2014, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>percent_encoder Contracts</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="percent_encoder_chart.html">Chart</a>
+<a class="nav class" href="percent_encoder_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="percent_encoder"></span>
+</div></form><pre><span class="ekeyword">note</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">Component to handle percent encoding</span>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+	<span class="eitag">date</span><span class="esymbol">:</span> <span class="estring">&quot;$Date$&quot;</span>
+	<span class="eitag">revision</span><span class="esymbol">:</span> <span class="estring">&quot;$Revision$&quot;</span>
+	<span class="eitag">eis</span><span class="esymbol">:</span> <span class="estring">&quot;name=Percent-encoding&quot;</span><span class="esymbol">,</span> <span class="estring">&quot;protocol=URI&quot;</span><span class="esymbol">,</span> <span class="estring">&quot;src=</span><a class="estring" href="http://en.wikipedia.org/wiki/Percent-encoding">http://en.wikipedia.org/wiki/Percent-encoding</a><span class="estring">&quot;</span>
+
+<span class="ekeyword">class</span> <span class="ekeyword">interface</span>
+	<a class="eclass" href="../encoder/percent_encoder_short.html">PERCENT_ENCODER</a>
+
+<span class="ekeyword">create</span> 
+	<a class="efeature" href="../base/any_short.html#f_default_create">default_create</a>
+
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Status report</span>
+
+	<a name="f_has_error"></a><a class="efeature" href="../encoder/percent_encoder_short.html#f_has_error">has_error</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Error occurred</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Percent encoding</span>
+
+	<a name="f_percent_encoded_string"></a><a class="efeature" href="../encoder/percent_encoder_short.html#f_percent_encoded_string">percent_encoded_string</a> <span class="esymbol">(</span><span class="elocal">s</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Return </span><span class="equoted">s</span><span class="ecomment"> percent-encoded</span>
+
+	<a name="f_append_percent_encoded_string_to"></a><a class="efeature" href="../encoder/percent_encoder_short.html#f_append_percent_encoded_string_to">append_percent_encoded_string_to</a> <span class="esymbol">(</span><span class="elocal">s</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">;</span> <span class="elocal">a_result</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_general_short.html">STRING_GENERAL</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Append </span><span class="equoted">s</span><span class="ecomment"> as percent-encoded value to </span><span class="equoted">a_result</span>
+
+	<a name="f_partial_encoded_string"></a><a class="efeature" href="../encoder/percent_encoder_short.html#f_partial_encoded_string">partial_encoded_string</a> <span class="esymbol">(</span><span class="elocal">s</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">;</span> <span class="elocal">a_ignore</span><span class="esymbol">:</span> <a class="eclass" href="../base/iterable_short.html">ITERABLE</a> <span class="esymbol">[</span><a class="eclass" href="../base/character_8_short.html">CHARACTER_8</a><span class="esymbol">]</span><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Return &nbsp;</span><span class="equoted">s</span><span class="ecomment"> as percent-encoded value,</span>
+			<span class="ecomment">--</span><span class="ecomment"> but does not escape character listed in </span><span class="equoted">a_ignore</span><span class="ecomment">.</span>
+
+	<a name="f_append_partial_percent_encoded_string_to"></a><a class="efeature" href="../encoder/percent_encoder_short.html#f_append_partial_percent_encoded_string_to">append_partial_percent_encoded_string_to</a> <span class="esymbol">(</span><span class="elocal">s</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">;</span> <span class="elocal">a_result</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_general_short.html">STRING_GENERAL</a><span class="esymbol">;</span> <span class="elocal">a_ignore</span><span class="esymbol">:</span> <a class="eclass" href="../base/iterable_short.html">ITERABLE</a> <span class="esymbol">[</span><a class="eclass" href="../base/character_8_short.html">CHARACTER_8</a><span class="esymbol">]</span><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Append </span><span class="equoted">s</span><span class="ecomment"> as percent-encoded value to </span><span class="equoted">a_result</span><span class="ecomment">,</span>
+			<span class="ecomment">--</span><span class="ecomment"> but does not escape character listed in </span><span class="equoted">a_ignore</span><span class="ecomment">.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Percent encoding: character		</span>
+
+	<a name="f_append_percent_encoded_character_code_to"></a><a class="efeature" href="../encoder/percent_encoder_short.html#f_append_percent_encoded_character_code_to">append_percent_encoded_character_code_to</a> <span class="esymbol">(</span><span class="elocal">a_code</span><span class="esymbol">:</span> <a class="eclass" href="../base/natural_32_short.html">NATURAL_32</a><span class="esymbol">;</span> <span class="elocal">a_result</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_general_short.html">STRING_GENERAL</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Append character code </span><span class="equoted">a_code</span><span class="ecomment"> as percent-encoded content into </span><span class="equoted">a_result</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">appended</span><span class="esymbol">:</span> <span class="elocal">a_result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_count">count</a> <a class="esymbol" href="../base/comparable_short.html#f_is_greater">&gt;</a> <span class="ekeyword">old</span> <span class="elocal">a_result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_count">count</a>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Percent decoding</span>
+
+	<a name="f_percent_decoded_string"></a><a class="efeature" href="../encoder/percent_encoder_short.html#f_percent_decoded_string">percent_decoded_string</a> <span class="esymbol">(</span><span class="elocal">v</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_32_short.html">STRING_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> Return the percent decoded unicode string equivalent to the percent-encoded string </span><span class="equoted">v</span>
+
+	<a name="f_percent_decoded_utf_8_string"></a><a class="efeature" href="../encoder/percent_encoder_short.html#f_percent_decoded_utf_8_string">percent_decoded_utf_8_string</a> <span class="esymbol">(</span><span class="elocal">v</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Return the percent decoded UTF-8 string equivalent to the percent-encoded string </span><span class="equoted">v</span>
+
+	<a name="f_append_percent_decoded_string_to"></a><a class="efeature" href="../encoder/percent_encoder_short.html#f_append_percent_decoded_string_to">append_percent_decoded_string_to</a> <span class="esymbol">(</span><span class="elocal">v</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">;</span> <span class="elocal">a_result</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_general_short.html">STRING_GENERAL</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Append to </span><span class="equoted">a_result</span><span class="ecomment"> a string equivalent to the percent-encoded string </span><span class="equoted">v</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> RFC and characters</span>
+
+	<a name="f_is_hexa_decimal_character"></a><a class="efeature" href="../encoder/percent_encoder_short.html#f_is_hexa_decimal_character">is_hexa_decimal_character</a> <span class="esymbol">(</span><span class="elocal">c</span><span class="esymbol">:</span> <a class="eclass" href="../base/character_32_short.html">CHARACTER_32</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is hexadecimal character ?</span>
+
+	<a name="f_is_alpha_or_digit_character"></a><a class="efeature" href="../encoder/percent_encoder_short.html#f_is_alpha_or_digit_character">is_alpha_or_digit_character</a> <span class="esymbol">(</span><span class="elocal">c</span><span class="esymbol">:</span> <a class="eclass" href="../base/character_32_short.html">CHARACTER_32</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is ALPHA or DIGIT character ?</span>
+
+	<a name="f_is_alpha_character"></a><a class="efeature" href="../encoder/percent_encoder_short.html#f_is_alpha_character">is_alpha_character</a> <span class="esymbol">(</span><span class="elocal">c</span><span class="esymbol">:</span> <a class="eclass" href="../base/character_32_short.html">CHARACTER_32</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is ALPHA character ?</span>
+
+	<a name="f_is_digit_character"></a><a class="efeature" href="../encoder/percent_encoder_short.html#f_is_digit_character">is_digit_character</a> <span class="esymbol">(</span><span class="elocal">c</span><span class="esymbol">:</span> <a class="eclass" href="../base/character_32_short.html">CHARACTER_32</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is DIGIT character ?</span>
+
+	<a name="f_is_unreserved_character"></a><a class="efeature" href="../encoder/percent_encoder_short.html#f_is_unreserved_character">is_unreserved_character</a> <span class="esymbol">(</span><span class="elocal">c</span><span class="esymbol">:</span> <a class="eclass" href="../base/character_32_short.html">CHARACTER_32</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> unreserved &nbsp;= ALPHA / DIGIT / &quot;-&quot; / &quot;.&quot; / &quot;_&quot; / &quot;~&quot;</span>
+
+	<a name="f_is_reserved_character"></a><a class="efeature" href="../encoder/percent_encoder_short.html#f_is_reserved_character">is_reserved_character</a> <span class="esymbol">(</span><span class="elocal">c</span><span class="esymbol">:</span> <a class="eclass" href="../base/character_32_short.html">CHARACTER_32</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> reserved &nbsp;&nbsp;&nbsp;= gen-delims / sub-delims</span>
+
+	<a name="f_is_gen_delims_character"></a><a class="efeature" href="../encoder/percent_encoder_short.html#f_is_gen_delims_character">is_gen_delims_character</a> <span class="esymbol">(</span><span class="elocal">c</span><span class="esymbol">:</span> <a class="eclass" href="../base/character_32_short.html">CHARACTER_32</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> gen-delims &nbsp;= &quot;:&quot; / &quot;/&quot; / &quot;?&quot; / &quot;#&quot; / &quot;[&quot; / &quot;]&quot; / &quot;@&quot;	</span>
+
+	<a name="f_is_sub_delims_character"></a><a class="efeature" href="../encoder/percent_encoder_short.html#f_is_sub_delims_character">is_sub_delims_character</a> <span class="esymbol">(</span><span class="elocal">c</span><span class="esymbol">:</span> <a class="eclass" href="../base/character_32_short.html">CHARACTER_32</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> sub-delims &nbsp;= &quot;!&quot; / &quot;$&quot; / &quot;&#38;&quot; / &quot;'&quot; / &quot;(&quot; / &quot;)&quot;</span>
+			<span class="ecomment">--</span><span class="ecomment">				 &nbsp;&nbsp;/ &quot;*&quot; / &quot;+&quot; / &quot;,&quot; / &quot;;&quot; / &quot;=&quot;</span>
+	
+<span class="ekeyword">note</span>
+	<span class="eitag">copyright</span><span class="esymbol">:</span> <span class="estring">&quot;Copyright (c) 2011-2014, Eiffel Software and others&quot;</span>
+	<span class="eitag">license</span><span class="esymbol">:</span> <span class="estring">&quot;Eiffel Forum License v2 (see </span><a class="estring" href="http://www.eiffel.com/licensing/forum.txt">http://www.eiffel.com/licensing/forum.txt</a><span class="estring">)&quot;</span>
+	<span class="eitag">source</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">Eiffel Software</span>
+		<span class="estring">5949 Hollister Ave., Goleta, CA 93117 USA</span>
+		<span class="estring">Telephone 805-685-1006, Fax 805-685-6869</span>
+		<span class="estring">Website </span><a class="estring" href="http://www.eiffel.com">http://www.eiffel.com</a>
+		<span class="estring">Customer support </span><a class="estring" href="http://support.eiffel.com">http://support.eiffel.com</a>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+
+<span class="ekeyword">end</span> <span class="ecomment">--</span> <span class="ecomment">class </span><a class="eclass" href="../encoder/percent_encoder_short.html">PERCENT_ENCODER</a></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="percent_encoder_chart.html">Chart</a>
+<a class="nav class" href="percent_encoder_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="percent_encoder"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
+

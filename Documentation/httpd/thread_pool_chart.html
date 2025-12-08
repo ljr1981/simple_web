@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="A thread pool manager. Manages threads up to `capacity' and queue after that, till threads get available again."/>
+<meta name="legal" content="See notice at end of class."/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="2011-2012, Javier Velilla, Jocelyn Fiat and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="licensing_options" content="http://www.eiffel.com/licensing"/>
+<meta name="copying" content="This file is part of Eiffel Software's Eiffel Development Environment.  Eiffel Software's Eiffel Development Environment is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2 of the License (available at the URL listed under license above).  Eiffel Software's Eiffel Development Environment is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.  You should have received a copy of the GNU General Public License along with Eiffel Software's Eiffel Development Environment; if not, write to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>thread_pool Chart</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<span class="nav class selected">Chart</span>
+<a class="nav class" href="thread_pool_links.html">Relations</a>
+<a class="nav class" href="thread_pool_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="thread_pool"></span>
+</div></form><pre><span class="ekeyword">class</span>
+	<a class="eclass" href="../httpd/thread_pool_chart.html">THREAD_POOL</a> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+
+<span class="ekeyword">General</span>
+	<span class="eitag">cluster</span><span class="esymbol">:</span> <span class="necluster">concurrency_thread</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> 
+		<span class="estring">&quot;A thread pool manager. Manages threads up to </span><span class="estring">capacity</span><span class="estring"> and queue after that,</span>
+		<span class="estring">till threads get available again.&quot;</span>
+	<span class="eitag">create</span><span class="esymbol">:</span> <a class="efeature" href="../httpd/thread_pool_short.html#f_make">make</a>
+
+<span class="ekeyword">Ancestors</span>
+	<a class="eclass" href="../base/execution_environment_chart.html">EXECUTION_ENVIRONMENT</a>
+
+<span class="ekeyword">Queries</span>
+	<span title="`arguments' was declared in EXECUTION_ENVIRONMENT"><a class="efeature" href="../base/execution_environment_short.html#f_arguments">Arguments</a><span class="esymbol">:</span> <a class="eclass" href="../base/arguments_32_chart.html">ARGUMENTS_32</a></span>
+	<span title="`available_cpu_count' was declared in EXECUTION_ENVIRONMENT"><a class="efeature" href="../base/execution_environment_short.html#f_available_cpu_count">available_cpu_count</a><span class="esymbol">:</span> <a class="eclass" href="../base/natural_32_chart.html">NATURAL_32</a></span>
+	<span title="`capacity' is declared in `Current'"><a class="efeature" href="../httpd/thread_pool_short.html#f_capacity">capacity</a><span class="esymbol">:</span> <a class="eclass" href="../base/natural_32_chart.html">NATURAL_32</a></span>
+	<span title="`current_working_path' was declared in EXECUTION_ENVIRONMENT"><a class="efeature" href="../base/execution_environment_short.html#f_current_working_path">current_working_path</a><span class="esymbol">:</span> <a class="eclass" href="../base/path_chart.html">PATH</a></span>
+	<span title="`default_shell' was declared in EXECUTION_ENVIRONMENT"><a class="efeature" href="../base/execution_environment_short.html#f_default_shell">Default_shell</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_32_chart.html">STRING_32</a></span>
+	<span title="`get_work' is declared in `Current'"><a class="efeature" href="../httpd/thread_pool_short.html#f_get_work">get_work</a> <span class="esymbol">(</span><span class="elocal">requester</span><span class="esymbol">:</span> <a class="eclass" href="../httpd/pooled_thread_chart.html">POOLED_THREAD</a> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/procedure_chart.html">PROCEDURE</a></span>
+	<span title="`home_directory_path' was declared in EXECUTION_ENVIRONMENT"><a class="efeature" href="../base/execution_environment_short.html#f_home_directory_path">Home_directory_path</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/path_chart.html">PATH</a></span>
+	<span title="`item' was declared in EXECUTION_ENVIRONMENT"><a class="efeature" href="../base/execution_environment_short.html#f_item">item</a> <span class="esymbol">(</span><span class="elocal">s</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/string_32_chart.html">STRING_32</a></span>
+	<span title="`over' is declared in `Current'"><a class="efeature" href="../httpd/thread_pool_short.html#f_over">over</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`queue_count' is declared in `Current'"><a class="efeature" href="../httpd/thread_pool_short.html#f_queue_count">queue_count</a><span class="esymbol">:</span> <a class="eclass" href="../base/natural_32_chart.html">NATURAL_32</a></span>
+	<span title="`return_code' was declared in EXECUTION_ENVIRONMENT"><a class="efeature" href="../base/execution_environment_short.html#f_return_code">return_code</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+	<span title="`root_directory_name' was declared in EXECUTION_ENVIRONMENT"><a class="efeature" href="../base/execution_environment_short.html#f_root_directory_name">Root_directory_name</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`starting_environment' was declared in EXECUTION_ENVIRONMENT"><a class="efeature" href="../base/execution_environment_short.html#f_starting_environment">starting_environment</a><span class="esymbol">:</span> <a class="eclass" href="../base/hash_table_chart.html">HASH_TABLE</a> <span class="esymbol">[</span><a class="eclass" href="../base/string_32_chart.html">STRING_32</a><span class="esymbol">,</span> <a class="eclass" href="../base/string_32_chart.html">STRING_32</a><span class="esymbol">]</span></span>
+	<span title="`temporary_directory_path' was declared in EXECUTION_ENVIRONMENT"><a class="efeature" href="../base/execution_environment_short.html#f_temporary_directory_path">Temporary_directory_path</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/path_chart.html">PATH</a></span>
+	<span title="`user_directory_path' was declared in EXECUTION_ENVIRONMENT"><a class="efeature" href="../base/execution_environment_short.html#f_user_directory_path">User_directory_path</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/path_chart.html">PATH</a></span>
+	<span title="`valid_action' is declared in `Current'"><a class="efeature" href="../httpd/thread_pool_short.html#f_valid_action">valid_action</a> <span class="esymbol">(</span><span class="elocal">a_action</span><span class="esymbol">:</span> <a class="eclass" href="../base/procedure_chart.html">PROCEDURE</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+
+<span class="ekeyword">Commands</span>
+	<span title="`add_work' is declared in `Current'"><a class="efeature" href="../httpd/thread_pool_short.html#f_add_work">add_work</a> <span class="esymbol">(</span><span class="elocal">work</span><span class="esymbol">:</span> <a class="eclass" href="../base/procedure_chart.html">PROCEDURE</a><span class="esymbol">)</span></span>
+	<span title="`change_working_path' was declared in EXECUTION_ENVIRONMENT"><a class="efeature" href="../base/execution_environment_short.html#f_change_working_path">change_working_path</a> <span class="esymbol">(</span><span class="elocal">path</span><span class="esymbol">:</span> <a class="eclass" href="../base/path_chart.html">PATH</a><span class="esymbol">)</span></span>
+	<span title="`launch' was declared in EXECUTION_ENVIRONMENT"><a class="efeature" href="../base/execution_environment_short.html#f_launch">launch</a> <span class="esymbol">(</span><span class="elocal">s</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span></span>
+	<span title="`put' was declared in EXECUTION_ENVIRONMENT"><a class="efeature" href="../base/execution_environment_short.html#f_put">put</a> <span class="esymbol">(</span><span class="elocal">value</span><span class="esymbol">,</span> <span class="elocal">key</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span></span>
+	<span title="`sleep' was declared in EXECUTION_ENVIRONMENT"><a class="efeature" href="../base/execution_environment_short.html#f_sleep">sleep</a> <span class="esymbol">(</span><span class="elocal">nanoseconds</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_64_chart.html">INTEGER_64</a><span class="esymbol">)</span></span>
+	<span title="`system' was declared in EXECUTION_ENVIRONMENT"><a class="efeature" href="../base/execution_environment_short.html#f_system">system</a> <span class="esymbol">(</span><span class="elocal">s</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span></span>
+	<span title="`terminate' is declared in `Current'"><a class="efeature" href="../httpd/thread_pool_short.html#f_terminate">terminate</a></span>
+	<span title="`thread_terminated' is declared in `Current'"><a class="efeature" href="../httpd/thread_pool_short.html#f_thread_terminated">thread_terminated</a> <span class="esymbol">(</span><span class="elocal">a_thread</span><span class="esymbol">:</span> <a class="eclass" href="../httpd/pooled_thread_chart.html">POOLED_THREAD</a> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span><span class="esymbol">)</span></span>
+	<span title="`wait_for_completion' is declared in `Current'"><a class="efeature" href="../httpd/thread_pool_short.html#f_wait_for_completion">wait_for_completion</a></span>
+
+</pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<span class="nav class selected">Chart</span>
+<a class="nav class" href="thread_pool_links.html">Relations</a>
+<a class="nav class" href="thread_pool_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="thread_pool"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>

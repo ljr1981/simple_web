@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="Request settings for the standalone HTTPd server."/>
+<meta name="author" content="$Author$"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="2011-2018, Jocelyn Fiat, Javier Velilla, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>httpd_request_settings Chart</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<span class="nav class selected">Chart</span>
+<a class="nav class" href="httpd_request_settings_links.html">Relations</a>
+<a class="nav class" href="httpd_request_settings_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="httpd_request_settings"></span>
+</div></form><pre><span class="ekeyword">expanded</span> <span class="ekeyword">class</span>
+	<a class="eclass" href="../httpd/httpd_request_settings_chart.html">HTTPD_REQUEST_SETTINGS</a>
+
+<span class="ekeyword">General</span>
+	<span class="eitag">cluster</span><span class="esymbol">:</span> <span class="necluster">httpd_server</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;Request settings for the standalone HTTPd server.&quot;</span>
+
+<span class="ekeyword">Ancestors</span>
+	<span class="neclass">SOCKET_TIMEOUT_UTILITIES</span>
+
+<span class="ekeyword">Queries</span>
+	<span title="`is_secure' is declared in `Current'"><a class="efeature" href="../httpd/httpd_request_settings_short.html#f_is_secure">is_secure</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`is_valid_timeout_ns' was declared in SOCKET_TIMEOUT_UTILITIES"><span class="nefeature">is_valid_timeout_ns</span> <span class="esymbol">(</span><span class="elocal">ns</span><span class="esymbol">:</span> <a class="eclass" href="../base/natural_64_chart.html">NATURAL_64</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`is_verbose' is declared in `Current'"><a class="efeature" href="../httpd/httpd_request_settings_short.html#f_is_verbose">is_verbose</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`keep_alive_timeout_ns' is declared in `Current'"><a class="efeature" href="../httpd/httpd_request_settings_short.html#f_keep_alive_timeout_ns">keep_alive_timeout_ns</a><span class="esymbol">:</span> <a class="eclass" href="../base/natural_64_chart.html">NATURAL_64</a></span>
+	<span title="`max_keep_alive_requests' is declared in `Current'"><a class="efeature" href="../httpd/httpd_request_settings_short.html#f_max_keep_alive_requests">max_keep_alive_requests</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+	<span title="`max_timeout_ns_value' was declared in SOCKET_TIMEOUT_UTILITIES"><span class="nefeature">Max_timeout_ns_value</span><span class="esymbol">:</span> <a class="eclass" href="../base/natural_64_chart.html">NATURAL_64</a></span>
+	<span title="`nanoseconds_to_seconds' was declared in SOCKET_TIMEOUT_UTILITIES"><span class="nefeature">nanoseconds_to_seconds</span> <span class="esymbol">(</span><span class="elocal">ns</span><span class="esymbol">:</span> <a class="eclass" href="../base/natural_64_chart.html">NATURAL_64</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+	<span title="`one_second_in_nanoseconds' was declared in SOCKET_TIMEOUT_UTILITIES"><span class="nefeature">One_second_in_nanoseconds</span><span class="esymbol">:</span> <a class="eclass" href="../base/natural_64_chart.html">NATURAL_64</a></span>
+	<span title="`seconds_to_nanoseconds' was declared in SOCKET_TIMEOUT_UTILITIES"><span class="nefeature">seconds_to_nanoseconds</span> <span class="esymbol">(</span><span class="elocal">s</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/natural_64_chart.html">NATURAL_64</a></span>
+	<span title="`socket_recv_timeout_ns' is declared in `Current'"><a class="efeature" href="../httpd/httpd_request_settings_short.html#f_socket_recv_timeout_ns">socket_recv_timeout_ns</a><span class="esymbol">:</span> <a class="eclass" href="../base/natural_64_chart.html">NATURAL_64</a></span>
+	<span title="`timeout_ns' is declared in `Current'"><a class="efeature" href="../httpd/httpd_request_settings_short.html#f_timeout_ns">timeout_ns</a><span class="esymbol">:</span> <a class="eclass" href="../base/natural_64_chart.html">NATURAL_64</a></span>
+	<span title="`verbose_level' is declared in `Current'"><a class="efeature" href="../httpd/httpd_request_settings_short.html#f_verbose_level">verbose_level</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+
+<span class="ekeyword">Commands</span>
+	<span title="`set_is_secure' is declared in `Current'"><a class="efeature" href="../httpd/httpd_request_settings_short.html#f_set_is_secure">set_is_secure</a> <span class="esymbol">(</span><span class="elocal">b</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a><span class="esymbol">)</span></span>
+	<span title="`set_is_verbose' is declared in `Current'"><a class="efeature" href="../httpd/httpd_request_settings_short.html#f_set_is_verbose">set_is_verbose</a> <span class="esymbol">(</span><span class="elocal">b</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a><span class="esymbol">)</span></span>
+	<span title="`set_keep_alive_timeout' is declared in `Current'"><a class="efeature" href="../httpd/httpd_request_settings_short.html#f_set_keep_alive_timeout">set_keep_alive_timeout</a> <span class="esymbol">(</span><span class="elocal">a_timeout_in_seconds</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a><span class="esymbol">)</span></span>
+	<span title="`set_keep_alive_timeout_ns' is declared in `Current'"><a class="efeature" href="../httpd/httpd_request_settings_short.html#f_set_keep_alive_timeout_ns">set_keep_alive_timeout_ns</a> <span class="esymbol">(</span><span class="elocal">a_timeout_in_nanoseconds</span><span class="esymbol">:</span> <a class="eclass" href="../base/natural_64_chart.html">NATURAL_64</a><span class="esymbol">)</span></span>
+	<span title="`set_max_keep_alive_requests' is declared in `Current'"><a class="efeature" href="../httpd/httpd_request_settings_short.html#f_set_max_keep_alive_requests">set_max_keep_alive_requests</a> <span class="esymbol">(</span><span class="elocal">nb</span><span class="esymbol">:</span> <span class="esymbol">[</span><span class="ekeyword">like</span> <a class="efeature" href="../httpd/httpd_request_settings_short.html#f_max_keep_alive_requests">max_keep_alive_requests</a><span class="esymbol">]</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a><span class="esymbol">)</span></span>
+	<span title="`set_socket_recv_timeout' is declared in `Current'"><a class="efeature" href="../httpd/httpd_request_settings_short.html#f_set_socket_recv_timeout">set_socket_recv_timeout</a> <span class="esymbol">(</span><span class="elocal">a_timeout_in_seconds</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a><span class="esymbol">)</span></span>
+	<span title="`set_socket_recv_timeout_ns' is declared in `Current'"><a class="efeature" href="../httpd/httpd_request_settings_short.html#f_set_socket_recv_timeout_ns">set_socket_recv_timeout_ns</a> <span class="esymbol">(</span><span class="elocal">a_timeout_in_nanoseconds</span><span class="esymbol">:</span> <a class="eclass" href="../base/natural_64_chart.html">NATURAL_64</a><span class="esymbol">)</span></span>
+	<span title="`set_timeout' is declared in `Current'"><a class="efeature" href="../httpd/httpd_request_settings_short.html#f_set_timeout">set_timeout</a> <span class="esymbol">(</span><span class="elocal">a_timeout_in_seconds</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a><span class="esymbol">)</span></span>
+	<span title="`set_timeout_ns' is declared in `Current'"><a class="efeature" href="../httpd/httpd_request_settings_short.html#f_set_timeout_ns">set_timeout_ns</a> <span class="esymbol">(</span><span class="elocal">a_timeout_in_nanoseconds</span><span class="esymbol">:</span> <a class="eclass" href="../base/natural_64_chart.html">NATURAL_64</a><span class="esymbol">)</span></span>
+	<span title="`set_verbose_level' is declared in `Current'"><a class="efeature" href="../httpd/httpd_request_settings_short.html#f_set_verbose_level">set_verbose_level</a> <span class="esymbol">(</span><span class="elocal">lev</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a><span class="esymbol">)</span></span>
+
+</pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<span class="nav class selected">Chart</span>
+<a class="nav class" href="httpd_request_settings_links.html">Relations</a>
+<a class="nav class" href="httpd_request_settings_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="httpd_request_settings"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>

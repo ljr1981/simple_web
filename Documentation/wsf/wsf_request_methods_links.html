@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="Object that is use in relation with WSF_ROUTER, to precise which request methods is accepted. For convenience, `make_from_iterable' is available, so that you can use <<GET, POST>> for instance but remember manifest string are evil ...  Since in HTTP you can use your own custom request method, this is not possible to catch any typo  ( for instance if you write POST instead of P0ST this is hard to find the error,     but in one case it uses upper o and in the other case this is zero 0  )     The recommanded way to use is for instance     create {WSF_REQUEST_METHODS}.make_get_post     create methods; methods.enable_get; methods.enable_post  This sounds heavy, but this is much safer.   ( note: in addition internally this first checks using reference comparison   and then compare string value, so it brings optimization for accepted request methods. )"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="2011-2013, Jocelyn Fiat, Javier Velilla, Olivier Ligot, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>wsf_request_methods Relations</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="wsf_request_methods_chart.html">Chart</a>
+<span class="nav class selected">Relations</span>
+<a class="nav class" href="wsf_request_methods_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="wsf_request_methods"></span>
+</div></form><pre><span class="ekeyword">class</span>
+	<a class="eclass" href="../wsf/wsf_request_methods_links.html">WSF_REQUEST_METHODS</a>
+
+<span class="ekeyword">Ancestors</span>
+	<span class="neclass">HTTP_REQUEST_METHODS</span>
+	<a class="eclass" href="../base/iterable_links.html">ITERABLE</a><span class="echar">*</span> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+
+<span class="ekeyword">Clients</span>
+	<span class="neclass">CMS_CORE_MODULE_WEBAPI</span>
+	<span class="neclass">CMS_EXECUTION</span><span class="echar">*</span>
+	<span class="neclass">CMS_ROOT_WEBAPI_HANDLER</span>
+	<span class="neclass">JSON_WEBAPI_RESPONSE</span>
+	<a class="eclass" href="../wsf/wsf_cors_options_response_links.html">WSF_CORS_OPTIONS_RESPONSE</a>
+	<a class="eclass" href="../wsf/wsf_default_router_response_links.html">WSF_DEFAULT_ROUTER_RESPONSE</a>
+	<a class="eclass" href="../wsf/wsf_method_not_allowed_response_links.html">WSF_METHOD_NOT_ALLOWED_RESPONSE</a>
+	<a class="eclass" href="../wsf/wsf_options_policy_links.html">WSF_OPTIONS_POLICY</a>
+	<a class="eclass" href="../wsf/wsf_request_methods_links.html">WSF_REQUEST_METHODS</a>
+	<a class="eclass" href="../wsf/wsf_router_links.html">WSF_ROUTER</a>
+	<a class="eclass" href="../wsf/wsf_router_item_links.html">WSF_ROUTER_ITEM</a>
+	<a class="eclass" href="../wsf/wsf_router_self_documentation_message_links.html">WSF_ROUTER_SELF_DOCUMENTATION_MESSAGE</a>
+
+<span class="ekeyword">Suppliers</span>
+	<a class="eclass" href="../base/arrayed_list_links.html">ARRAYED_LIST</a> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+	<a class="eclass" href="../base/arrayed_list_iteration_cursor_links.html">ARRAYED_LIST_ITERATION_CURSOR</a> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+	<a class="eclass" href="../base/boolean_links.html">BOOLEAN</a>
+	<a class="eclass" href="../base/character_8_links.html">CHARACTER_8</a>
+	<a class="eclass" href="../base/indexable_iteration_cursor_links.html">INDEXABLE_ITERATION_CURSOR</a><span class="echar">*</span> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+	<a class="eclass" href="../base/integer_32_links.html">INTEGER_32</a>
+	<a class="eclass" href="../base/iterable_links.html">ITERABLE</a><span class="echar">*</span> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+	<a class="eclass" href="../base/iteration_cursor_links.html">ITERATION_CURSOR</a><span class="echar">*</span> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+	<a class="eclass" href="../base/readable_string_8_links.html">READABLE_STRING_8</a><span class="echar">*</span>
+	<a class="eclass" href="../base/string_8_iteration_cursor_links.html">STRING_8_ITERATION_CURSOR</a>
+	<a class="eclass" href="../wsf/wsf_request_methods_links.html">WSF_REQUEST_METHODS</a>
+
+</pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="wsf_request_methods_chart.html">Chart</a>
+<span class="nav class selected">Relations</span>
+<a class="nav class" href="wsf_request_methods_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="wsf_request_methods"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>

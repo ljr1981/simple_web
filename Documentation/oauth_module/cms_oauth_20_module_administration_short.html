@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="keywords" content="Eiffel class"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>cms_oauth_20_module_administration Contracts</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="cms_oauth_20_module_administration_chart.html">Chart</a>
+<a class="nav class" href="cms_oauth_20_module_administration_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="cms_oauth_20_module_administration"></span>
+</div></form><pre><span class="ekeyword">note</span>
+	<span class="eitag">date</span><span class="esymbol">:</span> <span class="estring">&quot;$Date$&quot;</span>
+	<span class="eitag">revision</span><span class="esymbol">:</span> <span class="estring">&quot;$Revision$&quot;</span>
+
+<span class="ekeyword">class</span> <span class="ekeyword">interface</span>
+	<a class="eclass" href="../oauth_module/cms_oauth_20_module_administration_short.html">CMS_OAUTH_20_MODULE_ADMINISTRATION</a>
+
+<span class="ekeyword">create</span> 
+	<span class="nefeature">make</span>
+
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Access</span>
+
+	<a name="f_permissions"></a><a class="efeature" href="../oauth_module/cms_oauth_20_module_administration_short.html#f_permissions">permissions</a><span class="esymbol">:</span> <a class="eclass" href="../base/list_short.html">LIST</a> <span class="esymbol">[</span><a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">]</span>
+			<span class="ecomment">--</span><span class="ecomment"> List of permission ids, used by this module, and declared.</span>
+
+	<a name="f_perm_admin_oauth2"></a><a class="efeature" href="../oauth_module/cms_oauth_20_module_administration_short.html#f_perm_admin_oauth2">Perm_admin_oauth2</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;admin oauth2&quot;
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Handle</span>
+
+	<a name="f_handle_admin_consumers"></a><a class="efeature" href="../oauth_module/cms_oauth_20_module_administration_short.html#f_handle_admin_consumers">handle_admin_consumers</a> <span class="esymbol">(</span><span class="elocal">a_api</span><span class="esymbol">:</span> <span class="neclass">CMS_API</span><span class="esymbol">;</span> <span class="elocal">req</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_short.html">WSF_REQUEST</a><span class="esymbol">;</span> <span class="elocal">res</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_response_short.html">WSF_RESPONSE</a><span class="esymbol">)</span>
+
+	<a name="f_predefined_consumer"></a><a class="efeature" href="../oauth_module/cms_oauth_20_module_administration_short.html#f_predefined_consumer">predefined_consumer</a> <span class="esymbol">(</span><span class="elocal">a_consumer_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">;</span> <span class="elocal">api</span><span class="esymbol">:</span> <span class="neclass">CMS_API</span><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../oauth_module/cms_oauth_20_consumer_short.html">CMS_OAUTH_20_CONSUMER</a>
+
+	<a name="f_predefined_consumer_from_path"></a><a class="efeature" href="../oauth_module/cms_oauth_20_module_administration_short.html#f_predefined_consumer_from_path">predefined_consumer_from_path</a> <span class="esymbol">(</span><span class="elocal">a_path</span><span class="esymbol">:</span> <a class="eclass" href="../base/path_short.html">PATH</a><span class="esymbol">;</span> <span class="elocal">api</span><span class="esymbol">:</span> <span class="neclass">CMS_API</span><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../oauth_module/cms_oauth_20_consumer_short.html">CMS_OAUTH_20_CONSUMER</a>
+
+	<a name="f_handle_admin_consumer"></a><a class="efeature" href="../oauth_module/cms_oauth_20_module_administration_short.html#f_handle_admin_consumer">handle_admin_consumer</a> <span class="esymbol">(</span><span class="elocal">a_api</span><span class="esymbol">:</span> <span class="neclass">CMS_API</span><span class="esymbol">;</span> <span class="elocal">req</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_short.html">WSF_REQUEST</a><span class="esymbol">;</span> <span class="elocal">res</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_response_short.html">WSF_RESPONSE</a><span class="esymbol">)</span>
+
+	<a name="f_new_consumer_form"></a><a class="efeature" href="../oauth_module/cms_oauth_20_module_administration_short.html#f_new_consumer_form">new_consumer_form</a> <span class="esymbol">(</span><span class="elocal">a_action</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">;</span> <span class="elocal">req</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_short.html">WSF_REQUEST</a><span class="esymbol">;</span> <span class="elocal">cons</span><span class="esymbol">:</span> <a class="eclass" href="../oauth_module/cms_oauth_20_consumer_short.html">CMS_OAUTH_20_CONSUMER</a><span class="esymbol">;</span> <span class="elocal">a_api</span><span class="esymbol">:</span> <span class="neclass">CMS_API</span><span class="esymbol">)</span><span class="esymbol">:</span> <span class="neclass">CMS_FORM</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Hook</span>
+
+	<a name="f_setup_hooks"></a><a class="efeature" href="../oauth_module/cms_oauth_20_module_administration_short.html#f_setup_hooks">setup_hooks</a> <span class="esymbol">(</span><span class="elocal">a_hooks</span><span class="esymbol">:</span> <span class="neclass">CMS_HOOK_CORE_MANAGER</span><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Module hooks configuration.</span>
+
+	<a name="f_menu_system_alter"></a><a class="efeature" href="../oauth_module/cms_oauth_20_module_administration_short.html#f_menu_system_alter">menu_system_alter</a> <span class="esymbol">(</span><span class="elocal">a_menu_system</span><span class="esymbol">:</span> <span class="neclass">CMS_MENU_SYSTEM</span><span class="esymbol">;</span> <span class="elocal">a_response</span><span class="esymbol">:</span> <span class="neclass">CMS_RESPONSE</span><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Hook execution on collection of menu contained by </span><span class="equoted">a_menu_system</span>
+			<span class="ecomment">--</span><span class="ecomment"> for related response </span><span class="equoted">a_response</span><span class="ecomment">.</span>
+	
+<span class="ekeyword">end</span> <span class="ecomment">--</span> <span class="ecomment">class </span><a class="eclass" href="../oauth_module/cms_oauth_20_module_administration_short.html">CMS_OAUTH_20_MODULE_ADMINISTRATION</a></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="cms_oauth_20_module_administration_chart.html">Chart</a>
+<a class="nav class" href="cms_oauth_20_module_administration_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="cms_oauth_20_module_administration"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
+

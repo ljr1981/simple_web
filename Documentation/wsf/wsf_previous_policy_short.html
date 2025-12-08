@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="Policies for deciding if a resource that currently doesn't exist used to do so. This default implementation assumes that no resources used to exist."/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="2011-2013, Jocelyn Fiat, Javier Velilla, Olivier Ligot, Colin Adams, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>wsf_previous_policy Contracts</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="wsf_previous_policy_chart.html">Chart</a>
+<a class="nav class" href="wsf_previous_policy_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="wsf_previous_policy"></span>
+</div></form><pre><span class="ekeyword">note</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">Policies for deciding if a resource that currently doesn't exist used to do so.</span>
+		<span class="estring">This default implementation assumes that no resources used to exist.</span>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+	<span class="eitag">date</span><span class="esymbol">:</span> <span class="estring">&quot;$Date$&quot;</span>
+	<span class="eitag">revision</span><span class="esymbol">:</span> <span class="estring">&quot;$Revision$&quot;</span>
+
+<span class="ekeyword">deferred</span> <span class="ekeyword">class</span> <span class="ekeyword">interface</span>
+	<a class="eclass" href="../wsf/wsf_previous_policy_short.html">WSF_PREVIOUS_POLICY</a>
+
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Access</span>
+
+	<a name="f_resource_previously_existed"></a><a class="efeature" href="../wsf/wsf_previous_policy_short.html#f_resource_previously_existed">resource_previously_existed</a> <span class="esymbol">(</span><span class="elocal">req</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_short.html">WSF_REQUEST</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Did </span><span class="equoted">req.path_translated</span><span class="ecomment"> exist previously?</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">req_attached</span><span class="esymbol">:</span> <span class="elocal">req</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+
+	<a name="f_resource_moved_permanently"></a><a class="efeature" href="../wsf/wsf_previous_policy_short.html#f_resource_moved_permanently">resource_moved_permanently</a> <span class="esymbol">(</span><span class="elocal">req</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_short.html">WSF_REQUEST</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Was </span><span class="equoted">req.path_translated</span><span class="ecomment"> moved permanently?</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">req_attached</span><span class="esymbol">:</span> <span class="elocal">req</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">previously_existed</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_previous_policy_short.html#f_resource_previously_existed">resource_previously_existed</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">req</span><span class="esymbol">)</span>
+
+	<a name="f_resource_moved_temporarily"></a><a class="efeature" href="../wsf/wsf_previous_policy_short.html#f_resource_moved_temporarily">resource_moved_temporarily</a> <span class="esymbol">(</span><span class="elocal">req</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_short.html">WSF_REQUEST</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Was </span><span class="equoted">req.path_translated</span><span class="ecomment"> moved temporarily?</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">req_attached</span><span class="esymbol">:</span> <span class="elocal">req</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">previously_existed</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_previous_policy_short.html#f_resource_previously_existed">resource_previously_existed</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">req</span><span class="esymbol">)</span>
+
+	<a name="f_previous_location"></a><a class="efeature" href="../wsf/wsf_previous_policy_short.html#f_previous_location">previous_location</a> <span class="esymbol">(</span><span class="elocal">req</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_short.html">WSF_REQUEST</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/list_short.html">LIST</a> <span class="esymbol">[</span><a class="eclass" href="../uri/uri_short.html">URI</a><span class="esymbol">]</span>
+			<span class="ecomment">--</span><span class="ecomment"> Previous location(s) for resource named by </span><span class="equoted">req</span><span class="ecomment">;</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">req_attached</span><span class="esymbol">:</span> <span class="elocal">req</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">previously_existed</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_previous_policy_short.html#f_resource_previously_existed">resource_previously_existed</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">req</span><span class="esymbol">)</span>
+			<span class="etag">moved</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_previous_policy_short.html#f_resource_moved_permanently">resource_moved_permanently</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">req</span><span class="esymbol">)</span> <a class="ekeyword" href="../base/boolean_short.html#f_disjuncted">or</a> <a class="efeature" href="../wsf/wsf_previous_policy_short.html#f_resource_moved_temporarily">resource_moved_temporarily</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">req</span><span class="esymbol">)</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">previous_location_attached</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">non_empty_list</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+	
+<span class="ekeyword">note</span>
+	<span class="eitag">copyright</span><span class="esymbol">:</span> <span class="estring">&quot;2011-2013, Jocelyn Fiat, Javier Velilla, Olivier Ligot, Colin Adams, Eiffel Software and others&quot;</span>
+	<span class="eitag">license</span><span class="esymbol">:</span> <span class="estring">&quot;Eiffel Forum License v2 (see </span><a class="estring" href="http://www.eiffel.com/licensing/forum.txt">http://www.eiffel.com/licensing/forum.txt</a><span class="estring">)&quot;</span>
+	<span class="eitag">source</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">Eiffel Software</span>
+		<span class="estring">5949 Hollister Ave., Goleta, CA 93117 USA</span>
+		<span class="estring">Telephone 805-685-1006, Fax 805-685-6869</span>
+		<span class="estring">Website </span><a class="estring" href="http://www.eiffel.com">http://www.eiffel.com</a>
+		<span class="estring">Customer support </span><a class="estring" href="http://support.eiffel.com">http://support.eiffel.com</a>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+
+<span class="ekeyword">end</span> <span class="ecomment">--</span> <span class="ecomment">class </span><a class="eclass" href="../wsf/wsf_previous_policy_short.html">WSF_PREVIOUS_POLICY</a></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="wsf_previous_policy_chart.html">Chart</a>
+<a class="nav class" href="wsf_previous_policy_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="wsf_previous_policy"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
+

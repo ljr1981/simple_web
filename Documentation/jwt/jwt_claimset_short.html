@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="Object representing a JWT claim set"/>
+<meta name="eis" content="name=JWT claims, src=https://tools.ietf.org/html/rfc7519#section-4, protocol=uri"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>jwt_claimset Contracts</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="jwt_claimset_chart.html">Chart</a>
+<a class="nav class" href="jwt_claimset_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="jwt_claimset"></span>
+</div></form><pre><span class="ekeyword">note</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;Object representing a JWT claim set&quot;</span>
+	<span class="eitag">date</span><span class="esymbol">:</span> <span class="estring">&quot;$Date$&quot;</span>
+	<span class="eitag">revision</span><span class="esymbol">:</span> <span class="estring">&quot;$Revision$&quot;</span>
+	<span class="eitag">eis</span><span class="esymbol">:</span> <span class="estring">&quot;name=JWT claims&quot;</span><span class="esymbol">,</span> <span class="estring">&quot;src=</span><a class="estring" href="https://tools.ietf.org/html/rfc7519#section-4">https://tools.ietf.org/html/rfc7519#section-4</a><span class="estring">&quot;</span><span class="esymbol">,</span> <span class="estring">&quot;protocol=uri&quot;</span>
+
+<span class="ekeyword">class</span> <span class="ekeyword">interface</span>
+	<a class="eclass" href="../jwt/jwt_claimset_short.html">JWT_CLAIMSET</a>
+
+<span class="ekeyword">create</span> 
+	<a class="efeature" href="../jwt/jwt_claimset_short.html#f_default_create">default_create</a>
+
+<span class="ekeyword">convert</span>
+	<a class="efeature" href="../jwt/jwt_claimset_short.html#f_string">string</a><span class="esymbol">:</span> <span class="esymbol">{</span><a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">,</span>
+		<a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">}</span>
+
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Element change</span>
+
+	<a name="f_import_json"></a><a class="efeature" href="../jwt/jwt_claimset_short.html#f_import_json">import_json</a> <span class="esymbol">(</span><span class="elocal">j</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">)</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Access</span>
+
+	<a name="f_claim"></a><a class="efeature" href="../jwt/jwt_claimset_short.html#f_claim">claim</a> <span class="ekeyword">alias</span> <span class="esymbol">&quot;</span><a class="esymbol" href="../jwt/jwt_claimset_short.html#f_claim">[]</a><span class="esymbol">&quot;</span> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/any_short.html">ANY</a>
+
+	<a name="f_string_32_claim"></a><a class="efeature" href="../jwt/jwt_claimset_short.html#f_string_32_claim">string_32_claim</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_32_short.html">READABLE_STRING_32</a>
+
+	<a name="f_string_8_claim"></a><a class="efeature" href="../jwt/jwt_claimset_short.html#f_string_8_claim">string_8_claim</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a>
+
+	<a name="f_issuer"></a><a class="efeature" href="../jwt/jwt_claimset_short.html#f_issuer">issuer</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a> <span class="ekeyword">assign</span> <a class="efeature" href="../jwt/jwt_claimset_short.html#f_set_issuer">set_issuer</a>
+
+	<a name="f_subjet"></a><a class="efeature" href="../jwt/jwt_claimset_short.html#f_subjet">subjet</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_32_short.html">READABLE_STRING_32</a> <span class="ekeyword">assign</span> <a class="efeature" href="../jwt/jwt_claimset_short.html#f_set_subject">set_subject</a>
+
+	<a name="f_audience"></a><a class="efeature" href="../jwt/jwt_claimset_short.html#f_audience">audience</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a> <span class="ekeyword">assign</span> <a class="efeature" href="../jwt/jwt_claimset_short.html#f_set_audience">set_audience</a>
+
+	<a name="f_expiration_time"></a><a class="efeature" href="../jwt/jwt_claimset_short.html#f_expiration_time">expiration_time</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <span class="neclass">DATE_TIME</span> <span class="ekeyword">assign</span> <a class="efeature" href="../jwt/jwt_claimset_short.html#f_set_expiration_time">set_expiration_time</a>
+
+	<a name="f_not_before_time"></a><a class="efeature" href="../jwt/jwt_claimset_short.html#f_not_before_time">not_before_time</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <span class="neclass">DATE_TIME</span> <span class="ekeyword">assign</span> <a class="efeature" href="../jwt/jwt_claimset_short.html#f_set_not_before_time">set_not_before_time</a>
+
+	<a name="f_issued_at"></a><a class="efeature" href="../jwt/jwt_claimset_short.html#f_issued_at">issued_at</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <span class="neclass">DATE_TIME</span> <span class="ekeyword">assign</span> <a class="efeature" href="../jwt/jwt_claimset_short.html#f_set_issued_at">set_issued_at</a>
+
+	<a name="f_jwd_id"></a><a class="efeature" href="../jwt/jwt_claimset_short.html#f_jwd_id">jwd_id</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a> <span class="ekeyword">assign</span> <a class="efeature" href="../jwt/jwt_claimset_short.html#f_set_jwt_id">set_jwt_id</a>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Conversion</span>
+
+	<a name="f_json"></a><a class="efeature" href="../jwt/jwt_claimset_short.html#f_json">json</a><span class="esymbol">:</span> <span class="neclass">JSON_OBJECT</span>
+
+	<a name="f_string"></a><a class="efeature" href="../jwt/jwt_claimset_short.html#f_string">string</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Element change</span>
+
+	<a name="f_set_claim"></a><a class="efeature" href="../jwt/jwt_claimset_short.html#f_set_claim">set_claim</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">;</span> <span class="elocal">a_val</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/any_short.html">ANY</a><span class="esymbol">)</span>
+
+	<a name="f_set_issuer"></a><a class="efeature" href="../jwt/jwt_claimset_short.html#f_set_issuer">set_issuer</a> <span class="esymbol">(</span><span class="elocal">iss</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> The &quot;iss&quot; (issuer) claim identifies the principal that issued the</span>
+			<span class="ecomment">--</span><span class="ecomment"> JWT. &nbsp;The processing of this claim is generally application specific.</span>
+			<span class="ecomment">--</span><span class="ecomment"> The &quot;iss&quot; value is a case-sensitive string containing a StringOrURI</span>
+			<span class="ecomment">--</span><span class="ecomment"> value. &nbsp;Use of this claim is OPTIONAL.	</span>
+
+	<a name="f_set_subject"></a><a class="efeature" href="../jwt/jwt_claimset_short.html#f_set_subject">set_subject</a> <span class="esymbol">(</span><span class="elocal">sub</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_32_short.html">READABLE_STRING_32</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> The &quot;sub&quot; (subject) claim identifies the principal that is the</span>
+			<span class="ecomment">--</span><span class="ecomment"> subject of the JWT. &nbsp;The claims in a JWT are normally statements</span>
+			<span class="ecomment">--</span><span class="ecomment"> about the subject. &nbsp;The subject value MUST either be scoped to be</span>
+			<span class="ecomment">--</span><span class="ecomment"> locally unique in the context of the issuer or be globally unique.</span>
+			<span class="ecomment">--</span><span class="ecomment"> The processing of this claim is generally application specific. &nbsp;The</span>
+			<span class="ecomment">--</span><span class="ecomment"> &quot;sub&quot; value is a case-sensitive string containing a StringOrURI</span>
+			<span class="ecomment">--</span><span class="ecomment"> value. &nbsp;Use of this claim is OPTIONAL.	</span>
+
+	<a name="f_set_audience"></a><a class="efeature" href="../jwt/jwt_claimset_short.html#f_set_audience">set_audience</a> <span class="esymbol">(</span><span class="elocal">aud</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;The &quot;aud&quot; (audience) claim identifies the recipients that the JWT is</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;intended for. &nbsp;Each principal intended to process the JWT MUST</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;identify itself with a value in the audience claim. &nbsp;If the principal</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;processing the claim does not identify itself with a value in the</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&quot;aud&quot; claim when this claim is present, then the JWT MUST be</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;rejected. &nbsp;In the general case, the &quot;aud&quot; value is an array of case-</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;sensitive strings, each containing a StringOrURI value. &nbsp;In the</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;special case when the JWT has one audience, the &quot;aud&quot; value MAY be a</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;single case-sensitive string containing a StringOrURI value. &nbsp;The</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;interpretation of audience values is generally application specific.</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;Use of this claim is OPTIONAL.</span>
+
+	<a name="f_set_expiration_time"></a><a class="efeature" href="../jwt/jwt_claimset_short.html#f_set_expiration_time">set_expiration_time</a> <span class="esymbol">(</span><span class="elocal">exp</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <span class="neclass">DATE_TIME</span><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;The &quot;exp&quot; (expiration time) claim identifies the expiration time on</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;or after which the JWT MUST NOT be accepted for processing. &nbsp;The</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;processing of the &quot;exp&quot; claim requires that the current date/time</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;MUST be before the expiration date/time listed in the &quot;exp&quot; claim.</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;Implementers MAY provide for some small leeway, usually no more than</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;a few minutes, to account for clock skew. &nbsp;Its value MUST be a number</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;containing a NumericDate value. &nbsp;Use of this claim is OPTIONAL.</span>
+
+	<a name="f_set_not_before_time"></a><a class="efeature" href="../jwt/jwt_claimset_short.html#f_set_not_before_time">set_not_before_time</a> <span class="esymbol">(</span><span class="elocal">nbf</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <span class="neclass">DATE_TIME</span><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;The &quot;nbf&quot; (not before) claim identifies the time before which the JWT</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;MUST NOT be accepted for processing. &nbsp;The processing of the &quot;nbf&quot;</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;claim requires that the current date/time MUST be after or equal to</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;the not-before date/time listed in the &quot;nbf&quot; claim. &nbsp;Implementers MAY</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;provide for some small leeway, usually no more than a few minutes, to</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;account for clock skew. &nbsp;Its value MUST be a number containing a</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;NumericDate value. &nbsp;Use of this claim is OPTIONAL.</span>
+
+	<a name="f_set_issued_at"></a><a class="efeature" href="../jwt/jwt_claimset_short.html#f_set_issued_at">set_issued_at</a> <span class="esymbol">(</span><span class="elocal">iat</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <span class="neclass">DATE_TIME</span><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;The &quot;iat&quot; (issued at) claim identifies the time at which the JWT was</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;issued. &nbsp;This claim can be used to determine the age of the JWT. &nbsp;Its</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;value MUST be a number containing a NumericDate value. &nbsp;Use of this</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;claim is OPTIONAL.	</span>
+
+	<a name="f_set_issued_at_now_utc"></a><a class="efeature" href="../jwt/jwt_claimset_short.html#f_set_issued_at_now_utc">set_issued_at_now_utc</a>
+
+	<a name="f_set_jwt_id"></a><a class="efeature" href="../jwt/jwt_claimset_short.html#f_set_jwt_id">set_jwt_id</a> <span class="esymbol">(</span><span class="elocal">jti</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;The &quot;jti&quot; (JWT ID) claim provides a unique identifier for the JWT.</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;The identifier value MUST be assigned in a manner that ensures that</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;there is a negligible probability that the same value will be</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;accidentally assigned to a different data object; if the application</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;uses multiple issuers, collisions MUST be prevented among values</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;produced by different issuers as well. &nbsp;The &quot;jti&quot; claim can be used</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;to prevent the JWT from being replayed. &nbsp;The &quot;jti&quot; value is a case-</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;sensitive string. &nbsp;Use of this claim is OPTIONAL.	</span>
+	
+<span class="ekeyword">end</span> <span class="ecomment">--</span> <span class="ecomment">class </span><a class="eclass" href="../jwt/jwt_claimset_short.html">JWT_CLAIMSET</a></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="jwt_claimset_chart.html">Chart</a>
+<a class="nav class" href="jwt_claimset_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="jwt_claimset"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
+

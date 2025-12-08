@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="Configuration for the standalone HTTPd server."/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="2011-2018, Jocelyn Fiat, Javier Velilla, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>httpd_configuration_i Contracts</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="httpd_configuration_i_chart.html">Chart</a>
+<a class="nav class" href="httpd_configuration_i_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="httpd_configuration_i"></span>
+</div></form><pre><span class="ekeyword">note</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;Configuration for the standalone HTTPd server.&quot;</span>
+	<span class="eitag">date</span><span class="esymbol">:</span> <span class="estring">&quot;$Date$&quot;</span>
+	<span class="eitag">revision</span><span class="esymbol">:</span> <span class="estring">&quot;$Revision$&quot;</span>
+
+<span class="ekeyword">deferred</span> <span class="ekeyword">class</span> <span class="ekeyword">interface</span>
+	<a class="eclass" href="../httpd/httpd_configuration_i_short.html">HTTPD_CONFIGURATION_I</a>
+
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Access</span>
+
+	<a name="f_server_details"></a><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_server_details">server_details</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Detail of the server.</span>
+
+	<a name="f_http_server_name"></a><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_http_server_name">http_server_name</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a> <span class="ekeyword">assign</span> <a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_set_http_server_name">set_http_server_name</a>
+
+	<a name="f_http_server_port"></a><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_http_server_port">http_server_port</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a> <span class="ekeyword">assign</span> <a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_set_http_server_port">set_http_server_port</a>
+
+	<a name="f_max_bind_attempts"></a><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_max_bind_attempts">max_bind_attempts</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a> <span class="ekeyword">assign</span> <a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_set_max_bind_attempts">set_max_bind_attempts</a>
+
+	<a name="f_is_reuse_address_allowed"></a><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_is_reuse_address_allowed">is_reuse_address_allowed</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a> <span class="ekeyword">assign</span> <a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_set_is_reuse_address_allowed">set_is_reuse_address_allowed</a>
+
+	<a name="f_max_tcp_clients"></a><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_max_tcp_clients">max_tcp_clients</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a> <span class="ekeyword">assign</span> <a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_set_max_tcp_clients">set_max_tcp_clients</a>
+			<span class="ecomment">--</span><span class="ecomment"> Listen on socket for at most </span><span class="equoted">queue</span><span class="ecomment"> connections.</span>
+
+	<a name="f_socket_timeout_ns"></a><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_socket_timeout_ns">socket_timeout_ns</a><span class="esymbol">:</span> <a class="eclass" href="../base/natural_64_short.html">NATURAL_64</a> <span class="ekeyword">assign</span> <a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_set_socket_timeout_ns">set_socket_timeout_ns</a>
+			<span class="ecomment">--</span><span class="ecomment"> Amount of seconds that the server waits for receipts and transmissions during communications.</span>
+			<span class="ecomment">--</span><span class="ecomment"> note: with timeout of 0, socket can wait for ever.</span>
+			<span class="ecomment">--</span><span class="ecomment"> By default: 60 seconds, which is appropriate for most situations.</span>
+
+	<a name="f_socket_recv_timeout_ns"></a><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_socket_recv_timeout_ns">socket_recv_timeout_ns</a><span class="esymbol">:</span> <a class="eclass" href="../base/natural_64_short.html">NATURAL_64</a> <span class="ekeyword">assign</span> <a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_set_socket_recv_timeout_ns">set_socket_recv_timeout_ns</a>
+			<span class="ecomment">--</span><span class="ecomment"> Amount of seconds that the server waits for receiving data during communications.</span>
+			<span class="ecomment">--</span><span class="ecomment"> note: with timeout of 0, socket can wait for ever.</span>
+			<span class="ecomment">--</span><span class="ecomment"> By default: 5 seconds.</span>
+
+	<a name="f_max_concurrent_connections"></a><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_max_concurrent_connections">max_concurrent_connections</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a> <span class="ekeyword">assign</span> <a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_set_max_concurrent_connections">set_max_concurrent_connections</a>
+			<span class="ecomment">--</span><span class="ecomment"> Max number of concurrent connections.</span>
+
+	<a name="f_is_verbose"></a><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_is_verbose">is_verbose</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a> <span class="ekeyword">assign</span> <a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_set_is_verbose">set_is_verbose</a>
+			<span class="ecomment">--</span><span class="ecomment"> Display verbose message to the output?</span>
+
+	<a name="f_verbose_level"></a><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_verbose_level">verbose_level</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a> <span class="ekeyword">assign</span> <a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_set_verbose_level">set_verbose_level</a>
+			<span class="ecomment">--</span><span class="ecomment"> Verbosity of output.</span>
+
+	<a name="f_keep_alive_timeout_ns"></a><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_keep_alive_timeout_ns">keep_alive_timeout_ns</a><span class="esymbol">:</span> <a class="eclass" href="../base/natural_64_short.html">NATURAL_64</a> <span class="ekeyword">assign</span> <a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_set_keep_alive_timeout_ns">set_keep_alive_timeout_ns</a>
+			<span class="ecomment">--</span><span class="ecomment"> Persistent connection timeout.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Number of seconds the server waits after a request has been served before it closes the connection.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Timeout unit in Seconds.</span>
+			<span class="ecomment">--</span><span class="ecomment"> By default: 5 seconds.</span>
+
+	<a name="f_max_keep_alive_requests"></a><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_max_keep_alive_requests">max_keep_alive_requests</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a> <span class="ekeyword">assign</span> <a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_set_max_keep_alive_requests">set_max_keep_alive_requests</a>
+			<span class="ecomment">--</span><span class="ecomment"> Maximum number of requests allowed per persistent connection.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Recommended a high setting.</span>
+			<span class="ecomment">--</span><span class="ecomment"> To disable KeepAlive, set </span><span class="ecomment">`</span><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_max_keep_alive_requests">max_keep_alive_requests</a><span class="ecomment">`</span><span class="ecomment"> to 0.</span>
+			<span class="ecomment">--</span><span class="ecomment"> By default: 100 .</span>
+
+	<a name="f_has_secure_support"></a><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_has_secure_support">has_secure_support</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Has SSL/TLS secure support?</span>
+
+	<a name="f_request_settings"></a><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_request_settings">request_settings</a><span class="esymbol">:</span> <a class="eclass" href="../httpd/httpd_request_settings_short.html">HTTPD_REQUEST_SETTINGS</a>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Access: SSL</span>
+
+	<a name="f_is_secure"></a><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_is_secure">is_secure</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is SSL/TLS session?.</span>
+
+	<a name="f_secure_certificate"></a><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_secure_certificate">secure_certificate</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/immutable_string_32_short.html">IMMUTABLE_STRING_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> the signed certificate.</span>
+
+	<a name="f_secure_certificate_key"></a><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_secure_certificate_key">secure_certificate_key</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/immutable_string_32_short.html">IMMUTABLE_STRING_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> private key to the certificate authority.</span>
+
+	<a name="f_secure_protocol"></a><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_secure_protocol">secure_protocol</a><span class="esymbol">:</span> <a class="eclass" href="../base/natural_32_short.html">NATURAL_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> By default protocol is tls 1.2.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Element change</span>
+
+	<a name="f_set_secure_settings"></a><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_set_secure_settings">set_secure_settings</a> <span class="esymbol">(</span><span class="elocal">v</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <span class="ekeyword">separate</span> <a class="eclass" href="../base/tuple_short.html">TUPLE</a> <span class="esymbol">[</span><span class="elocal">protocol</span><span class="esymbol">:</span> <span class="ekeyword">separate</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">;</span> <span class="elocal">ca_crt</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <span class="ekeyword">separate</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">;</span> <span class="elocal">ca_key</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <span class="ekeyword">separate</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">]</span><span class="esymbol">)</span>
+
+	<a name="f_set_http_server_name"></a><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_set_http_server_name">set_http_server_name</a> <span class="esymbol">(</span><span class="elocal">v</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <span class="ekeyword">separate</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">)</span>
+
+	<a name="f_unset_http_server_name"></a><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_unset_http_server_name">unset_http_server_name</a>
+			<span class="ecomment">--</span><span class="ecomment"> Unset </span><span class="ecomment">`</span><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_http_server_name">http_server_name</a><span class="ecomment">`</span><span class="ecomment"> value.</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">unset_http_server_name</span><span class="esymbol">:</span> <a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_http_server_name">http_server_name</a> <span class="esymbol">=</span> <span class="ekeyword">Void</span>
+
+	<a name="f_set_http_server_port"></a><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_set_http_server_port">set_http_server_port</a> <span class="esymbol">(</span><span class="elocal">v</span><span class="esymbol">:</span> <span class="ekeyword">like</span> <a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_http_server_port">http_server_port</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set </span><span class="ecomment">`</span><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_http_server_port">http_server_port</a><span class="ecomment">`</span><span class="ecomment"> with </span><span class="equoted">v</span><span class="ecomment">.</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">http_server_port_set</span><span class="esymbol">:</span> <a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_http_server_port">http_server_port</a> <span class="esymbol">=</span> <span class="elocal">v</span>
+
+	<a name="f_set_max_bind_attempts"></a><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_set_max_bind_attempts">set_max_bind_attempts</a> <span class="esymbol">(</span><span class="elocal">nb</span><span class="esymbol">:</span> <span class="ekeyword">like</span> <a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_max_bind_attempts">max_bind_attempts</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set </span><span class="ecomment">`</span><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_max_bind_attempts">max_bind_attempts</a><span class="ecomment">`</span><span class="ecomment"> with </span><span class="equoted">nb</span><span class="ecomment">.</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">max_bind_attempts_set</span><span class="esymbol">:</span> <a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_max_bind_attempts">max_bind_attempts</a> <span class="esymbol">=</span> <span class="elocal">nb</span>
+
+	<a name="f_set_is_reuse_address_allowed"></a><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_set_is_reuse_address_allowed">set_is_reuse_address_allowed</a> <span class="esymbol">(</span><span class="elocal">b</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set </span><span class="ecomment">`</span><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_is_reuse_address_allowed">is_reuse_address_allowed</a><span class="ecomment">`</span><span class="ecomment"> with </span><span class="equoted">b</span><span class="ecomment">.</span>
+		<span class="ekeyword">ensure</span>
+			<a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_is_reuse_address_allowed">is_reuse_address_allowed</a> <span class="esymbol">=</span> <span class="elocal">b</span>
+
+	<a name="f_set_max_tcp_clients"></a><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_set_max_tcp_clients">set_max_tcp_clients</a> <span class="esymbol">(</span><span class="elocal">v</span><span class="esymbol">:</span> <span class="ekeyword">like</span> <a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_max_tcp_clients">max_tcp_clients</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set </span><span class="ecomment">`</span><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_max_tcp_clients">max_tcp_clients</a><span class="ecomment">`</span><span class="ecomment"> with </span><span class="equoted">v</span><span class="ecomment">.</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">max_tcp_clients_set</span><span class="esymbol">:</span> <a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_max_tcp_clients">max_tcp_clients</a> <span class="esymbol">=</span> <span class="elocal">v</span>
+
+	<a name="f_set_max_concurrent_connections"></a><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_set_max_concurrent_connections">set_max_concurrent_connections</a> <span class="esymbol">(</span><span class="elocal">v</span><span class="esymbol">:</span> <span class="ekeyword">like</span> <a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_max_concurrent_connections">max_concurrent_connections</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set </span><span class="ecomment">`</span><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_max_concurrent_connections">max_concurrent_connections</a><span class="ecomment">`</span><span class="ecomment"> with </span><span class="equoted">v</span><span class="ecomment">.</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">max_concurrent_connections_set</span><span class="esymbol">:</span> <a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_max_concurrent_connections">max_concurrent_connections</a> <span class="esymbol">=</span> <span class="elocal">v</span>
+
+	<a name="f_set_socket_timeout_ns"></a><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_set_socket_timeout_ns">set_socket_timeout_ns</a> <span class="esymbol">(</span><span class="elocal">a_nano_seconds</span><span class="esymbol">:</span> <span class="ekeyword">like</span> <a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_socket_timeout_ns">socket_timeout_ns</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set </span><span class="ecomment">`</span><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_socket_timeout_ns">socket_timeout_ns</a><span class="ecomment">`</span><span class="ecomment"> with </span><span class="equoted">a_nano_seconds</span><span class="ecomment">.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">is_valid_timeout_ns</span><span class="esymbol">:</span> <span class="nefeature">is_valid_timeout_ns</span><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">a_nano_seconds</span><span class="esymbol">)</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">socket_timeout_ns_set</span><span class="esymbol">:</span> <a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_socket_timeout_ns">socket_timeout_ns</a> <span class="esymbol">=</span> <span class="elocal">a_nano_seconds</span>
+
+	<a name="f_set_socket_recv_timeout_ns"></a><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_set_socket_recv_timeout_ns">set_socket_recv_timeout_ns</a> <span class="esymbol">(</span><span class="elocal">a_nano_seconds</span><span class="esymbol">:</span> <span class="ekeyword">like</span> <a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_socket_recv_timeout_ns">socket_recv_timeout_ns</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set </span><span class="ecomment">`</span><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_socket_recv_timeout_ns">socket_recv_timeout_ns</a><span class="ecomment">`</span><span class="ecomment"> with </span><span class="equoted">a_nano_seconds</span><span class="ecomment">.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">is_valid_timeout_ns</span><span class="esymbol">:</span> <span class="nefeature">is_valid_timeout_ns</span><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">a_nano_seconds</span><span class="esymbol">)</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">socket_recv_timeout_ns_set</span><span class="esymbol">:</span> <a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_socket_recv_timeout_ns">socket_recv_timeout_ns</a> <span class="esymbol">=</span> <span class="elocal">a_nano_seconds</span>
+
+	<a name="f_set_keep_alive_timeout_ns"></a><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_set_keep_alive_timeout_ns">set_keep_alive_timeout_ns</a> <span class="esymbol">(</span><span class="elocal">a_nano_seconds</span><span class="esymbol">:</span> <span class="ekeyword">like</span> <a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_keep_alive_timeout_ns">keep_alive_timeout_ns</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set </span><span class="ecomment">`</span><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_keep_alive_timeout_ns">keep_alive_timeout_ns</a><span class="ecomment">`</span><span class="ecomment"> with </span><span class="equoted">a_nano_seconds</span><span class="ecomment">.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">is_valid_timeout_ns</span><span class="esymbol">:</span> <span class="nefeature">is_valid_timeout_ns</span><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">a_nano_seconds</span><span class="esymbol">)</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">keep_alive_timeout_ns_set</span><span class="esymbol">:</span> <a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_keep_alive_timeout_ns">keep_alive_timeout_ns</a> <span class="esymbol">=</span> <span class="elocal">a_nano_seconds</span>
+
+	<a name="f_set_socket_timeout"></a><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_set_socket_timeout">set_socket_timeout</a> <span class="esymbol">(</span><span class="elocal">a_nb_seconds</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set </span><span class="equoted">socket_timeout</span><span class="ecomment"> with </span><span class="equoted">a_nb_seconds</span><span class="ecomment">.</span>
+
+	<a name="f_set_socket_recv_timeout"></a><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_set_socket_recv_timeout">set_socket_recv_timeout</a> <span class="esymbol">(</span><span class="elocal">a_nb_seconds</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set </span><span class="equoted">socket_recv_timeout</span><span class="ecomment"> with </span><span class="equoted">a_nb_seconds</span><span class="ecomment">.</span>
+
+	<a name="f_set_keep_alive_timeout"></a><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_set_keep_alive_timeout">set_keep_alive_timeout</a> <span class="esymbol">(</span><span class="elocal">a_nb_seconds</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set </span><span class="equoted">keep_alive_timeout</span><span class="ecomment"> with </span><span class="equoted">a_nb_seconds</span><span class="ecomment">.</span>
+
+	<a name="f_set_max_keep_alive_requests"></a><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_set_max_keep_alive_requests">set_max_keep_alive_requests</a> <span class="esymbol">(</span><span class="elocal">nb</span><span class="esymbol">:</span> <span class="ekeyword">like</span> <a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_max_keep_alive_requests">max_keep_alive_requests</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set </span><span class="ecomment">`</span><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_max_keep_alive_requests">max_keep_alive_requests</a><span class="ecomment">`</span><span class="ecomment"> with </span><span class="equoted">nb</span><span class="ecomment">.</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">max_keep_alive_requests_set</span><span class="esymbol">:</span> <a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_max_keep_alive_requests">max_keep_alive_requests</a> <span class="esymbol">=</span> <span class="elocal">nb</span>
+
+	<a name="f_set_is_verbose"></a><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_set_is_verbose">set_is_verbose</a> <span class="esymbol">(</span><span class="elocal">b</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set </span><span class="ecomment">`</span><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_is_verbose">is_verbose</a><span class="ecomment">`</span><span class="ecomment"> to </span><span class="equoted">b</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">is_verbose_set</span><span class="esymbol">:</span> <a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_is_verbose">is_verbose</a> <span class="esymbol">=</span> <span class="elocal">b</span>
+
+	<a name="f_set_verbose_level"></a><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_set_verbose_level">set_verbose_level</a> <span class="esymbol">(</span><span class="elocal">lev</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set </span><span class="ecomment">`</span><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_verbose_level">verbose_level</a><span class="ecomment">`</span><span class="ecomment"> to </span><span class="equoted">lev</span><span class="ecomment">.</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">verbose_level_set</span><span class="esymbol">:</span> <a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_verbose_level">verbose_level</a> <span class="esymbol">=</span> <span class="elocal">lev</span>
+
+	<a name="f_set_is_secure"></a><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_set_is_secure">set_is_secure</a> <span class="esymbol">(</span><span class="elocal">b</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set </span><span class="ecomment">`</span><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_is_secure">is_secure</a><span class="ecomment">`</span><span class="ecomment"> to </span><span class="equoted">b</span><span class="ecomment">.</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">is_secure_set</span><span class="esymbol">:</span> <a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_has_secure_support">has_secure_support</a> <a class="ekeyword" href="../base/boolean_short.html#f_implication">implies</a> <a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_is_secure">is_secure</a>
+			<span class="etag">is_not_secure</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_has_secure_support">has_secure_support</a> <a class="ekeyword" href="../base/boolean_short.html#f_implication">implies</a> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_is_secure">is_secure</a>
+
+	<a name="f_mark_secure"></a><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_mark_secure">mark_secure</a>
+			<span class="ecomment">--</span><span class="ecomment"> Set is_secure in True.</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">is_secure_set</span><span class="esymbol">:</span> <a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_has_secure_support">has_secure_support</a> <a class="ekeyword" href="../base/boolean_short.html#f_implication">implies</a> <a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_is_secure">is_secure</a>
+			<span class="etag">is_not_secure</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_has_secure_support">has_secure_support</a> <a class="ekeyword" href="../base/boolean_short.html#f_implication">implies</a> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_is_secure">is_secure</a>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Element change</span>
+
+	<a name="f_set_secure_certificate"></a><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_set_secure_certificate">set_secure_certificate</a> <span class="esymbol">(</span><span class="elocal">a_value</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <span class="ekeyword">separate</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set </span><span class="ecomment">`</span><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_secure_certificate">secure_certificate</a><span class="ecomment">`</span><span class="ecomment"> from </span><span class="equoted">a_value</span><span class="ecomment">.</span>
+
+	<a name="f_set_secure_certificate_key"></a><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_set_secure_certificate_key">set_secure_certificate_key</a> <span class="esymbol">(</span><span class="elocal">a_value</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <span class="ekeyword">separate</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set </span><span class="ecomment">`</span><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_secure_certificate_key">secure_certificate_key</a><span class="ecomment">`</span><span class="ecomment"> with </span><span class="equoted">a_value</span><span class="ecomment">.</span>
+
+	<a name="f_set_secure_protocol"></a><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_set_secure_protocol">set_secure_protocol</a> <span class="esymbol">(</span><span class="elocal">a_version</span><span class="esymbol">:</span> <a class="eclass" href="../base/natural_32_short.html">NATURAL_32</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set </span><span class="ecomment">`</span><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_secure_protocol">secure_protocol</a><span class="ecomment">`</span><span class="ecomment"> with </span><span class="equoted">a_version</span><span class="ecomment">.</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">secure_protocol_set</span><span class="esymbol">:</span> <a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_secure_protocol">secure_protocol</a> <span class="esymbol">=</span> <span class="elocal">a_version</span>
+
+	<a name="f_set_secure_protocol_from_string"></a><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_set_secure_protocol_from_string">set_secure_protocol_from_string</a> <span class="esymbol">(</span><span class="elocal">a_ssl_version</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set </span><span class="ecomment">`</span><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_secure_protocol">secure_protocol</a><span class="ecomment">`</span><span class="ecomment"> with </span><span class="equoted">a_ssl_version</span><span class="ecomment">.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> SSL Helpers</span>
+
+	<a name="f_set_secure_protocol_to_tls_1_0"></a><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_set_secure_protocol_to_tls_1_0">set_secure_protocol_to_tls_1_0</a>
+			<span class="ecomment">--</span><span class="ecomment"> Set </span><span class="ecomment">`</span><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_secure_protocol">secure_protocol</a><span class="ecomment">`</span><span class="ecomment"> with </span><span class="equoted">Tls_1_0</span><span class="ecomment">.</span>
+
+	<a name="f_set_secure_protocol_to_tls_1_1"></a><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_set_secure_protocol_to_tls_1_1">set_secure_protocol_to_tls_1_1</a>
+			<span class="ecomment">--</span><span class="ecomment"> Set </span><span class="ecomment">`</span><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_secure_protocol">secure_protocol</a><span class="ecomment">`</span><span class="ecomment"> with </span><span class="equoted">Tls_1_1</span><span class="ecomment">.</span>
+
+	<a name="f_set_secure_protocol_to_tls_1_2"></a><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_set_secure_protocol_to_tls_1_2">set_secure_protocol_to_tls_1_2</a>
+			<span class="ecomment">--</span><span class="ecomment"> Set </span><span class="ecomment">`</span><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_secure_protocol">secure_protocol</a><span class="ecomment">`</span><span class="ecomment"> with </span><span class="equoted">Tls_1_2</span><span class="ecomment">.</span>
+
+	<a name="f_set_secure_protocol_to_dtls_1_0"></a><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_set_secure_protocol_to_dtls_1_0">set_secure_protocol_to_dtls_1_0</a>
+			<span class="ecomment">--</span><span class="ecomment"> Set </span><span class="ecomment">`</span><a class="efeature" href="../httpd/httpd_configuration_i_short.html#f_secure_protocol">secure_protocol</a><span class="ecomment">`</span><span class="ecomment"> with </span><span class="equoted">Dtls_1_0</span><span class="ecomment">.</span>
+	
+<span class="ekeyword">note</span>
+	<span class="eitag">copyright</span><span class="esymbol">:</span> <span class="estring">&quot;2011-2018, Jocelyn Fiat, Javier Velilla, Eiffel Software and others&quot;</span>
+	<span class="eitag">license</span><span class="esymbol">:</span> <span class="estring">&quot;Eiffel Forum License v2 (see </span><a class="estring" href="http://www.eiffel.com/licensing/forum.txt">http://www.eiffel.com/licensing/forum.txt</a><span class="estring">)&quot;</span>
+	<span class="eitag">source</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">Eiffel Software</span>
+		<span class="estring">5949 Hollister Ave., Goleta, CA 93117 USA</span>
+		<span class="estring">Telephone 805-685-1006, Fax 805-685-6869</span>
+		<span class="estring">Website </span><a class="estring" href="http://www.eiffel.com">http://www.eiffel.com</a>
+		<span class="estring">Customer support </span><a class="estring" href="http://support.eiffel.com">http://support.eiffel.com</a>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+
+<span class="ekeyword">end</span> <span class="ecomment">--</span> <span class="ecomment">class </span><a class="eclass" href="../httpd/httpd_configuration_i_short.html">HTTPD_CONFIGURATION_I</a></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="httpd_configuration_i_chart.html">Chart</a>
+<a class="nav class" href="httpd_configuration_i_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="httpd_configuration_i"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
+

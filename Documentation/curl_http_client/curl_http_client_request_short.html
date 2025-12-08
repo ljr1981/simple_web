@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="Specific implementation of HTTP_CLIENT_REQUEST based on the curl executable"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="2011-2023, Jocelyn Fiat, Javier Velilla, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>curl_http_client_request Contracts</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="curl_http_client_request_chart.html">Chart</a>
+<a class="nav class" href="curl_http_client_request_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="curl_http_client_request"></span>
+</div></form><pre><span class="ekeyword">note</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">Specific implementation of HTTP_CLIENT_REQUEST based on the curl executable</span>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+	<span class="eitag">date</span><span class="esymbol">:</span> <span class="estring">&quot;$Date$&quot;</span>
+	<span class="eitag">revision</span><span class="esymbol">:</span> <span class="estring">&quot;$Revision$&quot;</span>
+
+<span class="ekeyword">class</span> <span class="ekeyword">interface</span>
+	<a class="eclass" href="../curl_http_client/curl_http_client_request_short.html">CURL_HTTP_CLIENT_REQUEST</a>
+
+<span class="ekeyword">create</span> 
+	<a class="efeature" href="../curl_http_client/curl_http_client_request_short.html#f_make">make</a>
+
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Execution</span>
+
+	<a name="f_response"></a><a class="efeature" href="../curl_http_client/curl_http_client_request_short.html#f_response">response</a><span class="esymbol">:</span> <a class="eclass" href="../curl_http_client/http_client_response_short.html">HTTP_CLIENT_RESPONSE</a>
+			<span class="ecomment">--</span><span class="ecomment"> Response received from request execution.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Check </span><span class="equoted">error_occurred</span><span class="ecomment"> for eventual error.</span>
+			<span class="ecomment">--</span><span class="ecomment"> note: two consecutive calls will trigger two executions!</span>
+
+	<a name="f_new_temporary_file"></a><a class="efeature" href="../curl_http_client/curl_http_client_request_short.html#f_new_temporary_file">new_temporary_file</a><span class="esymbol">:</span> <a class="eclass" href="../base/raw_file_short.html">RAW_FILE</a>
+
+	<a name="f_file_content"></a><a class="efeature" href="../curl_http_client/curl_http_client_request_short.html#f_file_content">file_content</a> <span class="esymbol">(</span><span class="elocal">f</span><span class="esymbol">:</span> <a class="eclass" href="../base/file_short.html">FILE</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+
+	<a name="f_initialize_curl_session"></a><a class="efeature" href="../curl_http_client/curl_http_client_request_short.html#f_initialize_curl_session">initialize_curl_session</a> <span class="esymbol">(</span><span class="elocal">ctx</span><span class="esymbol">:</span> <span class="ekeyword">like</span> <a class="efeature" href="../curl_http_client/http_client_request_short.html#f_context">context</a><span class="esymbol">;</span> <span class="elocal">cmd</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_32_short.html">STRING_32</a><span class="esymbol">)</span>
+
+	<a name="f_initialize_curl_security_session"></a><a class="efeature" href="../curl_http_client/curl_http_client_request_short.html#f_initialize_curl_security_session">initialize_curl_security_session</a> <span class="esymbol">(</span><span class="elocal">cmd</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_32_short.html">STRING_32</a><span class="esymbol">;</span> <span class="elocal">a_config</span><span class="esymbol">:</span> <a class="eclass" href="../curl_http_client/http_client_secure_config_short.html">HTTP_CLIENT_SECURE_CONFIG</a><span class="esymbol">)</span>
+	
+<span class="ekeyword">note</span>
+	<span class="eitag">copyright</span><span class="esymbol">:</span> <span class="estring">&quot;2011-2023, Jocelyn Fiat, Javier Velilla, Eiffel Software and others&quot;</span>
+	<span class="eitag">license</span><span class="esymbol">:</span> <span class="estring">&quot;Eiffel Forum License v2 (see </span><a class="estring" href="http://www.eiffel.com/licensing/forum.txt">http://www.eiffel.com/licensing/forum.txt</a><span class="estring">)&quot;</span>
+	<span class="eitag">source</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">Eiffel Software</span>
+		<span class="estring">5949 Hollister Ave., Goleta, CA 93117 USA</span>
+		<span class="estring">Telephone 805-685-1006, Fax 805-685-6869</span>
+		<span class="estring">Website </span><a class="estring" href="http://www.eiffel.com">http://www.eiffel.com</a>
+		<span class="estring">Customer support </span><a class="estring" href="http://support.eiffel.com">http://support.eiffel.com</a>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+
+<span class="ekeyword">end</span> <span class="ecomment">--</span> <span class="ecomment">class </span><a class="eclass" href="../curl_http_client/curl_http_client_request_short.html">CURL_HTTP_CLIENT_REQUEST</a></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="curl_http_client_request_chart.html">Chart</a>
+<a class="nav class" href="curl_http_client_request_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="curl_http_client_request"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
+

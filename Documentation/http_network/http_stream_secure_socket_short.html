@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="A fake SSL network stream socket... when SSL is disabled at compilation time. Its behavior is similar to HTTP_STREAM_SOCKET."/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="2011-2013, Javier Velilla, Jocelyn Fiat and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>http_stream_secure_socket Contracts</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="http_stream_secure_socket_chart.html">Chart</a>
+<a class="nav class" href="http_stream_secure_socket_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="http_stream_secure_socket"></span>
+</div></form><pre><span class="ekeyword">note</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">A fake SSL network stream socket... when SSL is disabled at compilation time.</span>
+		<span class="estring">Its behavior is similar to HTTP_STREAM_SOCKET.</span>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+	<span class="eitag">date</span><span class="esymbol">:</span> <span class="estring">&quot;$Date$&quot;</span>
+	<span class="eitag">revision</span><span class="esymbol">:</span> <span class="estring">&quot;$Revision$&quot;</span>
+
+<span class="ekeyword">class</span> <span class="ekeyword">interface</span>
+	<a class="eclass" href="../http_network/http_stream_secure_socket_short.html">HTTP_STREAM_SECURE_SOCKET</a>
+
+<span class="ekeyword">create</span> 
+	<span class="nefeature">make</span><span class="esymbol">,</span>
+	<span class="nefeature">make_empty</span><span class="esymbol">,</span>
+	<span class="nefeature">make_client_by_port</span><span class="esymbol">,</span>
+	<span class="nefeature">make_client_by_address_and_port</span><span class="esymbol">,</span>
+	<span class="nefeature">make_server_by_port</span><span class="esymbol">,</span>
+	<span class="nefeature">make_server_by_address_and_port</span><span class="esymbol">,</span>
+	<span class="nefeature">make_loopback_server_by_port</span>
+
+
+<span class="ekeyword">create</span> <span class="esymbol">{</span><a class="eclass" href="../http_network/http_stream_secure_socket_short.html">HTTP_STREAM_SECURE_SOCKET</a><span class="esymbol">}</span>
+	<span class="nefeature">make_from_descriptor_and_address</span>
+
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Element change	</span>
+
+	<a name="f_set_certificate_file_path"></a><a class="efeature" href="../http_network/http_stream_secure_socket_short.html#f_set_certificate_file_path">set_certificate_file_path</a> <span class="esymbol">(</span><span class="elocal">a_crt_filename</span><span class="esymbol">:</span> <a class="eclass" href="../base/path_short.html">PATH</a><span class="esymbol">)</span>
+
+	<a name="f_set_key_file_path"></a><a class="efeature" href="../http_network/http_stream_secure_socket_short.html#f_set_key_file_path">set_key_file_path</a> <span class="esymbol">(</span><span class="elocal">a_key_filename</span><span class="esymbol">:</span> <a class="eclass" href="../base/path_short.html">PATH</a><span class="esymbol">)</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> SSL Helpers</span>
+
+	<a name="f_set_secure_protocol"></a><a class="efeature" href="../http_network/http_stream_secure_socket_short.html#f_set_secure_protocol">set_secure_protocol</a> <span class="esymbol">(</span><span class="elocal">v</span><span class="esymbol">:</span> <a class="eclass" href="../base/natural_32_short.html">NATURAL_32</a><span class="esymbol">)</span>
+
+	<a name="f_set_secure_protocol_to_ssl_2_or_3"></a><a class="efeature" href="../http_network/http_stream_secure_socket_short.html#f_set_secure_protocol_to_ssl_2_or_3">set_secure_protocol_to_ssl_2_or_3</a>
+			<span class="ecomment">--</span><span class="ecomment"> Set </span><span class="equoted">ssl_protocol</span><span class="ecomment"> with </span><span class="equoted">Ssl_23</span><span class="ecomment">.</span>
+
+	<a name="f_set_secure_protocol_to_tls_1_0"></a><a class="efeature" href="../http_network/http_stream_secure_socket_short.html#f_set_secure_protocol_to_tls_1_0">set_secure_protocol_to_tls_1_0</a>
+			<span class="ecomment">--</span><span class="ecomment"> Set </span><span class="equoted">ssl_protocol</span><span class="ecomment"> with </span><span class="equoted">Tls_1_0</span><span class="ecomment">.</span>
+
+	<a name="f_set_secure_protocol_to_tls_1_1"></a><a class="efeature" href="../http_network/http_stream_secure_socket_short.html#f_set_secure_protocol_to_tls_1_1">set_secure_protocol_to_tls_1_1</a>
+			<span class="ecomment">--</span><span class="ecomment"> Set </span><span class="equoted">ssl_protocol</span><span class="ecomment"> with </span><span class="equoted">Tls_1_1</span><span class="ecomment">.</span>
+
+	<a name="f_set_secure_protocol_to_tls_1_2"></a><a class="efeature" href="../http_network/http_stream_secure_socket_short.html#f_set_secure_protocol_to_tls_1_2">set_secure_protocol_to_tls_1_2</a>
+			<span class="ecomment">--</span><span class="ecomment"> Set </span><span class="equoted">ssl_protocol</span><span class="ecomment"> with </span><span class="equoted">Tls_1_2</span><span class="ecomment">.</span>
+
+	<a name="f_set_secure_protocol_to_dtls_1_0"></a><a class="efeature" href="../http_network/http_stream_secure_socket_short.html#f_set_secure_protocol_to_dtls_1_0">set_secure_protocol_to_dtls_1_0</a>
+			<span class="ecomment">--</span><span class="ecomment"> Set </span><span class="equoted">ssl_protocol</span><span class="ecomment"> with </span><span class="equoted">Dtls_1_0</span><span class="ecomment">.</span>
+	
+<span class="ekeyword">invariant</span>
+	<span class="etag">secure_connection_not_supported</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../http_network/http_stream_socket_short.html#f_is_secure_connection_supported">Is_secure_connection_supported</a>
+
+<span class="ekeyword">note</span>
+	<span class="eitag">copyright</span><span class="esymbol">:</span> <span class="estring">&quot;2011-2013, Javier Velilla, Jocelyn Fiat and others&quot;</span>
+	<span class="eitag">license</span><span class="esymbol">:</span> <span class="estring">&quot;Eiffel Forum License v2 (see </span><a class="estring" href="http://www.eiffel.com/licensing/forum.txt">http://www.eiffel.com/licensing/forum.txt</a><span class="estring">)&quot;</span>
+
+<span class="ekeyword">end</span> <span class="ecomment">--</span> <span class="ecomment">class </span><a class="eclass" href="../http_network/http_stream_secure_socket_short.html">HTTP_STREAM_SECURE_SOCKET</a></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="http_stream_secure_socket_chart.html">Chart</a>
+<a class="nav class" href="http_stream_secure_socket_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="http_stream_secure_socket"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
+

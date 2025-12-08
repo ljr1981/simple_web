@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="Handler based on a STARTS_WITH handler to respond a  WSF_ROUTER_SELF_DOCUMENTATION_MESSAGE message  This is a self documentation for WSF_ROUTER."/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>wsf_router_self_documentation_handler Contracts</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="wsf_router_self_documentation_handler_chart.html">Chart</a>
+<a class="nav class" href="wsf_router_self_documentation_handler_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="wsf_router_self_documentation_handler"></span>
+</div></form><pre><span class="ekeyword">note</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">Handler based on a STARTS_WITH handler to respond a </span>
+		<span class="estring">WSF_ROUTER_SELF_DOCUMENTATION_MESSAGE message</span>
+		
+		<span class="estring">This is a self documentation for WSF_ROUTER.</span>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+	<span class="eitag">date</span><span class="esymbol">:</span> <span class="estring">&quot;$Date$&quot;</span>
+	<span class="eitag">revision</span><span class="esymbol">:</span> <span class="estring">&quot;$Revision$&quot;</span>
+
+<span class="ekeyword">class</span> <span class="ekeyword">interface</span>
+	<a class="eclass" href="../wsf/wsf_router_self_documentation_handler_short.html">WSF_ROUTER_SELF_DOCUMENTATION_HANDLER</a>
+
+<span class="ekeyword">create</span> 
+	<a class="efeature" href="../wsf/wsf_router_self_documentation_handler_short.html#f_make">make</a><span class="esymbol">,</span>
+	<a class="efeature" href="../wsf/wsf_router_self_documentation_handler_short.html#f_make_hidden">make_hidden</a>
+
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Documentation</span>
+
+	<a name="f_mapping_documentation"></a><a class="efeature" href="../wsf/wsf_router_self_documentation_handler_short.html#f_mapping_documentation">mapping_documentation</a> <span class="esymbol">(</span><span class="elocal">m</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_router_mapping_short.html">WSF_ROUTER_MAPPING</a><span class="esymbol">;</span> <span class="elocal">a_request_methods</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../wsf/wsf_request_methods_short.html">WSF_REQUEST_METHODS</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_router_mapping_documentation_short.html">WSF_ROUTER_MAPPING_DOCUMENTATION</a>
+			<span class="ecomment">--</span><span class="ecomment"> Documentation associated with Current handler, in the context of the mapping </span><span class="equoted">m</span><span class="ecomment"> and methods </span><span class="equoted">a_request_methods</span><span class="ecomment">.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Execution</span>
+
+	<a name="f_execute"></a><a class="efeature" href="../wsf/wsf_router_self_documentation_handler_short.html#f_execute">execute</a> <span class="esymbol">(</span><span class="elocal">a_start_path</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">;</span> <span class="elocal">req</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_request_short.html">WSF_REQUEST</a><span class="esymbol">;</span> <span class="elocal">res</span><span class="esymbol">:</span> <a class="eclass" href="../wsf/wsf_response_short.html">WSF_RESPONSE</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Handle </span><span class="equoted">req</span><span class="ecomment"> responding into </span><span class="equoted">res</span><span class="ecomment">.</span>
+	
+<span class="ekeyword">invariant</span>
+	<span class="etag">router_attached</span><span class="esymbol">:</span> <a class="efeature" href="../wsf/wsf_router_self_documentation_handler_short.html#f_router">router</a> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+
+<span class="ekeyword">end</span> <span class="ecomment">--</span> <span class="ecomment">class </span><a class="eclass" href="../wsf/wsf_router_self_documentation_handler_short.html">WSF_ROUTER_SELF_DOCUMENTATION_HANDLER</a></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="wsf_router_self_documentation_handler_chart.html">Chart</a>
+<a class="nav class" href="wsf_router_self_documentation_handler_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="wsf_router_self_documentation_handler"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
+
