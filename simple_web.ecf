@@ -27,7 +27,7 @@
 		<library name="oauth_module" location="$ISE_LIBRARY\unstable\library\web\cms\modules\oauth20\oauth20.ecf"/>
 		<library name="simple_json" location="$SIMPLE_JSON\simple_json.ecf"/>
 		<library name="standalone_launcher" location="$ISE_LIBRARY\unstable\library\web\cms\launcher\standalone.ecf"/>
-		<library name="testing_ext" location="$TESTING_EXT\testing_ext.ecf"/>
+		<library name="simple_testing" location="$SIMPLE_TESTING\simple_testing.ecf"/>
 		<library name="uri" location="$ISE_LIBRARY\library\text\uri\uri.ecf"/>
 		<library name="uri_launcher" location="$ISE_LIBRARY\library\runtime\process\uri_launcher\uri_launcher.ecf"/>
 		<library name="uri_template" location="$ISE_LIBRARY\contrib\library\text\parser\uri_template\uri_template.ecf"/>
@@ -49,7 +49,6 @@
 		<capability>
 			<concurrency use="thread"/>
 		</capability>
-		<library name="testing" location="$ISE_LIBRARY\library\testing\testing.ecf"/>
 		<cluster name="test" location=".\testing\" recursive="true">
 			<file_rule>
 				<exclude>/wms_api$</exclude>
@@ -77,7 +76,6 @@
 	</target>
 	<target name="wms_api_tests" extends="wms_api">
 		<root class="WMS_API_APP" feature="make"/>
-		<library name="testing" location="$ISE_LIBRARY\library\testing\testing.ecf"/>
 		<cluster name="wms_api_test" location=".\testing\wms_api\" recursive="true"/>
 	</target>
 	<target name="todo_api" extends="simple_web">
@@ -95,7 +93,6 @@
 	</target>
 	<target name="todo_api_tests" extends="todo_api">
 		<root class="ANY" feature="default_create"/>
-		<library name="testing" location="$ISE_LIBRARY\library\testing\testing.ecf"/>
 		<cluster name="todo_api_test" location=".\testing\todo_api\" recursive="true"/>
 	</target>
 </system>
