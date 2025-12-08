@@ -3,7 +3,7 @@ note
 		Integration tests for {SIMPLE_WEB_CLIENT} using httpbin.org.
 		Tests real HTTPS requests, authentication, and error handling.
 	]"
-	testing: "type/manual"
+	testing: "covers"
 
 class
 	TEST_SIMPLE_WEB_CLIENT_INTEGRATION

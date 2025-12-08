@@ -4,7 +4,7 @@ note
 		Uses echo services to verify exact request transmission.
 		Tests internal request building and header handling.
 	]"
-	testing: "type/manual"
+	testing: "covers"
 
 class
 	TEST_SIMPLE_WEB_CLIENT_ECHO

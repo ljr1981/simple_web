@@ -1,6 +1,6 @@
 note
 	description: "Tests for {SIMPLE_WEB_OLLAMA_CLIENT}"
-	testing: "type/manual"
+	testing: "covers"
 
 class
 	TEST_SIMPLE_WEB_OLLAMA

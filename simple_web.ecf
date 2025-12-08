@@ -29,6 +29,7 @@
 		<library name="simple_json" location="$SIMPLE_JSON\simple_json.ecf"/>
 		<library name="standalone_launcher" location="$ISE_LIBRARY\unstable\library\web\cms\launcher\standalone.ecf"/>
 		<library name="simple_testing" location="$SIMPLE_TESTING\simple_testing.ecf"/>
+		<library name="testing" location="$ISE_LIBRARY\library\testing\testing.ecf"/>
 		<library name="uri" location="$ISE_LIBRARY\library\text\uri\uri.ecf"/>
 		<library name="uri_launcher" location="$ISE_LIBRARY\library\runtime\process\uri_launcher\uri_launcher.ecf"/>
 		<library name="uri_template" location="$ISE_LIBRARY\contrib\library\text\parser\uri_template\uri_template.ecf"/>

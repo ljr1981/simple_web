@@ -4,7 +4,7 @@ note
 		Tests RESTful CRUD operations, array responses, and nested resources.
 		JSONPlaceholder provides free fake REST API: https://jsonplaceholder.typicode.com
 	]"
-	testing: "type/manual"
+	testing: "covers"
 
 class
 	TEST_SIMPLE_WEB_CLIENT_JSONPLACEHOLDER

@@ -1,6 +1,6 @@
 note
 	description: "Tests for {SIMPLE_WEB_SERVER_ROUTER}"
-	testing: "type/manual"
+	testing: "covers"
 
 class
 	TEST_SIMPLE_WEB_SERVER_ROUTER
