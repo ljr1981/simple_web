@@ -107,7 +107,7 @@ feature {NONE} -- Implementation
 			l_cmd.append (l_escaped_body)
 			l_cmd.append ("%"")
 
-			l_output := process_helper.output_of_command (l_cmd, Void)
+			l_output := process_helper.shell_output (l_cmd, Void)
 			Result := parse_curl_output (l_output)
 		end
 
@@ -145,7 +145,7 @@ feature {NONE} -- Implementation
 			l_cmd.append (l_escaped_body)
 			l_cmd.append ("%"")
 
-			l_output := process_helper.output_of_command (l_cmd, Void)
+			l_output := process_helper.shell_output (l_cmd, Void)
 			Result := parse_curl_output (l_output)
 		end
 

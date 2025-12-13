@@ -173,7 +173,7 @@ feature -- Conversion
 		do
 			if not body.is_empty then
 				create l_parser
-				Result := l_parser.parse (body)
+				Result := l_parser.decode_payload (body)
 			end
 		end
 

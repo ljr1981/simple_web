@@ -264,7 +264,7 @@ feature -- Body
 			l_body := body
 			if not l_body.is_empty then
 				create l_json
-				if attached l_json.parse (l_body) as l_value and then l_value.is_object then
+				if attached l_json.decode_payload (l_body) as l_value and then l_value.is_object then
 					Result := l_value.as_object
 				end
 			end

@@ -438,7 +438,7 @@ feature -- Operations
 			l_response := client.get (base_url + "/api/warehouses")
 			if l_response.status_code = 200 then
 				create l_json
-				if attached {SIMPLE_JSON_ARRAY} l_json.parse (l_response.body) as arr and then arr.count > 0 then
+				if attached {SIMPLE_JSON_ARRAY} l_json.decode (l_response.body) as arr and then arr.count > 0 then
 					if attached {SIMPLE_JSON_OBJECT} arr.item (1) as wh then
 						current_warehouse_id := wh.integer_item ("id")
 						if attached wh.string_item ("name") as l_name then
@@ -523,7 +523,7 @@ feature -- Operations
 					if l_response.status_code = 201 then
 						-- Parse reservation ID
 						create l_json
-						if attached {SIMPLE_JSON_OBJECT} l_json.parse (l_response.body) as res_json then
+						if attached {SIMPLE_JSON_OBJECT} l_json.decode (l_response.body) as res_json then
 							l_reservation_id := res_json.integer_item ("id")
 							log_success ("  Reserved " + item.quantity.out + "x product " +
 								item.product_id.out + " (reservation " + l_reservation_id.out + ")")
@@ -626,7 +626,7 @@ feature -- Stock Queries
 				l_response := client.get (base_url + "/api/stock/product/" + pid.item.out)
 				if l_response.status_code = 200 then
 					create l_json
-					if attached {SIMPLE_JSON_OBJECT} l_json.parse (l_response.body) as stock then
+					if attached {SIMPLE_JSON_OBJECT} l_json.decode (l_response.body) as stock then
 						print ("    Product " + pid.item.out + ": " +
 							stock.integer_item ("total_quantity").out + " total, " +
 							stock.integer_item ("available_quantity").out + " available%N")
@@ -644,7 +644,7 @@ feature -- Stock Queries
 			l_response := client.get (base_url + "/api/low-stock")
 			if l_response.status_code = 200 then
 				create l_json
-				if attached {SIMPLE_JSON_ARRAY} l_json.parse (l_response.body) as arr then
+				if attached {SIMPLE_JSON_ARRAY} l_json.decode (l_response.body) as arr then
 					if arr.count > 0 then
 						print ("  LOW STOCK ALERTS: " + arr.count.out + " products below minimum%N")
 					else
@@ -755,7 +755,7 @@ feature -- Inventory Validation (Spot Checks)
 			l_response := client.get (base_url + "/api/stock/product/" + a_product_id.out)
 			if l_response.status_code = 200 then
 				create l_json
-				if attached {SIMPLE_JSON_OBJECT} l_json.parse (l_response.body) as stock then
+				if attached {SIMPLE_JSON_OBJECT} l_json.decode (l_response.body) as stock then
 					l_actual := stock.integer_item ("total_quantity")
 					if l_actual.to_integer_32 = a_expected_total then
 						log_success ("SPOT CHECK #" + spot_check_count.out + " PASS: " + a_description +
@@ -784,7 +784,7 @@ feature -- Inventory Validation (Spot Checks)
 			l_response := client.get (base_url + "/api/stock/product/" + a_product_id.out)
 			if l_response.status_code = 200 then
 				create l_json
-				if attached {SIMPLE_JSON_OBJECT} l_json.parse (l_response.body) as stock then
+				if attached {SIMPLE_JSON_OBJECT} l_json.decode (l_response.body) as stock then
 					l_actual := stock.integer_item ("available_quantity")
 					if l_actual.to_integer_32 = a_expected_available then
 						log_success ("SPOT CHECK #" + spot_check_count.out + " PASS: " + a_description)
@@ -812,7 +812,7 @@ feature -- Inventory Validation (Spot Checks)
 			l_response := client.get (base_url + "/api/movements/" + a_product_id.out + "?limit=1")
 			if l_response.status_code = 200 then
 				create l_json
-				if attached {SIMPLE_JSON_ARRAY} l_json.parse (l_response.body) as arr and then arr.count > 0 then
+				if attached {SIMPLE_JSON_ARRAY} l_json.decode (l_response.body) as arr and then arr.count > 0 then
 					if attached {SIMPLE_JSON_OBJECT} arr.item (1) as mov then
 						if attached mov.string_item ("movement_type") as l_type then
 							l_found := l_type.to_string_8 ~ a_expected_type and
@@ -1427,7 +1427,7 @@ feature {NONE} -- Implementation
 			l_response := client.get (base_url + "/api/stock/product/" + a_product_id.out)
 			if l_response.status_code = 200 then
 				create l_json
-				if attached {SIMPLE_JSON_OBJECT} l_json.parse (l_response.body) as stock then
+				if attached {SIMPLE_JSON_OBJECT} l_json.decode (l_response.body) as stock then
 					Result := stock.integer_item ("total_quantity").to_integer_32
 				end
 			end
