@@ -37,8 +37,8 @@
             <h2>Overview</h2>
             <p>
                 <strong>simple_web</strong> provides high-level HTTP APIs for Eiffel, supporting
-                HTTP client operations, HTTP server development, and ready-to-use <strong>AI API clients</strong>
-                for Ollama, Claude, OpenAI, and Grok.
+                HTTP client operations, HTTP server development, <strong>resilience patterns</strong>,
+                and ready-to-use <strong>AI API clients</strong> for Ollama, Claude, OpenAI, and Grok.
             </p>
             <p>
                 Part of the <strong>simple_*</strong> ecosystem of focused, single-purpose Eiffel libraries.
@@ -84,6 +84,18 @@
     <span class="keyword">create</span> ollama
     response := ollama.generate (<span class="string">"llama3"</span>, <span class="string">"Hello!"</span>)
 <span class="keyword">end</span></code></pre>
+
+            <h3>Resilience Policy</h3>
+<pre><code><span class="keyword">local</span>
+    policy: <span class="type">SIMPLE_RESILIENCE_POLICY</span>
+<span class="keyword">do</span>
+    <span class="keyword">create</span> policy.make
+    policy.with_retry (3)
+          .with_circuit_breaker (5, 30)
+          .with_timeout (10)
+          .with_bulkhead (100)
+    policy.execute_procedure (<span class="keyword">agent</span> call_external_service)
+<span class="keyword">end</span></code></pre>
         </section>
 
         <section id="features">
@@ -118,6 +130,11 @@
                 <div class="feature-card">
                     <h3>JSON Support</h3>
                     <p>Seamless JSON request/response handling with simple_json.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>Resilience</h3>
+                    <p>Circuit breaker, bulkhead, retry with backoff, timeout, fallback patterns.</p>
                 </div>
             </div>
         </section>

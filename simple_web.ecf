@@ -16,6 +16,7 @@
 			<void_safety support="all"/>
 		</capability>
 		<library name="base" location="$ISE_LIBRARY\library\base\base.ecf"/>
+		<library name="simple_datetime" location="$SIMPLE_DATETIME\simple_datetime.ecf"/>
 		<library name="curl_http_client" location="$ISE_LIBRARY\contrib\library\network\http_client\curl_http_client.ecf"/>
 		<library name="default_standalone" location="$ISE_LIBRARY\contrib\library\web\framework\ewf\wsf\default\standalone.ecf"/>
 		<library name="encoder" location="$ISE_LIBRARY\contrib\library\web\framework\ewf\text\encoder\encoder.ecf"/>

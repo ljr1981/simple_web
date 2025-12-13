@@ -22,6 +22,7 @@ feature {NONE} -- Initialization
 			run_sanitizer_tests
 			run_router_tests
 			run_route_tests
+			run_resilience_tests
 
 			print ("%N========================%N")
 			print ("Results: " + passed.out + " passed, " + failed.out + " failed%N")
@@ -138,6 +139,38 @@ feature {NONE} -- Test Runners
 			run_test (agent route_tests.test_trailing_slash_handling, "test_trailing_slash_handling")
 		end
 
+	run_resilience_tests
+			-- Run resilience pattern tests.
+		do
+			print ("%N=== TEST_RESILIENCE ===%N")
+			create resilience_tests
+			-- Circuit breaker tests
+			run_test (agent resilience_tests.test_circuit_breaker_initial_state, "test_circuit_breaker_initial_state")
+			run_test (agent resilience_tests.test_circuit_breaker_opens_after_threshold, "test_circuit_breaker_opens_after_threshold")
+			run_test (agent resilience_tests.test_circuit_breaker_success_resets_count, "test_circuit_breaker_success_resets_count")
+			run_test (agent resilience_tests.test_circuit_breaker_state_name, "test_circuit_breaker_state_name")
+			run_test (agent resilience_tests.test_circuit_breaker_force_open, "test_circuit_breaker_force_open")
+			run_test (agent resilience_tests.test_circuit_breaker_force_closed, "test_circuit_breaker_force_closed")
+			run_test (agent resilience_tests.test_circuit_breaker_reset, "test_circuit_breaker_reset")
+			-- Bulkhead tests
+			run_test (agent resilience_tests.test_bulkhead_initial_state, "test_bulkhead_initial_state")
+			run_test (agent resilience_tests.test_bulkhead_acquire_release, "test_bulkhead_acquire_release")
+			run_test (agent resilience_tests.test_bulkhead_rejects_when_full, "test_bulkhead_rejects_when_full")
+			run_test (agent resilience_tests.test_bulkhead_utilization, "test_bulkhead_utilization")
+			run_test (agent resilience_tests.test_bulkhead_statistics, "test_bulkhead_statistics")
+			run_test (agent resilience_tests.test_bulkhead_release_if_held, "test_bulkhead_release_if_held")
+			-- Policy tests
+			run_test (agent resilience_tests.test_policy_default_state, "test_policy_default_state")
+			run_test (agent resilience_tests.test_policy_builder_fluent, "test_policy_builder_fluent")
+			run_test (agent resilience_tests.test_policy_with_retry, "test_policy_with_retry")
+			run_test (agent resilience_tests.test_policy_with_circuit_breaker, "test_policy_with_circuit_breaker")
+			run_test (agent resilience_tests.test_policy_with_bulkhead, "test_policy_with_bulkhead")
+			run_test (agent resilience_tests.test_policy_with_timeout, "test_policy_with_timeout")
+			run_test (agent resilience_tests.test_policy_with_fallback_value, "test_policy_with_fallback_value")
+			run_test (agent resilience_tests.test_policy_execute_success, "test_policy_execute_success")
+			run_test (agent resilience_tests.test_policy_execute_with_retry, "test_policy_execute_with_retry")
+		end
+
 feature {NONE} -- Implementation
 
 	lib_tests: LIB_TESTS
@@ -145,6 +178,7 @@ feature {NONE} -- Implementation
 	sanitizer_tests: TEST_SANITIZER
 	router_tests: TEST_SIMPLE_WEB_SERVER_ROUTER
 	route_tests: TEST_SIMPLE_WEB_SERVER_ROUTE
+	resilience_tests: TEST_RESILIENCE
 
 	passed: INTEGER
 	failed: INTEGER

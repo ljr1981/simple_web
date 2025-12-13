@@ -42,6 +42,7 @@ end
 - **JSON Support** - Easy JSON request/response handling
 - **AI Clients** - Ollama, Claude, OpenAI, Grok integrations
 - **Hybrid Client** - Workaround for localhost POST issues
+- **Resilience Patterns** - Circuit breaker, bulkhead, retry with backoff, timeout, fallback
 
 ## Installation
 
@@ -59,6 +60,7 @@ export SIMPLE_WEB=/path/to/simple_web
 
 - simple_json
 - simple_process
+- simple_datetime
 - EWF libraries (included with EiffelStudio)
 
 ## License
